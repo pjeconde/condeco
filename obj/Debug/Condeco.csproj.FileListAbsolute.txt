@@ -1,0 +1,5 @@
+C:\SVNCondeco\Condeco\bin\Condeco.dll
+C:\SVNCondeco\Condeco\bin\Condeco.pdb
+C:\SVNCondeco\Condeco\obj\Debug\ResolveAssemblyReference.cache
+C:\SVNCondeco\Condeco\obj\Debug\Condeco.dll
+C:\SVNCondeco\Condeco\obj\Debug\Condeco.pdb
