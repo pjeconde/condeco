@@ -1,0 +1,6 @@
+C:\SVNCondeco\CondecoWebForm\bin\Debug\CondecoWebForm.dll
+C:\SVNCondeco\CondecoWebForm\bin\Debug\CondecoWebForm.pdb
+C:\SVNCondeco\CondecoWebForm\obj\Debug\CondecoWebForm.dll
+C:\SVNCondeco\CondecoWebForm\obj\Debug\CondecoWebForm.pdb
+C:\SVNCondeco\CondecoWebForm\bin\Debug\CondecoEX.dll
+C:\SVNCondeco\CondecoWebForm\bin\Debug\CondecoEX.pdb
