@@ -82,26 +82,12 @@
                                     </tr>
                                     <tr>
                                         <td align="left" style="padding-top: 20px">
-                                            This user account will allow you to operate on our website so independent and do the activities listed below:
+                                            Esta cuenta de usuario le permitirá a usted, acceder a las las novedades y promociones disponibles en nuestro sitio web.
                                             <br />
                                             <br />
-                                            <font style="color: #F6B200">&gt;</font> Milongas
+                                            <font style="color: #F6B200">&gt;</font> Novedades
                                             <br />
-                                            If you, are the owner or manager of a Milonga, you can enter all the information
-                                            concerning it, to exhibit in our search engine. Thus, display all the Ballroom features, amenities, services, location
-                                            and schedules among other things.
-                                            <br />
-                                            <br />
-                                            <font style="color: #F6B200">&gt;</font> Teachers or Taxi Dancers<br />
-                                            If you are a teacher of Tango, you can leave your data available and the services offered.
-                                            <br />
-                                            <br />
-                                            <font style="color: #F6B200">&gt;</font> Festivals
-                                            <br />
-                                            If you are organizing a festival or event of Tango, you can enter all the information regarding the same, to convey our search and thus
-                                            give full features of the event, inform the orchestra and dancers involved, amenities, location, duration and schedules among other things.
-                                            <br />
-                                            <br />
+                                            Una vez al mes actualizamos la información con las novedades o nuevos diseños que estamos desarrollando en nuestro taller.
                                         </td>
                                     </tr>
                                     <tr>
