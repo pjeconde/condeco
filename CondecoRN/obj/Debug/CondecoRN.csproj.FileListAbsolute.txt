@@ -1,0 +1,13 @@
+C:\SVNCondeco\CondecoRN\bin\Debug\CondecoRN.dll
+C:\SVNCondeco\CondecoRN\bin\Debug\CondecoRN.pdb
+C:\SVNCondeco\CondecoRN\bin\Debug\CondecoEntidades.dll
+C:\SVNCondeco\CondecoRN\bin\Debug\CondecoEntidades.pdb
+C:\SVNCondeco\CondecoRN\obj\Debug\CondecoRN.dll
+C:\SVNCondeco\CondecoRN\obj\Debug\CondecoRN.pdb
+C:\SVNCondeco\CondecoRN\obj\Debug\CondecoRN.csprojResolveAssemblyReference.cache
+C:\SVNCondeco\CondecoRN\bin\Debug\Captcha.dll
+C:\SVNCondeco\CondecoRN\bin\Debug\CondecoDB.dll
+C:\SVNCondeco\CondecoRN\bin\Debug\CondecoEX.dll
+C:\SVNCondeco\CondecoRN\bin\Debug\Captcha.pdb
+C:\SVNCondeco\CondecoRN\bin\Debug\CondecoDB.pdb
+C:\SVNCondeco\CondecoRN\bin\Debug\CondecoEX.pdb
