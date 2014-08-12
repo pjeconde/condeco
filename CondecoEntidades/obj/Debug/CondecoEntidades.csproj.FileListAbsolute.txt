@@ -1,0 +1,4 @@
+C:\SVNCondeco\CondecoEntidades\bin\Debug\CondecoEntidades.dll
+C:\SVNCondeco\CondecoEntidades\bin\Debug\CondecoEntidades.pdb
+C:\SVNCondeco\CondecoEntidades\obj\Debug\CondecoEntidades.dll
+C:\SVNCondeco\CondecoEntidades\obj\Debug\CondecoEntidades.pdb
