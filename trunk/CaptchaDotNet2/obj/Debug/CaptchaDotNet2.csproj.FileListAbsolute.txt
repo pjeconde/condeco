@@ -1,0 +1,10 @@
+C:\SVNCedServicios\CedServicios\CaptchaDotNet2\bin\Debug\Captcha.dll
+C:\SVNCedServicios\CedServicios\CaptchaDotNet2\bin\Debug\Captcha.pdb
+C:\SVNCedServicios\CedServicios\CaptchaDotNet2\obj\Debug\ResolveAssemblyReference.cache
+C:\SVNCedServicios\CedServicios\CaptchaDotNet2\obj\Debug\Captcha.dll
+C:\SVNCedServicios\CedServicios\CaptchaDotNet2\obj\Debug\Captcha.pdb
+C:\SVNTangoFamilyAndGuide\TangoFamilyAndGuide\CaptchaDotNet2\bin\Debug\Captcha.dll
+C:\SVNTangoFamilyAndGuide\TangoFamilyAndGuide\CaptchaDotNet2\bin\Debug\Captcha.pdb
+C:\SVNTangoFamilyAndGuide\TangoFamilyAndGuide\CaptchaDotNet2\obj\Debug\Captcha.dll
+C:\SVNTangoFamilyAndGuide\TangoFamilyAndGuide\CaptchaDotNet2\obj\Debug\Captcha.pdb
+C:\SVNTangoFamilyAndGuide\TangoFamilyAndGuide\CaptchaDotNet2\obj\Debug\CaptchaDotNet2.csprojResolveAssemblyReference.cache
