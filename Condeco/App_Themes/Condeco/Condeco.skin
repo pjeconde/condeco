@@ -1,0 +1,60 @@
+<%@ Register Assembly="CondecoWebForm" Namespace="CondecoWebForm" TagPrefix="cc1" %>
+
+<asp:Label SkinID="TextoGrande" runat="server" Font-Size="14px" ForeColor="Gray"></asp:Label>
+<asp:Label SkinID="TextoMediano" runat="server" Font-Size="12px" ForeColor="Gray" Font-Bold="False"></asp:Label>
+<asp:Label SkinID="TextoChico" runat="server" Font-Size="10px" ForeColor="Gray" Font-Bold="False" Width="100%"></asp:Label>
+
+<asp:Label SkinID="TextoInicioMediano" runat="server" Font-Size="12px" ForeColor="Gray" Font-Bold="False" Width="100%"></asp:Label>
+<asp:Label SkinID="TextoInicioChico" runat="server" Font-Size="10px" ForeColor="Gray" Font-Bold="False" Width="100%"></asp:Label>
+
+<asp:Label SkinID="TituloPagina" runat="server" Font-Size="24px" ForeColor="Gray" Font-Bold="false"></asp:Label>
+<asp:Label SkinID="TituloMediano" runat="server" Font-Size="12px" ForeColor="Gray" Font-Bold="True"></asp:Label>
+<asp:Label SkinID="TituloMedianoNoBold" runat="server" Font-Size="12px" ForeColor="Gray" Font-Bold="False"></asp:Label>
+
+<asp:Label SkinID="TituloPaginaClaroGr" runat="server" Font-Size="20px" ForeColor="Gray" Font-Bold="True" Width="100%"></asp:Label>
+<asp:Label SkinID="TituloPaginaClaro" runat="server" Font-Size="14px" ForeColor="Gray" Font-Bold="True" Width="100%"></asp:Label>
+<asp:Label SkinID="TituloChico" runat="server" Font-Size="10px" ForeColor="Gray" Font-Bold="True" Width="100%"></asp:Label>
+
+<asp:Label SkinID="TituloGrande" runat="server" Font-Size="14px" ForeColor="#A52A2A"></asp:Label>
+<asp:Label SkinID="TituloColor1Grande" runat="server" Font-Size="14px" ForeColor="#A52A2A" Font-Bold="True" Width="100%"></asp:Label>
+<asp:Label SkinID="TituloColor1Mediano" runat="server" Font-Size="12px" ForeColor="#A52A2A" Font-Bold="True"></asp:Label>
+<asp:Label SkinID="TituloColor1Chico" runat="server" Font-Size="10px" ForeColor="#A52A2A" Font-Bold="True" Width="100%"></asp:Label>
+
+<asp:Label SkinID="LabelFact" runat="server" Font-Size="10px" ForeColor="#071F70" Font-Bold="True" Width="100%"></asp:Label>
+
+<asp:Label SkinID="IndicadorValidacion" runat="server" Font-Size="14px" ForeColor="#669900" Font-Bold="True" Text="*"></asp:Label>
+<asp:Label SkinID="MensajePaginaCorto" runat="server" Font-Size="14px" ForeColor="#669900" Font-Bold="True" Width="350px"></asp:Label>
+<asp:Label SkinID="MensajePagina" runat="server" Font-Size="14px" ForeColor="#669900" Font-Bold="True" Width="500px"></asp:Label>
+
+<asp:TextBox SkinID="TextoBoxChico" runat="server" Style="width: 50px" ForeColor="#071F70" BorderStyle="Solid" BorderWidth="1px" BorderColor=#071F70></asp:TextBox>
+<asp:TextBox SkinID="TextoBoxMediano" runat="server" Style="width: 100px" ForeColor="#071F70" BorderStyle="Solid" BorderWidth="1px" BorderColor=#071F70></asp:TextBox>
+
+<asp:TextBox SkinID="TextoBoxFEAVendedorDet" runat="server" Style="width: 170px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
+<asp:TextBox SkinID="TextoBoxFEAVendedorDetCh" runat="server" Style="width: 80px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
+<asp:TextBox SkinID="TextoBoxFEAVendedorDetChCh" runat="server" Style="width: 40px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
+<asp:TextBox SkinID="Fecha" runat="server" Style="width: 60px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
+<asp:TextBox SkinID="FechaFact" runat="server" Style="width: 140px; padding-rigth: 4px;" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
+
+<asp:TextBox SkinID="TextoBoxFEADescrGr" runat="server" Style="width: 570px; resize: none;" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
+
+<asp:ValidationSummary SkinID="MensajeValidationSummary" runat="server" Font-Size="12px" ForeColor="#669900" Font-Bold="True" HeaderText="Por favor, ingrese (o corrija) los siguientes campos: " ShowMessageBox="true" ShowSummary="true" DisplayMode="SingleParagraph"/>
+
+<asp:HyperLink SkinID="LinkChicoClaro" runat="server" Font-Size="10px" ForeColor="Gray"></asp:HyperLink>
+<asp:HyperLink SkinID="LinkMedianoClaro" runat="server" Font-Size="12px" ForeColor="Gray"></asp:HyperLink>
+
+<asp:CheckBox SkinID="CheckBoxFEALoteDetChCh" runat="server" Width="40px" ForeColor="#071F70"></asp:CheckBox>
+
+<asp:DropDownList SkinID="ddln" runat="server" Style="width: 176px" ForeColor="#071F70" BorderStyle="NotSet"></asp:DropDownList>
+<asp:DropDownList SkinID="ddlch" runat="server" Style="width: 60px" ForeColor="#071F70" BorderStyle="NotSet"></asp:DropDownList>
+<asp:DropDownList SkinID="ddlgrc" runat="server" Style="width: 200px" BackColor="peachpuff" ForeColor="brown" Font-Bold="true" BorderStyle="Solid" BorderColor="Brown" BorderWidth="1" ToolTip=""></asp:DropDownList>
+<asp:DropDownList SkinID="ddlgr2c" runat="server" Style="width: 300px" BackColor="peachpuff" ForeColor="brown" Font-Bold="true" BorderStyle="Solid" BorderColor="Brown" BorderWidth="1" ToolTip=""></asp:DropDownList>
+<asp:DropDownList SkinID="DropDownListCompradorGr" runat="server" Style="width: 280px" ForeColor="#071F70" BorderStyle="NotSet"></asp:DropDownList>
+
+<asp:GridView runat="server" SkinID="GrillaExploradores" 
+  RowStyle-BorderColor="Gray"
+  CellPadding="2">
+</asp:GridView>
+
+<cc1:PagingGridView runat="server" SkinID="GrillaGuide"> 
+    <headerstyle horizontalalign="Center" BorderColor="Gray" wrap="false" ForeColor="Brown" />
+</cc1:PagingGridView>

@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Condeco.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadCPH" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+            <asp:ScriptManager ID="MasterScriptManager" runat="server">
+            </asp:ScriptManager>
+            <asp:Panel id="Cabecera" runat="server" BackColor="Black" Width="100%">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <tr>
+                        <td>
+                            &nbsp;
+                            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="500" height="100"
+                                id="FlashID" title="Logo">
+                                <param name="movie" value="/Flash/LogoLogoCondeco.swf">
+                                <param name="quality" value="high">
+                                <param name="wmode" value="opaque">
+                                <param name="swfversion" value="11.0.0.0">
+                                <!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+                                <param name="expressinstall" value="/Scripts/expressInstall.swf">
+                                <!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+                                <!--[if !IE]>-->
+                                <object type="application/x-shockwave-flash" data="/Flash/LogoCondeco.swf" width="500" height="100">
+                                    <!--<![endif]-->
+                                    <param name="quality" value="high">
+                                    <param name="wmode" value="opaque">
+                                    <param name="swfversion" value="11.0.0.0">
+                                    <param name="expressinstall" value="/Scripts/expressInstall.swf">
+                                    <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+                                    <div>
+                                        <h4>
+                                            El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+                                        <p>
+                                            <a href="http://www.adobe.com/go/getflashplayer">
+                                                <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
+                                                    alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+                                    </div>
+                                    <!--[if !IE]>-->
+                                </object>
+                                <!--<![endif]-->
+                            </object>
+                        </td>
+                        <td align="right" style="background-position: left 25px; width: 100%; background-image: url('/Imagenes/Empedrado.jpg'); background-repeat: no-repeat;">
+                            <table cellspacing="0" cellpadding="0">
+                                <tr>
+
+                                    <td align="left" width="50">
+                                    <a href="https://www.facebook.com/pages/Tango-Family-and-Guide/427458774042479?fref=ts" target="_blank">
+                                        <img src="Imagenes/Facebook.gif" alt="Síguenos en facebook" border="false" style="width: 40px;" align="middle" /></a>
+                                    </td>
+                                    <td align="right" style="margin-top:15">
+                                        <div id="fb-root" style="margin-top:15"></div>
+                                        <script type="text/javascript">
+                                            (function (d, s, id) 
+                                            {
+                                                var js, fjs = d.getElementsByTagName(s)[0];
+                                                if (d.getElementById(id)) return;
+                                                js = d.createElement(s); js.id = id;
+                                                js.src = "//connect.facebook.net/es_EN/all.js#xfbml=1";
+                                                fjs.parentNode.insertBefore(js, fjs);
+                                            } (document, 'script', 'facebook-jssdk'));</script>
+                                        <div class="fb-like" data-href="http://www.tangofamilyandguide.com.ar/" data-send="false" data-width="150" data-show-faces="false" data-font="segoe ui"></div>
+                                    </td>
+                                    <td align="right">
+                                        <asp:ImageButton ID="UsuarioImageButton" runat="server" 
+                                            ImageUrl="~/Imagenes/SiluetaHombre.jpg" OnClick="UsuarioImageButton_Click" 
+                                            AlternateText="" Height="50px" Visible="false" BorderColor="#F6B200" 
+                                            BorderStyle="Solid" BorderWidth="1" />
+                                    </td>
+                                    <td>
+                                        <asp:ContentPlaceHolder ID="UsuarioCPH" runat="server" Visible="true">
+                                            <table>
+                                                <tr>
+                                                    <td class="Fuente" align="right" style="color: #F6B200; font-weight: bold">
+                                                        <asp:Label ID="UsuarioLabel" runat="server" Text="User:"></asp:Label>
+                                                    </td>
+                                                    <td class="Fuente" align="left" colspan="3" style="color: White;">
+                                                        <asp:HyperLink ID="UsuarioHyperLink" runat="server" Text="" ForeColor="White" NavigateUrl="~/UsuarioConsulta.aspx"></asp:HyperLink>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </asp:ContentPlaceHolder>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100%" colspan="2" style="height: 1px; background-color: red;">
+                        </td>
+                    </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0" style="height:14px">
+                    <tr>
+                        <td width="8px">
+                        </td>
+                        <td style="background-color: #666666; height: 10px">
+                            <asp:ContentPlaceHolder ID="MenuCPH" runat="server" Visible="true">
+                            <div id="navlogin">
+                                <asp:Menu ID="Menu" runat="server" BackColor="#666666" DynamicHorizontalOffset="0" StaticMenuItemStyle-VerticalPadding="2px" 
+                                    CssClass="Menu" Font-Names="Verdana" Font-Size="12px" ForeColor="#ffffff" PathSeparator="|"
+                                    StaticSubMenuIndent="30px" OnMenuItemClick="Menu_MenuItemClick" Orientation="Horizontal" Height="18px">
+                                    <DynamicHoverStyle Font-Underline="true" />
+                                    <DynamicMenuItemStyle BackColor="#666666" VerticalPadding="4px" HorizontalPadding="10px" />
+                                    <DynamicSelectedStyle Font-Underline="true" />
+                                    <StaticHoverStyle BackColor="#000000" />
+                                    <StaticMenuItemStyle HorizontalPadding="10px" />
+                                    <StaticSelectedStyle BackColor="#000000" />
+                                    <StaticItemTemplate>
+                                        <asp:Panel ID="Panel1" runat="server" ForeColor='<%# GetItemColor(Container) %>'>
+                                            <%# Eval("Text") %>
+                                        </asp:Panel>
+                                    </StaticItemTemplate>
+                                    <DynamicItemTemplate>
+                                        <asp:Panel ID="Panel1" runat="server" ForeColor='<%# GetItemColor(Container) %>'>
+                                            <%# Eval("Text") %>
+                                        </asp:Panel>
+                                    </DynamicItemTemplate>
+                                </asp:Menu>
+                            </div>
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:10px">
+                        </td>
+                    </tr>
+                </table>
+            </asp:Panel>
+            <asp:ContentPlaceHolder ID="MainCPH" runat="server">
+            </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

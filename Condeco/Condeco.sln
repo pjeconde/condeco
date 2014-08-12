@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condeco", "Condeco.csproj", "{890DCF27-5C4C-41EA-BF3A-65E2575C4201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondecoEntidades", "..\CondecoEntidades\CondecoEntidades.csproj", "{07B8B972-E92E-404C-996A-732ADEB8CAFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptchaDotNet2", "..\CaptchaDotNet2\CaptchaDotNet2.csproj", "{40240522-9A53-49AB-BD32-6A0A7116F87F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondecoRN", "..\CondecoRN\CondecoRN.csproj", "{C1BFE035-CD33-4153-AC5A-D04CA278DA7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondecoEX", "..\CondecoEX\CondecoEX.csproj", "{1CDFB38A-8878-4EE9-AE05-DCCA96E96638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondecoDB", "..\CondecoDB\CondecoDB.csproj", "{62AD5D0A-389B-41C0-BF80-5E012CFE7475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondecoWebForm", "..\CondecoWebForm\CondecoWebForm.csproj", "{8784B14F-A0EF-465F-BF17-6190312EF9C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{890DCF27-5C4C-41EA-BF3A-65E2575C4201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{890DCF27-5C4C-41EA-BF3A-65E2575C4201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{890DCF27-5C4C-41EA-BF3A-65E2575C4201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{890DCF27-5C4C-41EA-BF3A-65E2575C4201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B8B972-E92E-404C-996A-732ADEB8CAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B8B972-E92E-404C-996A-732ADEB8CAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B8B972-E92E-404C-996A-732ADEB8CAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B8B972-E92E-404C-996A-732ADEB8CAFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40240522-9A53-49AB-BD32-6A0A7116F87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40240522-9A53-49AB-BD32-6A0A7116F87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40240522-9A53-49AB-BD32-6A0A7116F87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40240522-9A53-49AB-BD32-6A0A7116F87F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1BFE035-CD33-4153-AC5A-D04CA278DA7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1BFE035-CD33-4153-AC5A-D04CA278DA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1BFE035-CD33-4153-AC5A-D04CA278DA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1BFE035-CD33-4153-AC5A-D04CA278DA7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CDFB38A-8878-4EE9-AE05-DCCA96E96638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CDFB38A-8878-4EE9-AE05-DCCA96E96638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CDFB38A-8878-4EE9-AE05-DCCA96E96638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CDFB38A-8878-4EE9-AE05-DCCA96E96638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62AD5D0A-389B-41C0-BF80-5E012CFE7475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62AD5D0A-389B-41C0-BF80-5E012CFE7475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62AD5D0A-389B-41C0-BF80-5E012CFE7475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62AD5D0A-389B-41C0-BF80-5E012CFE7475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8784B14F-A0EF-465F-BF17-6190312EF9C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8784B14F-A0EF-465F-BF17-6190312EF9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8784B14F-A0EF-465F-BF17-6190312EF9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8784B14F-A0EF-465F-BF17-6190312EF9C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
