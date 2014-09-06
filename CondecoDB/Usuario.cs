@@ -81,22 +81,10 @@ namespace CondecoDB
             a.Append("'" + Usuario.DatoAdicional1 + "', ");
             a.Append("'" + Usuario.DatoAdicional2 + "' ");
             a.AppendLine(") ");
-            a.Append("insert Log values (@idWF, getdate(), '" + Usuario.Id + "', 'Usuario', 'New', 'PteConf', '') ");
+            a.Append("insert Log values (@idWF, getdate(), '" + Usuario.Id + "', 'Usuario', 'Nuevo', 'PteConf', '') ");
             a.Append("update Configuracion set @idWF=Valor=convert(varchar(256), convert(int, Valor)+1) where IdItemConfig='UltimoIdWF'");
-            a.Append("insert Permiso values ('" + Usuario.Id + "', 'OperMilonga', '20621231', @idWF, 'Active')");
-            a.Append("insert Log values (@IdWF, getdate(), '" + Usuario.Id + "', 'Permiso', 'New', 'Active', '')");
-            a.Append("update Configuracion set @idWF=Valor=convert(varchar(256), convert(int, Valor)+1) where IdItemConfig='UltimoIdWF'");
-            a.Append("insert Permiso values ('" + Usuario.Id + "', 'OperFestival', '20621231', @idWF, 'Active')");
-            a.Append("insert Log values (@IdWF, getdate(), '" + Usuario.Id + "', 'Permiso', 'New', 'Active', '')");
-            a.Append("update Configuracion set @idWF=Valor=convert(varchar(256), convert(int, Valor)+1) where IdItemConfig='UltimoIdWF'");
-            a.Append("insert Permiso values ('" + Usuario.Id + "', 'OperTeacher', '20621231', @idWF, 'Active')");
-            a.Append("insert Log values (@IdWF, getdate(), '" + Usuario.Id + "', 'Permiso', 'New', 'Active', '')");
-            a.Append("update Configuracion set @idWF=Valor=convert(varchar(256), convert(int, Valor)+1) where IdItemConfig='UltimoIdWF'");
-            a.Append("insert Permiso values ('" + Usuario.Id + "', 'OperCastingArtistsOffer', '20621231', @idWF, 'Active')");
-            a.Append("insert Log values (@IdWF, getdate(), '" + Usuario.Id + "', 'Permiso', 'New', 'Active', '')");
-            a.Append("update Configuracion set @idWF=Valor=convert(varchar(256), convert(int, Valor)+1) where IdItemConfig='UltimoIdWF'");
-            a.Append("insert Permiso values ('" + Usuario.Id + "', 'OperCastingCall', '20621231', @idWF, 'Active')");
-            a.Append("insert Log values (@IdWF, getdate(), '" + Usuario.Id + "', 'Permiso', 'New', 'Active', '')");
+            //a.Append("insert Permiso values ('" + Usuario.Id + "', 'OperProducto', '20621231', @idWF, 'Vigente')");
+            //a.Append("insert Log values (@IdWF, getdate(), '" + Usuario.Id + "', 'Permiso', 'Nuevo', 'Vigente', '')");
             Ejecutar(a.ToString(), TipoRetorno.None, Transaccion.NoAcepta, sesion.CnnStr);
         }
         public void Confirmar(CondecoEntidades.Usuario Usuario)
@@ -105,10 +93,10 @@ namespace CondecoDB
             a.Append("declare @idWF varchar(256) ");
             a.Append("declare @cantFilas int ");
             a.Append("select @idWF = IdWF from Usuario where IdUsuario='" + Usuario.Id + "' ");
-            a.Append("update Usuario set Estado='Active' where IdUsuario='" + Usuario.Id + "' and Estado='PteConf' ");
+            a.Append("update Usuario set Estado='Vigente' where IdUsuario='" + Usuario.Id + "' and Estado='PteConf' ");
             a.Append("set @cantFilas = @@ROWCOUNT ");
             a.Append("if @cantFilas = 1 ");
-            a.Append("    insert Log values (@idWF, getdate(), '" + Usuario.Id + "', 'Usuario', 'Confirm', 'Active', '') ");
+            a.Append("    insert Log values (@idWF, getdate(), '" + Usuario.Id + "', 'Usuario', 'Confirmar', 'Vigente', '') ");
             a.Append("select @cantFilas as CantFilas ");
             DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
             if (Convert.ToInt32(dt.Rows[0]["CantFilas"]) != 1)

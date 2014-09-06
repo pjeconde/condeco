@@ -60,18 +60,18 @@
                                 <tr>
                                     <td align="right" colspan="2" style="padding-right: 5px; padding-top: 5px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server"
-                                            ControlToValidate="ProvinciaTextBox" ErrorMessage="State" SetFocusOnError="True"
+                                            ControlToValidate="DescripcionTextBox" ErrorMessage="State" SetFocusOnError="True"
                                             ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label26" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="ProvinciaTextBox"
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="DescripcionTextBox"
                                             ErrorMessage="State" SetFocusOnError="True">
                                             <asp:Label ID="Label27" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
                                         <asp:Label ID="Label28" runat="server" Text="State"></asp:Label>
                                     </td>
                                     <td align="left" colspan="2" style="padding-top: 5px">
-                                        <asp:TextBox ID="ProvinciaTextBox" runat="server" MaxLength="50" TabIndex="3" Width="400px"></asp:TextBox>
+                                        <asp:TextBox ID="DescripcionTextBox" runat="server" MaxLength="50" TabIndex="3" Width="400px"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <!-- Ciudad o Localidad -->

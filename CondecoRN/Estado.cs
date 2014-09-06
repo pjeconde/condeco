@@ -10,10 +10,10 @@ namespace CondecoRN
         public static List<CondecoEntidades.Estado> ListaParaUsuario(bool IncluirOpcionTodos, CondecoEntidades.Sesion Sesion)
         {
             List<CondecoEntidades.Estado> lista = new List<CondecoEntidades.Estado>();
-            lista.Add(new CondecoEntidades.Estado("Active", "Active"));
+            lista.Add(new CondecoEntidades.Estado("Vigente", "Vigente"));
             //lista.Add(new CondecoEntidades.Estado("PteAutoriz", "Pendiente de autorización"));
             lista.Add(new CondecoEntidades.Estado("PteConf", "Pendiente de confirmación"));
-            lista.Add(new CondecoEntidades.Estado("Canceled", "Canceled"));
+            lista.Add(new CondecoEntidades.Estado("Canceledo", "Canceledo"));
             //lista.Add(new CondecoEntidades.Estado("Rech", "Rechazado"));
             if (IncluirOpcionTodos) lista.Add(new CondecoEntidades.Estado(String.Empty, "Todos"));
             return lista;
@@ -21,44 +21,17 @@ namespace CondecoRN
         public static List<CondecoEntidades.Estado> ListaParaPermiso(bool IncluirOpcionTodos, CondecoEntidades.Sesion Sesion)
         {
             List<CondecoEntidades.Estado> lista = new List<CondecoEntidades.Estado>();
-            lista.Add(new CondecoEntidades.Estado("Active", "Active"));
-            lista.Add(new CondecoEntidades.Estado("Canceled", "Canceled"));
+            lista.Add(new CondecoEntidades.Estado("Vigente", "Vigente"));
+            lista.Add(new CondecoEntidades.Estado("Canceledo", "Canceledo"));
             if (IncluirOpcionTodos) lista.Add(new CondecoEntidades.Estado(String.Empty, "Todos"));
             return lista;
         }
-        public static List<CondecoEntidades.Estado> ListaParaMilonga(bool IncluirOpcionTodos, CondecoEntidades.Sesion Sesion)
+        public static List<CondecoEntidades.Estado> ListaParaProducto(bool IncluirOpcionTodos, CondecoEntidades.Sesion Sesion)
         {
             List<CondecoEntidades.Estado> lista = new List<CondecoEntidades.Estado>();
-            lista.Add(new CondecoEntidades.Estado("Active", "Active"));
-            lista.Add(new CondecoEntidades.Estado("Canceled", "Canceled"));
-            if (IncluirOpcionTodos) lista.Add(new CondecoEntidades.Estado(String.Empty, "All"));
-            return lista;
-        }
-        public static List<CondecoEntidades.Estado> ListaParaRental(bool IncluirOpcionTodos, CondecoEntidades.Sesion Sesion)
-        {
-            List<CondecoEntidades.Estado> lista = new List<CondecoEntidades.Estado>();
-            lista.Add(new CondecoEntidades.Estado("Active", "Active"));
-            lista.Add(new CondecoEntidades.Estado("PendingConf", "Pending Confirmation"));
-            lista.Add(new CondecoEntidades.Estado("Reserved", "Reserved"));
-            lista.Add(new CondecoEntidades.Estado("Canceled", "Canceled"));
-            if (IncluirOpcionTodos) lista.Add(new CondecoEntidades.Estado("All", "All"));
-            return lista;
-        }
-        public static List<CondecoEntidades.Estado> ListaParaHousing(bool IncluirOpcionTodos, CondecoEntidades.Sesion Sesion)
-        {
-            List<CondecoEntidades.Estado> lista = new List<CondecoEntidades.Estado>();
-            lista.Add(new CondecoEntidades.Estado("Active", "Active"));
-            lista.Add(new CondecoEntidades.Estado("PendingConf", "Pending Confirmation"));
-            lista.Add(new CondecoEntidades.Estado("Reserved", "Reserved"));
-            lista.Add(new CondecoEntidades.Estado("Canceled", "Canceled"));
-            if (IncluirOpcionTodos) lista.Add(new CondecoEntidades.Estado("All", "All"));
-            return lista;
-        }
-        public static List<CondecoEntidades.Estado> ListaParaAirTicket(bool IncluirOpcionTodos, CondecoEntidades.Sesion Sesion)
-        {
-            List<CondecoEntidades.Estado> lista = new List<CondecoEntidades.Estado>();
-            lista.Add(new CondecoEntidades.Estado("Active", "Active"));
-            if (IncluirOpcionTodos) lista.Add(new CondecoEntidades.Estado("All", "All"));
+            lista.Add(new CondecoEntidades.Estado("Vigente", "Vigente"));
+            lista.Add(new CondecoEntidades.Estado("Canceledo", "Canceledo"));
+            if (IncluirOpcionTodos) lista.Add(new CondecoEntidades.Estado(String.Empty, "Todos"));
             return lista;
         }
     }

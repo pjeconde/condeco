@@ -20,8 +20,8 @@
                             <td align="left" class="style3" rowspan="1" style="background-position: left -40px;
                                 padding: 10px; background-image: url('Imagenes/TroiloOrquesta.jpg'); background-repeat: no-repeat;"
                                 valign="top">
-                                If you are NOT yet a user account on our website, you can register for free by clicking on the option 
-                                &#39;Create new account&#39;.
+                                SI usted aún no posee una cuenta de usuario en nuestro Sitio Web, usted puede registrarse de forma gratuita haciendo clic en la opción 
+                                &#39;Crear nueva cuenta de usuario&#39;.
                                 <br />
                                 <br />
                                 <table border="0" cellpadding="0" cellspacing="0">
@@ -37,7 +37,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td align="right" class="TextoInicioMediano" style="padding-right: 10px; padding-top: 20px">
-                                                            User.Id
+                                                            Nombre de usuario
                                                         </td>
                                                         <td align="left" style="width: 100px; padding-top: 20px">
                                                             <asp:TextBox ID="UsuarioTextBox" runat="server" MaxLength="50" OnTextChanged="UsuarioTextBox_TextChanged"
@@ -50,7 +50,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td align="right" class="TextoInicioMediano" style="padding-right: 10px; padding-top: 5px">
-                                                            Password
+                                                            Clave
                                                         </td>
                                                         <td align="left" style="width: 100px; padding-right: 10px; padding-top: 5px">
                                                             <asp:TextBox ID="PasswordTextBox" runat="server" OnTextChanged="PasswordTextBox_TextChanged"
@@ -65,15 +65,15 @@
                                                     <tr>
                                                         <td align="center" colspan="3" style="padding-top: 10px">
                                                             <asp:HyperLink ID="CuentaCrearHyperLink" runat="server" NavigateUrl="~/UsuarioCrear.aspx"
-                                                                SkinID="LinkMedianoClaro">Create new account</asp:HyperLink>
+                                                                SkinID="LinkMedianoClaro">Crear nueva cuenta de usuario</asp:HyperLink>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td align="center" colspan="3" style="padding-top: 5px; padding-bottom: 20px">
                                                             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/UsuarioOlvidoId.aspx"
-                                                                SkinID="LinkMedianoClaro">Forgot your User.Id ?</asp:HyperLink>&nbsp;&nbsp;
+                                                                SkinID="LinkMedianoClaro">Olvidó su nombre de usuario ?</asp:HyperLink>&nbsp;&nbsp;
                                                             <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/UsuarioOlvidoPassword.aspx"
-                                                                SkinID="LinkMedianoClaro">Forgot your password ?</asp:HyperLink>
+                                                                SkinID="LinkMedianoClaro">Olvidó su clave ?</asp:HyperLink>
                                                         </td>
                                                     </tr>
                                                 </table>
