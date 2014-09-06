@@ -10,7 +10,6 @@ namespace CondecoRN
         public static void Cerrar(CondecoEntidades.Sesion Sesion)
         {
             Sesion.Usuario = new CondecoEntidades.Usuario();
-            //Sesion.MilongasDelUsuario = new List<CondecoEntidades.Milongas>();
             Sesion.OpcionesHabilitadas = OpcionesHabilitadas(Sesion);
         }
         public static List<string> OpcionesHabilitadas(CondecoEntidades.Sesion Sesion)

@@ -197,7 +197,7 @@ namespace CondecoDB
                 a.Append("update Comentario set ");
                 a.Append("Estado='" + Estado + "' ");
                 a.AppendLine("where IdComentario=" + Comentario.Id + " and IdReplica = " + Comentario.IdReplica);
-                //a.AppendLine("insert Log values (" + Milonga.WF.Id.ToString() + ", getdate(), '" + sesion.Usuario.Id + "', 'Milonga', '" + Evento + "', '" + Estado + "', '') ");
+                //a.AppendLine("insert Log values (" + Producto.WF.Id.ToString() + ", getdate(), '" + sesion.Usuario.Id + "', 'Producto', '" + Evento + "', '" + Estado + "', '') ");
                 Ejecutar(a.ToString(), TipoRetorno.None, Transaccion.Usa, sesion.CnnStr);
             }
         }
