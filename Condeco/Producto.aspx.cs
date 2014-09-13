@@ -166,7 +166,7 @@ namespace Condeco
                     List<CondecoEntidades.Producto> lista = (List<CondecoEntidades.Producto>)ViewState["lista"];
                     CondecoEntidades.Producto Producto = lista[item];
                     Session["Producto"] = Producto;
-                    Response.Redirect("~/ProductoGuideConsultaDetallada.aspx");
+                    Response.Redirect("~/ProductoConsultaDetallada.aspx");
                     break;
             }
         }
@@ -223,7 +223,7 @@ namespace Condeco
                 return m.Id == item;
             });
             Session["Producto"] = Producto;
-            Response.Redirect("~/ProductoGuideConsultaDetallada.aspx");
+            Response.Redirect("~/ProductoConsultaDetallada.aspx");
         }
     }
 }

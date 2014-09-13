@@ -215,7 +215,7 @@ namespace CondecoDB
             a.Append("[TipoProducto] [varchar](15) NOT NULL, ");
             a.Append("[Ranking] [int] NOT NULL, ");
             a.Append("[TipoDestacado] [varchar](2) NOT NULL, ");
-            a.Append("[GoogleMap] [varchar](100) NOT NULL, ");
+            a.Append("[YouTube] [varchar](100) NOT NULL, ");
             a.Append("CONSTRAINT [PK_Producto" + SessionID + "] PRIMARY KEY CLUSTERED ");
             a.Append("( ");
             a.Append("[IdProducto] ASC ");

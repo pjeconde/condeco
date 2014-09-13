@@ -87,7 +87,9 @@
     <Content Include="UsuarioLogin.aspx" />
     <Content Include="UsuarioOlvidoId.aspx" />
     <Content Include="UsuarioOlvidoPassword.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -226,6 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ImagenesProducto\Portada\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
