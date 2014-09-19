@@ -25,7 +25,7 @@ namespace Condeco
                     DatosPersonalesLabel.Text = "Id: " + sesion.Usuario.Id;
                     DatosPersonalesLabel.Text += "<br />Email: " + sesion.Usuario.Email;
                     if (!sesion.Usuario.EmailSMS.Equals(String.Empty)) DatosPersonalesLabel.Text += "<br />SMS: " + sesion.Usuario.EmailSMS;
-                    if (!sesion.Usuario.Telefono.Equals(String.Empty)) DatosPersonalesLabel.Text += "<br />Telephone: " + sesion.Usuario.Telefono;
+                    if (!sesion.Usuario.Telefono.Equals(String.Empty)) DatosPersonalesLabel.Text += "<br />Telefono: " + sesion.Usuario.Telefono;
                     PermisosGridView.DataSource = sesion.Usuario.Permisos;
                     PermisosGridView.DataBind();
                     String path = Server.MapPath("~/ImagenesSubidas/");
@@ -41,7 +41,7 @@ namespace Condeco
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                if (e.Row.Cells[1].Text != "Active")
+                if (e.Row.Cells[1].Text != "Vigente")
                 {
                     e.Row.ForeColor = Color.Red;
                 }

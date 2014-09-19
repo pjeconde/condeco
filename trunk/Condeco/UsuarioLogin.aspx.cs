@@ -32,7 +32,7 @@ namespace Condeco
                 CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
                 CondecoRN.Usuario.Login(usuario, sesion);
                 CondecoRN.Sesion.AsignarUsuario(usuario, sesion);
-                Response.Redirect("~/Home.aspx");
+                Response.Redirect("~/Default.aspx");
             }
             catch (System.Threading.ThreadAbortException)
             {

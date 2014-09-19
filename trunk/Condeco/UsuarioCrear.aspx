@@ -9,7 +9,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" class="TextoComun" style="width: 100%;">
                     <tr>
                         <td align="center" style="padding-left:10px; padding-top:20px" valign="top">
-                            <asp:Label ID="Label5" runat="server" SkinID="TituloPagina" Text="Create new account"></asp:Label>
+                            <asp:Label ID="Label5" runat="server" SkinID="TituloPagina" Text="Crear Nueva Cuenta"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -30,7 +30,7 @@
                                             ErrorMessage="First and Last Name" SetFocusOnError="True">
                                             <asp:Label ID="Label8" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label SkinID="TextoMediano" ID="NombreLabel" runat="server" Text="First and Last Name"></asp:Label>
+                                        <asp:Label SkinID="TextoMediano" ID="NombreLabel" runat="server" Text="Nombre y Apellido"></asp:Label>
                                     </td>
                                     <td align="left" colspan="2">
                                         <asp:TextBox ID="NombreTextBox" runat="server" MaxLength="50" TabIndex="1" Width="400px"></asp:TextBox>
@@ -42,15 +42,15 @@
                                 <tr>
                                     <td align="right" colspan="2" style="padding-right: 5px; padding-top: 5px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server"
-                                            ControlToValidate="PaisTextBox" ErrorMessage="Country" SetFocusOnError="True"
+                                            ControlToValidate="PaisTextBox" ErrorMessage="Pais" SetFocusOnError="True"
                                             ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label2" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PaisTextBox"
-                                            ErrorMessage="Country" SetFocusOnError="True">
+                                            ErrorMessage="Pais" SetFocusOnError="True">
                                             <asp:Label ID="Label10" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label ID="Label25" runat="server" Text="Country"></asp:Label>
+                                        <asp:Label ID="Label25" runat="server" Text="Pais"></asp:Label>
                                     </td>
                                     <td align="left" colspan="2" style="padding-top: 5px">
                                         <asp:TextBox ID="PaisTextBox" runat="server" MaxLength="50" TabIndex="2" Width="400px"></asp:TextBox>
@@ -60,18 +60,18 @@
                                 <tr>
                                     <td align="right" colspan="2" style="padding-right: 5px; padding-top: 5px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server"
-                                            ControlToValidate="DescripcionTextBox" ErrorMessage="State" SetFocusOnError="True"
+                                            ControlToValidate="ProvinciaTextBox" ErrorMessage="Provincia" SetFocusOnError="True"
                                             ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label26" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="DescripcionTextBox"
-                                            ErrorMessage="State" SetFocusOnError="True">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="ProvinciaTextBox"
+                                            ErrorMessage="Provincia" SetFocusOnError="True">
                                             <asp:Label ID="Label27" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label ID="Label28" runat="server" Text="State"></asp:Label>
+                                        <asp:Label ID="Label28" runat="server" Text="Provincia"></asp:Label>
                                     </td>
                                     <td align="left" colspan="2" style="padding-top: 5px">
-                                        <asp:TextBox ID="DescripcionTextBox" runat="server" MaxLength="50" TabIndex="3" Width="400px"></asp:TextBox>
+                                        <asp:TextBox ID="ProvinciaTextBox" runat="server" MaxLength="50" TabIndex="3" Width="400px"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <!-- Ciudad o Localidad -->
@@ -86,7 +86,7 @@
                                             ErrorMessage="City" SetFocusOnError="True">
                                             <asp:Label ID="Label36" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label ID="Label29" runat="server" Text="City"></asp:Label>
+                                        <asp:Label ID="Label29" runat="server" Text="Localidad"></asp:Label>
                                     </td>
                                     <td align="left" colspan="2" style="padding-top: 5px">
                                         <asp:TextBox ID="LocalidadTextBox" runat="server" MaxLength="50" TabIndex="4" Width="400px"></asp:TextBox>
@@ -103,10 +103,10 @@
                                 <tr>
                                     <td align="right" colspan="2" style="padding-top:5px; padding-right: 5px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TelefonoTextBox"
-                                            ErrorMessage="Telephone" SetFocusOnError="True" ValidationExpression="[0-9\-]*">
+                                            ErrorMessage="Telefono" SetFocusOnError="True" ValidationExpression="[0-9\-]*">
                                             <asp:Label ID="Label9" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
-                                        <asp:Label SkinID="TextoMediano" ID="TelefonoLabel" runat="server" Text="Telephone"></asp:Label>
+                                        <asp:Label SkinID="TextoMediano" ID="TelefonoLabel" runat="server" Text="Telefono"></asp:Label>
                                     </td>
                                     <td align="left" colspan="2" style="padding-top:5px">
                                         <asp:TextBox ID="TelefonoTextBox" runat="server" MaxLength="50" TabIndex="5" Width="400px"></asp:TextBox>
@@ -132,7 +132,7 @@
                                     <td colspan="2">
                                     </td>
                                     <td colspan="2" style="color: Gray">
-                                        (very important: Account confirmation is done via mail, to this address)
+                                        (Muy importante: La coonfirmación de la cuenta se realizara vía email, a esta cuenta)
                                     </td>
                                 </tr>
                                 <tr>
@@ -145,7 +145,7 @@
                                             ErrorMessage="User.Id" SetFocusOnError="True">
                                             <asp:Label ID="Label14" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label SkinID="TextoMediano" ID="IdUsuarioLabel" runat="server" Text="User.Id"></asp:Label>
+                                        <asp:Label SkinID="TextoMediano" ID="IdUsuarioLabel" runat="server" Text="Usuario de Ingreso"></asp:Label>
                                     </td>
                                     <td align="left" style="padding-top:5px">
                                         <asp:TextBox ID="IdUsuarioTextBox" runat="server" MaxLength="50" TabIndex="7" Width="100px"></asp:TextBox>
@@ -175,20 +175,20 @@
                                             Width="100px"></asp:TextBox>
                                     </td>
                                     <td align="left" rowspan="2" style="padding-left: 5px; padding-top:5px" valign="middle">
-                                        <asp:Label ID="Label4" runat="server" ForeColor="Gray" Text="(If you forget your password, use the Security Question)"></asp:Label>
+                                        <asp:Label ID="Label4" runat="server" ForeColor="Gray" Text="(Si usted olvido el password, use la pregunta de seguridad)"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="right" colspan="2" style="padding-top:5px; padding-right: 5px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="ConfirmacionPasswordTextBox"
-                                            ErrorMessage="Re-enter password" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                                            ErrorMessage="Reingresar password" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label17" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ConfirmacionPasswordTextBox"
-                                            ErrorMessage="Re-enter password" SetFocusOnError="True">
+                                            ErrorMessage="Reingresar password" SetFocusOnError="True">
                                             <asp:Label ID="Label18" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label SkinID="TextoMediano" ID="ConfirmacionPasswordLabel" runat="server" Text="Re-enter password"></asp:Label>
+                                        <asp:Label SkinID="TextoMediano" ID="ConfirmacionPasswordLabel" runat="server" Text="Reingresar password"></asp:Label>
                                     </td>
                                     <td align="left" style="padding-top:5px">
                                         <asp:TextBox ID="ConfirmacionPasswordTextBox" runat="server" MaxLength="50" TabIndex="9"
@@ -198,14 +198,14 @@
                                 <tr>
                                     <td align="right" colspan="2" style="padding-top:5px; padding-right: 5px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="PreguntaTextBox"
-                                            ErrorMessage="Security Question" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                                            ErrorMessage="Pregunta de Securidad" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label19" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="PreguntaTextBox"
-                                            ErrorMessage="Security Question" SetFocusOnError="True">
+                                            ErrorMessage="Pregunta de Securidad" SetFocusOnError="True">
                                             <asp:Label ID="Label20" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label SkinID="TextoMediano" ID="PreguntaLabel" runat="server" Text="Security Question"></asp:Label>
+                                        <asp:Label SkinID="TextoMediano" ID="PreguntaLabel" runat="server" Text="Pregunta de Securidad"></asp:Label>
                                     </td>
                                     <td align="left" colspan="2" style="padding-top:5px">
                                         <asp:Label SkinID="TextoMediano" ID="Label1" runat="server" Font-Bold="true" Text="¿"></asp:Label>
@@ -216,14 +216,14 @@
                                 <tr>
                                     <td align="right" colspan="2" style="padding-top:5px; padding-right: 5px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="RespuestaTextBox"
-                                            ErrorMessage="Answer" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                                            ErrorMessage="Respuesta" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label21" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="RespuestaTextBox"
-                                            ErrorMessage="Answer" SetFocusOnError="True">
+                                            ErrorMessage="Respuesta" SetFocusOnError="True">
                                             <asp:Label ID="Label22" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label SkinID="TextoMediano" ID="RespuestaLabel" runat="server" Text="Answer"></asp:Label>
+                                        <asp:Label SkinID="TextoMediano" ID="RespuestaLabel" runat="server" Text="Respuesta"></asp:Label>
                                     </td>
                                     <td align="left" colspan="2" style="padding-top:5px">
                                         <asp:TextBox ID="RespuestaTextBox" runat="server" MaxLength="256" TabIndex="11" Width="400px"></asp:TextBox>
@@ -231,7 +231,7 @@
                                 </tr>
                                 <tr>
                                     <td align="right" colspan="2" style="padding-top:5px; padding-right: 5px">
-                                        <asp:Label SkinID="TextoMediano" ID="LabelIdMedio" runat="server" Text="How to know us ?"></asp:Label>
+                                        <asp:Label SkinID="TextoMediano" ID="LabelIdMedio" runat="server" Text="Como nos conocio ?"></asp:Label>
                                     </td>
                                     <td align="left"  colspan="2" style="padding-top:5px">
 				                        <asp:DropDownList ID="MedioDropDownList" runat="server" TabIndex="501" Width="216px" DataValueField="Id" DataTextField="Descr">
@@ -258,14 +258,14 @@
                                     </td>
                                     <td align="right" style="padding-top:5px; padding-right: 5px; width: 150px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="CaptchaTextBox"
-                                            ErrorMessage="Code" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                                            ErrorMessage="Codigo" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label23" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="CaptchaTextBox"
-                                            ErrorMessage="Code" SetFocusOnError="True">
+                                            ErrorMessage="Codigo" SetFocusOnError="True">
                                             <asp:Label ID="Label24" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label ID="ClaveLabel" runat="server" Text="Code"></asp:Label>
+                                        <asp:Label ID="ClaveLabel" runat="server" Text="Codigo"></asp:Label>
                                     </td>
                                     <td align="left" style="width: 80px; padding-top:5px">
                                         <asp:TextBox ID="CaptchaTextBox" runat="server" MaxLength="20" TabIndex="12" Width="100px"></asp:TextBox>
@@ -284,11 +284,11 @@
                                     </td>
                                     <td align="left" style="padding-top: 10px">
                                         <asp:Button ID="CrearCuentaButton" runat="server" OnClick="CrearCuentaButton_Click"
-                                            TabIndex="13" Text="Create account" Width="100px" />
+                                            TabIndex="13" Text="Crear cuenta" Width="100px" />
                                     </td>
                                     <td align="right" style="padding-top: 10px">
                                         <asp:Button ID="CancelarButton" runat="server" CausesValidation="false" PostBackUrl="~/UsuarioLogin.aspx"
-                                            TabIndex="14" Text="Cancel" Width="100px" />
+                                            TabIndex="14" Text="Cancelar" Width="100px" />
                                     </td>
                                 </tr>
                                 <tr>

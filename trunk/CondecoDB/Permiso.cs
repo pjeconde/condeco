@@ -70,12 +70,12 @@ namespace CondecoDB
             }
             return lista;
         }
-        public List<CondecoEntidades.Permiso> LeerListaPermisosActivesPorUsuario(CondecoEntidades.Usuario Usuario)
+        public List<CondecoEntidades.Permiso> LeerListaPermisosVigentesPorUsuario(CondecoEntidades.Usuario Usuario)
         {
             StringBuilder a = new StringBuilder(string.Empty);
             a.AppendLine("select Permiso.IdUsuario, Permiso.IdTipoPermiso, Permiso.FechaFinVigencia, Permiso.IdWF, Permiso.Estado, TipoPermiso.DescrTipoPermiso ");
             a.AppendLine("from Permiso, TipoPermiso ");
-            a.AppendLine("where IdUsuario='" + Usuario.Id + "' and Estado='Active' and Permiso.IdTipoPermiso=TipoPermiso.IdTipoPermiso ");
+            a.AppendLine("where IdUsuario='" + Usuario.Id + "' and Estado='Vigente' and Permiso.IdTipoPermiso=TipoPermiso.IdTipoPermiso ");
             DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
             List<CondecoEntidades.Permiso> lista = new List<CondecoEntidades.Permiso>();
             if (dt.Rows.Count != 0)
@@ -160,7 +160,7 @@ namespace CondecoDB
         public List<CondecoEntidades.Usuario> LeerListaUsuariosAutorizadores()
         {
             StringBuilder a = new StringBuilder(string.Empty);
-            a.AppendLine("select IdUsuario from Permiso IdTipoPermiso='AdminSITE' and Estado='Active' ");
+            a.AppendLine("select IdUsuario from Permiso IdTipoPermiso='AdminSITE' and Estado='Vigente' ");
             return LeerListaUsuarios(a.ToString());
         }
         public List<CondecoEntidades.Usuario> LeerListaUsuarios(string SqlScript)
@@ -199,7 +199,7 @@ namespace CondecoDB
             a.AppendLine("declare @IdWF  varchar(256) ");
             a.Append("update Configuracion set @idWF=Valor=convert(varchar(256), convert(int, Valor)+1) where IdItemConfig='UltimoIdWF' ");
             a.Append("insert Permiso values ('" + Permiso.IdUsuario + "', '" + Permiso.IdTipoPermiso + "', '" + Permiso.FechaFinVigencia.ToString("yyyyMMdd") + "', @idWF, '" + Permiso.Estado + "')");
-            a.Append("insert Log values (@IdWF, getdate(), '" + Permiso.IdUsuario + "', 'Permiso', 'New', 'Active', '')");
+            a.Append("insert Log values (@IdWF, getdate(), '" + Permiso.IdUsuario + "', 'Permiso', 'New', 'Vigente', '')");
             Ejecutar(a.ToString(), TipoRetorno.None, Transaccion.Usa, sesion.CnnStr);
         }
     }

@@ -41,8 +41,29 @@ namespace Condeco
                 case "Promociones":
                     Response.Redirect("~/Promociones.aspx");
                     break;
+                case "Configuración":
+                    Response.Redirect("~/Default.aspx");
+                    break;
+                case "Configuración|Cambiar password":
+                    Response.Redirect("~/Default.aspx");
+                    break;
+                case "Configuración|Mofificar configuración":
+                    Response.Redirect("~/Default.aspx");
+                    break;
                 case "Login":
                     Response.Redirect("~/UsuarioLogin.aspx");
+                    break;
+                case "Administración Site|Productos|Crear":
+                    Response.Redirect("~/ProductoCrear.aspx");
+                    break;
+                case "Administración Site|Productos|Modificar":
+                    Response.Redirect("~/ProductoModificar.aspx");
+                    break;
+                case "Administración Site|Productos|Imagenes":
+                    Response.Redirect("~/ProductoImagenes.aspx");
+                    break;
+                case "Administración Site|Productos|Consultar":
+                    Response.Redirect("~/ProductoConsultar.aspx");
                     break;
                 case "Administración Site|Explorador de Usuarios":
                     Response.Redirect("~/ExploradorUsuarios.aspx");
@@ -50,16 +71,7 @@ namespace Condeco
                 case "Administración Site|Explorador de Permisos":
                     Response.Redirect("~/ExploradorPermiso.aspx");
                     break;
-                case "Administración Site|Explorador de Productos":
-                    Response.Redirect("~/ExploradorProducto.aspx");
-                    break;
-                case "Administración Site|Explorador de Novedades":
-                    Response.Redirect("~/ExploradorFestival.aspx");
-                    break;
-                case "Administración Site|Explorador de Promociones":
-                    Response.Redirect("~/ExploradorAirTicket.aspx");
-                    break;
-                case "Administración Site|Explorador de Publicidad":
+                 case "Administración Site|Explorador de Publicidad":
                     Response.Redirect("~/ExploradorPublicidad.aspx");
                     break;
                 case "Administración Site|Explorador de Comentarios":

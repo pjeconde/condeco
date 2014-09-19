@@ -94,7 +94,7 @@ namespace CondecoRN
             Evento = new CondecoEntidades.Evento();
             List<CondecoEntidades.Permiso> permisoAdminSITEActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
             {
-                return p.TipoPermiso.Id == "AdminSITE" && p.Estado == "Active";
+                return p.TipoPermiso.Id == "AdminSITE" && p.Estado == "Vigente";
             });
             if (permisoAdminSITEActive.Count != 0)
             {
@@ -103,9 +103,9 @@ namespace CondecoRN
                     Evento.Id = "Undo Cancel (Admin)";
                     Evento.DescrEvento = "Undo Cancel (Admin)";
                     Evento.Accion = "Undo Cancel (Admin)";
-                    Evento.EstadoHst = "Active";
+                    Evento.EstadoHst = "Vigente";
                 }
-                else if (Comentario.Estado == "Active")
+                else if (Comentario.Estado == "Vigente")
                 {
                     Evento.Id = "Cancel (Admin)";
                     Evento.DescrEvento = "Cancel (Admin)";

@@ -121,7 +121,7 @@ namespace Condeco
                     comentario.IdEntidad = Convert.ToInt32(ViewState["IdProducto"]);
                     comentario.Contenido = txtComentario.Text;
                     comentario.Fecha = DateTime.Now;
-                    comentario.Estado = "Active";
+                    comentario.Estado = "Vigente";
                     comentario.Url = "";
                     comentario.ManoOk = 0;
                     comentario.ManoNoOk = 0;
@@ -345,7 +345,7 @@ namespace Condeco
                     comentario.IdEntidad = Convert.ToInt32(ViewState["IdProducto"]);
                     comentario.Contenido = ComentarioReplicaTextBox.Text;
                     comentario.Fecha = DateTime.Now;
-                    comentario.Estado = "Active";
+                    comentario.Estado = "Vigente";
                     comentario.Url = "";
                     comentario.ManoOk = 0;
                     comentario.ManoNoOk = 0;
@@ -408,7 +408,7 @@ namespace Condeco
 
         public string ComentarioEstado(string comentario, string estado)
         {
-            if (estado == "Active")
+            if (estado == "Vigente")
             {
                 return comentario;
             }
@@ -420,7 +420,7 @@ namespace Condeco
 
         public bool EstadoOk(string estado)
         {
-            if (estado == "Active")
+            if (estado == "Vigente")
             {
                 return true;
             }

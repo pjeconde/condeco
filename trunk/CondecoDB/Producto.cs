@@ -116,10 +116,10 @@ namespace CondecoDB
             {
                 StringBuilder a = new StringBuilder(string.Empty);
                 a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.TipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
-                a.Append("from Producto where (Producto.IdUsuario in (Select Permiso.IdUsuario from Permiso where Permiso.IdTipoPermiso='OperProducto' and Permiso.IdUsuario='" + sesion.Usuario.Id + "' and Permiso.Estado='Active')");
+                a.Append("from Producto where (Producto.IdUsuario in (Select Permiso.IdUsuario from Permiso where Permiso.IdTipoPermiso='OperProducto' and Permiso.IdUsuario='" + sesion.Usuario.Id + "' and Permiso.Estado='Vigente')");
                 if (!SoloPropias)
                 {
-                    a.Append(" or '" + sesion.Usuario.Id + "' in (Select Permiso.IdUsuario from Permiso where Permiso.IdTipoPermiso='AdminSITE' and Permiso.IdUsuario='" + sesion.Usuario.Id + "' and Permiso.Estado='Active')) ");
+                    a.Append(" or '" + sesion.Usuario.Id + "' in (Select Permiso.IdUsuario from Permiso where Permiso.IdTipoPermiso='AdminSITE' and Permiso.IdUsuario='" + sesion.Usuario.Id + "' and Permiso.Estado='Vigente')) ");
                 }
                 else
                 {
@@ -149,10 +149,10 @@ namespace CondecoDB
                     StringBuilder a = new StringBuilder(string.Empty);
                     a.Append("select Producto.IdProducto, Producto.IdUsuario, Producto.Nombre, Producto.Descripcion, Producto.Pais, Producto.Provincia, Producto.Localidad, Producto.Direccion, Producto.CodPost, Producto.Telefono, ");
                     a.Append("Producto.MonedaEntrada, Producto.PrecioEntrada, Producto.ComentarioPrecioEntrada, Producto.Email, Producto.WebSite, Producto.Comentarios, Producto.NombreContacto, Producto.EmailContacto, TelefonoContacto, Producto.IdWF, Producto.Estado, Producto.Facebook, Producto.TipoProducto, Producto.TipoMusica, Producto.TipoPiso, Producto.GoogleMap, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado ");
-                    a.Append("from Producto where (Producto.IdUsuario in (Select Permiso.IdUsuario from Permiso where Permiso.IdTipoPermiso='OperProducto' and Permiso.IdUsuario='" + sesion.Usuario.Id + "' and Permiso.Estado='Active')");
+                    a.Append("from Producto where (Producto.IdUsuario in (Select Permiso.IdUsuario from Permiso where Permiso.IdTipoPermiso='OperProducto' and Permiso.IdUsuario='" + sesion.Usuario.Id + "' and Permiso.Estado='Vigente')");
                     if (!SoloPropias)
                     {
-                        a.Append(" or '" + sesion.Usuario.Id + "' in (Select Permiso.IdUsuario from Permiso where Permiso.IdTipoPermiso='AdminSITE' and Permiso.IdUsuario='" + sesion.Usuario.Id + "' and Permiso.Estado='Active')) ");
+                        a.Append(" or '" + sesion.Usuario.Id + "' in (Select Permiso.IdUsuario from Permiso where Permiso.IdTipoPermiso='AdminSITE' and Permiso.IdUsuario='" + sesion.Usuario.Id + "' and Permiso.Estado='Vigente')) ");
                     }
                     else
                     {

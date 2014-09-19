@@ -109,7 +109,7 @@ namespace CondecoRN
                     Evento.EstadoHst = "";
 
                 }
-                else if (Producto.Estado == "Active")
+                else if (Producto.Estado == "Vigente")
                 {
                     Evento.Id = "Cancel";
                     Evento.DescrEvento = "Cancel";
@@ -121,7 +121,7 @@ namespace CondecoRN
                     Evento.Id = "Undo Cancel";
                     Evento.DescrEvento = "Undo Cancel";
                     Evento.Accion = "Undo Cancel";
-                    Evento.EstadoHst = "Active";
+                    Evento.EstadoHst = "Vigente";
                 }
             }
             else
@@ -131,9 +131,9 @@ namespace CondecoRN
                     Evento.Id = "Undo Cancel (Admin)";
                     Evento.DescrEvento = "Undo Cancel (Admin)";
                     Evento.Accion = "Undo Cancel (Admin)";
-                    Evento.EstadoHst = "Active";
+                    Evento.EstadoHst = "Vigente";
                 }
-                else if (Producto.Estado == "Active")
+                else if (Producto.Estado == "Vigente")
                 {
                     Evento.Id = "Cancel (Admin)";
                     Evento.DescrEvento = "Cancel (Admin)";
