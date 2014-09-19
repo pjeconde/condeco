@@ -229,6 +229,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ImagenesProducto\Portada\" />
+    <Folder Include="ImagenesSubidas\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />

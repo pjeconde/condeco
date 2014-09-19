@@ -22,7 +22,7 @@ namespace Condeco
                     CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
                     List<CondecoEntidades.Permiso> permisoHabilitado = sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                     {
-                        return p.TipoPermiso.Id == "OperProducto" && p.Estado == "Active";
+                        return p.TipoPermiso.Id == "OperProducto" && p.Estado == "Vigente";
                     });
                     if (permisoHabilitado.Count == 0)
                     {

@@ -70,48 +70,49 @@ namespace Condeco
             menu.Items.Add(mItem);
             menu.Items[menu.Items.Count - 1].Selectable = false;
 
-            //mItem = new MenuItem("New", "New");
-            //menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-            //menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-            //mItem = new MenuItem("Change Status", "Change Status");
-            //menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-            //menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-            //menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].ToolTip = "";
-            //mItem = new MenuItem("Modify", "Modify");
-            //menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-            //menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-            //menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].ToolTip = "";
-            //mItem = new MenuItem("Images", "Images");
-            //menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-            //menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-            //menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].ToolTip = "";
-            //mItem = new MenuItem("List", "List");
-            //menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-            //menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-            //menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].ToolTip = "";
 
-            mItem = new MenuItem("Configuration", "Configuration");
+            mItem = new MenuItem("Configuracion", "Configuracion");
             menu.Items.Add(mItem);
             menu.Items[menu.Items.Count - 1].Selectable = false;
-            mItem = new MenuItem("Change user password", "Change user password");
+            mItem = new MenuItem("Cambiar password", "Cambiar password");
             menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
             menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-            mItem = new MenuItem("Modify configuration", "Modify configuration");
-            menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-            menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-            mItem = new MenuItem("Terms and conditions", "Terms and conditions");
+            mItem = new MenuItem("Modificar configuración", "Modificar configuración");
             menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
             menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
 
             List<CondecoEntidades.Permiso> permisoAdminSITEActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
             {
-                return p.TipoPermiso.Id == "AdminSITE" && p.Estado == "Active";
+                return p.TipoPermiso.Id == "AdminSITE" && p.Estado == "Vigente";
             });
             if (permisoAdminSITEActive.Count != 0)
             {
                 mItem = new MenuItem("Administración Site", "Administración Site");
                 menu.Items.Add(mItem);
                 menu.Items[menu.Items.Count - 1].Selectable = false;
+
+                mItem = new MenuItem("Productos", "Productos");
+                menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
+                menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
+
+                MenuItem miProductos = new MenuItem();
+                miProductos = menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1];
+                mItem = new MenuItem("Crear", "Crear");
+                miProductos.ChildItems.Add(mItem);
+                miProductos.ChildItems[0].Selectable = false;
+
+                mItem = new MenuItem("Modificar", "Modificar");
+                miProductos.ChildItems.Add(mItem);
+                
+                miProductos.ChildItems[0].Selectable = false;
+                mItem = new MenuItem("Imagenes", "Imagenes");
+                miProductos.ChildItems.Add(mItem);
+
+                miProductos.ChildItems[0].Selectable = false;
+                mItem = new MenuItem("Consultar", "Consultar");
+                miProductos.ChildItems.Add(mItem);
+                miProductos.ChildItems[0].Selectable = false;
+
                 mItem = new MenuItem("Explorador de Usuarios", "Explorador de Usuarios");
                 menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
                 menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;

@@ -17,7 +17,7 @@ namespace CondecoRN
         {
             if (Usuario.Id == String.Empty)
             {
-                throw new CondecoEX.Validaciones.ValorNoInfo("User.Id");
+                throw new CondecoEX.Validaciones.ValorNoInfo("Usuario de ingreso");
             }
             else
             {
@@ -35,7 +35,7 @@ namespace CondecoRN
                     }
                     //Se impide el login a cuenta pendientes de confirmacion o dadas de baja
                     //(las cuentas "Prem" suspendidas se comportan como cuentas "Free")
-                    if (Usuario.WF.Estado != "Active")
+                    if (Usuario.WF.Estado != "Vigente")
                     {
                         throw new CondecoEX.Usuario.LoginRechazadoXEstadoCuenta();
                     }
@@ -45,54 +45,22 @@ namespace CondecoRN
         public static string TerminosYCondiciones()
         {
             StringBuilder a = new StringBuilder(string.Empty);
-            a.AppendLine("Términos y condiciones.");
+            //a.AppendLine("Términos y condiciones.");
             a.AppendLine("");
-            a.AppendLine("El presente aviso legal, regula el uso del Portal Sitio Web, www.tangofamilyandguide.com.ar 'TFG' que Sergio Ramos, con domicilio en Argentina, Buenos Aires pone a disposición de los usuarios que deseen publicar sus clasificados en este sitio web.");
-            a.AppendLine("Tango Family and Guide no se responsabiliza por la información que se publica en el sitio ni por los desacuerdos que puedan surgir entre las partes, ya que esta pagina es solamente una Guia de Clasificados en la cual  los usuarios publican su información.");
-            a.AppendLine("La utilización del sitio TFG por parte del  usuario, implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, en la versión publicada por TFG en el momento mismo en que el Usuario acceda al Portal. EL USUARIO se abstendrá de realizar cualquier acto suponga cualquier tipo de perjuicio a la pagina web de Tango Family and Guide  y/o al resto de usuarios del mismo. En caso de incumplimiento de las obligaciones anteriores, Tango Family and Guide se reserva el derecho de denegar el acceso al Portal a dicho usuario.");
-            a.AppendLine("");
-            a.AppendLine("");
-            a.AppendLine("Ley aplicable y jurisdicción competente");
-            a.AppendLine("");
-            a.AppendLine("El usuario acepta que la legislación aplicable al funcionamiento de este servicio es la Argentina y se somete a la jurisdicción de los juzgados y Tribunales de C.A.B.A para la resolución de las divergencias que se deriven de la interpretación o aplicación.");
-            a.AppendLine("");
-            a.AppendLine("");
-            a.AppendLine("Propiedad intelectual");
-            a.AppendLine("");
-            a.AppendLine("Sergio Ramos es propietario del nombre de dominio Tango Family and Guide ");
-            a.AppendLine("El sitio web Tango Family and Guide en su totalidad, incluyendo, su diseño, estructura y distribución, así como todos los derechos de propiedad  intelectual.");
-            a.AppendLine("La violación de los derechos será penada con la legislación vigente.");
-            a.AppendLine("Copyright Tango Family and Guide 2013");
             return a.ToString();
         }
         public static string TerminosYCondicionesHTML()
         {
             StringBuilder a = new StringBuilder(string.Empty);
-            a.AppendLine("<b>Términos y condiciones.</b>");
-            a.AppendLine("<br/>");
-            a.AppendLine("El presente aviso legal, regula el uso del Portal Sitio Web, www.tangofamilyandguide.com.ar 'TFG' que Sergio Ramos, con domicilio en Argentina, Buenos Aires pone a disposición de los usuarios que deseen publicar sus clasificados en este sitio web.");
-            a.AppendLine("Tango Family and Guide no se responsabiliza por la información que se publica en el sitio ni por los desacuerdos que puedan surgir entre las partes, ya que esta pagina es solamente una Guia de Clasificados en la cual  los usuarios publican su información.");
-            a.AppendLine("La utilización del sitio TFG por parte del  usuario, implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, en la versión publicada por TFG en el momento mismo en que el Usuario acceda al Portal. EL USUARIO se abstendrá de realizar cualquier acto suponga cualquier tipo de perjuicio a la pagina web de Tango Family and Guide  y/o al resto de usuarios del mismo. En caso de incumplimiento de las obligaciones anteriores, Tango Family and Guide se reserva el derecho de denegar el acceso al Portal a dicho usuario.");
-            a.AppendLine("<br/>");
-            a.AppendLine("<br/>");
-            a.AppendLine("<b>Ley aplicable y jurisdicción competente</b>");
-            a.AppendLine("<br/>");
-            a.AppendLine("El usuario acepta que la legislación aplicable al funcionamiento de este servicio es la Argentina y se somete a la jurisdicción de los juzgados y Tribunales de C.A.B.A para la resolución de las divergencias que se deriven de la interpretación o aplicación.");
-            a.AppendLine("<br/>");
-            a.AppendLine("<br/>");
-            a.AppendLine("<b>Propiedad intelectual</b>");
-            a.AppendLine("<br/>");
-            a.AppendLine("Sergio Ramos es propietario del nombre de dominio Tango Family and Guide ");
-            a.AppendLine("El sitio web Tango Family and Guide en su totalidad, incluyendo, su diseño, estructura y distribución, así como todos los derechos de propiedad  intelectual.");
-            a.AppendLine("La violación de los derechos será penada con la legislación vigente.");
-            a.AppendLine("Copyright Tango Family and Guide 2013");
+            //a.AppendLine("<b>Términos y condiciones.</b>");
+            a.AppendLine("");
             return a.ToString();
         }
         public static void Validar(CondecoEntidades.Usuario Usuario, string ConfirmacionPassword, string ClaveCatpcha, string Clave, CondecoEntidades.Sesion Sesion)
         {
             if (Usuario.Nombre == String.Empty)
             {
-                throw new CondecoEX.Validaciones.ValorNoInfo("First and Last Name");
+                throw new CondecoEX.Validaciones.ValorNoInfo("Nombre y Apellido");
             }
             else
             {
@@ -110,7 +78,7 @@ namespace CondecoRN
                     {
                         if (Usuario.Id == String.Empty)
                         {
-                            throw new CondecoEX.Validaciones.ValorNoInfo("User.Id");
+                            throw new CondecoEX.Validaciones.ValorNoInfo("Usuario de Ingreso");
                         }
                         else
                         {
@@ -128,7 +96,7 @@ namespace CondecoRN
                                 {
                                     if (ConfirmacionPassword == String.Empty)
                                     {
-                                        throw new CondecoEX.Validaciones.ValorNoInfo("Re-enter Password");
+                                        throw new CondecoEX.Validaciones.ValorNoInfo("Reingresar Password");
                                     }
                                     else
                                     {
@@ -140,19 +108,19 @@ namespace CondecoRN
                                         {
                                             if (Usuario.Pregunta == String.Empty)
                                             {
-                                                throw new CondecoEX.Validaciones.ValorNoInfo("Question");
+                                                throw new CondecoEX.Validaciones.ValorNoInfo("Pregunta de seguridad");
                                             }
                                             else
                                             {
                                                 if (Usuario.Respuesta == String.Empty)
                                                 {
-                                                    throw new CondecoEX.Validaciones.ValorNoInfo("Answer");
+                                                    throw new CondecoEX.Validaciones.ValorNoInfo("Respuesta de seguridad");
                                                 }
                                                 else
                                                 {
                                                     if (!ClaveCatpcha.Equals(Clave.ToLower()))
                                                     {
-                                                        throw new CondecoEX.Validaciones.ValorInvalido("Code");
+                                                        throw new CondecoEX.Validaciones.ValorInvalido("Codigo");
                                                     }
                                                 }
                                             }
@@ -183,7 +151,7 @@ namespace CondecoRN
             CondecoDB.Usuario usuario = new CondecoDB.Usuario((CondecoEntidades.Sesion)Sesion);
             usuario.Confirmar(Usuario);
             Leer(Usuario, (CondecoEntidades.Sesion)Sesion);
-            if (EnviarCorreo) CondecoRN.EnvioSMS.Enviar("New account " + CantidadDeFilas((CondecoEntidades.Sesion)Sesion).ToString(), Usuario.Nombre, usuario.DestinatariosAvisoAltaUsuario());
+            if (EnviarCorreo) CondecoRN.EnvioSMS.Enviar("Nueva cuenta " + CantidadDeFilas((CondecoEntidades.Sesion)Sesion).ToString(), Usuario.Nombre, usuario.DestinatariosAvisoAltaUsuario());
         }
         public static bool IdCuentaDisponible(CondecoEntidades.Usuario Usuario, CondecoEntidades.Sesion Sesion)
         {
@@ -213,19 +181,19 @@ namespace CondecoRN
         {
             if (PasswordActual == String.Empty)
             {
-                throw new CondecoEX.Validaciones.ValorNoInfo("Current Password");
+                throw new CondecoEX.Validaciones.ValorNoInfo("Password Actual");
             }
             else
             {
                 if (PasswordNueva == String.Empty)
                 {
-                    throw new CondecoEX.Validaciones.ValorNoInfo("New Password");
+                    throw new CondecoEX.Validaciones.ValorNoInfo("Nueva Password");
                 }
                 else
                 {
                     if (ConfirmacionPasswordNueva == String.Empty)
                     {
-                        throw new CondecoEX.Validaciones.ValorNoInfo("Re-enter Password");
+                        throw new CondecoEX.Validaciones.ValorNoInfo("Reingresar Password");
                     }
                     else
                     {

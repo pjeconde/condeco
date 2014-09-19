@@ -17,38 +17,46 @@ namespace CondecoRN
             List<string> opcionesHabilitadas = new List<string>();
             if (Sesion.Usuario.Id != null)
             {
-                //opcionesHabilitadas.Add("Página principal|Página principal");
-                //opcionesHabilitadas.Add("Contacto|Contacto");
                 List<CondecoEntidades.Permiso> permisoOperNovedadesActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                 {
-                    return p.TipoPermiso.Id == "OperNovedades" && p.Estado == "Active";
+                    return p.TipoPermiso.Id == "OperNovedades" && p.Estado == "Vigente";
                 });
                 if (permisoOperNovedadesActive.Count != 0)
                 {
-                    opcionesHabilitadas.Add("Novedades|New");
-                    opcionesHabilitadas.Add("Novedades|Change Status");
-                    opcionesHabilitadas.Add("Novedades|Modify");
-                    opcionesHabilitadas.Add("Novedades|Images");
-                    opcionesHabilitadas.Add("Novedades|List");
+                    opcionesHabilitadas.Add("Novedades|Crear");
+                    opcionesHabilitadas.Add("Novedades|Modificar");
+                    opcionesHabilitadas.Add("Novedades|Imagenes");
+                    opcionesHabilitadas.Add("Novedades|Consultar");
                 }
                 List<CondecoEntidades.Permiso> permisoOperPromocionesActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                 {
-                    return p.TipoPermiso.Id == "OperPromociones" && p.Estado == "Active";
+                    return p.TipoPermiso.Id == "OperPromociones" && p.Estado == "Vigente";
                 });
                 if (permisoOperPromocionesActive.Count != 0)
                 {
-                    opcionesHabilitadas.Add("Promociones|New");
-                    opcionesHabilitadas.Add("Promociones|Change Status");
-                    opcionesHabilitadas.Add("Promociones|Modify");
-                    opcionesHabilitadas.Add("Promociones|Images");
-                    opcionesHabilitadas.Add("Promociones|List");
+                    opcionesHabilitadas.Add("Promociones|Crear");
+                    opcionesHabilitadas.Add("Promociones|Modificar");
+                    opcionesHabilitadas.Add("Promociones|Imagenes");
+                    opcionesHabilitadas.Add("Promociones|Consultar");
                 }
                 List<CondecoEntidades.Permiso> permisoAdminSITEActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                 {
-                    return p.TipoPermiso.Id == "AdminSITE" && p.Estado == "Active";
+                    return p.TipoPermiso.Id == "AdminSITE" && p.Estado == "Vigente";
                 });
                 if (permisoAdminSITEActive.Count != 0)
                 {
+                    opcionesHabilitadas.Add("Administración Site|Productos");
+                    List<CondecoEntidades.Permiso> permisoOperProductosActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
+                    {
+                        return p.TipoPermiso.Id == "OperProductos" && p.Estado == "Vigente";
+                    });
+                    if (permisoOperProductosActive.Count != 0)
+                    {
+                        opcionesHabilitadas.Add("Administración Site|Productos|Crear");
+                        opcionesHabilitadas.Add("Administración Site|Productos|Modificar");
+                        opcionesHabilitadas.Add("Administración Site|Productos|Imagenes");
+                        opcionesHabilitadas.Add("Administración Site|Productos|Consultar");
+                    }
                     opcionesHabilitadas.Add("Administración Site|Explorador de Usuarios");
                     opcionesHabilitadas.Add("Administración Site|Explorador de Permisos");
                     opcionesHabilitadas.Add("Administración Site|Explorador de Publicidad");
@@ -74,8 +82,7 @@ namespace CondecoRN
         }
         public static void RefrescarDatosUsuario(CondecoEntidades.Usuario Usuario, CondecoEntidades.Sesion Sesion)
         {
-            //Sesion.Usuario.Permisos = CondecoRN.Permiso.LeerListaPermisosPorUsuario(Sesion.Usuario, Sesion);
-            //Sesion.MilongasDelUsuario = CondecoRN.Milonga.LeerListaMilongasPorUsuario(Sesion);
+            Sesion.Usuario.Permisos = CondecoRN.Permiso.LeerListaPermisosPorUsuario(Sesion.Usuario, Sesion);
             Sesion.OpcionesHabilitadas = OpcionesHabilitadas(Sesion);
         }
     }

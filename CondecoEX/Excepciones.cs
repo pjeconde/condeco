@@ -61,7 +61,7 @@ namespace CondecoEX
         [Serializable]
         public class ElementoInexistente : CondecoEX.Validaciones.BaseApplicationException
         {
-            static string TextoError = "Non-existent";
+            static string TextoError = "Inexistente";
             public ElementoInexistente(IDescrClase Elemento)
                 : base(Elemento._Descripcion + " " + TextoError)
             {
@@ -86,7 +86,7 @@ namespace CondecoEX
         [Serializable]
         public class ElementoYaInexistente : CondecoEX.Validaciones.BaseApplicationException
         {
-            static string TextoError = "Exists";
+            static string TextoError = "Existente";
             public ElementoYaInexistente(IDescrClase Elemento)
                 : base(Elemento._Descripcion + " " + TextoError)
             {
@@ -130,7 +130,7 @@ namespace CondecoEX
         [Serializable]
         public class LimiteMaximoExcedido : CondecoEX.Imagenes.BaseApplicationException
         {
-            static string TextoError = "With this image would exceed the maximum allowed.";
+            static string TextoError = "Con esta imagen exedería el máximo permitido.";
             public LimiteMaximoExcedido(string Descr)
                 : base(TextoError + " " + Descr)
             {
@@ -166,7 +166,7 @@ namespace CondecoEX
         [Serializable]
         public class PasswordYConfirmacionNoCoincidente : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "The password does not match with your confirmation";
+            static string TextoError = "Esta password no coincide con la confirmación";
             public PasswordYConfirmacionNoCoincidente()
                 : base(TextoError)
             {
@@ -183,7 +183,7 @@ namespace CondecoEX
         [Serializable]
         public class PasswordNuevaIgualAActual : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "The new password must not be equal to the current";
+            static string TextoError = "La nueva password debería ser diferente a la actual";
             public PasswordNuevaIgualAActual()
                 : base(TextoError)
             {
@@ -200,7 +200,7 @@ namespace CondecoEX
         [Serializable]
         public class IdUsuarioNoDisponible : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "The User.Id, you entered has already been used by another person. Modify it to find a unique value.";
+            static string TextoError = "El usuario de ingreso que usted a elegido ya ha sido utilizado por otra persona. Ingrese otro y verifique nuevamente que no exista.";
             public IdUsuarioNoDisponible()
                 : base(TextoError)
             {

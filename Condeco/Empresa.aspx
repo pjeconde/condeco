@@ -10,13 +10,16 @@
                     Empresa
                 </h2>
                 <p>
-                    Nuestra empresa esta ubicada en el barrio de Villa del Parque y nos dedicamos diseño y fabricación de muebles estilo semi-rústico, modernos 
-                    y minimalista.<br /> 
-                    Principalmente trabajamos con terminaciones en acabado poliuretánico de alta calidad.
+                    Nuestra empresa esta ubicada en el barrio de Villa del Parque y cuenta con talleres propios.
+                    <br />  
+                    Nos dedicamos al diseño y fabricación de muebles y objetos de decoración realizados principalmente en madera. 
+                    <br /> 
                 </p>
                 <p>
-                    También hacemos trabajos con maderas recicladas y otros de materiales que nos 
-                    dan la posibilidad de hacer objetos muy bellos y funcionales. 
+                    Nuestro objetivo fundamental es satisfacer al cliente y cuidar al mismo tiempo el medio ambiente. 
+                    <br /> 
+                    Por lo tanto, es muy importante para nosotros, aumentar la conciencia acerca las preocupaciones ambientales y desarrollar nuestros productos con maderas recuperadas en demoliciones y otros materiales descartados por individuos o empresas, 
+                    reciclandolos para generar objetos funcionales y con un diseño actual. 
                 </p>
             </td>
         </tr>

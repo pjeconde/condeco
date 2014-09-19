@@ -175,13 +175,13 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label Label28;
         
         /// <summary>
-        /// Control DescripcionTextBox.
+        /// Control ProvinciaTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
+        protected global::System.Web.UI.WebControls.TextBox ProvinciaTextBox;
         
         /// <summary>
         /// Control RegularExpressionValidator12.
