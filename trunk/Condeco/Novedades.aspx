@@ -10,10 +10,7 @@
                     Novedades
                 </h2>
                 <p>
-                    ........
-                </p>
-                <p>
-                    ...........................
+                    En breve estaremos informando las novedades.
                 </p>
             </td>
         </tr>

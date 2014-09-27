@@ -18,8 +18,8 @@
                 <p>
                     Nuestro objetivo fundamental es satisfacer al cliente y cuidar al mismo tiempo el medio ambiente. 
                     <br /> 
-                    Por lo tanto, es muy importante para nosotros, aumentar la conciencia acerca las preocupaciones ambientales y desarrollar nuestros productos con maderas recuperadas en demoliciones y otros materiales descartados por individuos o empresas, 
-                    reciclandolos para generar objetos funcionales y con un diseño actual. 
+                    Es muy importante para nosotros, aumentar la conciencia acerca las preocupaciones ambientales y desarrollar nuestros productos con maderas recuperadas en demoliciones y otros materiales descartados por individuos o empresas, 
+                    reciclandolos para generar objetos funcionales con un diseño actual. 
                 </p>
             </td>
         </tr>
