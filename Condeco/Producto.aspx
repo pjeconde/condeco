@@ -31,7 +31,7 @@
                             <table border="0" cellpadding="0" cellspacing="0" align="center" width="780">
                                 <tr align="right">
                                     <td align="center">
-                                        <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Height="70" Text="Producto Guide"></asp:Label>
+                                        <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Height="70" Text="Catálogo de Producto"></asp:Label>
                                     </td>
                                 </tr>
                             </table>
@@ -67,12 +67,6 @@
                             &nbsp;</td>
                     </tr>
                     <tr>
-                        <td align="right" style="padding-right: 5px; padding-top: 2px">
-                            &nbsp;</td>
-                        <td align="left" style="padding-top: 5px">
-                            &nbsp;</td>
-                    </tr>
-                    <tr>
                         <td colspan="5" align="right" style="height: 24px; padding-top: 20px; text-align: center">
                             <asp:Button ID="BuscarButton" runat="server" TabIndex="8" Text="Search" OnClick="BuscarButton_Click" UseSubmitBehavior="false" />
                             <asp:Button ID="ClearButton" runat="server" TabIndex="8" Text="Clear" OnClick="ClearButton_Click"  UseSubmitBehavior="false" />
@@ -84,8 +78,7 @@
                             <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; padding-right: 30px; width: 100%">
                                 <tr>
                                     <td align="left">
-                                        <asp:Button ID="NewButton" runat="server" Text="Add New Producto" OnClick="NewButton_Click" UseSubmitBehavior="false" />
-                                    </td>
+                                        &nbsp;</td>
                                     <td align="right">
                                         <asp:RadioButton ID="Vista1RadioButton" runat="server" AutoPostBack="True" Checked="true"
                                             Text="View 1" GroupName="Vistas" OnCheckedChanged="VistaRadioButton_CheckedChanged" />&nbsp;&nbsp;&nbsp;

@@ -10,10 +10,7 @@
                     Promociones
                 </h2>
                 <p>
-                    ........
-                </p>
-                <p>
-                    ...........................
+                    En breve estaremos informando las promociones.
                 </p>
             </td>
         </tr>

@@ -71,7 +71,7 @@ namespace Condeco
             menu.Items[menu.Items.Count - 1].Selectable = false;
 
 
-            mItem = new MenuItem("Configuracion", "Configuracion");
+            mItem = new MenuItem("Configuración", "Configuración");
             menu.Items.Add(mItem);
             menu.Items[menu.Items.Count - 1].Selectable = false;
             mItem = new MenuItem("Cambiar password", "Cambiar password");

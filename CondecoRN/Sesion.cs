@@ -17,6 +17,8 @@ namespace CondecoRN
             List<string> opcionesHabilitadas = new List<string>();
             if (Sesion.Usuario.Id != null)
             {
+                opcionesHabilitadas.Add("Configuración|Cambiar password");
+                opcionesHabilitadas.Add("Configuración|Modificar configuración");
                 List<CondecoEntidades.Permiso> permisoOperNovedadesActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                 {
                     return p.TipoPermiso.Id == "OperNovedades" && p.Estado == "Vigente";
@@ -67,13 +69,13 @@ namespace CondecoRN
             }
             else
             {
-                opcionesHabilitadas.Add("Portada");
-                opcionesHabilitadas.Add("Empresa");
-                opcionesHabilitadas.Add("Productos");
-                opcionesHabilitadas.Add("Contacto");
-                opcionesHabilitadas.Add("Acerca");
                 opcionesHabilitadas.Add("Login");
             }
+            opcionesHabilitadas.Add("Portada");
+            opcionesHabilitadas.Add("Empresa");
+            opcionesHabilitadas.Add("Productos");
+            opcionesHabilitadas.Add("Contacto");
+            opcionesHabilitadas.Add("Acerca");
             return opcionesHabilitadas;
         }
         public static void AsignarUsuario(CondecoEntidades.Usuario Usuario, CondecoEntidades.Sesion Sesion)
@@ -84,6 +86,7 @@ namespace CondecoRN
         {
             Sesion.Usuario.Permisos = CondecoRN.Permiso.LeerListaPermisosPorUsuario(Sesion.Usuario, Sesion);
             Sesion.OpcionesHabilitadas = OpcionesHabilitadas(Sesion);
+            //Sesion.TiposProductos
         }
     }
 }

@@ -11,13 +11,14 @@
                     Bienvenidos
                 </h2>
                 <p>
-                    Usted podrá encontrar distintos tipos de productos y objetos de decoración.  
+                    Usted podrá encontrar aquí, los distintos tipos de productos y objetos de decoración ofrecidos, y visualizar detalladamente los mismos.  
                     <br /> 
-                    Principalmente trabajamos productos desarrollados en madera, con terminaciones en acabado poliuretánico de alta calidad.
+                    <br /> 
+                    Principalmente trabajamos productos desarrollados en madera, con acabados en pintura poliuretánica de alta calidad.
+                    <br />
+                    También realizamos producto tipo vintage o retro, con terminaciones manuales que hacen único al producto.
                 </p>
                 <p>
-                    En este sitio web, ustedes podrá observar detenidamente los productos ofrecidos y visualizar los detalles en 
-                    sus terminaciones.
                 </p>
             </td>
         </tr>

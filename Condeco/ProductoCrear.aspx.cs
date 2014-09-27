@@ -22,15 +22,15 @@ namespace Condeco
                     CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
                     List<CondecoEntidades.Permiso> permisoHabilitado = sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                     {
-                        return p.TipoPermiso.Id == "OperProducto" && p.Estado == "Vigente";
+                        return p.TipoPermiso.Id == "OperProductos" && p.Estado == "Vigente";
                     });
                     if (permisoHabilitado.Count == 0)
                     {
-                        Response.Redirect("~/Home.aspx");
+                        Response.Redirect("~/Default.aspx");
                     }
 
                     NombreTextBox.Focus();
-                    //TipoProductoDropDownList.DataSource = CondecoEntidades.TiposProducto.TipoProducto.ListaMasSinInformar();
+                    TipoProductoDropDownList.DataSource = sesion.TiposProducto;
 
                     DataBind();
                 }

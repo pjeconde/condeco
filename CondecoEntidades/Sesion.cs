@@ -10,14 +10,14 @@ namespace CondecoEntidades
     {
 		private string cnnStr;
 		private Usuario usuario;
-        //private List<Milonga> milongasDelUsuario;
         private List<string> opcionesHabilitadas;
+        private List<TipoProducto> tiposProducto;
         private DateTime fechaInicio;
 
         public Sesion()
         {
             usuario = new Usuario();
-            //milongasDelUsuario = new List<Milonga>();
+            tiposProducto = new List<TipoProducto>();
             opcionesHabilitadas = new List<string>();
             fechaInicio = DateTime.Now;
         }
@@ -49,17 +49,17 @@ namespace CondecoEntidades
                 usuario = value;
             }
         }
-        //public List<Milonga> MilongasDelUsuario
-        //{
-        //    get
-        //    {
-        //        return milongasDelUsuario;
-        //    }
-        //    set
-        //    {
-        //        milongasDelUsuario = value;
-        //    }
-        //}
+        public List<TipoProducto> TiposProducto
+        {
+            get
+            {
+                return tiposProducto;
+            }
+            set
+            {
+                tiposProducto = value;
+            }
+        }
         public List<string> OpcionesHabilitadas
         {
             get

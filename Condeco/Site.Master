@@ -99,20 +99,20 @@
                         </td>
                     </tr>
                 </table>
-                <table cellspacing="0" cellpadding="0" style="height:14px">
+                <table cellspacing="0" cellpadding="0" style="height:15px">
                     <tr>
                         <td width="8px">
                         </td>
                         <td style="background-color: #666666; height: 10px">
                             <asp:ContentPlaceHolder ID="MenuCPH" runat="server" Visible="true">
                             <div id="navlogin">
-                                <asp:Menu ID="Menu" runat="server" BackColor="#666666" DynamicHorizontalOffset="0" StaticMenuItemStyle-VerticalPadding="2px" 
+                                <asp:Menu ID="Menu" runat="server" BackColor="#000000" DynamicHorizontalOffset="0" StaticMenuItemStyle-VerticalPadding="2px" 
                                     CssClass="Menu" Font-Names="Verdana" Font-Size="12px" ForeColor="#ffffff" PathSeparator="|"
-                                    StaticSubMenuIndent="30px" OnMenuItemClick="Menu_MenuItemClick" Orientation="Horizontal" Height="18px">
+                                    StaticSubMenuIndent="30px" OnMenuItemClick="Menu_MenuItemClick" Orientation="Horizontal" Height="15px">
                                     <DynamicHoverStyle Font-Underline="true" />
-                                    <DynamicMenuItemStyle BackColor="#666666" VerticalPadding="4px" HorizontalPadding="10px" />
+                                    <DynamicMenuItemStyle BackColor="#333333" VerticalPadding="4px" HorizontalPadding="10px" />
                                     <DynamicSelectedStyle Font-Underline="true" />
-                                    <StaticHoverStyle BackColor="#000000" />
+                                    <StaticHoverStyle BackColor="#999999" Height="16px" />
                                     <StaticMenuItemStyle HorizontalPadding="10px" />
                                     <StaticSelectedStyle BackColor="#000000" />
                                     <StaticItemTemplate>
@@ -131,7 +131,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="height:10px">
+                        <td style="height:5px">
                         </td>
                     </tr>
                 </table>
