@@ -5,7 +5,7 @@
 <%@ Register Assembly="ASTreeView" Namespace="Geekees.Common.Controls" TagPrefix="ct" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; width: 100%;">
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
         <tr>
             <td>
                 <asp:Panel runat="server" ID="Buscador" DefaultButton="BuscarButton">
@@ -16,7 +16,7 @@
                                 <tr>
                                     <td>
                                         <h2>
-                                            Catálogo de Producto
+                                            Catálogo de Productos
                                         </h2>
                                         <p> </p>
                                     </td>

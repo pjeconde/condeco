@@ -50,7 +50,7 @@ namespace CondecoDB
             a.AppendLine("update Configuracion set @idWF=Valor=convert(varchar(256), convert(int, Valor)+1) where IdItemConfig='UltimoIdWF' ");
             a.AppendLine("update Configuracion set @idUltimoIdProducto=Valor=convert(varchar(256), convert(int, Valor)+1) where IdItemConfig='UltimoIdProducto' ");
             a.Append("Insert Producto (IdProducto, Nombre, Descripcion, PrecioBase, ");
-            a.Append("IdWF, Estado, TipoProducto, Ranking, TipoDestacado, YouTube) values (");
+            a.Append("IdWF, Estado, IdTipoProducto, Ranking, TipoDestacado, YouTube) values (");
             a.Append("@idUltimoIdProducto, ");
             a.Append("'" + Producto.Nombre + "', ");
             a.Append("'" + Producto.Descripcion + "', ");
@@ -148,7 +148,7 @@ namespace CondecoDB
                 {
                     StringBuilder a = new StringBuilder(string.Empty);
                     a.Append("select Producto.IdProducto, Producto.IdUsuario, Producto.Nombre, Producto.Descripcion, Producto.Pais, Producto.Provincia, Producto.Localidad, Producto.Direccion, Producto.CodPost, Producto.Telefono, ");
-                    a.Append("Producto.MonedaEntrada, Producto.PrecioEntrada, Producto.ComentarioPrecioEntrada, Producto.Email, Producto.WebSite, Producto.Comentarios, Producto.NombreContacto, Producto.EmailContacto, TelefonoContacto, Producto.IdWF, Producto.Estado, Producto.Facebook, Producto.TipoProducto, Producto.TipoMusica, Producto.TipoPiso, Producto.GoogleMap, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado ");
+                    a.Append("Producto.MonedaEntrada, Producto.PrecioEntrada, Producto.ComentarioPrecioEntrada, Producto.Email, Producto.WebSite, Producto.Comentarios, Producto.NombreContacto, Producto.EmailContacto, TelefonoContacto, Producto.IdWF, Producto.Estado, Producto.Facebook, Producto.IdTipoProducto, Producto.TipoMusica, Producto.TipoPiso, Producto.GoogleMap, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado ");
                     a.Append("from Producto where (Producto.IdUsuario in (Select Permiso.IdUsuario from Permiso where Permiso.IdTipoPermiso='OperProducto' and Permiso.IdUsuario='" + sesion.Usuario.Id + "' and Permiso.Estado='Vigente')");
                     if (!SoloPropias)
                     {
@@ -177,7 +177,7 @@ namespace CondecoDB
         {
             List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
             StringBuilder a = new StringBuilder(string.Empty);
-            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.TipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
+            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
             a.Append("from Producto where 1=1 ");
             if (!Nombre.Equals(string.Empty))
             {
