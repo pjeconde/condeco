@@ -29,9 +29,9 @@
 <asp:TextBox SkinID="TextoBoxChico" runat="server" Style="width: 50px" ForeColor="#071F70" BorderStyle="Solid" BorderWidth="1px" BorderColor=#071F70></asp:TextBox>
 <asp:TextBox SkinID="TextoBoxMediano" runat="server" Style="width: 100px" ForeColor="#071F70" BorderStyle="Solid" BorderWidth="1px" BorderColor=#071F70></asp:TextBox>
 
-<asp:TextBox SkinID="TextoBoxFEAVendedorDet" runat="server" Style="width: 170px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
-<asp:TextBox SkinID="TextoBoxFEAVendedorDetCh" runat="server" Style="width: 80px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
-<asp:TextBox SkinID="TextoBoxFEAVendedorDetChCh" runat="server" Style="width: 40px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
+<asp:TextBox SkinID="TextoBoxDet" runat="server" Style="width: 170px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
+<asp:TextBox SkinID="TextoBoxDetCh" runat="server" Style="width: 80px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
+<asp:TextBox SkinID="TextoBoxDetChCh" runat="server" Style="width: 40px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
 <asp:TextBox SkinID="Fecha" runat="server" Style="width: 60px" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
 <asp:TextBox SkinID="FechaFact" runat="server" Style="width: 140px; padding-rigth: 4px;" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
 

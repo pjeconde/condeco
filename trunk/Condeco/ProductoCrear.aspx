@@ -14,10 +14,20 @@
             }
         } 
     </script>
-    <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px">
+    <table border="0" cellpadding="0" cellspacing="0">
         <tr>
-            <td align="center" colspan="2" style="padding-top:20px">
-                <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Nuevo Producto"></asp:Label>
+            <td colspan="2">
+                <table  class="ppaltable" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <h2>
+                                Nuevo Producto
+                            </h2>
+                            <p>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
         <tr>
@@ -71,30 +81,7 @@
             <td align="right" style="padding-right: 5px; padding-top:5px">
             </td>
             <td align="left" style="padding-top:5px" valign="top">
-                &nbsp;(example: http://www.condeco.com.ar) 
-            </td>
-        </tr>
-        <tr>
-            <td align="right" style="padding-right: 5px; padding-top:5px">
-            </td>
-            <td align="left" style="padding-top:5px" valign="top">
-                &nbsp;(example: info@condeco.com.ar)
-            </td>
-        </tr>
-        <tr>
-            <td align="right" style="padding-right: 5px; padding-top:5px">
-                <asp:Label ID="Label12" runat="server" Text="Email (info) Site"></asp:Label>
-            </td>
-            <td align="left" style="padding-top:5px" valign="top">
-                <asp:TextBox ID="EmailTextBox" runat="server" MaxLength="60" TabIndex="502"
-                    Width="300px"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td align="right" style="padding-right: 5px; padding-top:5px">
-            </td>
-            <td align="left" style="padding-top:5px" valign="top">
-                &nbsp;(example: https://www.youtube.com/Producto)
+                &nbsp;(example: https://www.youtube.com/Condeco)
             </td>
         </tr>
         <tr>
@@ -142,14 +129,6 @@
                 <asp:DropDownList ID="EstadoDropDownList" runat="server" TabIndex="501" Width="200px"
                     DataValueField="Id" DataTextField="Descr">
                 </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td align="right" style="padding-right: 5px; padding-top:5px">
-                <asp:Label ID="Label7" runat="server" Text="Comments"></asp:Label>
-            </td>
-            <td align="left" style="padding-top:5px" valign="top">
-                <asp:TextBox ID="ComentariosTextBox" runat="server" MaxLength="250" CssClass="MultilineFont" style="resize: none;" TextMode="MultiLine" Height="80px" TabIndex="502" Width="400px"></asp:TextBox>
             </td>
         </tr>
         <tr>

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CaptchaDotNet2.Security.Cryptography;
 using System.Drawing;
+using Geekees.Common.Controls;
 
 namespace Condeco
 {
@@ -197,6 +198,33 @@ namespace Condeco
         public static bool SessionTimeOut(System.Web.SessionState.HttpSessionState Session)
         {
             return ((CondecoEntidades.Sesion)Session["Sesion"]).Usuario.Id == null;
+        }
+
+        public static void GenerarTreeTipoProductos(ASTreeView astvMyTree)
+        {
+             ASTreeViewLinkNode n = new ASTreeViewLinkNode("Mesas Ratonas", "401", "", "frm", "Mesas Ratonas", "");
+            //n.NodeText = "";
+            n.EnableChildren = false;
+            n.EnableEditContextMenu = false;
+
+            //n.AdditionalAttributes.Add( new KeyValuePair<string, string>( "onclick", "alert(1);return false;" ) );
+            //n.AdditionalAttributes.Add( new KeyValuePair<string, string>( "disableChildren1", "true" ) );
+
+            astvMyTree.RootNode
+                .AppendChild(new ASTreeViewLinkNode("Marcos", "100", "", "frm", "madera maciza", "")
+                    .AppendChild(new ASTreeViewLinkNode("Madera Pinotea", "Madera Pinotea", "", "frm", "madera maciza", ""))
+                    .AppendChild(new ASTreeViewLinkNode("Madera Cedro", "Madera Cedro", "", "frm", "", ""))
+                    .AppendChild(new ASTreeViewLinkNode("Vintage", "Vintage", "", "frm", "madera maciza", ""))
+                )
+                .AppendChild(new ASTreeViewLinkNode("Espejos", "200", "", "frm", "", ""))
+                .AppendChild(new ASTreeViewLinkNode("Carteles", "300", "", "frm", "", ""))
+                .AppendChild(new ASTreeViewLinkNode("Mesas", "400", "", "frm", "", "")
+                    .AppendChild(n))
+                .AppendChild(new ASTreeViewLinkNode("Bancos", "500", "", "frm", "", "")
+                    .AppendChild(new ASTreeViewLinkNode("Bancos Rústicos", "501", "", "frm", "En maderas recicladas", ""))
+                );
+                //.AppendChild(new ASTreeViewLinkNode("<font style='color:blue;font-weight:bold;font-style:italic;' isTreeNodeChild='true'>Novedades</font>", "Novedades", "", "frm", "", "~/Imagenes/Iconos/Punto.jpg")
+                //);
         }
     }
 }
