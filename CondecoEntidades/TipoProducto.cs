@@ -8,10 +8,12 @@ namespace CondecoEntidades
     [Serializable]
     public class TipoProducto
     {
-        private string id;
+        private int id;
         private string descr;
+        private int idPariente;
+        private string estado;
 
-        public string Id
+        public int Id
         {
             set
             {
@@ -31,6 +33,28 @@ namespace CondecoEntidades
             get
             {
                 return descr;
+            }
+        }
+        public int IdPariente
+        {
+            set
+            {
+                idPariente = value;
+            }
+            get
+            {
+                return idPariente;
+            }
+        }
+        public string Estado
+        {
+            set
+            {
+                estado = value;
+            }
+            get
+            {
+                return estado;
             }
         }
     }

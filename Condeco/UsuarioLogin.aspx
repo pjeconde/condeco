@@ -20,7 +20,7 @@
                             <td align="left" class="style3" rowspan="1" style="background-position: left -40px;
                                 padding: 10px; background-image: url('Imagenes/TroiloOrquesta.jpg'); background-repeat: no-repeat;"
                                 valign="top">
-                                SI usted aún no posee una cuenta de usuario en nuestro Sitio Web, usted puede registrarse de forma gratuita haciendo clic en la opción 
+                                Si usted aún no posee una cuenta de usuario en nuestro Sitio Web, usted puede registrarse de forma gratuita haciendo clic en la opción 
                                 &#39;Crear nueva cuenta de usuario&#39;.
                                 <br />
                                 <br />
@@ -82,12 +82,18 @@
                                     </tr>
                                     <tr>
                                         <td align="left" style="padding-top: 20px">
-                                            Esta cuenta de usuario le permitirá a usted, acceder a las las novedades y promociones disponibles en nuestro sitio web.
+                                            Esta cuenta de usuario le permitirá a usted, acceder a las novedades y promociones disponibles en nuestro sitio web.
                                             <br />
                                             <br />
                                             <font style="color: #F6B200">&gt;</font> Novedades
                                             <br />
                                             Una vez al mes actualizamos la información con las novedades o nuevos diseños que estamos desarrollando en nuestro taller.
+                                            <br />
+                                            <br />
+                                            <font style="color: #F6B200">&gt;</font> Promociones
+                                            <br />
+                                            Por cada lanzamiento de un nuevo producto, tenemos reservado un precio especial para la venta de las primeras unidades.
+                                            Usted contará con toda la información necesaria relacionada al lanzamiento y detalle del producto, y como usuario de nuestro sitio web podrá reservar la unidad que le sea de interes.
                                         </td>
                                     </tr>
                                     <tr>

@@ -1,5 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductoCrear.aspx.cs" Inherits="Condeco.ProductoCrear" Theme="" Culture="en-GB" UICulture="en-GB" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductoCrear.aspx.cs" Inherits="Condeco.ProductoCrear" Theme="Condeco" Culture="en-GB" UICulture="en-GB" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
+
+<%@ Register Assembly="ASTreeView" Namespace="Geekees.Common.Controls" TagPrefix="ct" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainCPH" runat="server">
     <script type="text/javascript">
@@ -21,10 +23,10 @@
         <tr>
             <td align="right" style="padding-right:5px; padding-top:2px; width:150px">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="NombreTextBox"
-                    ErrorMessage="Name of Producto" SetFocusOnError="True">
+                    ErrorMessage="Nombre" SetFocusOnError="True">
                     <asp:Label ID="Label4" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RequiredFieldValidator>
-                <asp:Label ID="Label5" runat="server" Text="Name"></asp:Label>
+                <asp:Label ID="Label5" runat="server" Text="Nombre"></asp:Label>
             </td>
             <td align="left" style="padding-top:2px">
                 <asp:TextBox ID="NombreTextBox" runat="server" MaxLength="50" TabIndex="2" Width="400px"></asp:TextBox>
@@ -33,10 +35,10 @@
         <tr>
             <td align="right" style="padding-right:5px; padding-top:2px">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DescripcionTextBox"
-                    ErrorMessage="Description" SetFocusOnError="True">
+                    ErrorMessage="Descripción" SetFocusOnError="True">
                     <asp:Label ID="Label8" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RequiredFieldValidator>
-                <asp:Label ID="Label9" runat="server" Text="Description"></asp:Label>
+                <asp:Label ID="Label9" runat="server" Text="Descripción"></asp:Label>
             </td>
             <td align="left" style="padding-top:2px">
                 <asp:TextBox ID="DescripcionTextBox" runat="server" TextMode="MultiLine" CssClass="MultilineFont" style="resize: none;" MaxLength="250" Height="100px" TabIndex="2" Width="400px"></asp:TextBox>
@@ -46,7 +48,7 @@
             <td align="right" style="padding-right: 5px; padding-top:5px">
                 <asp:RegularExpressionValidator ID="PrecioRegularExpressionValidator"
                     runat="server" ControlToValidate="PrecioBaseTextBox"
-                    ErrorMessage="Error in format price" SetFocusOnError="True"
+                    ErrorMessage="Error en el formato del precio" SetFocusOnError="True"
                     ValidationExpression="[0-9]+(\.[0-9]+)?">
                     <asp:Label ID="Label6" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RegularExpressionValidator>
@@ -59,7 +61,7 @@
         </tr>
         <tr>
             <td align="right" style="padding-right: 5px; padding-top:5px">
-                <asp:Label ID="Label3" runat="server" Text="Ticket Information"></asp:Label>
+                <asp:Label ID="Label3" runat="server" Text="Información del precio"></asp:Label>
             </td>
             <td align="left" style="padding-top:5px" valign="top">
                 <asp:TextBox ID="ComentarioPrecioBaseTextBox" runat="server" MaxLength="250" TextMode="MultiLine" Height="40px" TabIndex="502" Width="300px"></asp:TextBox>
@@ -69,23 +71,14 @@
             <td align="right" style="padding-right: 5px; padding-top:5px">
             </td>
             <td align="left" style="padding-top:5px" valign="top">
-                &nbsp;(example: http://www.tangofamilyandguide.com.ar) 
-            </td>
-        </tr>
-        <tr>
-            <td align="right" style="padding-right: 5px; padding-top:5px">
-                <asp:Label ID="Label1" runat="server" Text="Web Site"></asp:Label>
-            </td>
-            <td align="left" style="padding-top:5px" valign="top">
-                <asp:TextBox ID="WebSiteTextBox" runat="server" MaxLength="60" TabIndex="502"
-                    Width="300px"></asp:TextBox>
+                &nbsp;(example: http://www.condeco.com.ar) 
             </td>
         </tr>
         <tr>
             <td align="right" style="padding-right: 5px; padding-top:5px">
             </td>
             <td align="left" style="padding-top:5px" valign="top">
-                &nbsp;(example: info@tangofamilyandguide.com.ar)
+                &nbsp;(example: info@condeco.com.ar)
             </td>
         </tr>
         <tr>
@@ -101,53 +94,52 @@
             <td align="right" style="padding-right: 5px; padding-top:5px">
             </td>
             <td align="left" style="padding-top:5px" valign="top">
-                &nbsp;(example: https://www.facebook.com/Producto)
+                &nbsp;(example: https://www.youtube.com/Producto)
             </td>
         </tr>
         <tr>
             <td align="right" style="padding-right: 5px; padding-top:5px">
-                <asp:Label ID="Label13" runat="server" Text="Facebook Address"></asp:Label>
+                <asp:Label ID="Label13" runat="server" Text="YouTube dirección"></asp:Label>
             </td>
             <td align="left" style="padding-top:5px" valign="top">
-                <asp:TextBox ID="FacebookTextBox" runat="server" MaxLength="60" TabIndex="502"
-                     Width="400px"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td align="right" style="padding-right: 5px; padding-top:5px">
-                <asp:Label ID="Label14" runat="server" Text="Google Map Address"></asp:Label>
-            </td>
-            <td align="left" style="padding-top:5px" valign="top">
-                <asp:TextBox ID="GoogleMapTextBox" runat="server" MaxLength="60" TabIndex="502"
+                <asp:TextBox ID="YouTubeTextBox" runat="server" MaxLength="60" TabIndex="502"
                      Width="400px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td align="right" style="padding-right: 5px; padding-top: 5px">
-                <asp:Label ID="Label15" runat="server" Text="Type of Floor"></asp:Label>
+                <asp:Label ID="Label15" runat="server" Text="Tipo de Producto"></asp:Label>
             </td>
             <td align="left" style="padding-top: 5px">
-                <asp:DropDownList ID="TipoPisoDropDownList" runat="server" TabIndex="501" Width="200px"
-                    DataValueField="Id" DataTextField="Descr">
-                </asp:DropDownList>
+                <div>
+		            <ct:ASTreeView ID="astvMyTree" 
+				        runat="server"
+				        BasePath="~/Javascript/astreeview/"
+				        DataTableRootNodeValue="0"
+				        EnableRoot="false" 
+				        EnableNodeSelection="false" 
+				        EnableCheckbox="true" 
+				        EnableDragDrop="true" 
+				        EnableTreeLines="true"
+				        EnableNodeIcon="true"
+				        EnableCustomizedNodeIcon="true"
+				        EnableContextMenu="true"
+				        EnableDebugMode="false"
+				        EnableContextMenuAdd="false"
+				        OnNodeDragAndDropCompletingScript="dndCompletingHandler( elem, newParent )"
+				        OnNodeDragAndDropCompletedScript="dndCompletedHandler( elem, newParent )"
+				        OnNodeDragAndDropStartScript="dndStartHandler( elem )"
+				        EnableMultiLineEdit="false"
+				        EnableEscapeInput="false" />
+                </div>
             </td>
         </tr>
         <tr>
             <td align="right" style="padding-right: 5px; padding-top: 5px">
-                <asp:Label ID="Label16" runat="server" Text="Type of Producto"></asp:Label>
+                <asp:Label ID="Label17" runat="server" Text="Estado"></asp:Label>
             </td>
             <td align="left" style="padding-top: 5px">
-                <asp:DropDownList ID="TipoProductoDropDownList" runat="server" TabIndex="501" Width="200px"
-                    DataValueField="Id" DataTextField="Descr">
-                </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td align="right" style="padding-right: 5px; padding-top: 5px">
-                <asp:Label ID="Label17" runat="server" Text="Type of Music"></asp:Label>
-            </td>
-            <td align="left" style="padding-top: 5px">
-                <asp:DropDownList ID="TipoMusicaDropDownList" runat="server" TabIndex="501" Width="200px"
+                <asp:DropDownList ID="EstadoDropDownList" runat="server" TabIndex="501" Width="200px"
                     DataValueField="Id" DataTextField="Descr">
                 </asp:DropDownList>
             </td>

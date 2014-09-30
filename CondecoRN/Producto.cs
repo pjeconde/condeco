@@ -59,7 +59,7 @@ namespace CondecoRN
             return db.ListaPorNombre(Nombre, SoloPropias);
         }
         
-        public static List<CondecoEntidades.Producto> Lista(out int CantidadFilas, int IndicePagina, int TamañoPagina, string OrderBy, string Nombre, string Descripcion, string SessionID, CondecoEntidades.Sesion Sesion)
+        public static List<CondecoEntidades.Producto> Lista(out int CantidadFilas, int IndicePagina, int TamañoPagina, string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto, string SessionID, CondecoEntidades.Sesion Sesion)
         {
             List<CondecoEntidades.Producto> listaProducto = new List<CondecoEntidades.Producto>();
             CondecoDB.Producto db = new CondecoDB.Producto(Sesion);
@@ -67,12 +67,12 @@ namespace CondecoRN
             {
                 OrderBy = "Ranking desc, IdProducto desc";
             }
-            listaProducto = db.ListaCompleta(OrderBy, Nombre, Descripcion);
+            listaProducto = db.ListaCompleta(OrderBy, Nombre, Descripcion, ListaTipoProducto);
             int cantidadFilas = listaProducto.Count;
             CantidadFilas = cantidadFilas;
             return db.Lista(IndicePagina, TamañoPagina, OrderBy, SessionID, listaProducto);
         }
-        public static List<CondecoEntidades.Producto> ListaCompleta(out int CantidadFilas, string OrderBy, string Nombre, string Descripcion, string SessionID, CondecoEntidades.Sesion Sesion)
+        public static List<CondecoEntidades.Producto> ListaCompleta(out int CantidadFilas, string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto, string SessionID, CondecoEntidades.Sesion Sesion)
         {
             List<CondecoEntidades.Producto> listaProducto = new List<CondecoEntidades.Producto>();
             CondecoDB.Producto db = new CondecoDB.Producto(Sesion);
@@ -80,7 +80,7 @@ namespace CondecoRN
             {
                 OrderBy = "Ranking desc, IdProducto desc";
             }
-            listaProducto = db.ListaCompleta(OrderBy, Nombre, Descripcion);
+            listaProducto = db.ListaCompleta(OrderBy, Nombre, Descripcion, ListaTipoProducto);
             int cantidadFilas = listaProducto.Count;
             CantidadFilas = cantidadFilas;
             return listaProducto;

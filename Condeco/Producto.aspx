@@ -1,76 +1,86 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Producto.aspx.cs" Inherits="Condeco.Producto" Theme="Condeco" Culture="en-GB" UICulture="en-GB" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Producto.aspx.cs" Inherits="Condeco.Producto" Culture="en-GB" UICulture="en-GB" %>
 
 <%@ Register Assembly="CondecoWebForm" Namespace="CondecoWebForm" TagPrefix="cc1" %>
+
+<%@ Register Assembly="ASTreeView" Namespace="Geekees.Common.Controls" TagPrefix="ct" %>
+
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <style type="text/css">
-        .myClass02 
-        {
-        	font-size: 14dpx;
-        	font-weight: bold;
-        }
-        .myClass01 
-        {
-            background-color: white;
-        }
-        .myClass 
-        {
-            background-color: black;
-        }
-        .style2
-        {
-            height: 50px;
-        }
-    </style>
-    <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; width: 100%; height: 248px;">
+    <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; width: 100%;">
         <tr>
             <td>
                 <asp:Panel runat="server" ID="Buscador" DefaultButton="BuscarButton">
-                <table border="0" cellpadding="0" cellspacing="0" style="background-position: 0px; background-image: url('Imagenes/Productos.jpg'); width: 820px; background-repeat: no-repeat;">
+                <table border="0" class="ppaltable" cellpadding="0" cellspacing="0" style="background-position: 0px; background-image: url('Imagenes/Productos.jpg'); width: 820px; background-repeat: no-repeat;">
                     <tr>
-                        <td colspan="5" align="center" class="style2">
-                            <table border="0" cellpadding="0" cellspacing="0" align="center" width="780">
-                                <tr align="right">
-                                    <td align="center">
-                                        <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Height="70" Text="Catálogo de Producto"></asp:Label>
+                        <td colspan="5">
+                            <table border="0" cellpadding="0" cellspacing="0" width="780">
+                                <tr>
+                                    <td>
+                                        <h2>
+                                            Catálogo de Producto
+                                        </h2>
+                                        <p> </p>
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
                     <tr>
-                        <td align="right" style="padding-right: 5px; padding-top: 2px">
-                            <asp:Label ID="NombreLabel" runat="server" Text="Nombre"></asp:Label>
-                        </td>
-                        <td align="left" style="padding-top: 5px">
-                            <asp:TextBox ID="NombreTextBox" runat="server" MaxLength="50" TabIndex="6" Width="280px"></asp:TextBox>
+                        <td align="left" colspan="2" style="padding-right: 5px; padding-top: 2px">
+                            <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                            <td style="text-align: left">
+                            <div>
+		                        <ct:ASTreeView ID="astvMyTree" 
+				                    runat="server"
+				                    BasePath="~/Javascript/astreeview/"
+				                    DataTableRootNodeValue="0"
+				                    EnableRoot="false" 
+				                    EnableNodeSelection="false" 
+				                    EnableCheckbox="true" 
+				                    EnableDragDrop="true" 
+				                    EnableTreeLines="true"
+				                    EnableNodeIcon="true"
+				                    EnableCustomizedNodeIcon="true"
+				                    EnableContextMenu="true"
+				                    EnableDebugMode="false"
+				                    EnableContextMenuAdd="false"
+				                    OnNodeDragAndDropCompletingScript="dndCompletingHandler( elem, newParent )"
+				                    OnNodeDragAndDropCompletedScript="dndCompletedHandler( elem, newParent )"
+				                    OnNodeDragAndDropStartScript="dndStartHandler( elem )"
+				                    EnableMultiLineEdit="false"
+				                    EnableEscapeInput="false" />
+                            </div>
+                            </td>
+                            </tr>
+                            </table>
                         </td>
                         <td style="padding-right: 30px">
                         </td>
-                        <td align="right" style="padding-right: 5px; padding-top: 2px">
-                            <asp:Label ID="DescripcionLabel" runat="server" Text="Descripción"></asp:Label>
+                        <td colspan="2" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="right" style="padding-right: 5px; padding-top: 2px">
+                                        <asp:Label ID="NombreLabel" runat="server" Text="Nombre"></asp:Label>
+                                    </td>
+                                    <td align="left" style="padding-top: 5px">
+                                        <asp:TextBox ID="NombreTextBox" runat="server" MaxLength="50" TabIndex="6" Width="280px"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="padding-right: 5px; padding-top: 2px">
+                                        <asp:Label ID="DescripcionLabel" runat="server" Text="Descripción"></asp:Label>
+                                    </td>
+                                    <td align="left" style="padding-top: 5px">
+                                        <asp:TextBox ID="DescripcionTextBox" runat="server" MaxLength="50" TabIndex="6" Width="280px"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
-                        <td align="left" style="padding-top: 5px">
-                            <asp:TextBox ID="DescripcionTextBox" runat="server" MaxLength="50" TabIndex="6" 
-                                Width="280px"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right" style="padding-right: 5px; padding-top: 2px">
-                            &nbsp;</td>
-                        <td align="left" style="padding-top: 5px">
-                            &nbsp;</td>
-                        <td style="padding-right: 30px">
-                        </td>
-                        <td align="right" style="padding-right: 5px; padding-top: 2px">
-                            &nbsp;</td>
-                        <td align="left" style="padding-top: 5px">
-                            &nbsp;</td>
                     </tr>
                     <tr>
                         <td colspan="5" align="right" style="height: 24px; padding-top: 20px; text-align: center">
-                            <asp:Button ID="BuscarButton" runat="server" TabIndex="8" Text="Search" OnClick="BuscarButton_Click" UseSubmitBehavior="false" />
-                            <asp:Button ID="ClearButton" runat="server" TabIndex="8" Text="Clear" OnClick="ClearButton_Click"  UseSubmitBehavior="false" />
-                            <asp:Button ID="SalirButton" runat="server" CausesValidation="false" TabIndex="9" Text="Exit" PostBackUrl="~/Home.aspx" />
+                            <asp:Button ID="BuscarButton" runat="server" TabIndex="8" Text="Aplicar filtro" ToolTip="Muestra los productos acorde a los filtros seleccionados" OnClick="BuscarButton_Click" UseSubmitBehavior="false" />
+                            <asp:Button ID="ClearButton" runat="server" TabIndex="8" Text="Limpiar filtro" ToolTip="Muestra todos los productos" OnClick="ClearButton_Click"  UseSubmitBehavior="false" />
                         </td>
                     </tr>
                     <tr>
