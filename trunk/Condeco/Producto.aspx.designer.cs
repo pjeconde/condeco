@@ -22,13 +22,13 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Panel Buscador;
         
         /// <summary>
-        /// Control TituloPaginaLabel.
+        /// Control astvMyTree.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TituloPaginaLabel;
+        protected global::Geekees.Common.Controls.ASTreeView astvMyTree;
         
         /// <summary>
         /// Control NombreLabel.
@@ -83,15 +83,6 @@ namespace Condeco {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ClearButton;
-        
-        /// <summary>
-        /// Control SalirButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SalirButton;
         
         /// <summary>
         /// Control Vista1RadioButton.

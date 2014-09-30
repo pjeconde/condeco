@@ -14,7 +14,7 @@ namespace CondecoDB
         public void Leer(CondecoEntidades.Producto Producto)
         {
             StringBuilder a = new StringBuilder(string.Empty);
-            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.PrecioBase, Producto.IdWF, Producto.Estado, Producto.TipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado ");
+            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.PrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado ");
             a.Append("from Producto ");
             a.Append("where Producto.IdProducto = " + Producto.Id + " ");
             DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
@@ -33,7 +33,7 @@ namespace CondecoDB
             Hasta.Nombre = Convert.ToString(Desde["Nombre"]);
             Hasta.Descripcion = Convert.ToString(Desde["Descripcion"]);
             Hasta.PrecioBase = Convert.ToDecimal(Desde["PrecioBase"]);
-            Hasta.TipoProducto.Id = Convert.ToString(Desde["IdTipoProducto"]);
+            Hasta.TipoProducto.Id = Convert.ToInt32(Desde["IdTipoProducto"]);
             Hasta.Ranking = Convert.ToInt32(Desde["Ranking"]);
             Hasta.Descripcion = Convert.ToString(Desde["TipoDestacado"]);
             Hasta.WF.Id = Convert.ToInt32(Desde["IdWF"]);
@@ -57,7 +57,7 @@ namespace CondecoDB
             a.Append(Convert.ToDouble(Producto.PrecioBase) + ", ");
             a.Append("@idWF, ");
             a.Append("'" + Producto.WF.Estado + "', ");
-            a.Append("'" + Producto.TipoProducto + "', ");
+            a.Append(Producto.TipoProducto.Id + ", ");
             a.Append(Producto.Ranking + ", ");
             a.Append("'" + Producto.TipoDestacado + "', ");
             a.Append("'" + Producto.YouTube + "' ");
@@ -84,7 +84,7 @@ namespace CondecoDB
                 a.Append("Descripcion = '" + Hasta.Descripcion + "', ");
                 a.Append("PrecioBase = " + Convert.ToDouble(Hasta.PrecioBase) + ", ");
                 a.Append("ComentarioPrecioBase = '" + Hasta.ComentarioPrecioBase + "', ");
-                a.Append("TipoProducto = '" + Hasta.TipoProducto + "', ");
+                a.Append("IdTipoProducto = " + Hasta.TipoProducto.Id + ", ");
                 a.Append("Ranking = '" + Hasta.Ranking + "', ");
                 a.Append("TipoDestacado = '" + Hasta.TipoDestacado + "' ");
                 a.Append("where IdProducto = " + Hasta.Id + " ");
@@ -115,7 +115,7 @@ namespace CondecoDB
             if (sesion.Usuario.Id != null)
             {
                 StringBuilder a = new StringBuilder(string.Empty);
-                a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.TipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
+                a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
                 a.Append("from Producto where (Producto.IdUsuario in (Select Permiso.IdUsuario from Permiso where Permiso.IdTipoPermiso='OperProducto' and Permiso.IdUsuario='" + sesion.Usuario.Id + "' and Permiso.Estado='Vigente')");
                 if (!SoloPropias)
                 {
@@ -173,7 +173,7 @@ namespace CondecoDB
             }
             return lista;
         }
-        public List<CondecoEntidades.Producto> ListaCompleta(string OrderBy, string Nombre, string Descripcion)
+        public List<CondecoEntidades.Producto> ListaCompleta(string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto)
         {
             List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
             StringBuilder a = new StringBuilder(string.Empty);
@@ -186,6 +186,10 @@ namespace CondecoDB
             if (!Descripcion.Equals(string.Empty))
             {
                 a.Append("and Descripcion like '%" + Descripcion + "%' ");
+            }
+            if (!ListaTipoProducto.Equals(string.Empty))
+            {
+                a.Append("and IdTipoProducto in (" +  ListaTipoProducto + ") ");
             }
             a.Append("and Estado = 'Vigente' ");
             a.Append("order by " + OrderBy);
@@ -212,7 +216,7 @@ namespace CondecoDB
 	        a.Append("[ComentarioPrecioBase] [varchar](250) NOT NULL, ");
 	        a.Append("[IdWF] [int] NOT NULL, ");
             a.Append("[Estado] [varchar](15) NOT NULL, ");
-            a.Append("[TipoProducto] [varchar](15) NOT NULL, ");
+            a.Append("[IdTipoProducto] [int] NOT NULL, ");
             a.Append("[Ranking] [int] NOT NULL, ");
             a.Append("[TipoDestacado] [varchar](2) NOT NULL, ");
             a.Append("[YouTube] [varchar](100) NOT NULL, ");
@@ -230,14 +234,14 @@ namespace CondecoDB
                 a.Append(Producto.ComentarioPrecioBase + "', '");
                 a.Append(Producto.WF.Id + ", '");
                 a.Append(Producto.Estado + "', '");
-                a.Append(Producto.TipoProducto + "', '");
+                a.Append(Producto.IdTipoProducto + ", '");
                 a.Append(Producto.Ranking + ", '");
                 a.Append(Producto.TipoDestacado + "',' ");
                 a.Append(Producto.YouTube + "') ");
             }
             a.Append("select * ");
             a.Append("from (select top {0} ROW_NUMBER() OVER (ORDER BY {1}) as ROW_NUM, ");
-            a.Append("IdProducto, Nombre, Descripcion, PrecioBase, ComentarioPrecioBase, IdWF, Estado, TipoProducto, Ranking, TipoDestacado, YouTube ");
+            a.Append("IdProducto, Nombre, Descripcion, PrecioBase, ComentarioPrecioBase, IdWF, Estado, IdTipoProducto, Ranking, TipoDestacado, YouTube ");
             a.Append("from #Producto" + SessionID + " ");
             a.Append("ORDER BY ROW_NUM) innerSelect WHERE ROW_NUM > {2} ");
             a.Append("DROP TABLE #Producto" + SessionID);
@@ -259,7 +263,7 @@ namespace CondecoDB
                     Producto.Descripcion = dt.Rows[i]["Descripcion"].ToString();
                     Producto.PrecioBase = Convert.ToDecimal(dt.Rows[i]["PrecioBase"]);
                     Producto.ComentarioPrecioBase = dt.Rows[i]["ComentarioPrecioBase"].ToString();
-                    Producto.TipoProducto.Id = dt.Rows[i]["TipoProducto"].ToString();
+                    Producto.TipoProducto.Id = Convert.ToInt32(dt.Rows[i]["IdTipoProducto"].ToString());
                     Producto.Ranking = Convert.ToInt32(dt.Rows[i]["Ranking"].ToString());
                     Producto.TipoDestacado = dt.Rows[i]["TipoDestacado"].ToString();
                     Producto.WF.Id = Convert.ToInt32(dt.Rows[i]["IdWF"].ToString());
@@ -275,7 +279,7 @@ namespace CondecoDB
         {
             bool resp = false;
             StringBuilder a = new StringBuilder(string.Empty);
-            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.TipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
+            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
             a.Append("from Producto where ");
             a.Append("Nombre like '%" + Nombre + "%'");
             DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);

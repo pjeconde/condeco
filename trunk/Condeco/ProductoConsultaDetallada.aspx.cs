@@ -32,7 +32,7 @@ namespace Condeco
                 PrecioBaseLabel.Text = Producto.PrecioBase.ToString();
                 ComentarioPrecioBaseLabel.Text = Producto.ComentarioPrecioBase;
 
-                TipoProductoLabel.Text = Producto.TipoProducto.Id;
+                TipoProductoLabel.Text = Producto.TipoProducto.Id.ToString();
                 IdProductoTextBox.Enabled = false;
 
                 String path = Server.MapPath("~/ImagenesProducto/");

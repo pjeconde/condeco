@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Geekees.Common.Utilities.Xml;
+using Geekees.Common.Controls;
 
 namespace Condeco
 {
@@ -19,6 +21,7 @@ namespace Condeco
                 }
                 else
                 {
+                    GenerateTree();
                     CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
                     List<CondecoEntidades.Permiso> permisoHabilitado = sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                     {
@@ -30,12 +33,45 @@ namespace Condeco
                     }
 
                     NombreTextBox.Focus();
-                    TipoProductoDropDownList.DataSource = sesion.TiposProducto;
+                    EstadoDropDownList.DataSource = CondecoEntidades.Estados.ListaEstados.ListaMasSinInformar();
+                    
+                    //TipoProductoTreeView.Nodes.Add(
 
                     DataBind();
+                    //this.btnExpandAllClient.Attributes.Add("onclick", this.astvMyTree.GetExpandAllScript() + "return false;");
+                    //this.btnCollapseAllClient.Attributes.Add("onclick", this.astvMyTree.GetCollapseAllScript() + "return false;");
+                    //this.btnToggleExpandCollapseAllClient.Attributes.Add("onclick", this.astvMyTree.GetToggleExpandCollapseAllScript() + "return false;");
+
+                    this.astvMyTree.ContextMenu.MenuItems.Add(new ASContextMenuItem("Custom Menu", "alert('current value:' + " + this.astvMyTree.ContextMenuClientID + ".getSelectedItem().parentNode.getAttribute('treeNodeValue')" + ");return false;", "text"));
                 }
             }
         }
+
+        private void GenerateTree()
+		{
+
+			ASTreeViewLinkNode n = new ASTreeViewLinkNode( "Picasa", "Picasa", "http://picasaweb.google.com", "frm", "Goto Picasa", "~/Images/demoIcons/picasa.gif" );
+			n.NodeText = "The node cannot have children.";
+			n.EnableChildren = false;
+			n.EnableEditContextMenu = false;
+
+			//n.AdditionalAttributes.Add( new KeyValuePair<string, string>( "onclick", "alert(1);return false;" ) );
+			//n.AdditionalAttributes.Add( new KeyValuePair<string, string>( "disableChildren1", "true" ) );
+
+			this.astvMyTree.RootNode
+                                .AppendChild(new ASTreeViewLinkNode("Marcos", "Marcos", "", "frm", "madera maciza", "")
+													.AppendChild( new ASTreeViewLinkNode( "de Pinotea", "de Madera", "", "frm", "madera maciza", "" ) )
+													.AppendChild( new ASTreeViewLinkNode( "de Cedro", "Cedro", "", "frm", "", "" ) )
+                                                    .AppendChild(new ASTreeViewLinkNode("vintage", "vintage", "", "frm", "madera maciza", "~/Images/demoIcons/saab.gif"))
+								)
+                                .AppendChild(new ASTreeViewLinkNode("Espejos", "Espejos", "", "frm", "Goto Google", "~/Images/demoIcons/google.gif")
+													.AppendChild( new ASTreeViewLinkNode( "de Cedro", "de Cedro", "", "frm", "", "~/Images/demoIcons/picasa.gif" ) )
+								)
+								.AppendChild( new ASTreeViewLinkNode( "Amazon", "Amazon", "http://www.amazon.com", "frm", "Goto Amazon", "~/Images/demoIcons/amazon.gif" ).AppendChild( n ) )
+								.AppendChild( new ASTreeViewLinkNode( "<font style='color:blue;font-weight:bold;font-style:italic;' isTreeNodeChild='true'>ASTreeView</font>", "Best Free TreeView Control for ASP.Net", "http://www.astreeview.com", "frm", "Html as TreeNode Text", "~/Images/demoIcons/ast.gif" )
+								);
+		}
+
         protected void AceptarButton_Click(object sender, EventArgs e)
         {
             if (Funciones.SessionTimeOut(Session))
@@ -67,12 +103,9 @@ namespace Condeco
                         PrecioBaseTextBox.Enabled = false;
                         ComentarioPrecioBaseTextBox.Enabled = false;
                         EmailTextBox.Enabled = false;
-                        WebSiteTextBox.Enabled = false;
-                        FacebookTextBox.Enabled = false;
-                        GoogleMapTextBox.Enabled = false;
-                        TipoProductoDropDownList.Enabled = false;
-                        TipoMusicaDropDownList.Enabled = false;
-                        TipoPisoDropDownList.Enabled = false;
+                        
+                        YouTubeTextBox.Enabled = false;
+                        EstadoDropDownList.Enabled = false;
                         ComentariosTextBox.Enabled = false;
                         AceptarButton.Enabled = false;
                         SalirButton.Text = "Salir";

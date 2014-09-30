@@ -4,38 +4,77 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Geekees.Common.Utilities.Xml;
+using Geekees.Common.Controls;
 
 namespace Condeco
 {
     public partial class Producto : System.Web.UI.Page
     {
+        string listaTipoProducto = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                GenerateTree();
                 VistaRadioButton_CheckedChanged(Vista1RadioButton, new EventArgs());
                 DataBind();
+                this.astvMyTree.ContextMenu.MenuItems.Add(new ASContextMenuItem("Custom Menu", "alert('current value:' + " + this.astvMyTree.ContextMenuClientID + ".getSelectedItem().parentNode.getAttribute('treeNodeValue')" + ");return false;", "text"));
             }
         }
+
+        private void GenerateTree()
+        {
+
+            ASTreeViewLinkNode n = new ASTreeViewLinkNode("Mesas Ratonas", "401", "", "frm", "Mesas Ratonas", "");
+            //n.NodeText = "";
+            n.EnableChildren = false;
+            n.EnableEditContextMenu = false;
+
+            //n.AdditionalAttributes.Add( new KeyValuePair<string, string>( "onclick", "alert(1);return false;" ) );
+            //n.AdditionalAttributes.Add( new KeyValuePair<string, string>( "disableChildren1", "true" ) );
+
+            this.astvMyTree.RootNode
+                                .AppendChild(new ASTreeViewLinkNode("Marcos", "100", "", "frm", "madera maciza", "")
+                                                    .AppendChild(new ASTreeViewLinkNode("Madera Pinotea", "Madera Pinotea", "", "frm", "madera maciza", ""))
+                                                    .AppendChild(new ASTreeViewLinkNode("Madera Cedro", "Madera Cedro", "", "frm", "", ""))
+                                                    .AppendChild(new ASTreeViewLinkNode("Vintage", "Vintage", "", "frm", "madera maciza", ""))
+                                )
+                                .AppendChild(new ASTreeViewLinkNode("Espejos", "200", "", "frm", "", ""))
+                                .AppendChild(new ASTreeViewLinkNode("Carteles", "300", "", "frm", "", ""))
+                                .AppendChild(new ASTreeViewLinkNode("Mesas", "400", "", "frm", "", "")
+                                                    .AppendChild(n))
+                                .AppendChild(new ASTreeViewLinkNode("Bancos", "500", "", "frm", "", "")
+                                                    .AppendChild(new ASTreeViewLinkNode("Bancos Rústicos", "501", "", "frm", "En maderas recicladas", ""))
+                                );
+                                //.AppendChild(new ASTreeViewLinkNode("<font style='color:blue;font-weight:bold;font-style:italic;' isTreeNodeChild='true'>Novedades</font>", "Novedades", "", "frm", "", "~/Imagenes/Iconos/Punto.jpg")
+                                //);
+        }
+
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             BindPagingGrid();
+            List<ASTreeViewNode> checkedNodes = this.astvMyTree.GetCheckedNodes(false);
+            
+            listaTipoProducto = "";
+            foreach (ASTreeViewNode node in checkedNodes)
+            {
+                //Nodos seleccionados
+                if (listaTipoProducto == "")
+                {
+                    listaTipoProducto += node.NodeValue;        //"[" + node.NodeText + "-" + node.NodeValue + "]";
+                }
+                else
+                {
+                    listaTipoProducto += ", " + node.NodeValue;
+                }
+            }
         }
         protected void ClearButton_Click(object sender, EventArgs e)
         {
             NombreTextBox.Text = "";
             DescripcionTextBox.Text = "";
-        }
-        protected void NewButton_Click(object sender, EventArgs e)
-        {
-            if (Funciones.SessionTimeOut(Session))
-            {
-                Response.Redirect("~/UsuarioLogin.aspx");
-            }
-            else
-            {
-                Response.Redirect("~/ProductoCrear.aspx");
-            }
         }
         private void BindPagingGrid()
         {
@@ -45,7 +84,7 @@ namespace Condeco
                 List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
                 if (Vista1RadioButton.Checked == true)
                 {
-                    lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                     ProductoPagingGridView.VirtualItemCount = CantidadFilas;
                     ViewState["lista"] = lista;
                     //Grilla
@@ -54,7 +93,7 @@ namespace Condeco
                 }
                 else
                 {
-                    lista = CondecoRN.Producto.ListaCompleta(out CantidadFilas, "", NombreTextBox.Text, DescripcionTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    lista = CondecoRN.Producto.ListaCompleta(out CantidadFilas, "", NombreTextBox.Text, DescripcionTextBox.Text, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
 
                     string[] archivos = LeerImagenesPortada();
                     for (int i = 0; i < archivos.Length; i++)
@@ -105,7 +144,7 @@ namespace Condeco
                 ProductoPagingGridView.PageIndex = e.NewPageIndex;
                 List<CondecoEntidades.Producto> lista;
                 int CantidadFilas = 0;
-                lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 ProductoPagingGridView.VirtualItemCount = CantidadFilas;
                 ViewState["lista"] = lista;
                 ProductoPagingGridView.DataSource = lista;
@@ -128,7 +167,7 @@ namespace Condeco
                 DesSeleccionarFilas();
                 List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
                 int CantidadFilas = 0;
-                lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 ViewState["lista"] = lista;
                 ProductoPagingGridView.DataSource = (List<CondecoEntidades.Producto>)ViewState["lista"];
                 ProductoPagingGridView.DataBind();

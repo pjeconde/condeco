@@ -104,6 +104,13 @@ namespace CondecoEntidades
                 return tipoProducto;
             }
         }
+        public int IdTipoProducto
+        {
+            get
+            {
+                return tipoProducto.Id;
+            }
+        }
         public int Ranking
         {
             set

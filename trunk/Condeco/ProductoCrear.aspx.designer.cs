@@ -148,24 +148,6 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.TextBox ComentarioPrecioBaseTextBox;
         
         /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// Control WebSiteTextBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox WebSiteTextBox;
-        
-        /// <summary>
         /// Control Label12.
         /// </summary>
         /// <remarks>
@@ -193,31 +175,13 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label Label13;
         
         /// <summary>
-        /// Control FacebookTextBox.
+        /// Control YouTubeTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FacebookTextBox;
-        
-        /// <summary>
-        /// Control Label14.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label14;
-        
-        /// <summary>
-        /// Control GoogleMapTextBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GoogleMapTextBox;
+        protected global::System.Web.UI.WebControls.TextBox YouTubeTextBox;
         
         /// <summary>
         /// Control Label15.
@@ -229,31 +193,13 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label Label15;
         
         /// <summary>
-        /// Control TipoPisoDropDownList.
+        /// Control astvMyTree.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoPisoDropDownList;
-        
-        /// <summary>
-        /// Control Label16.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label16;
-        
-        /// <summary>
-        /// Control TipoProductoDropDownList.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoProductoDropDownList;
+        protected global::Geekees.Common.Controls.ASTreeView astvMyTree;
         
         /// <summary>
         /// Control Label17.
@@ -265,13 +211,13 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label Label17;
         
         /// <summary>
-        /// Control TipoMusicaDropDownList.
+        /// Control EstadoDropDownList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoMusicaDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList EstadoDropDownList;
         
         /// <summary>
         /// Control Label7.
