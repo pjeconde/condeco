@@ -21,7 +21,7 @@ namespace Condeco
                 }
                 else
                 {
-                    GenerateTree();
+                    
                     CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
                     List<CondecoEntidades.Permiso> permisoHabilitado = sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                     {
@@ -34,8 +34,7 @@ namespace Condeco
 
                     NombreTextBox.Focus();
                     EstadoDropDownList.DataSource = CondecoEntidades.Estados.ListaEstados.ListaMasSinInformar();
-                    
-                    //TipoProductoTreeView.Nodes.Add(
+                    Funciones.GenerarTreeTipoProductos(astvMyTree);
 
                     DataBind();
                     //this.btnExpandAllClient.Attributes.Add("onclick", this.astvMyTree.GetExpandAllScript() + "return false;");
@@ -46,11 +45,6 @@ namespace Condeco
                 }
             }
         }
-
-        private void GenerateTree()
-		{
-            Funciones.GenerarTreeTipoProductos(astvMyTree);
-		}
 
         protected void AceptarButton_Click(object sender, EventArgs e)
         {
@@ -67,7 +61,14 @@ namespace Condeco
                     Producto.Nombre= NombreTextBox.Text.Trim();
                     Producto.Descripcion = DescripcionTextBox.Text.Trim();
                     Producto.PrecioBase = Convert.ToDecimal(PrecioBaseTextBox.Text);
-                    //Producto.TipoProducto = TipoProductoDropDownList.Text;
+                    Producto.ComentarioPrecioBase = ComentarioPrecioBaseTextBox.Text;
+                    Producto.YouTube = YouTubeTextBox.Text;
+                    Producto.IdMoneda = "$";
+                    string listaTipoProductos = Funciones.GenerarListaTipoProductos(astvMyTree);
+                    if (listaTipoProductos != "")
+                    {
+                        Producto.TipoProducto.Id = Convert.ToInt32(listaTipoProductos);
+                    }
                     Producto.Ranking = 0;
                     if (CondecoRN.Producto.ComprobarNombreProducto(Producto.Nombre, sesion))
                     {
@@ -88,7 +89,7 @@ namespace Condeco
                         SalirButton.Text = "Salir";
 
                         Funciones.PersonalizarControlesMaster(Master, true, sesion);
-                        MensajeLabel.Text = "There was successfully. ";
+                        MensajeLabel.Text = "Alta satisfactoria. ";
                         if (IdProducto != 0)
                         {
                             MensajeLabel.Text = MensajeLabel.Text + "Id: " + IdProducto;

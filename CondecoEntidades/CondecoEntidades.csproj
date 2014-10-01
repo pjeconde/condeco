@@ -56,6 +56,10 @@
     <Compile Include="Sesion.cs" />
     <Compile Include="TipoPermiso.cs" />
     <Compile Include="TipoProducto.cs" />
+    <Compile Include="TiposDestacado\Destacado1.cs" />
+    <Compile Include="TiposDestacado\Destacado2.cs" />
+    <Compile Include="TiposDestacado\DestacadoSinInformar.cs" />
+    <Compile Include="TiposDestacado\TipoDestacado.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="WF.cs" />
   </ItemGroup>

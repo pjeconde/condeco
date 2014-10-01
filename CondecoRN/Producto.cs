@@ -48,15 +48,15 @@ namespace CondecoRN
             hasta.UltActualiz = Desde.UltActualiz;
             return hasta;
         }
-        public static List<CondecoEntidades.Producto> ListaPorIdProducto(int IdProducto, bool SoloPropias, CondecoEntidades.Sesion Sesion)
+        public static List<CondecoEntidades.Producto> ListaPorIdProducto(int IdProducto, CondecoEntidades.Sesion Sesion)
         {
             CondecoDB.Producto db = new CondecoDB.Producto(Sesion);
-            return db.ListaPorIdProducto(IdProducto, SoloPropias);
+            return db.ListaPorIdProducto(IdProducto);
         }
-        public static List<CondecoEntidades.Producto> ListaPorNombre(string Nombre, bool SoloPropias, CondecoEntidades.Sesion Sesion)
+        public static List<CondecoEntidades.Producto> ListaPorNombre(string Nombre, CondecoEntidades.Sesion Sesion)
         {
             CondecoDB.Producto db = new CondecoDB.Producto(Sesion);
-            return db.ListaPorNombre(Nombre, SoloPropias);
+            return db.ListaPorNombre(Nombre);
         }
         
         public static List<CondecoEntidades.Producto> Lista(out int CantidadFilas, int IndicePagina, int TamañoPagina, string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto, string SessionID, CondecoEntidades.Sesion Sesion)

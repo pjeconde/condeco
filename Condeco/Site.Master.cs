@@ -57,13 +57,13 @@ namespace Condeco
                     Response.Redirect("~/ProductoCrear.aspx");
                     break;
                 case "Administración Site|Productos|Modificar":
-                    Response.Redirect("~/ProductoModificar.aspx");
+                    Response.Redirect("~/ProductoSeleccionar.aspx?Modificar");
                     break;
                 case "Administración Site|Productos|Imagenes":
-                    Response.Redirect("~/ProductoImagenes.aspx");
+                    Response.Redirect("~/ProductoSeleccionar.aspx?Imagenes");
                     break;
-                case "Administración Site|Productos|Consultar":
-                    Response.Redirect("~/ProductoConsultar.aspx");
+                case "Administración Site|Productos|Explorador":
+                    Response.Redirect("~/ExploradorProducto.aspx");
                     break;
                 case "Administración Site|Explorador de Usuarios":
                     Response.Redirect("~/ExploradorUsuarios.aspx");
