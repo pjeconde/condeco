@@ -56,5 +56,5 @@
 </asp:GridView>
 
 <cc1:PagingGridView runat="server" SkinID="GrillaGuide"> 
-    <headerstyle horizontalalign="Center" BorderColor="Gray" wrap="false" ForeColor="Brown" />
+    <headerstyle horizontalalign="Center" BorderColor="green" wrap="false" ForeColor="Brown" />
 </cc1:PagingGridView>

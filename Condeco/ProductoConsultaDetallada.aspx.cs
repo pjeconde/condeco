@@ -21,7 +21,7 @@ namespace Condeco
                 switch (a)
                 {
                     case "Id":
-                        TituloPaginaLabel.Text = "Detail of Producto (Id." + Producto.Id.ToString() + ")";
+                        TituloPaginaLabel.Text = "Detalle del Producto (Id." + Producto.Id.ToString() + ")";
                         break;
                 }
 
@@ -105,7 +105,7 @@ namespace Condeco
         {
             if (Funciones.SessionTimeOut(Session))
             {
-                MensajeLabel.Text = "Please login.<br/><br/>";
+                MensajeLabel.Text = "Por favor hacer el login.<br/><br/>";
                 UpdatePanel2.Update();
                 //ClientScript.RegisterStartupScript(GetType(), "Message", "<SCRIPT LANGUAGE='javascript'>alert('Please login.\\n');</script>");
             }
@@ -129,7 +129,7 @@ namespace Condeco
 
                     if (CondecoRN.Comentario.ComprobarComentario(comentario.NombreEntidad, comentario.IdEntidad, comentario.Contenido, sesion))
                     {
-                        MensajeLabel.Text = "There is already a similar comment, change the comment.<br/><br/>";
+                        MensajeLabel.Text = "Hay un comentario similar, cambie el mismo.<br/><br/>";
                         //ClientScript.RegisterStartupScript(GetType(), "Message", "<SCRIPT LANGUAGE='javascript'>alert('There is already a similar comment, change the comment.');</script>");
                     }
                     else
@@ -138,7 +138,7 @@ namespace Condeco
                         AceptarButton.Enabled = false;
 
                         Funciones.PersonalizarControlesMaster(Master, true, sesion);
-                        MensajeLabel.Text = "The comment was successfully accepted.<br/><br/>";
+                        MensajeLabel.Text = "El comentario fue ingresado satisfactoriamente.<br/><br/>";
                         //Refrescar yendo a la base de datos.
                         List<CondecoEntidades.Comentario> c = CondecoRN.Comentario.Lista("Producto", comentario.IdEntidad.ToString(), "", sesion);
                         ViewState["lista"] = c;
@@ -162,7 +162,7 @@ namespace Condeco
         {
             if (Funciones.SessionTimeOut(Session))
             {
-                MensajeLabel.Text = "Please login.<br/><br/>";
+                MensajeLabel.Text = "Por favor hacer el login.<br/><br/>";
                 UpdatePanel2.Update();
             }
             else
@@ -179,7 +179,7 @@ namespace Condeco
                     });
                     //Grabar ManoOk (una sola vez por usuario, por entidad)
                     CondecoRN.Comentario.GuardarComentarioEstadistica(comentario.NombreEntidad, comentario.IdEntidad, comentario.Id, comentario.IdReplica, "ManoOk", (CondecoEntidades.Sesion)Session["Sesion"]);
-                    MensajeLabel.Text = "Successfully registered vote.<br/><br/>";
+                    MensajeLabel.Text = "Voto registrado satisfactoriamente.<br/><br/>";
                     //Refrescar sin ir a base de datos
                     comentario.ManoOk += 1;
                     ComentarioListView.DataSource = lista;
@@ -188,9 +188,9 @@ namespace Condeco
                 catch (Exception ex)
                 {
                     MensajeLabel.Text = CondecoEX.Funciones.Detalle(ex);
-                    if (MensajeLabel.Text.IndexOf("PK_Table_ComentarioEstadistica") != -1)
+                    if (MensajeLabel.Text.IndexOf("PK_ComentarioEstadistica") != -1)
                     {
-                        MensajeLabel.Text = "You can not vote twice.<br/><br/>";
+                        MensajeLabel.Text = "Usted no puede votar dos veces.<br/><br/>";
                     }
                 }
                 finally
@@ -204,7 +204,7 @@ namespace Condeco
         {
             if (Funciones.SessionTimeOut(Session))
             {
-                MensajeLabel.Text = "Please login.<br/><br/>";
+                MensajeLabel.Text = "Por favor hacer el login.<br/><br/>";
                 UpdatePanel2.Update();
             }
             else
@@ -221,7 +221,7 @@ namespace Condeco
                     });
                     //Grabar ManoNoOk (una sola vez por usuario, por entidad)
                     CondecoRN.Comentario.GuardarComentarioEstadistica(comentario.NombreEntidad, comentario.IdEntidad, comentario.Id, comentario.IdReplica, "ManoNoOk", (CondecoEntidades.Sesion)Session["Sesion"]);
-                    MensajeLabel.Text = "Successfully registered vote.<br/><br/>";
+                    MensajeLabel.Text = "Voto registrado satisfactoriamente.<br/><br/>";
                     //Refrescar sin ir a base de datos
                     comentario.ManoNoOk += 1;
                     ComentarioListView.DataSource = lista;
@@ -230,9 +230,9 @@ namespace Condeco
                 catch (Exception ex)
                 {
                     MensajeLabel.Text = CondecoEX.Funciones.Detalle(ex);
-                    if (MensajeLabel.Text.IndexOf("PK_Table_ComentarioEstadistica") != -1)
+                    if (MensajeLabel.Text.IndexOf("PK_ComentarioEstadistica") != -1)
                     {
-                        MensajeLabel.Text = "You can not vote twice.<br/><br/>";
+                        MensajeLabel.Text = "Usted no puede votar dos veces.<br/><br/>";
                     }
                 }
                 finally
@@ -246,7 +246,7 @@ namespace Condeco
         {
             if (Funciones.SessionTimeOut(Session))
             {
-                MensajeLabel.Text = "Please login.<br/><br/>";
+                MensajeLabel.Text = "Por favor hacer el login.<br/><br/>";
                 UpdatePanel2.Update();
             }
             else
@@ -263,7 +263,7 @@ namespace Condeco
                     });
                     //Grabar AbusoContenido (una sola vez por usuario, por entidad.)
                     CondecoRN.Comentario.GuardarComentarioEstadistica(comentario.NombreEntidad, comentario.IdEntidad, comentario.Id, comentario.IdReplica, "AbusoContenido", (CondecoEntidades.Sesion)Session["Sesion"]);
-                    MensajeLabel.Text = "Successfully registered vote.<br/><br/>";
+                    MensajeLabel.Text = "Voto registrado satisfactoriamente.<br/><br/>";
                     //Refrescar sin ir a base de datos
                     comentario.AbusoContenido += 1;
                     ComentarioListView.DataSource = lista;
@@ -272,9 +272,9 @@ namespace Condeco
                 catch (Exception ex)
                 {
                     MensajeLabel.Text = CondecoEX.Funciones.Detalle(ex);
-                    if (MensajeLabel.Text.IndexOf("PK_Table_ComentarioEstadistica") != -1)
+                    if (MensajeLabel.Text.IndexOf("PK_ComentarioEstadistica") != -1)
                     {
-                        MensajeLabel.Text = "You can not vote twice.<br/><br/>";
+                        MensajeLabel.Text = "Usted no puede votar dos veces.<br/><br/>";
                     }
                 }
                 finally
@@ -288,7 +288,7 @@ namespace Condeco
         {
             if (Funciones.SessionTimeOut(Session))
             {
-                MensajeLabel.Text = "Please login.<br/><br/>";
+                MensajeLabel.Text = "Por favor hacer el login.<br/><br/>";
                 UpdatePanel2.Update();
             }
             else
@@ -311,9 +311,9 @@ namespace Condeco
                 catch (Exception ex)
                 {
                     MensajeLabel.Text = CondecoEX.Funciones.Detalle(ex);
-                    if (MensajeLabel.Text.IndexOf("PK_Table_ComentarioEstadistica") != -1)
+                    if (MensajeLabel.Text.IndexOf("PK_ComentarioEstadistica") != -1)
                     {
-                        MensajeLabel.Text = "You can not vote twice.<br/><br/>";
+                        MensajeLabel.Text = "Usted no puede votar dos veces.<br/><br/>";
                     }
                 }
                 finally
@@ -327,7 +327,7 @@ namespace Condeco
         {
             if (Funciones.SessionTimeOut(Session))
             {
-                MensajeLabel.Text = "Please login.<br/><br/>";
+                MensajeLabel.Text = "Por favor hacer el login.<br/><br/>";
                 UpdatePanel2.Update();
             }
             else
@@ -353,13 +353,13 @@ namespace Condeco
 
                     if (CondecoRN.Comentario.ComprobarComentario(comentario.NombreEntidad, comentario.IdEntidad, comentario.Contenido, sesion))
                     {
-                        MensajeLabel.Text = "There is already a similar comment, change the comment.<br/><br/>";
+                        MensajeLabel.Text = "Hay un comentario similar, cambie el mismo.<br/><br/>";
                     }
                     else
                     {
                         //Grabar replica de comentario (una sola vez por usuario, por entidad.)
                         int NroReplica = CondecoRN.Comentario.Replicar(comentario, sesion);
-                        MensajeLabel.Text = "Successfully registered answer comment.<br/><br/>";
+                        MensajeLabel.Text = "La respuesta al comentario fue ingresado satisfactoriamente.<br/><br/>";
                         //Refrescar yendo a la base de datos.
                         List<CondecoEntidades.Comentario> c = CondecoRN.Comentario.Lista("Producto", comentario.IdEntidad.ToString(), "", sesion);
                         ViewState["lista"] = c;
@@ -414,7 +414,7 @@ namespace Condeco
             }
             else
             {
-                return "***** inappropriate comment *****<br/>deleted by admin";
+                return "***** commentario inapropiado *****<br/>eliminado por el administrador";
             }
         }
 

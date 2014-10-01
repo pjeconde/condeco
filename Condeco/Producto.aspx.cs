@@ -163,7 +163,7 @@ namespace Condeco
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Attributes["onmouseover"] = "this.style.cursor='hand';this.style.textDecoration='underline';";
+                e.Row.Attributes["onmouseover"] = "this.style.cursor='hand';";
                 e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                 //e.Row.Attributes["onclick"] = ClientScript.GetPostBackClientHyperlink(this.ProductoPagingGridView, "Select$" + e.Row.RowIndex);
             }
@@ -177,7 +177,7 @@ namespace Condeco
         {
             switch (e.CommandName)
             {
-                case "Detail":
+                case "Detalle":
                     int item = Convert.ToInt32(e.CommandArgument);
                     List<CondecoEntidades.Producto> lista = (List<CondecoEntidades.Producto>)ViewState["lista"];
                     CondecoEntidades.Producto Producto = lista[item];

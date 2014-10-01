@@ -116,100 +116,25 @@
                             <asp:Label ID="DescripcionLabel" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
-                    <!-- Dirección -->
-                    <tr>
-                        <td align="left" colspan="2" style="padding-right: 5px; padding-top: 12px; vertical-align: top">
-                            <asp:Label ID="Label1" runat="server" Text="Address" SkinID="TituloColor1Grande"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-top: 2px;">
-                            <!-- Dirección -->
-                            <asp:Label ID="DireccionLabel" runat="server"></asp:Label>
-                            <!-- Código postal -->
-                            Cod.Post:
-                            <asp:Label ID="CodPostLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-top: 2px;">
-                            <!-- Pais -->
-                            <asp:Label ID="PaisLabel" runat="server"></asp:Label>
-                            <!-- Provincia -->
-                            <asp:Label ID="ProvinciaLabel" runat="server"></asp:Label>
-                            <!-- Ciudad o Localidad -->
-                            <asp:Label ID="LocalidadLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-top: 2px;">
-                            <!-- Telefono -->
-                            Tel:
-                            <asp:Label ID="TelefonoLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <!-- Contacto -->
-                    <tr>
-                        <td align="left" colspan="2" style="padding-right: 5px; padding-top: 12px; vertical-align: top">
-                            <asp:Label ID="Label5" runat="server" Text="Contact" SkinID="TituloColor1Grande"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-top: 2px;">
-                            <!-- Nombre contacto -->
-                            <asp:Label ID="NombreContactoLabel" runat="server"></asp:Label>
-                            <!-- Mail Contacto -->
-                            <asp:Label ID="EmailContactoLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-top: 2px;">
-                            <!-- Teléfono contacto -->
-                            Tel:
-                            <asp:Label ID="TelefonoContactoLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <!-- Detalles -->
                     <tr>
                         <td align="left" colspan="2" style="padding-right: 5px; padding-top: 5px">
-                            Ticket:
+                            Precio:
                             <asp:Label ID="PrecioBaseLabel" runat="server"></asp:Label>
                         </td>
                     </tr>
-                    <%if (TipoPisoLabel.Text != "")
-                      {%>
                     <tr>
-                        <td align="left" colspan="2" style="padding-top: 5px">
-                            Type of Floor:
-                            <asp:Label ID="TipoPisoLabel" runat="server"></asp:Label>
+                        <td align="left" colspan="2" style="padding-right: 5px; padding-top: 5px">
+                            Comentario:
+                            <asp:Label ID="ComentarioPrecioBaseLabel" runat="server"></asp:Label>
                         </td>
                     </tr>
-                    <%} %>
                     <tr>
                         <td align="left" colspan="2" style="padding-top: 5px">
                             Tipo de Producto:
                             <asp:Label ID="TipoProductoLabel" runat="server"></asp:Label>
                         </td>
                     </tr>
-                    <%if (ComentarioPrecioBaseLabel.Text != "")
-                      {%>
-                    <tr>
-                        <td align="left" style="padding-top: 5px" valign="top">
-                            Información adicional:
-                            <asp:Label ID="ComentarioPrecioBaseLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <%} %>
                     <!-- Info.Web -->
-                    <%if (WebSiteLabel.Text != "")
-                      {%>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-top: 5px" valign="top">
-                            Web Site:
-                            <asp:Label ID="WebSiteLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <%} %>
                     <%if (YouTubeLabel.Text != "")
                       {%>
                     <tr>
@@ -293,7 +218,7 @@
         </tr>
         <tr>
             <td align="left" colspan="2" style="padding-top:20px">
-                <asp:Button ID="SalirButton" runat="server" CausesValidation="false" TabIndex="504" Text="Exit" PostBackUrl="~/Home.aspx" />
+                <asp:Button ID="SalirButton" runat="server" CausesValidation="false" TabIndex="504" Text="Salir" PostBackUrl="~/Default.aspx" />
                 <input type="button" value="Go back" name="Volver" onclick="history.back()" />
             </td>
         </tr>
@@ -672,7 +597,7 @@
         </table>
     </asp:Panel>
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="HeadContent">
+<asp:Content ID="Content2" runat="server" contentplaceholderid="HeadCPH">
     <style type="text/css">
         .style2
         {

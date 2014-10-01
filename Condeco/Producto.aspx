@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Producto.aspx.cs" Inherits="Condeco.Producto" Culture="en-GB" UICulture="en-GB" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Producto.aspx.cs" Inherits="Condeco.Producto" Theme="Condeco" Culture="en-GB" UICulture="en-GB" %>
 
 <%@ Register Assembly="CondecoWebForm" Namespace="CondecoWebForm" TagPrefix="cc1" %>
 
@@ -116,55 +116,31 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Panel ID="Panel1" runat="server" BackColor="black" BorderColor="black" BorderStyle="Solid"
-                                    BorderWidth="1px" ScrollBars="Auto" Width="800px" BackImageUrl="">
+                                <asp:Panel ID="Panel1" runat="server" BackColor="white" BorderColor="white" BorderStyle="Solid"
+                                    BorderWidth="0px" ScrollBars="Auto" Width="800px" BackImageUrl="">
                                     <cc1:PagingGridView ID="ProductoPagingGridView" runat="server" OnPageIndexChanging="ProductoPagingGridView_PageIndexChanging"
                                         OnRowDataBound="ProductoPagingGridView_RowDataBound" FooterStyle-ForeColor="Brown"
                                         OnSorting="ProductoPagingGridView_Sorting" AllowPaging="True" AllowSorting="True"
                                         PageSize="5" AutoGenerateColumns="false" SkinID="GrillaGuide" OnRowCommand="ProductoPagingGridView_RowCommand"
                                         OnSelectedIndexChanged="ProductoPagingGridView_SelectedIndexChanged" OnSelectedIndexChanging="ProductoPagingGridView_SelectedIndexChanging"
-                                        BackColor="#333333">
+                                        BackColor="white">
                                         <Columns>
                                             <asp:TemplateField ItemStyle-VerticalAlign="Top">
-                                                <HeaderStyle Wrap="False" BorderColor="White" ForeColor="#333333" BackColor="#DBDBDB" />
+                                                <HeaderStyle Wrap="False" ForeColor="#333333" BackColor="white"  />
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="Ver" runat="server" CausesValidation="false" CommandName="Detail"
+                                                    <asp:LinkButton ID="Ver" runat="server" CausesValidation="false" CommandName="Detalle"
                                                         CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip='<%# String.Format("{0}{1}", "Row ", ((GridViewRow) Container).RowIndex + 1)%>'
-                                                        Text="Detail" BackColor="#AAAAAA" ForeColor="#333333" Width="50px" Font-Bold="False"
+                                                        Text="Detail" BackColor="white" ForeColor="gray" Width="50px" Font-Bold="False"
                                                         CssClass="TextoCenter" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="Nombre" HeaderText="Name" SortExpression="Nombre" HeaderStyle-Width="200px">
-                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" ForeColor="#333333" BorderColor="White"
-                                                    BackColor="#DBDBDB" />
+                                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" HeaderStyle-Width="200px">
+                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" ForeColor="gray" BackColor="white" />
+                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="false"/>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion">
+                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" Width="100%"  ForeColor="gray" BackColor="white" />
                                                 <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
-                                            </asp:BoundField>
-                                            <asp:BoundField DataField="Descripcion" HeaderText="Description" SortExpression="Descripcion"
-                                                HeaderStyle-Width="250px">
-                                                <HeaderStyle Wrap="False" BorderColor="White" />
-                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" ForeColor="#333333" BorderColor="White"
-                                                    BackColor="#DBDBDB" />
-                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
-                                            </asp:BoundField>
-                                            <asp:BoundField DataField="Pais" HeaderText="Country" SortExpression="Pais" HeaderStyle-Width="120px">
-                                                <HeaderStyle Wrap="False" BorderColor="White" />
-                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" ForeColor="#333333" BorderColor="White"
-                                                    BackColor="#DBDBDB" />
-                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True" />
-                                            </asp:BoundField>
-                                            <asp:BoundField DataField="Provincia" HeaderText="State" SortExpression="Provincia"
-                                                HeaderStyle-Width="150px">
-                                                <HeaderStyle Wrap="False" BorderColor="White" />
-                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" ForeColor="#333333" BorderColor="White"
-                                                    BackColor="#DBDBDB" />
-                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True" />
-                                            </asp:BoundField>
-                                            <asp:BoundField DataField="Localidad" HeaderText="City" SortExpression="Localidad"
-                                                HeaderStyle-Width="150px">
-                                                <HeaderStyle Wrap="False" BorderColor="White" />
-                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" ForeColor="#333333" BorderColor="White"
-                                                    BackColor="#DBDBDB" />
-                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True" />
                                             </asp:BoundField>
                                         </Columns>
                                         <PagerSettings Mode="NumericFirstLast" />
@@ -178,7 +154,7 @@
         </tr>
         <tr>
             <td valign="top" style="padding-left: 10px;">
-                <asp:Panel ID="PanelListView" runat="server" BackColor="Black">
+                <asp:Panel ID="PanelListView" runat="server" BackColor="White">
                     <table border="0" cellpadding="0" cellspacing="0" style="width: 800px; vertical-align: top">
                         <tr>
                             <td style="padding-top: 10px; padding-bottom: 10px">
@@ -241,42 +217,10 @@
                                                             </tr>
                                                             <tr>
                                                                 <td class="TituloMediano" style="vertical-align: top; width: 80px">
-                                                                    Address:
+                                                                    YouTube:
                                                                 </td>
                                                                 <td align="left" style="vertical-align: top">
-                                                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("Direccion") %>' />
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="TituloMediano" style="vertical-align: top">
-                                                                    Telephones:
-                                                                </td>
-                                                                <td align="left" style="vertical-align: top">
-                                                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("Telefono") %>' />
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="TituloMediano" style="vertical-align: top">
-                                                                    Country:
-                                                                </td>
-                                                                <td colspan="2" style="vertical-align: top">
-                                                                    <asp:Label ID="PaisLabel" runat="server" Text='<%# Eval("Pais") %>' />
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="TituloMediano" style="vertical-align: top">
-                                                                    State:
-                                                                </td>
-                                                                <td colspan="2" style="vertical-align: top">
-                                                                    <asp:Label ID="ProvinciaLabel" runat="server" Text='<%# Eval("Provincia") %>' />
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="TituloMediano" style="vertical-align: top">
-                                                                    City:
-                                                                </td>
-                                                                <td colspan="2" style="vertical-align: top">
-                                                                    <asp:Label ID="LocalidadLabel" runat="server" Text='<%# Eval("Localidad") %>' />
+                                                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("YouTube") %>' />
                                                                 </td>
                                                             </tr>
                                                         </table>
