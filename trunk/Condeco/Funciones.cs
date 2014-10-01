@@ -110,7 +110,7 @@ namespace Condeco
                 miProductos.ChildItems.Add(mItem);
 
                 miProductos.ChildItems[0].Selectable = false;
-                mItem = new MenuItem("Consultar", "Consultar");
+                mItem = new MenuItem("Explorador", "Explorador");
                 miProductos.ChildItems.Add(mItem);
                 miProductos.ChildItems[0].Selectable = false;
 
@@ -225,6 +225,25 @@ namespace Condeco
                 );
                 //.AppendChild(new ASTreeViewLinkNode("<font style='color:blue;font-weight:bold;font-style:italic;' isTreeNodeChild='true'>Novedades</font>", "Novedades", "", "frm", "", "~/Imagenes/Iconos/Punto.jpg")
                 //);
+        }
+        public static string GenerarListaTipoProductos(ASTreeView astvMyTree)
+        {
+            List<ASTreeViewNode> checkedNodes = astvMyTree.GetCheckedNodes(false);
+
+            string listaTipoProducto = "";
+            foreach (ASTreeViewNode node in checkedNodes)
+            {
+                //Nodos seleccionados
+                if (listaTipoProducto == "")
+                {
+                    listaTipoProducto += node.NodeValue;        //"[" + node.NodeText + "-" + node.NodeValue + "]";
+                }
+                else
+                {
+                    listaTipoProducto += ", " + node.NodeValue;
+                }
+            }
+            return listaTipoProducto;
         }
     }
 }

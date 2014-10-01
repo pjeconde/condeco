@@ -60,6 +60,7 @@
     <Content Include="About.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="Empresa.aspx" />
+    <Content Include="ExploradorProducto.aspx" />
     <Content Include="Flash\LogoCondeco.swf" />
     <Content Include="highslide\graphics\close.png" />
     <Content Include="highslide\graphics\closeX.png" />
@@ -203,8 +204,11 @@
     <Content Include="ProductoCrear.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="Novedades.aspx" />
+    <Content Include="ProductoModificar.aspx" />
+    <Content Include="ProductoSeleccionar.aspx" />
     <Content Include="Promociones.aspx" />
     <Content Include="Scripts\expressInstall.swf" />
+    <Content Include="SessionTimeout.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -253,6 +257,13 @@
     <Compile Include="Empresa.aspx.designer.cs">
       <DependentUpon>Empresa.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ExploradorProducto.aspx.cs">
+      <DependentUpon>ExploradorProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExploradorProducto.aspx.designer.cs">
+      <DependentUpon>ExploradorProducto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Funciones.cs" />
     <Compile Include="ProductoConsultaDetallada.aspx.cs">
       <DependentUpon>ProductoConsultaDetallada.aspx</DependentUpon>
@@ -292,6 +303,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ProductoModificar.aspx.cs">
+      <DependentUpon>ProductoModificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductoModificar.aspx.designer.cs">
+      <DependentUpon>ProductoModificar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoSeleccionar.aspx.cs">
+      <DependentUpon>ProductoSeleccionar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductoSeleccionar.aspx.designer.cs">
+      <DependentUpon>ProductoSeleccionar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Promociones.aspx.cs">
       <DependentUpon>Promociones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -300,6 +325,13 @@
       <DependentUpon>Promociones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionTimeout.aspx.cs">
+      <DependentUpon>SessionTimeout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SessionTimeout.aspx.designer.cs">
+      <DependentUpon>SessionTimeout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

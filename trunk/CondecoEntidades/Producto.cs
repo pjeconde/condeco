@@ -11,7 +11,7 @@ namespace CondecoEntidades
         private int id;
         private string nombre;
         private string descripcion;
-        //private string moneda;
+        private string idMoneda;
         private decimal precioBase;
         private string comentarioPrecioBase;
         private WF wF;
@@ -25,6 +25,7 @@ namespace CondecoEntidades
         public Producto()
         {
             wF = new WF();
+            TipoProducto = new TipoProducto();
         }
 
         public int Id
@@ -58,6 +59,17 @@ namespace CondecoEntidades
             get
             {
                 return descripcion;
+            }
+        }
+        public string IdMoneda
+        {
+            set
+            {
+                idMoneda = value;
+            }
+            get
+            {
+                return idMoneda;
             }
         }
         public decimal PrecioBase

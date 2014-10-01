@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductoCrear.aspx.cs" Inherits="Condeco.ProductoCrear" Theme="Condeco" Culture="en-GB" UICulture="en-GB" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductoModificar.aspx.cs" Inherits="Condeco.ProductoModificar" Theme="Condeco" Culture="en-GB" UICulture="en-GB" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
 <%@ Register Assembly="ASTreeView" Namespace="Geekees.Common.Controls" TagPrefix="ct" %>
 
@@ -20,13 +20,32 @@
                     <tr>
                         <td>
                             <h2>
-                                Alta de Producto
+                                Modificación de Producto
                             </h2>
                             <p>
                             </p>
                         </td>
                     </tr>
                 </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table  class="ppaltable" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <b>Id. <asp:Label ID="IdProductoLabel" runat="server"></asp:Label></b>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td align="right" style="padding-left: 10px">
+                <asp:Label ID="EstadoActualLabel" runat="server" SkinID="IndicadorValidacion"></asp:Label>        
+            </td>      
+        </tr>
+        <tr>
+            <td colspan="2">
+                 <hr noshade="noshade" size="1" color="#cccccc" />
             </td>
         </tr>
         <tr>
@@ -80,12 +99,12 @@
             <td align="right" style="padding-right: 5px; padding-top:5px">
             </td>
             <td align="left" style="padding-top:5px" valign="top">
-                &nbsp;(example: https://www.youtube.com/Condeco)
+                &nbsp;(example: http://www.youtube.com/watch?v=S5qNnmaTDXM)
             </td>
         </tr>
         <tr>
             <td align="right" style="padding-right: 5px; padding-top:5px">
-                <asp:Label ID="Label13" runat="server" Text="YouTube dirección"></asp:Label>
+                <asp:Label ID="Label14" runat="server" Text="YouTube Dirección"></asp:Label>
             </td>
             <td align="left" style="padding-top:5px" valign="top">
                 <asp:TextBox ID="YouTubeTextBox" runat="server" MaxLength="60" TabIndex="502"
@@ -97,7 +116,8 @@
                 <asp:Label ID="Label15" runat="server" Text="Tipo de Producto"></asp:Label>
             </td>
             <td align="left" style="padding-top: 5px">
-                <div>
+                <asp:Panel ID="TipoProductoPanel" runat="server">
+                <div id="TipoProductoDiv" runat="server">
 		            <ct:ASTreeView ID="astvMyTree" 
 				        runat="server"
 				        BasePath="~/Javascript/astreeview/"
@@ -118,6 +138,7 @@
 				        EnableMultiLineEdit="false"
 				        EnableEscapeInput="false" />
                 </div>
+                </asp:Panel>
             </td>
         </tr>
         <tr>
