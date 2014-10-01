@@ -101,6 +101,7 @@
     <Content Include="highslide\highslide.js" />
     <Content Include="highslide\highslide.min.js" />
     <Content Include="highslide\highslide.packed.js" />
+    <Content Include="ImagenesProducto\Portada\PortadaGral.jpg" />
     <Content Include="Imagenes\Estrella.jpg" />
     <Content Include="Imagenes\Facebook.gif" />
     <Content Include="Imagenes\Iconos\AbusoSimple.jpg" />
@@ -206,6 +207,7 @@
     <Content Include="Novedades.aspx" />
     <Content Include="ProductoModificar.aspx" />
     <Content Include="ProductoSeleccionar.aspx" />
+    <Content Include="ProductoImagenes.aspx" />
     <Content Include="Promociones.aspx" />
     <Content Include="Scripts\expressInstall.swf" />
     <Content Include="SessionTimeout.aspx" />
@@ -317,6 +319,13 @@
     <Compile Include="ProductoSeleccionar.aspx.designer.cs">
       <DependentUpon>ProductoSeleccionar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ProductoImagenes.aspx.cs">
+      <DependentUpon>ProductoImagenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductoImagenes.aspx.designer.cs">
+      <DependentUpon>ProductoImagenes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Promociones.aspx.cs">
       <DependentUpon>Promociones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -391,7 +400,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ImagenesProducto\Portada\" />
+    <Folder Include="ImagenesProducto\Temp\" />
     <Folder Include="ImagenesSubidas\" />
   </ItemGroup>
   <ItemGroup>

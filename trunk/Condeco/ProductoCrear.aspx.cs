@@ -64,7 +64,7 @@ namespace Condeco
                     Producto.ComentarioPrecioBase = ComentarioPrecioBaseTextBox.Text;
                     Producto.YouTube = YouTubeTextBox.Text;
                     Producto.IdMoneda = "$";
-                    string listaTipoProductos = Funciones.GenerarListaTipoProductos(astvMyTree);
+                    string listaTipoProductos = Funciones.TreeViewLista(astvMyTree);
                     if (listaTipoProductos != "")
                     {
                         Producto.TipoProducto.Id = Convert.ToInt32(listaTipoProductos);

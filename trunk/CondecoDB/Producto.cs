@@ -14,7 +14,7 @@ namespace CondecoDB
         public void Leer(CondecoEntidades.Producto Producto)
         {
             StringBuilder a = new StringBuilder(string.Empty);
-            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.IdMoneda, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado ");
+            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.IdMoneda, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
             a.Append("from Producto ");
             a.Append("where Producto.IdProducto = " + Producto.Id + " ");
             DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
@@ -142,7 +142,7 @@ namespace CondecoDB
                 if (sesion.Usuario.Id != null)
                 {
                     StringBuilder a = new StringBuilder(string.Empty);
-                    a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.IdMoneda, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado ");
+                    a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.IdMoneda, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
                     a.Append("from Producto where Nombre like '%" + Nombre + "%'");
                     DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
                     if (dt.Rows.Count != 0)
@@ -162,7 +162,7 @@ namespace CondecoDB
         {
             List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
             StringBuilder a = new StringBuilder(string.Empty);
-            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.IdMoneda, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado ");
+            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.IdMoneda, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
             a.Append("from Producto where 1=1 ");
             if (!Nombre.Equals(string.Empty))
             {
@@ -216,12 +216,12 @@ namespace CondecoDB
                 a.Append("Insert #Producto" + SessionID + " values (" + Producto.Id + ", '");
                 a.Append(Producto.Nombre + "', '");
                 a.Append(Producto.Descripcion + "', '");
-                a.Append(Producto.IdMoneda + "', '");
+                a.Append(Producto.IdMoneda + "', ");
                 a.Append(Convert.ToDouble(Producto.PrecioBase) + ", '");
-                a.Append(Producto.ComentarioPrecioBase + "', '");
+                a.Append(Producto.ComentarioPrecioBase + "', ");
                 a.Append(Producto.WF.Id + ", '");
-                a.Append(Producto.Estado + "', '");
-                a.Append(Producto.IdTipoProducto + ", '");
+                a.Append(Producto.Estado + "', ");
+                a.Append(Producto.IdTipoProducto + ", ");
                 a.Append(Producto.Ranking + ", '");
                 a.Append(Producto.TipoDestacado + "',' ");
                 a.Append(Producto.YouTube + "') ");

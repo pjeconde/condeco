@@ -210,6 +210,12 @@ namespace Condeco
             //n.AdditionalAttributes.Add( new KeyValuePair<string, string>( "onclick", "alert(1);return false;" ) );
             //n.AdditionalAttributes.Add( new KeyValuePair<string, string>( "disableChildren1", "true" ) );
 
+            ASTreeViewLinkNode n2 = new ASTreeViewLinkNode("Bancos..", "500", "", "frm", "", "");
+            //n.NodeText = "";
+            n2.EnableCheckbox = false;
+            n2.EnableChildren = false;
+            n2.EnableEditContextMenu = false;
+
             astvMyTree.RootNode
                 .AppendChild(new ASTreeViewLinkNode("Marcos", "100", "", "frm", "madera maciza", "")
                     .AppendChild(new ASTreeViewLinkNode("Madera Pinotea", "Madera Pinotea", "", "frm", "madera maciza", ""))
@@ -220,30 +226,42 @@ namespace Condeco
                 .AppendChild(new ASTreeViewLinkNode("Carteles", "300", "", "frm", "", ""))
                 .AppendChild(new ASTreeViewLinkNode("Mesas", "400", "", "frm", "", "")
                     .AppendChild(n))
-                .AppendChild(new ASTreeViewLinkNode("Bancos", "500", "", "frm", "", "")
+                .AppendChild((n2)
                     .AppendChild(new ASTreeViewLinkNode("Bancos Rústicos", "501", "", "frm", "En maderas recicladas", ""))
                 );
                 //.AppendChild(new ASTreeViewLinkNode("<font style='color:blue;font-weight:bold;font-style:italic;' isTreeNodeChild='true'>Novedades</font>", "Novedades", "", "frm", "", "~/Imagenes/Iconos/Punto.jpg")
                 //);
         }
-        public static string GenerarListaTipoProductos(ASTreeView astvMyTree)
+        public static string TreeViewLista(ASTreeView astvMyTree)
         {
             List<ASTreeViewNode> checkedNodes = astvMyTree.GetCheckedNodes(false);
 
-            string listaTipoProducto = "";
+            string lista = "";
             foreach (ASTreeViewNode node in checkedNodes)
             {
                 //Nodos seleccionados
-                if (listaTipoProducto == "")
+                if (lista == "")
                 {
-                    listaTipoProducto += node.NodeValue;        //"[" + node.NodeText + "-" + node.NodeValue + "]";
+                    lista += node.NodeValue;        //"[" + node.NodeText + "-" + node.NodeValue + "]";
                 }
                 else
                 {
-                    listaTipoProducto += ", " + node.NodeValue;
+                    lista += ", " + node.NodeValue;
                 }
             }
-            return listaTipoProducto;
+            return lista;
         }
+        //public static string TreeViewSelected(ASTreeView astvMyTree, string Valor)
+        //{
+        //    List<ASTreeViewNode> checkedNodes = astvMyTree.GetCheckedNodes(false);
+            
+        //    ASTreeViewNode n = astvMyTree.FindByValue(Valor);
+        //    string resp = "";
+        //    if (n != null)
+        //    {
+        //        n.NodeValue;
+        //    }
+        //    return resp;
+        //}
     }
 }
