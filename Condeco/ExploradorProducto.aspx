@@ -13,11 +13,11 @@
         </tr>
         <tr>
             <td align="left" style="padding-right:5px; padding-top:5px">
-                <asp:RadioButton ID="IdProductoRadioButton" runat="server" AutoPostBack="true" Text="Id.Profesor" GroupName="TipoBusqueda" oncheckedchanged="TipoBusquedaRadioButton_CheckedChanged" TabIndex="1"/>
+                <asp:RadioButton ID="IdProductoRadioButton" runat="server" AutoPostBack="true" Text="Id.Producto" GroupName="TipoBusqueda" oncheckedchanged="TipoBusquedaRadioButton_CheckedChanged" TabIndex="1"/>
             </td>
             <td align="left" style="padding-top:5px">
                 <asp:TextBox ID="IdProductoTextBox" runat="server" MaxLength="50" TabIndex="7" Width="300px"></asp:TextBox>
-                <asp:RegularExpressionValidator id="reIdProductoTextBox" ControlToValidate="IdProductoTextBox" ValidationExpression="[0-9]*" ErrorMessage="Just numbers" Display="Dynamic" runat="server" SetFocusOnError="true" ForeColor="Red">*</asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator id="reIdProductoTextBox" ControlToValidate="IdProductoTextBox" ValidationExpression="[0-9]*" ErrorMessage="Solo números" Display="Dynamic" runat="server" SetFocusOnError="true" ForeColor="Red">*</asp:RegularExpressionValidator>
             </td>        
             <td>
             </td>
@@ -52,8 +52,8 @@
         </tr>
         <tr>
             <td colspan="3" style="padding-top:20px">
-                <asp:Panel ID="Panel1" runat="server" BackColor="black" BorderColor="black" BorderStyle="Solid"  
-                        BorderWidth="1px" ScrollBars="Auto" Width="800px" BackImageUrl="">
+                <asp:Panel ID="Panel1" runat="server" BackColor="white" BorderStyle="Solid"  
+                        ScrollBars="Auto" Width="800px" BackImageUrl="" BorderWidth="0px">
                         <cc1:PagingGridView ID="ProductosPagingGridView" runat="server" OnPageIndexChanging="ProductosPagingGridView_PageIndexChanging"
                             OnRowDataBound="ProductosPagingGridView_RowDataBound" FooterStyle-ForeColor="Brown" OnRowEditing="ProductosPagingGridView_RowEditing" OnRowCancelingEdit="ProductosPagingGridView_RowCancelingEdit"
                             OnRowUpdating="ProductosPagingGridView_RowUpdating" OnSorting="ProductosPagingGridView_Sorting" AllowPaging="True" AllowSorting="True" PageSize="5" 
@@ -62,33 +62,33 @@
                             DataKeyNames="TipoDestacado">
                             <Columns>
                                 <asp:TemplateField ItemStyle-VerticalAlign="Top">
-                                    <HeaderStyle Wrap="False" BorderColor="White" />
+                                    <HeaderStyle Wrap="False" />
                                     <ItemTemplate>
                                         <asp:LinkButton ID="Ver" runat="server" CausesValidation="false" CommandName="Detalle" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip="<%# ((GridViewRow) Container).RowIndex %>" Text="Detalle" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField ItemStyle-VerticalAlign="Top">
-                                    <HeaderStyle Wrap="False" BorderColor="White" />
+                                    <HeaderStyle Wrap="False" />
                                     <ItemTemplate>
                                         <asp:LinkButton Id="CambiarEstado" runat="server" CausesValidation="false" CommandName="CambiarEstado"  CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip="<%# ((GridViewRow) Container).RowIndex %>" Text="Cambiar estado" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" HeaderStyle-Width="200px" ReadOnly="true">
-                                    <HeaderStyle HorizontalAlign="Center" Wrap="false" ForeColor="Brown" BorderColor="White" />
+                                    <HeaderStyle HorizontalAlign="Center" Wrap="false" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="Descripcion" HeaderText="Descripción" SortExpression="Descripcion" ReadOnly="true" 
                                     HeaderStyle-Width="250px">
-                                    <HeaderStyle Wrap="False" BorderColor="White" />
+                                    <HeaderStyle Wrap="False" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" ReadOnly="true" 
                                     HeaderStyle-Width="100px">
-                                    <HeaderStyle Wrap="False" BorderColor="White" />
+                                    <HeaderStyle Wrap="False" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True" />
                                 </asp:BoundField>
                                 <asp:TemplateField HeaderText="Ranking" HeaderStyle-HorizontalAlign="Center" ControlStyle-Width="50px" ItemStyle-VerticalAlign="Top" FooterStyle-VerticalAlign="Top">
-                                    <HeaderStyle Wrap="False" BorderColor="White" Font-Bold="false" />
+                                    <HeaderStyle Wrap="False" Font-Bold="false" />
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtRanking" runat="server" Text='<%# Bind("Ranking") %>'
                                             MaxLength="2" Width="50px"></asp:TextBox>
@@ -100,7 +100,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Destacado" HeaderStyle-HorizontalAlign="Left" ItemStyle-VerticalAlign="Top"
                                     FooterStyle-VerticalAlign="Top">
-                                    <HeaderStyle Wrap="False" BorderColor="White" Font-Bold="false" />
+                                    <HeaderStyle Wrap="False" Font-Bold="false" />
                                     <EditItemTemplate>
                                         <asp:DropDownList ID="ddlTipoDestacado" runat="server" DataTextField="Descr" DataValueField="Id" Width="100px">
                                         </asp:DropDownList>
@@ -110,7 +110,7 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Edit" ShowHeader="False" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="100px" ItemStyle-VerticalAlign="Top" FooterStyle-VerticalAlign="Top">
-                                    <HeaderStyle Wrap="False" BorderColor="White" Font-Bold="false" />
+                                    <HeaderStyle Wrap="False" Font-Bold="false" />
                                     <EditItemTemplate>
                                         <asp:LinkButton ID="lnkUpdate" runat="server" CausesValidation="True" CommandName="Update" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"  
                                             Text="Update" OnClientClick="return confirm('Update?')" ValidationGroup="Update"></asp:LinkButton>

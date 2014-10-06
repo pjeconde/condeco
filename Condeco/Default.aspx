@@ -16,7 +16,13 @@
                     <br /> 
                     Principalmente trabajamos productos desarrollados en madera, con acabados en pintura poliuretánica de alta calidad.
                     <br />
-                    También realizamos producto tipo vintage o retro, con terminaciones manuales que hacen único al producto.
+                    También realizamos productos tipo vintage o retro, con terminaciones manuales que hacen único al producto.
+                </p>
+                <br />
+                <p>
+                    Realizamos todo tipo de reparación de pisos de madera, plastificado o hidrolaqueado de los mismos.<br />
+                    Contamos con personal altamente capacitado para realizar dicha tarea. <br />
+                    Si usted desea una hacer una consulta, cotización o presupuesto, haga <asp:HyperLink ID="HyperLink1" runat="server" Target="_self" NavigateUrl="~/Contacto.aspx">clic aqui</asp:HyperLink> y le contestaremos a la brevedad.
                 </p>
                 <p>
                 </p>

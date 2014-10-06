@@ -34,12 +34,9 @@ namespace Condeco
 
                     NombreTextBox.Focus();
                     EstadoDropDownList.DataSource = CondecoEntidades.Estados.ListaEstados.ListaMasSinInformar();
-                    Funciones.GenerarTreeTipoProductos(astvMyTree);
+                    Funciones.GenerarTreeTipoProductos(astvMyTree, false);
 
                     DataBind();
-                    //this.btnExpandAllClient.Attributes.Add("onclick", this.astvMyTree.GetExpandAllScript() + "return false;");
-                    //this.btnCollapseAllClient.Attributes.Add("onclick", this.astvMyTree.GetCollapseAllScript() + "return false;");
-                    //this.btnToggleExpandCollapseAllClient.Attributes.Add("onclick", this.astvMyTree.GetToggleExpandCollapseAllScript() + "return false;");
 
                     this.astvMyTree.ContextMenu.MenuItems.Add(new ASContextMenuItem("Custom Menu", "alert('current value:' + " + this.astvMyTree.ContextMenuClientID + ".getSelectedItem().parentNode.getAttribute('treeNodeValue')" + ");return false;", "text"));
                 }

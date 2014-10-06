@@ -5,7 +5,7 @@
 <%@ Register Assembly="ASTreeView" Namespace="Geekees.Common.Controls" TagPrefix="ct" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+    <table cellpadding="0" cellspacing="0" style="width: 100%; border-style: none;">
         <tr>
             <td>
                 <asp:Panel runat="server" ID="Buscador" DefaultButton="BuscarButton">
@@ -37,9 +37,9 @@
 				                    EnableRoot="false" 
 				                    EnableNodeSelection="false" 
 				                    EnableCheckbox="true" 
-				                    EnableDragDrop="true" 
+				                    EnableDragDrop="false" 
 				                    EnableTreeLines="true"
-				                    EnableNodeIcon="true"
+				                    EnableNodeIcon="false"
 				                    EnableCustomizedNodeIcon="true"
 				                    EnableContextMenu="true"
 				                    EnableDebugMode="false"
@@ -90,9 +90,9 @@
                                     <td align="left">
                                         &nbsp;</td>
                                     <td align="right">
-                                        <asp:RadioButton ID="Vista1RadioButton" runat="server" AutoPostBack="True" Checked="true"
+                                        <asp:RadioButton ID="Vista1RadioButton" runat="server" AutoPostBack="True"
                                             Text="View 1" GroupName="Vistas" OnCheckedChanged="VistaRadioButton_CheckedChanged" />&nbsp;&nbsp;&nbsp;
-                                        <asp:RadioButton ID="Vista2RadioButton" runat="server" AutoPostBack="True" Text="View 2"
+                                        <asp:RadioButton ID="Vista2RadioButton" runat="server" AutoPostBack="True" Text="View 2" Checked="true"
                                             GroupName="Vistas" OnCheckedChanged="VistaRadioButton_CheckedChanged" />
                                     </td>
                                 </tr>
@@ -111,7 +111,7 @@
                     <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; width: 800px;">
                         <tr>
                             <td style="padding-top: 0px; padding-bottom: 10px">
-                                <hr noshade="noshade" size="1" color="#cccccc" />
+                                <hr noshade="noshade" size="1" color="gray" />
                             </td>
                         </tr>
                         <tr>
@@ -120,27 +120,27 @@
                                     BorderWidth="0px" ScrollBars="Auto" Width="800px" BackImageUrl="">
                                     <cc1:PagingGridView ID="ProductoPagingGridView" runat="server" OnPageIndexChanging="ProductoPagingGridView_PageIndexChanging"
                                         OnRowDataBound="ProductoPagingGridView_RowDataBound" FooterStyle-ForeColor="Brown"
-                                        OnSorting="ProductoPagingGridView_Sorting" AllowPaging="True" AllowSorting="True"
+                                        OnSorting="ProductoPagingGridView_Sorting" AllowPaging="True" AllowSorting="True" 
                                         PageSize="5" AutoGenerateColumns="false" SkinID="GrillaGuide" OnRowCommand="ProductoPagingGridView_RowCommand"
                                         OnSelectedIndexChanged="ProductoPagingGridView_SelectedIndexChanged" OnSelectedIndexChanging="ProductoPagingGridView_SelectedIndexChanging"
-                                        BackColor="white">
+                                        BackColor="white" CssClass="TextDecorationNone">
                                         <Columns>
                                             <asp:TemplateField ItemStyle-VerticalAlign="Top">
-                                                <HeaderStyle Wrap="False" ForeColor="#333333" BackColor="white"  />
+                                                <HeaderStyle Wrap="False" BackColor="white"  />
                                                 <ItemTemplate>
                                                     <asp:LinkButton ID="Ver" runat="server" CausesValidation="false" CommandName="Detalle"
                                                         CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip='<%# String.Format("{0}{1}", "Row ", ((GridViewRow) Container).RowIndex + 1)%>'
-                                                        Text="Detail" BackColor="white" ForeColor="gray" Width="50px" Font-Bold="False"
+                                                        Text="Detalle"  BorderColor="Gray" ForeColor="Black" Width="50px" Font-Bold="False"
                                                         CssClass="TextoCenter" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" HeaderStyle-Width="200px">
-                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" ForeColor="gray" BackColor="white" />
-                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="false"/>
+                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" BackColor="white" CssClass="TextDecorationNone" />
+                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="false" CssClass="TextDecorationNone" BorderColor="Gray" ForeColor="Black"/>
                                             </asp:BoundField>
-                                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion">
-                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" Width="100%"  ForeColor="gray" BackColor="white" />
-                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
+                                            <asp:BoundField DataField="Descripcion" HeaderText="Descripción" SortExpression="Descripcion">
+                                                <HeaderStyle HorizontalAlign="Center" Wrap="false" Width="100%"  BackColor="white" />
+                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" CssClass="TextDecorationNone" BorderColor="Gray" ForeColor="Black" />
                                             </asp:BoundField>
                                         </Columns>
                                         <PagerSettings Mode="NumericFirstLast" />
@@ -157,8 +157,8 @@
                 <asp:Panel ID="PanelListView" runat="server" BackColor="White">
                     <table border="0" cellpadding="0" cellspacing="0" style="width: 800px; vertical-align: top">
                         <tr>
-                            <td style="padding-top: 10px; padding-bottom: 10px">
-                                <hr noshade="noshade" size="1" color="#cccccc" />
+                            <td style="padding-bottom: 10px; background-color:white">
+                                <hr noshade="noshade" size="1" color="gray" />
                             </td>
                         </tr>
                         <tr>
@@ -166,7 +166,7 @@
                                 <asp:ListView ID="ProductoListView" runat="server" OnPagePropertiesChanging="ProductoListView_PagePropertiesChanging"
                                     GroupItemCount="2">
                                     <LayoutTemplate>
-                                        <table>
+                                        <table border="0" cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td>
                                                     <table style="text-align: left; vertical-align: top">
@@ -183,10 +183,10 @@
                                     </GroupTemplate>
                                     <ItemTemplate>
                                         <td id="itemPlaceHolder" style="text-align: left; vertical-align: top;">
-                                            <table border="0" cellspacing="5px">
+                                            <table border="0" cellspacing="0px">
                                                 <tr>
                                                     <td style="width: 380px; vertical-align: top">
-                                                        <table border="0">
+                                                        <table border="0" cellpadding="0" cellspacing="0">
                                                             <tr>
                                                                 <td>
                                                                     <asp:Label ID="NombreLabel" runat="server" SkinID="TituloColor1Grande" Text='<%# Eval("Nombre") %>'
@@ -194,7 +194,7 @@
                                                                         Width="300px" />
                                                                 </td>
                                                                 <td style="padding-top: 5px">
-                                                                    <asp:Image ID="ImagenRecomendada" runat="server" ImageUrl='<%# Eval("TipoDestacado").ToString()=="02" ? "~/Imagenes/Estrella.jpg" : ""%>'
+                                                                    <asp:Image ID="ImagenRecomendada" runat="server" ImageUrl='<%# Eval("TipoDestacado").ToString()=="02" ? "~/Imagenes/Estrella.jpg" : "~/Imagenes/Iconos/PuntoW.jpg"%>'
                                                                         Width="25px" />
                                                                 </td>
                                                             </tr>
@@ -213,14 +213,6 @@
                                                                 <td colspan="2" style="vertical-align: top">
                                                                     <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion") %>'
                                                                         Width="280px" CssClass='<%# Eval("TipoDestacado").ToString()=="02" ? "myClass02" : "myClass"%>' />
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="TituloMediano" style="vertical-align: top; width: 80px">
-                                                                    YouTube:
-                                                                </td>
-                                                                <td align="left" style="vertical-align: top">
-                                                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("YouTube") %>' />
                                                                 </td>
                                                             </tr>
                                                         </table>

@@ -57,13 +57,13 @@
                     <tr>
                         <td align="left" style="padding-right: 5px">
                             <asp:Button ID="AgregarPortada" runat="server" TabIndex="3" Text="Agregar foto principal"
-                                ToolTip="" Width="132px"
+                                ToolTip="" Width="162px"
                                 OnClick="AgregarPortadaImagenButton_Click" />
                         </td>
                         <td>
-                            <asp:Button ID="AgregarButton" runat="server" TabIndex="3" Text="Agregar foto al catálogo de imagenes"
+                            <asp:Button ID="AgregarButton" runat="server" TabIndex="3" Text="Agregar foto al catálogo"
                                 ToolTip=""
-                                Width="150px" OnClick="AgregarImagenButton_Click" />
+                                Width="182px" OnClick="AgregarImagenButton_Click" />
                         </td>
                     </tr>
                 </table>

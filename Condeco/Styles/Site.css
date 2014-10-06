@@ -429,3 +429,9 @@ div.accountInfo
 {
 	text-align: center;
 }
+.TextDecorationNone
+{
+	text-decoration: none;
+	padding-left: 10px;
+	padding-right: 10px;
+}

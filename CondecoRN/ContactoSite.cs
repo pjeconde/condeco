@@ -12,13 +12,13 @@ namespace CondecoRN
         {
             if (ContactoSite.Motivo == String.Empty)
             {
-                throw new CondecoEX.Validaciones.ValorNoInfo("Subject");
+                throw new CondecoEX.Validaciones.ValorNoInfo("Asunto");
             }
             else
             {
                 if (ContactoSite.Nombre == String.Empty)
                 {
-                    throw new CondecoEX.Validaciones.ValorNoInfo("Name");
+                    throw new CondecoEX.Validaciones.ValorNoInfo("Nombre");
                 }
                 else
                 {
@@ -36,13 +36,13 @@ namespace CondecoRN
                         {
                             if (ContactoSite.Mensaje == String.Empty)
                             {
-                                throw new CondecoEX.Validaciones.ValorNoInfo("Message");
+                                throw new CondecoEX.Validaciones.ValorNoInfo("Mensaje");
                             }
                             else
                             {
                                 if (!ClaveCatpcha.Equals(Clave.ToLower()))
                                 {
-                                    throw new CondecoEX.Validaciones.ValorInvalido("Code");
+                                    throw new CondecoEX.Validaciones.ValorInvalido("Código");
                                 }
                             }
                         }
@@ -55,7 +55,7 @@ namespace CondecoRN
             string cuentaMailCondeco;
             if (ContactoSite.Motivo == "Producto")
             {
-                cuentaMailCondeco = System.Configuration.ConfigurationManager.AppSettings["ContactoMailMotivoProdcuto"];
+                cuentaMailCondeco = System.Configuration.ConfigurationManager.AppSettings["ContactoMailMotivoProducto"];
             }
             else
             {

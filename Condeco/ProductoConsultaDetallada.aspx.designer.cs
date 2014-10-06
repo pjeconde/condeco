@@ -139,24 +139,6 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control ImagenPortadaLabel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ImagenPortadaLabel;
-        
-        /// <summary>
-        /// Control Imagen1Label.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Imagen1Label;
-        
-        /// <summary>
         /// Control linkPortada.
         /// </summary>
         /// <remarks>
@@ -209,24 +191,6 @@ namespace Condeco {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image1Ampliada;
-        
-        /// <summary>
-        /// Control Imagen2Label.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Imagen2Label;
-        
-        /// <summary>
-        /// Control Imagen3Label.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Imagen3Label;
         
         /// <summary>
         /// Control linkImage2.

@@ -54,7 +54,7 @@
                             <asp:Label ID="MotivoLabel" runat="server" Text="Asunto"></asp:Label>
                         </td>
                         <td align="left" colspan="2" style="padding-top: 3px">
-                            <asp:TextBox ID="MotivoTextBox" runat="server" TabIndex="1" Width="360px"></asp:TextBox>
+                            <asp:TextBox ID="MotivoTextBox" runat="server" TabIndex="4" Width="360px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -65,18 +65,18 @@
                             <asp:Label ID="Label2" runat="server" Text="Mensaje"></asp:Label>
                         </td>
                         <td align="left" colspan="2" style="padding-top: 3px">
-                            <asp:TextBox ID="MensajeTextBox" runat="server" Height="100px" TabIndex="4" style="resize: none;" TextMode="MultiLine" Width="360px"></asp:TextBox>
+                            <asp:TextBox ID="MensajeTextBox" runat="server" Height="100px" TabIndex="5" style="resize: none;" TextMode="MultiLine" Width="360px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td align="center" style="padding-top: 3px" valign="top">
-                            <asp:Button ID="NuevaClaveCaptchaButton" runat="server" OnClick="NuevaClaveCaptchaButton_Click" Text="New Code" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
+                            <asp:Button ID="NuevaClaveCaptchaButton" runat="server" TabIndex="7" OnClick="NuevaClaveCaptchaButton_Click" Text="Nuevo código" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
                         </td>
                         <td align="right" style="padding-top: 3px; padding-right: 5px">
                             <asp:Label ID="ClaveLabel" runat="server" Text="Codigo"></asp:Label>
                         </td>
                         <td align="left" style="width: 80px; padding-top: 3px">
-                            <asp:TextBox ID="CaptchaTextBox" runat="server" TabIndex="5" Width="80px"></asp:TextBox>
+                            <asp:TextBox ID="CaptchaTextBox" runat="server" TabIndex="6" Width="80px"></asp:TextBox>
                         </td>
                         <td align="left" style="padding-top: 3px; padding-left: 3px; " class="style1">
                             <asp:Label ID="CaseSensitiveLabel" runat="server" ForeColor="gray" Text="(not case sensitive / no se distinguen mayúsculas de minúsculas)"></asp:Label>
@@ -88,7 +88,7 @@
                         <td>
                         </td>
                         <td align="left" style="padding-top: 10px" class="style2">
-                            <asp:Button ID="EnviarButton" runat="server" OnClick="EnviarButton_Click" TabIndex="6" Text="Enviar" Width="80px" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
+                            <asp:Button ID="EnviarButton" runat="server" OnClick="EnviarButton_Click" TabIndex="8" Text="Enviar" Width="80px" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
                         </td>
                         <td align="right" style="padding-top: 10px; padding-right: 0px" class="style1">
                             <asp:Button ID="BorrarDatosButton" runat="server" OnClick="BorrarDatosButton_Click" Text="Borrar" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
@@ -101,8 +101,8 @@
                         </td>
                         <td>
                         </td>
-                        <td align="right" style="padding-top: 20px" class="style2">
-                            <asp:Button ID="SalirButton" runat="server" CausesValidation="false" TabIndex="13" Text="Exit" PostBackUrl="~/Home.aspx" />
+                        <td align="right" style="padding-top: 5px" class="style2">
+                            <asp:Button ID="SalirButton" runat="server" CausesValidation="false" TabIndex="13" Text="Salir" PostBackUrl="~/Default.aspx" />
                         </td>
                     </tr>
                     <tr>
@@ -114,6 +114,7 @@
                 <script type="text/javascript">
                     function BorrarMensaje() {
                         {
+                            document.getElementById('<%=BorrarDatosButton.ClientID%>').enabled = false;
                             document.getElementById('<%=MensajeLabel.ClientID%>').innerHTML = '';
                         }
                     }
