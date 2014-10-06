@@ -200,37 +200,38 @@ namespace Condeco
             return ((CondecoEntidades.Sesion)Session["Sesion"]).Usuario.Id == null;
         }
 
-        public static void GenerarTreeTipoProductos(ASTreeView astvMyTree)
+        public static void GenerarTreeTipoProductos(ASTreeView astvMyTree, bool Buscador)
         {
-             ASTreeViewLinkNode n = new ASTreeViewLinkNode("Mesas Ratonas", "401", "", "frm", "Mesas Ratonas", "");
-            //n.NodeText = "";
-            n.EnableChildren = false;
-            n.EnableEditContextMenu = false;
+            ASTreeViewLinkNode n100 = new ASTreeViewLinkNode("Marcos", "100", "", "frm", "madera maciza", "");
+            n100.EnableCheckbox = Buscador;
+            n100.EnableChildren = false;
+            n100.EnableEditContextMenu = false;
 
-            //n.AdditionalAttributes.Add( new KeyValuePair<string, string>( "onclick", "alert(1);return false;" ) );
-            //n.AdditionalAttributes.Add( new KeyValuePair<string, string>( "disableChildren1", "true" ) );
+            ASTreeViewLinkNode n400 = new ASTreeViewLinkNode("Mesas", "400", "", "frm", "", "");
+            n400.EnableCheckbox = Buscador;
+            n400.EnableChildren = false;
+            n400.EnableEditContextMenu = false;
 
-            ASTreeViewLinkNode n2 = new ASTreeViewLinkNode("Bancos..", "500", "", "frm", "", "");
-            //n.NodeText = "";
-            n2.EnableCheckbox = false;
-            n2.EnableChildren = false;
-            n2.EnableEditContextMenu = false;
+            ASTreeViewLinkNode n500 = new ASTreeViewLinkNode("Sillas y Bancos", "500", "", "frm", "", "");
+            n500.EnableCheckbox = Buscador;
+            n500.EnableChildren = false;
+            n500.EnableEditContextMenu = false;
 
             astvMyTree.RootNode
-                .AppendChild(new ASTreeViewLinkNode("Marcos", "100", "", "frm", "madera maciza", "")
+                .AppendChild((n100)
                     .AppendChild(new ASTreeViewLinkNode("Madera Pinotea", "Madera Pinotea", "", "frm", "madera maciza", ""))
                     .AppendChild(new ASTreeViewLinkNode("Madera Cedro", "Madera Cedro", "", "frm", "", ""))
                     .AppendChild(new ASTreeViewLinkNode("Vintage", "Vintage", "", "frm", "madera maciza", ""))
                 )
                 .AppendChild(new ASTreeViewLinkNode("Espejos", "200", "", "frm", "", ""))
                 .AppendChild(new ASTreeViewLinkNode("Carteles", "300", "", "frm", "", ""))
-                .AppendChild(new ASTreeViewLinkNode("Mesas", "400", "", "frm", "", "")
-                    .AppendChild(n))
-                .AppendChild((n2)
-                    .AppendChild(new ASTreeViewLinkNode("Bancos Rústicos", "501", "", "frm", "En maderas recicladas", ""))
+                .AppendChild((n400)
+                    .AppendChild(new ASTreeViewLinkNode("Mesas Ratonas", "401", "", "frm", "Mesas Ratonas", ""))
+                )
+                .AppendChild((n500)
+                    .AppendChild(new ASTreeViewLinkNode("Bancos Rústicos", "501", "", "frm", "En madera reciclada", ""))
+                    .AppendChild(new ASTreeViewLinkNode("Bancos Modernos", "502", "", "frm", "En madera reciclada", ""))
                 );
-                //.AppendChild(new ASTreeViewLinkNode("<font style='color:blue;font-weight:bold;font-style:italic;' isTreeNodeChild='true'>Novedades</font>", "Novedades", "", "frm", "", "~/Imagenes/Iconos/Punto.jpg")
-                //);
         }
         public static string TreeViewLista(ASTreeView astvMyTree)
         {
@@ -251,17 +252,5 @@ namespace Condeco
             }
             return lista;
         }
-        //public static string TreeViewSelected(ASTreeView astvMyTree, string Valor)
-        //{
-        //    List<ASTreeViewNode> checkedNodes = astvMyTree.GetCheckedNodes(false);
-            
-        //    ASTreeViewNode n = astvMyTree.FindByValue(Valor);
-        //    string resp = "";
-        //    if (n != null)
-        //    {
-        //        n.NodeValue;
-        //    }
-        //    return resp;
-        //}
     }
 }

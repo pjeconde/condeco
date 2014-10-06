@@ -27,7 +27,7 @@ namespace CondecoEX
         [Serializable]
         public class ValorNoInfo : CondecoEX.Validaciones.BaseApplicationException
         {
-            static string TextoError = "Without informing";
+            static string TextoError = "Valor sin informar";
             public ValorNoInfo(string descrProp)
                 : base(descrProp + " " + TextoError)
             {
@@ -44,7 +44,7 @@ namespace CondecoEX
         [Serializable]
         public class ValorInvalido : CondecoEX.Validaciones.BaseApplicationException
         {
-            static string TextoError = "Invalid value";
+            static string TextoError = "Valor inválido";
             public ValorInvalido(string descrProp)
                 : base(descrProp + ": " + TextoError)
             {
@@ -130,7 +130,7 @@ namespace CondecoEX
         [Serializable]
         public class LimiteMaximoExcedido : CondecoEX.Imagenes.BaseApplicationException
         {
-            static string TextoError = "Con esta imagen exedería el máximo permitido.";
+            static string TextoError = "Con esta imagen excedería el máximo permitido.";
             public LimiteMaximoExcedido(string Descr)
                 : base(TextoError + " " + Descr)
             {
@@ -166,7 +166,7 @@ namespace CondecoEX
         [Serializable]
         public class PasswordYConfirmacionNoCoincidente : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "Esta password no coincide con la confirmación";
+            static string TextoError = "Esta clave no coincide con la confirmación";
             public PasswordYConfirmacionNoCoincidente()
                 : base(TextoError)
             {
@@ -183,7 +183,7 @@ namespace CondecoEX
         [Serializable]
         public class PasswordNuevaIgualAActual : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "La nueva password debería ser diferente a la actual";
+            static string TextoError = "La nueva clave debería ser diferente a la actual";
             public PasswordNuevaIgualAActual()
                 : base(TextoError)
             {
@@ -217,7 +217,7 @@ namespace CondecoEX
         [Serializable]
         public class ErrorDeConfirmacion : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "The confirmation event (account creation) can not be executed. It is likely that the confirmation has already been registered. Verify that you can enter. In contrast step, contact Tango Family and Guide, to fix the problem. Thank you very much.";
+            static string TextoError = "Mensaje de confirmación (Creación de nueva cuenta). No se puede ejecutar.  Es probable que la confirmación ya haya sido registrada.  Verifique si puede identificarse.  En paso contrario, póngase en contacto con Nosotros, para solucionar el inconveniente.  Muchas gracias.";
             public ErrorDeConfirmacion()
                 : base(TextoError)
             {
@@ -234,7 +234,7 @@ namespace CondecoEX
         [Serializable]
         public class LoginRechazadoXEstadoCuenta : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "Login wrong (the account is pending confirmation o canceled)";
+            static string TextoError = "Login Mensaje (La cuenta está pendiente de confirmación o cancelada)";
             public LoginRechazadoXEstadoCuenta()
                 : base(TextoError)
             {
@@ -251,7 +251,7 @@ namespace CondecoEX
         [Serializable]
         public class LoginRechazadoXPasswordInvalida : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "Password invalid";
+            static string TextoError = "Password inválido";
             public LoginRechazadoXPasswordInvalida()
                 : base(TextoError)
             {
@@ -268,7 +268,7 @@ namespace CondecoEX
         [Serializable]
         public class NoHayUsuariosAsociadasAEmail : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "There are no accounts associated with the email address specified";
+            static string TextoError = "No hay cuentas asociadas con la dirección de email especificada";
             public NoHayUsuariosAsociadasAEmail()
                 : base(TextoError)
             {
@@ -285,7 +285,7 @@ namespace CondecoEX
         [Serializable]
         public class UsuarioConfFormatoMsgErroneo : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "The confirmation message (from account creation) wrong format. Please contact Tango Family and Guide, to fix the problem. Thank you very much.";
+            static string TextoError = "Mensaje de confirmación (Creación de nueva cuenta) error en el formato.  Por favor contáctese con Nosotros, para solucionar el problema.  Muchas Gracias.";
             public UsuarioConfFormatoMsgErroneo()
                 : base(TextoError)
             {
@@ -302,7 +302,7 @@ namespace CondecoEX
         [Serializable]
         public class PasswordNoMatch : CondecoEX.Usuario.BaseApplicationException
         {
-            static string TextoError = "Incorrect password";
+            static string TextoError = "Clave incorrecta";
             public PasswordNoMatch()
                 : base(TextoError)
             {
@@ -338,7 +338,7 @@ namespace CondecoEX
 		[Serializable]
 		public class Conexion : CondecoEX.db.BaseApplicationException
 		{
-            static string TextoError = "Problem connecting to database";
+            static string TextoError = "Problemas conectandose con la base de datos";
 			public Conexion() : base(TextoError)
 			{
 			}
@@ -352,7 +352,7 @@ namespace CondecoEX
 		[Serializable]
 		public class Ejecucion : CondecoEX.db.BaseApplicationException
 		{
-            static string TextoError = "Problem running SQL script";
+            static string TextoError = "Problemas ejecutando SQL script";
 			public Ejecucion() : base(TextoError)
 			{
 			}
@@ -366,7 +366,7 @@ namespace CondecoEX
 		[Serializable]
 		public class EjecucionConRollback : CondecoEX.db.BaseApplicationException
 		{
-            static string TextoError = "Problem running SQL script (the operation is disposed)";
+            static string TextoError = "Problemas ejecutando SQL script (la operación ha sido cancelada)";
 			public EjecucionConRollback() : base(TextoError)
 			{
 			}
@@ -380,7 +380,7 @@ namespace CondecoEX
 		[Serializable]
 		public class Rollback : CondecoEX.db.BaseApplicationException
 		{
-            static string TextoError = "Problem while trying to undo the execution of a SQL script";
+            static string TextoError = "Problemas mientras se intentaba deshacer la ejecución del SQL script";
 			public Rollback() : base(TextoError)
 			{
 			}
@@ -414,7 +414,7 @@ namespace CondecoEX
         [Serializable]
         public class Existente : CondecoEX.db.BaseApplicationException
         {
-            static string TextoError = "This permission has been requested and is in status ";
+            static string TextoError = "EL permiso ha sido revocado y está en este estado actual ";
             public Existente(string estado)
                 : base(TextoError + " '" + estado + "'")
             {
@@ -431,7 +431,7 @@ namespace CondecoEX
         [Serializable]
         public class EstadoNoModificable : CondecoEX.db.BaseApplicationException
         {
-            static string TextoError = "Not authorized to change the status";
+            static string TextoError = "No está autorizado a cambiar el estado";
             public EstadoNoModificable(string estado)
                 : base(TextoError + " '" + estado + "'")
             {

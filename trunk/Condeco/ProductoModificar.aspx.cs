@@ -50,7 +50,7 @@ namespace Condeco
                     YouTubeTextBox.Text = producto.YouTube;
                     EstadoDropDownList.SelectedValue = producto.Estado;
 
-                    Funciones.GenerarTreeTipoProductos(astvMyTree);
+                    Funciones.GenerarTreeTipoProductos(astvMyTree, false);
  
                     NombreTextBox.Focus();
                     DataBind();

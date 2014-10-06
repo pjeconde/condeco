@@ -32,7 +32,7 @@ namespace Condeco
                     //Buscar si quedo una imagen (usuario - idProducto ) en el Temp pendiente de agregar.
                     CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
                     string path = Server.MapPath("~/ImagenesProducto/Temp/");
-                    string[] archivos = System.IO.Directory.GetFiles(path, sesion.Usuario.Id + "-" + producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
+                    string[] archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
                     if (archivos.Length != 0)
                     {
                         ImageParaAgregar.ImageUrl = "~/ImagenesProducto/Temp/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/Temp/"), String.Empty);
@@ -84,7 +84,7 @@ namespace Condeco
                         {
                             CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
                             FileUpload1.PostedFile.SaveAs(path + sesion.Usuario.Id + "-" + producto.Id.ToString() + fileExtension);
-                            string[] archivos = System.IO.Directory.GetFiles(path, sesion.Usuario.Id + "-" + producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
+                            string[] archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
                             if (archivos.Length != 0)
                             {
                                 ImageParaAgregar.ImageUrl = "~/ImagenesProducto/Temp/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/Temp/"), String.Empty);
@@ -107,7 +107,7 @@ namespace Condeco
             CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
             CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
             String path = Server.MapPath("~/ImagenesProducto/");
-            string[] archivos = System.IO.Directory.GetFiles(path, sesion.Usuario.Id + "-" + producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
+            string[] archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
             return archivos;
         }
         private void CompletarImagenesActuales(string[] archivos, bool ControlarMaxArch)
@@ -159,7 +159,7 @@ namespace Condeco
                 String path = Server.MapPath("~/ImagenesProducto/Temp/");
                 CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
                 CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
-                string[] archivos = System.IO.Directory.GetFiles(path, sesion.Usuario.Id + "-" + producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
+                string[] archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
                 for (int i = 0; i < archivos.Length; i++)
                 {
                     System.IO.File.Delete(archivos[i]);
@@ -193,7 +193,7 @@ namespace Condeco
                     string path = Server.MapPath("~/ImagenesProducto/");
                     string pathTemp = Server.MapPath("~/ImagenesProducto/Temp/");
                     CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
-                    string[] archivos = System.IO.Directory.GetFiles(pathTemp, sesion.Usuario.Id + "-" + producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
+                    string[] archivos = System.IO.Directory.GetFiles(pathTemp, producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
                     if (archivos.Length > 0)
                     {
                         string archivoImagen = "";
@@ -223,7 +223,7 @@ namespace Condeco
                 //reordenar en el formulario de Imagenes actuales. 
                 String path = Server.MapPath("~/ImagenesProducto/");
                 CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
-                archivos = System.IO.Directory.GetFiles(path, sesion.Usuario.Id + "-" + producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
+                archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
                 CompletarImagenesActuales(archivos, true);
             }
         }
@@ -240,7 +240,7 @@ namespace Condeco
                 //reordenar en el formulario de Imagenes actuales. 
                 String path = Server.MapPath("~/ImagenesProducto/");
                 CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
-                archivos = System.IO.Directory.GetFiles(path, sesion.Usuario.Id + "-" + producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
+                archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
                 CompletarImagenesActuales(archivos, true);
             }
         }
@@ -257,7 +257,7 @@ namespace Condeco
                 //reordenar en el formulario de Imagenes actuales. 
                 String path = Server.MapPath("~/ImagenesProducto/");
                 CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
-                archivos = System.IO.Directory.GetFiles(path, sesion.Usuario.Id + "-" + producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
+                archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
                 CompletarImagenesActuales(archivos, true);
             }
         }
@@ -268,7 +268,7 @@ namespace Condeco
             CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
             CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
             String path = Server.MapPath("~/ImagenesProducto/Portada/");
-            string[] archivos = System.IO.Directory.GetFiles(path, sesion.Usuario.Id + "-" + producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
+            string[] archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
             return archivos;
         }
         protected void BorrarPortadaButton_Click(object sender, EventArgs e)
@@ -310,7 +310,7 @@ namespace Condeco
                     string path = Server.MapPath("~/ImagenesProducto/Portada/");
                     string pathTemp = Server.MapPath("~/ImagenesProducto/Temp/");
                     CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
-                    string[] archivos = System.IO.Directory.GetFiles(pathTemp, sesion.Usuario.Id + "-" + producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
+                    string[] archivos = System.IO.Directory.GetFiles(pathTemp, producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
                     if (archivos.Length > 0)
                     {
                         System.IO.File.Copy(pathTemp + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/Temp/"), String.Empty), path + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/Temp/"), String.Empty), true);

@@ -9,7 +9,6 @@
         as first seen in http://www.dynamicdrive.com/forums/
         username: jscheuer1 - This Notice Must Remain for Legal Use
         */
-
         if (document.images) 
         {
             (function () {
@@ -75,7 +74,7 @@
     <table border="0" cellpadding="0" cellspacing="0" 
         style="padding-left:10px; vertical-align:top; background-image: url('Imagenes/Detallada.jpg'); background-repeat: no-repeat;">
         <tr>
-            <td align="center" colspan="2" style="padding-top:20px">
+            <td align="left" colspan="2" style="padding-top:20px">
                 <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Detalle del Producto"></asp:Label>
                 <asp:Label ID="TargetControlIDdelModalPopupExtender1" runat="server" Text=""></asp:Label>
             </td>
@@ -90,7 +89,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="1" style="vertical-align: top">
+            <td colspan="1" style="vertical-align: top; padding-left: 20px;">
                 <table border="0" cellpadding="0" cellspacing="0" style="vertical-align: top">
                     <tr>
                         <td align="right" style="padding-right: 5px; vertical-align: top">
@@ -116,24 +115,33 @@
                             <asp:Label ID="DescripcionLabel" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
+                    <%if (PrecioBaseLabel.Text != "")
+                      {%>
                     <tr>
                         <td align="left" colspan="2" style="padding-right: 5px; padding-top: 5px">
-                            Precio:
+                            Precio: $ 
                             <asp:Label ID="PrecioBaseLabel" runat="server"></asp:Label>
                         </td>
                     </tr>
+                    <%} %>
+                    <%if (ComentarioPrecioBaseLabel.Text != "") 
+                      {%>
                     <tr>
                         <td align="left" colspan="2" style="padding-right: 5px; padding-top: 5px">
                             Comentario:
                             <asp:Label ID="ComentarioPrecioBaseLabel" runat="server"></asp:Label>
                         </td>
                     </tr>
+                    <%} %>
+                    <%if (TipoProductoLabel.Text != "") 
+                      {%>
                     <tr>
                         <td align="left" colspan="2" style="padding-top: 5px">
-                            Tipo de Producto:
+                            Tipo de Producto: 
                             <asp:Label ID="TipoProductoLabel" runat="server"></asp:Label>
                         </td>
                     </tr>
+                    <%} %>
                     <!-- Info.Web -->
                     <%if (YouTubeLabel.Text != "")
                       {%>
@@ -146,26 +154,19 @@
                     <%} %>
                 </table>
             </td>
-            <td align="left" style="vertical-align: top; padding-left: 10px;" 
-                class="style2">
+        </tr>
+        <tr>
+            <td align="left" style="vertical-align: top; padding-left: 20px;" class="style2">
                 <!-- Imagenes -->
                 <table border="0" cellpadding="0" cellspacing="0" style="padding-left:0px">
                     <tr>
                         <td align="left" style="padding-right: 5px; padding-top: 5px; vertical-align: top">
-                            <asp:Label ID="Label4" runat="server" Text="Images" SkinID="TituloColor1Grande"></asp:Label>
+                            <asp:Label ID="Label4" runat="server" Text="Imagenes" SkinID="TituloColor1Grande"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 0px">
-                                <tr>
-                                    <td align="left" style="padding-right: 5px; padding-top: 5px">
-                                        <asp:Label ID="ImagenPortadaLabel" runat="server" Text="Main Photo"></asp:Label>
-                                    </td>
-                                    <td align="left" style="padding-right: 5px; padding-top: 5px">
-                                        <asp:Label ID="Imagen1Label" runat="server" Text="Image 1"></asp:Label>
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td align="left" style="padding-right: 25px; padding-top: 5px; vertical-align: top">
                                         <a id="linkPortada" class="thumbnail" runat="server" href="Imagenes/Interrogacion.jpg" target="_blank">
@@ -183,16 +184,6 @@
                                                 BorderColor="#cccccc" ImageUrl="~/Imagenes/Interrogacion.jpg"  Width="290px" /></span>
                                         </a>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td align="left" style="padding-right: 5px; padding-top: 5px">
-                                        <asp:Label ID="Imagen2Label" runat="server" Text="Image 2"></asp:Label>
-                                    </td>
-                                    <td align="left" style="padding-right: 5px; padding-top: 5px">
-                                        <asp:Label ID="Imagen3Label" runat="server" Text="Image 3"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td align="left" style="padding-right: 25px; padding-top: 5px; vertical-align: top">
                                         <a id="linkImage2" class="thumbnail" runat="server" href="Imagenes/Interrogacion.jpg" target="_blank">
                                             <asp:Image ID="Image2" runat="server" BorderStyle="Solid" BorderWidth="1px"
@@ -219,7 +210,7 @@
         <tr>
             <td align="left" colspan="2" style="padding-top:20px">
                 <asp:Button ID="SalirButton" runat="server" CausesValidation="false" TabIndex="504" Text="Salir" PostBackUrl="~/Default.aspx" />
-                <input type="button" value="Go back" name="Volver" onclick="history.back()" />
+                <input type="button" value="Volver atrás" name="Volver" onclick="history.back()" />
             </td>
         </tr>
         <tr>
@@ -227,7 +218,7 @@
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
                         <asp:Panel ID="pHeader" runat="server" CssClass="collapsePanelHeader">
-                                <asp:Label ID="lblText" runat="server" Text="Comments" Font-Size="16px" />
+                                <asp:Label ID="lblText" runat="server" Text="Comentarios" Font-Size="16px" />
                                 <asp:Image ID="imageCE" runat="server" ImageUrl="~/Imagenes/Iconos/icon_expand.gif" style="vertical-align:text-bottom" />
                                 <table border="0" cellpadding="0" cellspacing="0" style="width: 500px; vertical-align: top">
                                     <tr>
@@ -330,28 +321,28 @@
                                                                                                 <td style="vertical-align: top; padding-right: 10px">
                                                                                                     <asp:LinkButton ID="lManoOk" runat="server" OnClick="ManoOk_Click" CommandArgument='<%# String.Format("{0}-{1}", Eval("Id"), Eval("IdReplica")) %>' Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado"))) %>'
                                                                                                         ToolTip='<%# Eval("Id") %>'>
-                                                                                                        <asp:Image ID="ManoOk" runat="server" ToolTip="Good comment" ImageUrl="Imagenes/Iconos/PulgarArriba.jpg" Width="25px"></asp:Image>
+                                                                                                        <asp:Image ID="ManoOk" runat="server" ToolTip="Me gusta" ImageUrl="Imagenes/Iconos/PulgarArriba.jpg" Width="25px"></asp:Image>
                                                                                                     </asp:LinkButton>
                                                                                                     <ajaxToolkit:ConfirmButtonExtender ID="cbeManoOk" runat="server" ConfirmText="Confirm ?" TargetControlID="lManoOk" Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'></ajaxToolkit:ConfirmButtonExtender>
                                                                                                 </td>
                                                                                                 <td style="vertical-align: top; padding-right: 10px">
                                                                                                     <asp:LinkButton ID="lManoNoOk" runat="server" OnClick="ManoNoOk_Click" CommandArgument='<%# String.Format("{0}-{1}", Eval("Id"), Eval("IdReplica")) %>' Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'
                                                                                                         ToolTip='<%# Eval("Id") %>'>
-                                                                                                        <asp:Image ID="Image4" runat="server" ToolTip="Bad comment" ImageUrl="Imagenes/Iconos/PulgarAbajo.jpg" Width="25px"></asp:Image> 
+                                                                                                        <asp:Image ID="Image4" runat="server" ToolTip="No me gusta" ImageUrl="Imagenes/Iconos/PulgarAbajo.jpg" Width="25px"></asp:Image> 
                                                                                                     </asp:LinkButton>
                                                                                                     <ajaxToolkit:ConfirmButtonExtender ID="cbeManoNoOk" runat="server" ConfirmText="Confirm ?" TargetControlID="lManoNoOk" Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'></ajaxToolkit:ConfirmButtonExtender>
                                                                                                 </td>
                                                                                                 <td align="left" style="vertical-align: top; padding-right: 10px"">
                                                                                                     <asp:LinkButton ID="lAbusoContenido" runat="server" OnClick="AbusoContenido_Click" CommandArgument='<%# String.Format("{0}-{1}", Eval("Id"), Eval("IdReplica")) %>' Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'
                                                                                                         ToolTip='<%# Eval("Id") %>'>
-                                                                                                        <asp:Image ID="Image5" runat="server" ToolTip="report abuse of language" ImageUrl="Imagenes/Iconos/AbusoSimple.jpg" Width="25px"></asp:Image>
+                                                                                                        <asp:Image ID="Image5" runat="server" ToolTip="reporte abuso del lenguaje" ImageUrl="Imagenes/Iconos/AbusoSimple.jpg" Width="25px"></asp:Image>
                                                                                                     </asp:LinkButton>
-                                                                                                    <ajaxToolkit:ConfirmButtonExtender ID="cbeAbuso" runat="server" ConfirmText="Confirm ?" TargetControlID="lAbusoContenido" Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'></ajaxToolkit:ConfirmButtonExtender>
+                                                                                                    <ajaxToolkit:ConfirmButtonExtender ID="cbeAbuso" runat="server" ConfirmText="Confirma ?" TargetControlID="lAbusoContenido" Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'></ajaxToolkit:ConfirmButtonExtender>
                                                                                                 </td>
                                                                                                 <td style="vertical-align: top; padding-right: 10px">
                                                                                                     <asp:LinkButton ID="lReplicarComentario" runat="server" OnClick="ReplicarComentario_Click" CommandArgument='<%# String.Format("{0}-{1}", Eval("Id"), Eval("IdReplica")) %>'
                                                                                                         ToolTip='<%# Eval("Id") %>'>
-                                                                                                        <asp:Image ID="Image6" runat="server" ToolTip="Answer comment" ImageUrl="Imagenes/Iconos/CommentR.jpg" Width="25px"></asp:Image> 
+                                                                                                        <asp:Image ID="Image6" runat="server" ToolTip="Responder comentario" ImageUrl="Imagenes/Iconos/CommentR.jpg" Width="25px"></asp:Image> 
                                                                                                     </asp:LinkButton>
                                                                                                 </td>
                                                                                             </tr>
@@ -451,23 +442,23 @@
                                                                                                 <td style="vertical-align: top; padding-right: 10px">
                                                                                                     <asp:LinkButton ID="lRManoOk" runat="server" OnClick="ManoOk_Click" CommandArgument='<%# String.Format("{0}-{1}", Eval("Id"), Eval("IdReplica")) %>' Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado"))) %>'
                                                                                                         ToolTip='<%# Eval("Id") %>'>
-                                                                                                        <asp:Image ID="Image8" runat="server" ToolTip="Good comment" ImageUrl="Imagenes/Iconos/PulgarArriba.jpg" Width="25px"></asp:Image>
+                                                                                                        <asp:Image ID="Image8" runat="server" ToolTip="Me gusta" ImageUrl="Imagenes/Iconos/PulgarArriba.jpg" Width="25px"></asp:Image>
                                                                                                     </asp:LinkButton>
                                                                                                     <ajaxToolkit:ConfirmButtonExtender ID="cbeRManoOk" runat="server" ConfirmText="Confirm ?" TargetControlID="lRManoOk" Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'></ajaxToolkit:ConfirmButtonExtender>
                                                                                                 </td>
                                                                                                 <td style="vertical-align: top; padding-right: 10px">
                                                                                                     <asp:LinkButton ID="lRManoNoOk" runat="server" OnClick="ManoNoOk_Click" CommandArgument='<%# String.Format("{0}-{1}", Eval("Id"), Eval("IdReplica")) %>'  Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'
                                                                                                         ToolTip='<%# Eval("Id") %>'>
-                                                                                                        <asp:Image ID="Image9" runat="server" ToolTip="Bad comment" ImageUrl="Imagenes/Iconos/PulgarAbajo.jpg" Width="25px"></asp:Image> 
+                                                                                                        <asp:Image ID="Image9" runat="server" ToolTip="No me gusta" ImageUrl="Imagenes/Iconos/PulgarAbajo.jpg" Width="25px"></asp:Image> 
                                                                                                     </asp:LinkButton>
                                                                                                     <ajaxToolkit:ConfirmButtonExtender ID="cbeRManoNoOk" runat="server" ConfirmText="Confirm ?" TargetControlID="lRManoNoOk" Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'></ajaxToolkit:ConfirmButtonExtender>
                                                                                                 </td>
                                                                                                 <td align="left" style="vertical-align: top; padding-right: 10px"">
                                                                                                     <asp:LinkButton ID="lRAbusoContenido" runat="server" OnClick="AbusoContenido_Click" CommandArgument='<%# String.Format("{0}-{1}", Eval("Id"), Eval("IdReplica")) %>' Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'
                                                                                                         ToolTip='<%# Eval("Id") %>'>
-                                                                                                        <asp:Image ID="Image10" runat="server" ToolTip="report abuse of language" ImageUrl="Imagenes/Iconos/AbusoSimple.jpg" Width="25px"></asp:Image>
+                                                                                                        <asp:Image ID="Image10" runat="server" ToolTip="Reportar abuso del lenguaje" ImageUrl="Imagenes/Iconos/AbusoSimple.jpg" Width="25px"></asp:Image>
                                                                                                     </asp:LinkButton>
-                                                                                                    <ajaxToolkit:ConfirmButtonExtender ID="cbeRAbusoContenido" runat="server" ConfirmText="Confirm ?" TargetControlID="lRAbusoContenido" Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'></ajaxToolkit:ConfirmButtonExtender>
+                                                                                                    <ajaxToolkit:ConfirmButtonExtender ID="cbeRAbusoContenido" runat="server" ConfirmText="Confirmar ?" TargetControlID="lRAbusoContenido" Enabled='<%# EstadoOk(String.Format("{0}", Eval("Estado")))%>'></ajaxToolkit:ConfirmButtonExtender>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
@@ -518,7 +509,7 @@
                             </table>
                         </asp:Panel>
                         <ajaxToolkit:CollapsiblePanelExtender ID="CollapsiblePanelExtender1" runat="server" TargetControlID="pBody" 
-                            CollapseControlID="pHeader" ExpandControlID="pHeader" Collapsed="false" TextLabelID="lblText" CollapsedText="Presione para ver los comentarios" ExpandedText="Press to hide comments"  ImageControlID="imageCE" ExpandedImage="~/Imagenes/Iconos/icon_collapse.gif"
+                            CollapseControlID="pHeader" ExpandControlID="pHeader" Collapsed="false" TextLabelID="lblText" CollapsedText="Presione para ver los comentarios" ExpandedText="Presione para ocultar los comentarios"  ImageControlID="imageCE" ExpandedImage="~/Imagenes/Iconos/icon_collapse.gif"
                             CollapsedImage="~/Imagenes/Iconos/icon_expand.gif"
                             CollapsedSize="0">
                         </ajaxToolkit:CollapsiblePanelExtender>
@@ -532,8 +523,8 @@
                     <table border="0" cellpadding="0" cellspacing="0" style="width: 500px; vertical-align: top">
                         <tr>
                             <td style="padding-top: 10px; width: 500px; vertical-align: top">
-                                <asp:Label ID="LabelComentario" runat="server" Text="Input your new comment."></asp:Label>
-                                <asp:Label ID="LabelComentario2" runat="server" Text="  (to enter a comment, please login)"
+                                <asp:Label ID="LabelComentario" runat="server" Text="Ingresar comentario."></asp:Label>
+                                <asp:Label ID="LabelComentario2" runat="server" Text="  (para ingresar un comentario, debe ser usuario del sitio)"
                                     CssClass="MultilineFontCh"></asp:Label>
                             </td>
                         </tr>
@@ -545,7 +536,7 @@
                         </tr>
                         <tr>
                             <td style="padding-top: 10px; padding-bottom: 10px; width: 500px; vertical-align: top">
-                                <asp:Button ID="AceptarButton" runat="server" TabIndex="502" Text="Accept" OnClick="AceptarButton_Click" />
+                                <asp:Button ID="AceptarButton" runat="server" TabIndex="502" Text="Confirmar" OnClick="AceptarButton_Click" />
                             </td>
                         </tr>
                     </table>
@@ -567,7 +558,7 @@
         <table width="100%">
             <tr>
                 <td colspan="2">
-                    <asp:Label ID="TituloConfirmacionLabel" runat="server" SkinID="TituloPagina" Text="Answer Comment"></asp:Label>
+                    <asp:Label ID="TituloConfirmacionLabel" runat="server" SkinID="TituloPagina" Text="Responder comentario"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -580,7 +571,7 @@
             </tr>           
             <tr>
                 <td align="right" style="padding-right:5px; padding-left:5px; vertical-align: top">
-                    Comment:
+                    Comentario:
                 </td>
                 <td align="left">
                     <asp:TextBox ID="ComentarioReplicaTextBox" runat="server" Text="" MaxLength="500" CssClass="MultilineFontCh" TextMode="MultiLine" Width="500px" Height="60px" style="resize: none;"></asp:TextBox>

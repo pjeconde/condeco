@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contacto.aspx" />
+    <Content Include="Mensaje.aspx" />
     <Content Include="Empresa.aspx" />
     <Content Include="ExploradorProducto.aspx" />
     <Content Include="Flash\LogoCondeco.swf" />
@@ -106,6 +107,7 @@
     <Content Include="Imagenes\Facebook.gif" />
     <Content Include="Imagenes\Iconos\AbusoSimple.jpg" />
     <Content Include="Imagenes\Iconos\CommentR.jpg" />
+    <Content Include="Imagenes\Iconos\PuntoW.jpg" />
     <Content Include="Imagenes\Iconos\icon_collapse.gif" />
     <Content Include="Imagenes\Iconos\icon_expand.gif" />
     <Content Include="Imagenes\Iconos\Paypal.jpg" />
@@ -201,6 +203,9 @@
     <Content Include="Javascript\astreeview\themes\vista\vista.css" />
     <Content Include="Javascript\contextmenu\contextmenu.css" />
     <Content Include="Javascript\contextmenu\contextmenu_packed.js" />
+    <Content Include="Javascript\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Javascript\jquery-1.4.1.js" />
+    <Content Include="Javascript\jquery-1.4.1.min.js" />
     <Content Include="ProductoConsultaDetallada.aspx" />
     <Content Include="ProductoCrear.aspx" />
     <Content Include="Producto.aspx" />
@@ -251,6 +256,13 @@
     </Compile>
     <Compile Include="Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje.aspx.cs">
+      <DependentUpon>Mensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mensaje.aspx.designer.cs">
+      <DependentUpon>Mensaje.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empresa.aspx.cs">
       <DependentUpon>Empresa.aspx</DependentUpon>

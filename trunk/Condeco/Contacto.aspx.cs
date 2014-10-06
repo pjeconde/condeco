@@ -33,13 +33,13 @@ namespace Condeco
             {
                 CondecoRN.ContactoSite.Validar(contacto, Session["captcha"].ToString(), CaptchaTextBox.Text);
                 CondecoRN.ContactoSite.Registrar(contacto);
-                EnviarButton.Visible = false;
-                BorrarDatosButton.Visible = false;
-                NuevaClaveCaptchaButton.Visible = false;
-                CaptchaImage.Visible = false;
-                ClaveLabel.Visible = false;
-                CaptchaTextBox.Visible = false;
-                CaseSensitiveLabel.Visible = false;
+                EnviarButton.Enabled = false;
+                BorrarDatosButton.Enabled = false;
+                NuevaClaveCaptchaButton.Enabled = false;
+                //CaptchaImage.Visible = false;
+                ClaveLabel.Enabled = false;
+                CaptchaTextBox.Enabled = false;
+                CaseSensitiveLabel.Enabled = false;
                 MotivoTextBox.Enabled = false;
                 NombreTextBox.Enabled = false;
                 TelefonoTextBox.Enabled = false;

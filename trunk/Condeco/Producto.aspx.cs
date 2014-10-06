@@ -20,13 +20,14 @@ namespace Condeco
                 GenerateTree();
                 VistaRadioButton_CheckedChanged(Vista1RadioButton, new EventArgs());
                 DataBind();
-                this.astvMyTree.ContextMenu.MenuItems.Add(new ASContextMenuItem("Custom Menu", "alert('current value:' + " + this.astvMyTree.ContextMenuClientID + ".getSelectedItem().parentNode.getAttribute('treeNodeValue')" + ");return false;", "text"));
+                //this.astvMyTree.ContextMenu.MenuItems.Add(new ASContextMenuItem("Custom Menu", "alert('current value:' + " + this.astvMyTree.ContextMenuClientID + ".getSelectedItem().parentNode.getAttribute('treeNodeValue')" + ");return false;", "text"));
+                astvMyTree.ExpandToDepth(0);
             }
         }
 
         private void GenerateTree()
         {
-            Funciones.GenerarTreeTipoProductos(astvMyTree);
+            Funciones.GenerarTreeTipoProductos(astvMyTree, true);
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
@@ -76,12 +77,12 @@ namespace Condeco
                     for (int i = 0; i < archivos.Length; i++)
                     {
                         string fileName = System.IO.Path.GetFileNameWithoutExtension(archivos[i]);
-                        string[] resultado = fileName.Split(Convert.ToChar("-"));
-                        if (resultado.Length > 1)
+                        //string[] resultado = fileName.Split(Convert.ToChar("-"));
+                        if (fileName != "")
                         {
                             try 
                             {
-                                int idProducto = Convert.ToInt32(resultado[1].ToString());
+                                int idProducto = Convert.ToInt32(fileName);
                                 CondecoEntidades.Producto Producto = lista.Find(delegate(CondecoEntidades.Producto m)
                                 {
                                     return m.Id == idProducto;

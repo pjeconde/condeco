@@ -48,6 +48,10 @@ namespace Condeco
                 ViewState["lista"] = c;
                 ComentarioListView.DataSource = c;
 
+                pHeader.Visible = false;
+                pBody.Visible = false;
+                pComentarioCrear.Visible = false;
+
                 SalirButton.Focus();
                 DataBind();
             }

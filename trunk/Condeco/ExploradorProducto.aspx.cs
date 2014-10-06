@@ -128,7 +128,7 @@ namespace Condeco
             {
                 case "Detalle":
                     Session["Producto"] = producto;
-                    Response.Redirect("~/ProfesorGuideConsultaDetallada.aspx");
+                    Response.Redirect("~/ProductoConsultaDetallada.aspx");
                     break;
                 case "CambiarEstado":
                     Session["Producto"] = producto;
@@ -212,7 +212,7 @@ namespace Condeco
                 }
                 catch (Exception ex)
                 {
-                    MensajeLabel.Text = "Problemas al cambiar el estado de la Profesor." + ex.Message;
+                    MensajeLabel.Text = "Problemas al cambiar el estado del Producto." + ex.Message;
                 }
             }
         }
@@ -231,7 +231,7 @@ namespace Condeco
                 {
                     if (IdProductoTextBox.Text == string.Empty)
                     {
-                        MensajeLabel.Text = "No se han encontrado Profesores que satisfagan la busqueda";
+                        MensajeLabel.Text = "No se han encontrado Productos que satisfagan la busqueda";
                     }
                     else
                     {
@@ -254,7 +254,7 @@ namespace Condeco
                     {
                         ProductosPagingGridView.DataSource = null;
                         ProductosPagingGridView.DataBind();
-                        MensajeLabel.Text = "No se han encontrado Profesores que satisfagan la busqueda";
+                        MensajeLabel.Text = "No se han encontrado Productos que satisfagan la busqueda";
                     }
                 }
             }
@@ -268,13 +268,25 @@ namespace Condeco
             {
                 NombreTextBox.Text = String.Empty;
                 NombreTextBox.Visible = false;
+                DescripcionTextBox.Text = String.Empty;
+                DescripcionTextBox.Visible = false;
                 IdProductoTextBox.Visible = true;
+            }
+            else if (NombreRadioButton.Checked)
+            {
+                IdProductoTextBox.Text = String.Empty;
+                IdProductoTextBox.Visible = false;
+                DescripcionTextBox.Text = String.Empty;
+                DescripcionTextBox.Visible = false;
+                NombreTextBox.Visible = true;
             }
             else
             {
                 IdProductoTextBox.Text = String.Empty;
                 IdProductoTextBox.Visible = false;
-                NombreTextBox.Visible = true;
+                NombreTextBox.Text = String.Empty;
+                NombreTextBox.Visible = false;
+                DescripcionTextBox.Visible = true;
             }
         }
     }
