@@ -35,9 +35,8 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="ASTreeView, Version=1.5.8.0, Culture=neutral, PublicKeyToken=521e0b4262a9001c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Users\Pol\Downloads\astreeview-1.5.8_for_ASP.Net_2.0\ASTreeView.dll</HintPath>
+    <Reference Include="ASTreeView">
+      <HintPath>..\DLLs\ASTreeView.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
