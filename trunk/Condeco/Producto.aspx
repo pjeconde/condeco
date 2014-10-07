@@ -91,8 +91,8 @@
                                         &nbsp;</td>
                                     <td align="right">
                                         <asp:RadioButton ID="Vista1RadioButton" runat="server" AutoPostBack="True"
-                                            Text="View 1" GroupName="Vistas" OnCheckedChanged="VistaRadioButton_CheckedChanged" />&nbsp;&nbsp;&nbsp;
-                                        <asp:RadioButton ID="Vista2RadioButton" runat="server" AutoPostBack="True" Text="View 2" Checked="true"
+                                            Text="Vista 1" GroupName="Vistas" OnCheckedChanged="VistaRadioButton_CheckedChanged" />&nbsp;&nbsp;&nbsp;
+                                        <asp:RadioButton ID="Vista2RadioButton" runat="server" AutoPostBack="True" Text="Vista 2" Checked="true"
                                             GroupName="Vistas" OnCheckedChanged="VistaRadioButton_CheckedChanged" />
                                     </td>
                                 </tr>

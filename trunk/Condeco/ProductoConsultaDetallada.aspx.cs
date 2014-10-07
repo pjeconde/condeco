@@ -418,7 +418,7 @@ namespace Condeco
             }
             else
             {
-                return "***** commentario inapropiado *****<br/>eliminado por el administrador";
+                return "***** commntario inapropiado *****<br/>eliminado por el administrador";
             }
         }
 
