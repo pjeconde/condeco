@@ -45,6 +45,7 @@ namespace Condeco
 
         protected void AceptarButton_Click(object sender, EventArgs e)
         {
+            MensajeLabel.Text = "";
             if (Funciones.SessionTimeOut(Session))
             {
                 Response.Redirect("~/SessionTimeout.aspx");
@@ -55,18 +56,21 @@ namespace Condeco
                 CondecoEntidades.Producto Producto = new CondecoEntidades.Producto();
                 try
                 {
+                    ValidarCampos();
+                    if (MensajeLabel.Text != "") { return; }
                     Producto.Nombre= NombreTextBox.Text.Trim();
                     Producto.Descripcion = DescripcionTextBox.Text.Trim();
                     Producto.PrecioBase = Convert.ToDecimal(PrecioBaseTextBox.Text);
                     Producto.ComentarioPrecioBase = ComentarioPrecioBaseTextBox.Text;
                     Producto.YouTube = YouTubeTextBox.Text;
                     Producto.IdMoneda = "$";
-                    string listaTipoProductos = Funciones.TreeViewLista(astvMyTree);
+                    string listaTipoProductos = Funciones.TreeViewListaChilds(astvMyTree);
                     if (listaTipoProductos != "")
                     {
                         Producto.TipoProducto.Id = Convert.ToInt32(listaTipoProductos);
                     }
                     Producto.Ranking = 0;
+                    Producto.WF.Estado = EstadoDropDownList.SelectedValue;
                     if (CondecoRN.Producto.ComprobarNombreProducto(Producto.Nombre, sesion))
                     {
                         MensajeLabel.Text = "Hay un producto con un nombre similar, modifique parte del texto. ";
@@ -101,6 +105,37 @@ namespace Condeco
                     MensajeLabel.Text = CondecoEX.Funciones.Detalle(ex);
                     return;
                 }
+            }
+        }
+        private void ValidarCampos()
+        {
+            try
+            {
+                if (EstadoDropDownList.SelectedValue == "")
+                {
+                    MensajeLabel.Text = "Seleccione el tipo de producto";
+                    return;
+                }
+                string listaTipoProductosChilds = Funciones.TreeViewLista(astvMyTree);
+                if (listaTipoProductosChilds == "")
+                {
+                    MensajeLabel.Text = "Seleccione el tipo de producto";
+                    return;
+                }
+                else
+                {
+                    string[] l = listaTipoProductosChilds.Split(Convert.ToChar(","));
+                    if (l.Length > 1)
+                    {
+                        MensajeLabel.Text = "Seleccione solamente un tipo de producto";
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MensajeLabel.Text = CondecoEX.Funciones.Detalle(ex);
+                return;
             }
         }
     }

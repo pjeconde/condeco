@@ -252,5 +252,26 @@ namespace Condeco
             }
             return lista;
         }
+        public static string TreeViewListaChilds(ASTreeView astvMyTree)
+        {
+            List<ASTreeViewNode> checkedNodes = astvMyTree.GetCheckedNodes(false);
+
+            string lista = "";
+            foreach (ASTreeViewNode node in checkedNodes)
+            {
+                if (node.ChildNodes.Count == 0)
+                {
+                    if (lista == "")
+                    {
+                        lista += node.NodeValue;
+                    }
+                    else
+                    {
+                        lista += ", " + node.NodeValue;
+                    }
+                }
+            }
+            return lista;
+        }
     }
 }
