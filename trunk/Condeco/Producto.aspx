@@ -5,11 +5,11 @@
 <%@ Register Assembly="ASTreeView" Namespace="Geekees.Common.Controls" TagPrefix="ct" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table cellpadding="0" cellspacing="0" style="width: 100%; border-style: none;">
+    <table cellpadding="0" cellspacing="0" style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg'); width: 100%; background-repeat: repeat; border-style: none;">
         <tr>
             <td>
                 <asp:Panel runat="server" ID="Buscador" DefaultButton="BuscarButton">
-                <table border="0" class="ppaltable" cellpadding="0" cellspacing="0" style="background-position: 0px; background-image: url('Imagenes/Productos.jpg'); width: 820px; background-repeat: no-repeat;">
+                <table border="0" class="ppaltable" cellpadding="0" cellspacing="0" >
                     <tr>
                         <td colspan="5">
                             <table border="0" cellpadding="0" cellspacing="0" width="780">
@@ -29,9 +29,10 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                             <tr>
                             <td style="text-align: left">
-                            <div>
+                            <div style="padding-left: 10px">
 		                        <ct:ASTreeView ID="astvMyTree" 
-				                    runat="server"
+				                    runat="server" 
+                                    BackColor="Gray"
 				                    BasePath="~/Javascript/astreeview/"
 				                    DataTableRootNodeValue="0"
 				                    EnableRoot="false" 
@@ -85,11 +86,9 @@
                     </tr>
                     <tr>
                         <td colspan="5">
-                            <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; padding-right: 30px; width: 100%">
+                            <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; width: 100%">
                                 <tr>
-                                    <td align="left">
-                                        &nbsp;</td>
-                                    <td align="right">
+                                    <td align="left" style="padding-left: 10px;">
                                         <asp:RadioButton ID="Vista1RadioButton" runat="server" AutoPostBack="True"
                                             Text="Vista 1" GroupName="Vistas" OnCheckedChanged="VistaRadioButton_CheckedChanged" />&nbsp;&nbsp;&nbsp;
                                         <asp:RadioButton ID="Vista2RadioButton" runat="server" AutoPostBack="True" Text="Vista 2" Checked="true"
@@ -104,16 +103,21 @@
             </td>
         </tr>
     </table>
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 1px; border: 0px; background-color:Lime">
+        <tr>
+            <td style="height:1px; background-color: Gray">
+            </td>
+        </tr>
+        <tr>
+            <td style="height:9px; background-color: white">
+            </td>
+        </tr>
+    </table>
     <table border="0" cellpadding="0" cellspacing="0" style="width: 800px;">
         <tr>
             <td>
                 <asp:Panel ID="PanelPagingGridView" runat="server">
-                    <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; width: 800px;">
-                        <tr>
-                            <td style="padding-top: 0px; padding-bottom: 10px">
-                                <hr noshade="noshade" size="1" color="gray" />
-                            </td>
-                        </tr>
+                    <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; width: 800px;">    
                         <tr>
                             <td>
                                 <asp:Panel ID="Panel1" runat="server" BackColor="white" BorderColor="white" BorderStyle="Solid"
@@ -156,11 +160,6 @@
             <td valign="top" style="padding-left: 10px;">
                 <asp:Panel ID="PanelListView" runat="server" BackColor="White">
                     <table border="0" cellpadding="0" cellspacing="0" style="width: 800px; vertical-align: top">
-                        <tr>
-                            <td style="padding-bottom: 10px; background-color:white">
-                                <hr noshade="noshade" size="1" color="gray" />
-                            </td>
-                        </tr>
                         <tr>
                             <td style="padding-top: 10px; padding-bottom: 10px; width: 800px; vertical-align: top">
                                 <asp:ListView ID="ProductoListView" runat="server" OnPagePropertiesChanging="ProductoListView_PagePropertiesChanging"
