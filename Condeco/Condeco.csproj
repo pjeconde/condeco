@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contacto.aspx" />
+    <Content Include="Imagenes\MaderaC1.jpg" />
     <Content Include="Mensaje.aspx" />
     <Content Include="Empresa.aspx" />
     <Content Include="ExploradorProducto.aspx" />
@@ -457,7 +458,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>26625</DevelopmentServerPort>
+          <DevelopmentServerPort>30058</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
