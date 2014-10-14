@@ -5,11 +5,15 @@
 <%@ Register Assembly="ASTreeView" Namespace="Geekees.Common.Controls" TagPrefix="ct" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table cellpadding="0" cellspacing="0" style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg'); width: 100%; background-repeat: repeat; border-style: none;">
+    <table cellpadding="0" cellspacing="0" style="width:100%">
+        <tr>
+            <td style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg'); width: 100%; background-repeat: repeat; border-style: none; height:10px;">
+            </td>
+        </tr>
         <tr>
             <td>
                 <asp:Panel runat="server" ID="Buscador" DefaultButton="BuscarButton">
-                <table border="0" class="ppaltable" cellpadding="0" cellspacing="0" >
+                <table class="ppaltable" border="0" cellpadding="0" cellspacing="0" >
                     <tr>
                         <td colspan="5">
                             <table border="0" cellpadding="0" cellspacing="0" width="780">
@@ -86,7 +90,7 @@
                     </tr>
                     <tr>
                         <td colspan="5">
-                            <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; width: 100%">
+                            <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; padding-bottom:10px; width: 100%">
                                 <tr>
                                     <td align="left" style="padding-left: 10px;">
                                         <asp:RadioButton ID="Vista1RadioButton" runat="server" AutoPostBack="True"
@@ -102,10 +106,14 @@
                 </asp:Panel>
             </td>
         </tr>
+        <tr>
+            <td style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg'); width: 100%; background-repeat: repeat; border-style: none; height:1px;">
+            </td>
+        </tr>
     </table>
     <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 1px; border: 0px; background-color:Lime">
         <tr>
-            <td style="height:1px; background-color: Gray">
+            <td style="height:2px; background-color: Gray">
             </td>
         </tr>
         <tr>

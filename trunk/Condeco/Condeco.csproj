@@ -13,6 +13,7 @@
     <RootNamespace>Condeco</RootNamespace>
     <AssemblyName>Condeco</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,7 +59,10 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contacto.aspx" />
+    <Content Include="Imagenes\Home.jpg" />
     <Content Include="Imagenes\MaderaC1.jpg" />
+    <Content Include="Imagenes\Plastificados.jpg" />
+    <Content Include="Imagenes\Productos.jpg" />
     <Content Include="Mensaje.aspx" />
     <Content Include="Empresa.aspx" />
     <Content Include="ExploradorProducto.aspx" />

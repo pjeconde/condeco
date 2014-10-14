@@ -73,7 +73,7 @@
                             <asp:Button ID="NuevaClaveCaptchaButton" runat="server" TabIndex="7" OnClick="NuevaClaveCaptchaButton_Click" Text="Nuevo código" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
                         </td>
                         <td align="right" style="padding-top: 3px; padding-right: 5px">
-                            <asp:Label ID="ClaveLabel" runat="server" Text="Codigo"></asp:Label>
+                            <asp:Label ID="ClaveLabel" runat="server" Text="Código"></asp:Label>
                         </td>
                         <td align="left" style="width: 80px; padding-top: 3px">
                             <asp:TextBox ID="CaptchaTextBox" runat="server" TabIndex="6" Width="80px"></asp:TextBox>

@@ -6,10 +6,12 @@
     <table border="0" cellpadding="0" cellspacing="0" style="height: 500px; width: 740px">
         <tr>
             <td valign="top">
-                <table border="0" cellpadding="0" cellspacing="0" class="TextoComun" style="width: 100%;">
+                <table border="0" cellpadding="0" cellspacing="0" class="ppaltable" style="width: 100%;">
                     <tr>
-                        <td align="center" style="padding-left:10px; padding-top:20px" valign="top">
-                            <asp:Label ID="Label5" runat="server" SkinID="TituloPagina" Text="Crear Nueva Cuenta"></asp:Label>
+                        <td>
+                            <h2>
+                                <asp:Label ID="Label5" runat="server" Text="Crear Nueva Cuenta"></asp:Label>
+                            </h2>
                         </td>
                     </tr>
                     <tr>
@@ -132,7 +134,7 @@
                                     <td colspan="2">
                                     </td>
                                     <td colspan="2" style="color: Gray">
-                                        (Muy importante: La coonfirmación de la cuenta se realizara vía email, a esta cuenta)
+                                        (Muy importante: La confirmación de la cuenta se realizara vía email, a esta misma cuenta)
                                     </td>
                                 </tr>
                                 <tr>
@@ -152,7 +154,7 @@
                                     </td>
                                     <td align="left" colspan="2" style="padding-left: 5px; padding-top:5px; width: 330px">
                                         <asp:Button ID="ComprobarDisponibilidadButton" runat="server" CausesValidation="false"
-                                            OnClick="ComprobarDisponibilidadButton_Click" Text="It is available?" ToolTip="Check availability of User.Id entered"
+                                            OnClick="ComprobarDisponibilidadButton_Click" Text="It is available?" ToolTip="Chequear la disponibilidad del Id. de Usuario ingresado"
                                             Width="120px" />
                                         <asp:Label SkinID="TextoMediano" ID="ResultadoComprobarDisponibilidadLabel" runat="server" Font-Bold="True"
                                             Font-Size="12px" Text="" Width="200px"></asp:Label>
@@ -161,14 +163,14 @@
                                 <tr>
                                     <td align="right" colspan="2" style="padding-top:5px; padding-right: 5px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="PasswordTextBox"
-                                            ErrorMessage="Password" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                                            ErrorMessage="Clave" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label15" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="PasswordTextBox"
-                                            ErrorMessage="Password" SetFocusOnError="True">
+                                            ErrorMessage="Clave" SetFocusOnError="True">
                                             <asp:Label ID="Label16" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label SkinID="TextoMediano" ID="PasswordLabel" runat="server" Text="Password"></asp:Label>
+                                        <asp:Label SkinID="TextoMediano" ID="PasswordLabel" runat="server" Text="Clave"></asp:Label>
                                     </td>
                                     <td align="left" style="padding-top:5px">
                                         <asp:TextBox ID="PasswordTextBox" runat="server" MaxLength="50" TabIndex="8" TextMode="Password"

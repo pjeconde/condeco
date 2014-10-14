@@ -12,20 +12,20 @@
             </tr>
             <tr>
                 <td colspan="2" align="center" style="padding-top:20px;">
-                    <asp:Label ID="Label8" runat="server" SkinID="TextoMediano" Text="To change the password of your account, enter the information requested below:"></asp:Label>
+                    <asp:Label ID="Label8" runat="server" SkinID="TextoMediano" Text="Para cambiar la clave de su cuenta, ingrese la información requerida a continuación:"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td align="right" style="padding-right: 10px; padding-top:10px">
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="PasswordTextBox"
-                        ErrorMessage="Current Password" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                        ErrorMessage="Clave Actual" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                         <asp:Label ID="Label23" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                     </asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="PasswordTextBox"
-                        ErrorMessage="Current Password" SetFocusOnError="True">
+                        ErrorMessage="Clave Actual" SetFocusOnError="True">
                         <asp:Label ID="Label24" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                     </asp:RequiredFieldValidator>
-                    <asp:Label ID="Label15" runat="server" Text="Current Password"></asp:Label>
+                    <asp:Label ID="Label15" runat="server" Text="Clave Actual"></asp:Label>
                 </td>
                 <td align="left" style="padding-top:10px">
                     <asp:TextBox ID="PasswordTextBox" runat="server" OnTextChanged="TextBox_TextChanged"
@@ -35,14 +35,14 @@
             <tr>
                 <td align="right" style="padding-right: 10px; padding-top: 5px">
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="PasswordNuevaTextBox"
-                        ErrorMessage="New Password" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                        ErrorMessage="Nueva Clave" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                         <asp:Label ID="Label3" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                     </asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PasswordNuevaTextBox"
-                        ErrorMessage="New Password" SetFocusOnError="True">
+                        ErrorMessage="Nueva Clave" SetFocusOnError="True">
                         <asp:Label ID="Label4" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                     </asp:RequiredFieldValidator>
-                    <asp:Label ID="Label1" runat="server" Text="New Password"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="Nueva Clave"></asp:Label>
                 </td>
                 <td align="left" style="padding-right: 10px; padding-top: 5px">
                     <asp:TextBox ID="PasswordNuevaTextBox" runat="server" OnTextChanged="TextBox_TextChanged"
@@ -52,14 +52,14 @@
             <tr>
                 <td align="right" style="padding-right: 10px; padding-top: 5px">
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="ConfirmacionPasswordNuevaTextBox"
-                        ErrorMessage="Re-enter new password" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                        ErrorMessage="Reingresar nueva clave" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                         <asp:Label ID="Label5" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                     </asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ConfirmacionPasswordNuevaTextBox"
-                        ErrorMessage="Re-enter new password" SetFocusOnError="True">
+                        ErrorMessage="Reingresar nueva clave" SetFocusOnError="True">
                         <asp:Label ID="Label6" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                     </asp:RequiredFieldValidator>
-                    <asp:Label ID="Label2" runat="server" Text="Re-enter new password"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="Reingresar nueva clave"></asp:Label>
                 </td>
                 <td align="left" style="padding-right:10px; padding-top: 5px">
                     <asp:TextBox ID="ConfirmacionPasswordNuevaTextBox" runat="server" OnTextChanged="TextBox_TextChanged"
@@ -71,9 +71,9 @@
                 </td>
                 <td align="left" style="padding-top:20px">
                     <asp:Button ID="AceptarButton" runat="server" OnClick="AceptarButton_Click" TabIndex="4"
-                        Text="Accept" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
-                    <asp:Button ID="CancelarButton" runat="server" CausesValidation="false" PostBackUrl="~/Home.aspx"
-                        TabIndex="5" Text="Cancel" />
+                        Text="Aceptar" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
+                    <asp:Button ID="CancelarButton" runat="server" CausesValidation="false" PostBackUrl="~/Default.aspx"
+                        TabIndex="5" Text="Cancelar" />
                 </td>
             </tr>
             <tr>

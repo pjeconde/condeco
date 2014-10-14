@@ -3,35 +3,37 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadCPH">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainCPH" runat="server">
-    <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px;">
+    <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px;" class="ppaltable">
         <!-- @@@ TITULO DE LA PAGINA @@@-->
         <tr>
-            <td colspan="3" align="center" style="padding-top: 20px;">
-                <asp:Label ID="TituloLabel" runat="server" SkinID="TituloPagina" Text="Forgot your Password ?"></asp:Label>
+            <td colspan="3">
+                <h2>
+                <asp:Label ID="TituloLabel" runat="server" Text="Olvidó su clave ?"></asp:Label>
+                </h2>
             </td>
         </tr>
         <tr>
             <td colspan="3" align="left" style="padding-top:20px;">
-                <asp:Label ID="Label8" runat="server" SkinID="TextoMediano" Text="To set a new password for your account, follow the instructions below:"></asp:Label>
+                <asp:Label ID="Label8" runat="server" SkinID="TextoMediano" Text="Para definir una nueva clave en su cuenta, siguir las instrucciones que figuran a continuación:"></asp:Label>
             </td>
         </tr>
         <!-- @@@ OBJETOS ESPECIFICOS DE LA PAGINA @@@-->
         <tr>
             <td colspan="3" style="padding-top:10px" valign="middle" align="left">
-                <asp:Label ID="Label9" runat="server" SkinID="TextoMediano" Text="1) Enter User.Id and Email (then click the button 'Solicit Security Question')."></asp:Label>
+                <asp:Label ID="Label9" runat="server" SkinID="TextoMediano" Text="1) Ingrese su Id. de Usuario y su email (a continuación hacer clic en el botón 'Solicitar Pregunta de Seguridad')."></asp:Label>
             </td>
         </tr>
         <tr>
             <td align="right" style="padding-top:5px; padding-right: 5px">
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="IdUsuarioTextBox"
-                    ErrorMessage="User.Id" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                    ErrorMessage="Id. de Usuario" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                     <asp:Label ID="Label13" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="IdUsuarioTextBox"
-                    ErrorMessage="User.Id" SetFocusOnError="True">
+                    ErrorMessage="Id. de Usuario" SetFocusOnError="True">
                     <asp:Label ID="Label14" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RequiredFieldValidator>
-                <asp:Label ID="IdUsuarioLabel" runat="server" Text="User.Id"></asp:Label>
+                <asp:Label ID="IdUsuarioLabel" runat="server" Text="Id. de Usuario"></asp:Label>
             </td>
             <td  colspan="2" align="left" style="padding-top:5px">
                 <asp:TextBox ID="IdUsuarioTextBox" runat="server" MaxLength="50" TabIndex="1" Width="100px"></asp:TextBox>
@@ -58,13 +60,13 @@
             </td>
             <td colspan="2" align="left" style="padding-top:5px">
                 <asp:Button ID="SolicitarPreguntaButton" runat="server" CausesValidation="false"
-                    OnClick="SolicitarPreguntaButton_Click" TabIndex="3" Text="Solicit Security Question"
+                    OnClick="SolicitarPreguntaButton_Click" TabIndex="3" Text="Solicitar Pregunta de Seguridad"
                     Width="100%" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
             </td>
         </tr>
         <tr>
             <td align="left" colspan="3" style="padding-top:5px">
-                <asp:Label ID="Label10" runat="server" SkinID="TextoMediano" Text="2) Answer the Security Question (then click the button 'Solicit new password income')."></asp:Label>
+                <asp:Label ID="Label10" runat="server" SkinID="TextoMediano" Text="2) Responder la pregunta de seguridad (a continuación hacer clic en el botón 'Solicitar nueva clave')."></asp:Label>
             </td>
         </tr>
         <tr>
@@ -72,20 +74,20 @@
             </td>
             <td colspan="2" align="left" style="padding-top:5px;">
                 <asp:Label ID="PreguntaLabel" runat="server" Enabled="false" SkinID="TituloMediano"
-                    Text="Security Question"></asp:Label>
+                    Text="Pregunta de Seguridad"></asp:Label>
             </td>
         </tr>
         <tr>
             <td align="right" style="padding-top:5px; padding-right: 5px">
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="RespuestaTextBox"
-                    ErrorMessage="Answer" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                    ErrorMessage="Respuesta" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                     <asp:Label ID="Label21" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="RespuestaTextBox"
-                    ErrorMessage="Answer" SetFocusOnError="True">
+                    ErrorMessage="Respuesta" SetFocusOnError="True">
                     <asp:Label ID="Label22" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RequiredFieldValidator>
-                <asp:Label ID="RespuestaLabel" runat="server" Text="Answer"></asp:Label>
+                <asp:Label ID="RespuestaLabel" runat="server" Text="Respuesta"></asp:Label>
             </td>
             <td colspan="2" align="left" style="padding-top:5px">
                 <asp:TextBox ID="RespuestaTextBox" runat="server" Enabled="false" MaxLength="256"
@@ -97,26 +99,26 @@
             </td>
             <td colspan="2" align="left" style="padding-top:5px">
                 <asp:Button ID="SolicitarNuevaPasswordButton" runat="server" CausesValidation="false"
-                    Enabled="false" OnClick="SolicitarNuevaPasswordButton_Click" TabIndex="5" Text="Solicit new password entry"
+                    Enabled="false" OnClick="SolicitarNuevaPasswordButton_Click" TabIndex="5" Text="Solicitar el ingreso de la nueva clave"
                     Width="100%" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
             </td>
         </tr>
         <tr>
             <td align="left" colspan="3" style="padding-top:5px">
-                <asp:Label ID="Label11" runat="server" SkinID="TextoMediano" Text="3) Enter, and confirm your new password (then click 'Accept')."></asp:Label>
+                <asp:Label ID="Label11" runat="server" SkinID="TextoMediano" Text="3) Confirmar su nueva clave (hacer clic en 'Aceptar')."></asp:Label>
             </td>
         </tr>
         <tr>
             <td align="right" style="padding-right: 10px; padding-top:5px">
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="PasswordNuevaTextBox"
-                    ErrorMessage="New Password" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                    ErrorMessage="Nueva clave" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                     <asp:Label ID="Label3" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PasswordNuevaTextBox"
-                    ErrorMessage="New Password" SetFocusOnError="True">
+                    ErrorMessage="Nueva clave" SetFocusOnError="True">
                     <asp:Label ID="Label4" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RequiredFieldValidator>
-                <asp:Label ID="Label1" runat="server" Text="New Password"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Nueva clave"></asp:Label>
             </td>
             <td colspan="2" align="left" style="padding-right: 10px; padding-top:5px">
                 <asp:TextBox ID="PasswordNuevaTextBox" runat="server" Enabled="false" OnTextChanged="TextBox_TextChanged"
@@ -126,14 +128,14 @@
         <tr>
             <td align="right" style="padding-right: 10px; padding-top:5px">
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="ConfirmacionPasswordNuevaTextBox"
-                    ErrorMessage="Re-enter new password" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                    ErrorMessage="Reingresar nueva clave" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                     <asp:Label ID="Label5" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ConfirmacionPasswordNuevaTextBox"
-                    ErrorMessage="Re-enter new password" SetFocusOnError="True">
+                    ErrorMessage="Reingresar nueva clave" SetFocusOnError="True">
                     <asp:Label ID="Label6" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RequiredFieldValidator>
-                <asp:Label ID="Label2" runat="server" Text="Re-enter new password"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Reingresar nueva clave"></asp:Label>
             </td>
             <td colspan="2" align="left" style="padding-right: 10px; padding-top:5px">
                 <asp:TextBox ID="ConfirmacionPasswordNuevaTextBox" runat="server" Enabled="false"
@@ -145,11 +147,11 @@
             </td>
             <td align="left" style="padding-top:20px; width: 160px">
                 <asp:Button ID="AceptarButton" runat="server" Enabled="false" OnClick="AceptarButton_Click"
-                    TabIndex="8" Text="Accept" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
+                    TabIndex="8" Text="Aceptar" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
             </td>
             <td align="right" style="padding-top:20px; width: 200px">
                 <asp:Button ID="CancelarButton" runat="server" CausesValidation="false" PostBackUrl="~/UsuarioLogin.aspx"
-                    TabIndex="9" Text="Cancel" />
+                    TabIndex="9" Text="Cancelar" />
             </td>
         </tr>
         <tr>

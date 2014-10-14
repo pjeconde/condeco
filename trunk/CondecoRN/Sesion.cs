@@ -86,7 +86,6 @@ namespace CondecoRN
         {
             Sesion.Usuario.Permisos = CondecoRN.Permiso.LeerListaPermisosPorUsuario(Sesion.Usuario, Sesion);
             Sesion.OpcionesHabilitadas = OpcionesHabilitadas(Sesion);
-            //Sesion.TiposProductos
         }
     }
 }

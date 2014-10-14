@@ -11,7 +11,16 @@ namespace Condeco
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string a = HttpContext.Current.Request.Url.Query.ToString().Replace("?", String.Empty);
+            switch (a)
+            {
+                case "Login":
+                    DetalleLabel.Text = "Modificar Producto";
+                    break;
+                case "Productos":
+                    DetalleLabel.Text = "Imagenes Producto";
+                    break;
+            }
         }
     }
 }

@@ -3,21 +3,23 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadCPH">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainCPH" runat="server">
-    <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px;">
+    <table border="0" cellpadding="0" cellspacing="0" class="ppaltable">
         <!-- @@@ TITULO DE LA PAGINA @@@-->
         <tr>
-            <td colspan="3" align="center" style="padding-top:20px">
-                <asp:Label ID="TituloLabel" runat="server" SkinID="TituloPagina" Text="Forgot your User.Id ?"></asp:Label>
+            <td colspan="3">
+                <h2>
+                    <asp:Label ID="TituloLabel" runat="server" Text="Olvidó su Id. de Usuario ?"></asp:Label>
+                </h2>
             </td>
         </tr>
         <tr>
             <td colspan="3" align="left" style="padding-top:20px;">
-                <asp:Label ID="Label8" runat="server" SkinID="TextoMediano" Text="If you forget your User.Id, enter the eMail that recorded at the time of creating your account."></asp:Label>
+                <asp:Label ID="Label8" runat="server" SkinID="TextoMediano" Text="Si usted olvidó su Id. de Usuario, ingrese su email que registró al momento de crear la cuenta."></asp:Label>
             </td>
         </tr>
         <tr>
             <td colspan="3" align="left" style="padding-top:10px;">
-                <asp:Label ID="Label9" runat="server" SkinID="TextoMediano" Text="We will send your User.Id through an email to that address."></asp:Label>
+                <asp:Label ID="Label9" runat="server" SkinID="TextoMediano" Text="Nosotros le enviaremos su Id. de Usuario a esa dirección de email."></asp:Label>
             </td>
         </tr>
         <!-- @@@ OBJETOS ESPECIFICOS DE LA PAGINA @@@-->
@@ -42,11 +44,11 @@
             </td>
             <td align="left" style="padding-top:20px">
                 <asp:Button ID="AceptarButton" runat="server" OnClick="AceptarButton_Click" TabIndex="4"
-                    Text="Solicit User.Id" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
+                    Text="Solicitar Id. de Usuario" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
             </td>
             <td align="right" style="padding-top:20px">
                 <asp:Button ID="CancelarButton" runat="server" CausesValidation="false" PostBackUrl="~/UsuarioLogin.aspx"
-                    TabIndex="5" Text="Cancel" />
+                    TabIndex="5" Text="Cancelar" />
             </td>
         </tr>
         <tr>

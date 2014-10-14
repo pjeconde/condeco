@@ -32,7 +32,18 @@ namespace Condeco
                 PrecioBaseLabel.Text = Producto.PrecioBase.ToString();
                 ComentarioPrecioBaseLabel.Text = Producto.ComentarioPrecioBase;
 
-                TipoProductoLabel.Text = Producto.TipoProducto.Id.ToString();
+                List<CondecoEntidades.TipoProducto> tp = sesion.TiposProducto.FindAll(delegate(CondecoEntidades.TipoProducto p)
+                {
+                    return p.Id == Producto.TipoProducto.Id;
+                });
+                if (tp.Count != 0)
+                {
+                    TipoProductoLabel.Text = tp[0].Descr;
+                }
+                else
+                {
+                    TipoProductoLabel.Text = "";
+                }
                 IdProductoTextBox.Enabled = false;
 
                 String path = Server.MapPath("~/ImagenesProducto/");

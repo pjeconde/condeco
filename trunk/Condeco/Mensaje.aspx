@@ -12,6 +12,8 @@
                 <p>
                     Por el momento no está disponible esta página.
                     <br />  
+                    <br />  
+                    <asp:Label ID="DetalleLabel" runat="server" Text=""></asp:Label>
                 </p>
             </td>
         </tr>
