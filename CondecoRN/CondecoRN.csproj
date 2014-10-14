@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Comentario.cs" />
     <Compile Include="ContactoSite.cs" />
+    <Compile Include="TipoProducto.cs" />
     <Compile Include="EnvioCorreo.cs" />
     <Compile Include="EnvioSMS.cs" />
     <Compile Include="Estado.cs" />

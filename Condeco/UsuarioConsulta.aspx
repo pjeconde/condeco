@@ -6,7 +6,7 @@
     <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px">
         <tr>
             <td align="center" colspan="2" style="padding-top:20px">
-                <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="User Permissions"></asp:Label>
+                <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Permisos de Usuarios"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -23,11 +23,11 @@
                     <asp:GridView ID="PermisosGridView" runat="server" 
                         AutoGenerateColumns="false" OnRowDataBound="PermisosGridView_RowDataBound">
                         <Columns>
-                            <asp:BoundField DataField="DescrTipoPermiso" HeaderText="Permission" SortExpression="DescrTipoPermiso">
+                            <asp:BoundField DataField="DescrTipoPermiso" HeaderText="Permido" SortExpression="DescrTipoPermiso">
                                 <headerstyle horizontalalign="center" wrap="False" />
                                 <itemstyle horizontalalign="left" wrap="False" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="Estado" HeaderText="Status" SortExpression="Estado">
+                            <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado">
                                 <headerstyle horizontalalign="center" wrap="False" />
                                 <itemstyle horizontalalign="left" wrap="False" />
                             </asp:BoundField>
@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <td align="center" colspan="2" style="padding-top:20px">
-                <asp:Button ID="SalirButton" runat="server" Text="Exit" TabIndex="4" PostBackUrl="~/Home.aspx"/>
+                <asp:Button ID="SalirButton" runat="server" Text="Exit" TabIndex="4" PostBackUrl="~/Default.aspx"/>
             </td>
         </tr>
         <tr>

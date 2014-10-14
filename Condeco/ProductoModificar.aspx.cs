@@ -34,6 +34,7 @@ namespace Condeco
                     }
 
                     EstadoDropDownList.DataSource = CondecoEntidades.Estados.ListaEstados.ListaMasSinInformar();
+                    
                     NombreTextBox.Focus();
                     DataBind();
 

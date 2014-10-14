@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comentario.cs" />
+    <Compile Include="TipoProducto.cs" />
     <Compile Include="db.cs" />
     <Compile Include="Funciones.cs" />
     <Compile Include="Medio.cs" />

@@ -6,20 +6,25 @@
     <table border="0" cellpadding="0" cellspacing="0" class="ppaltable" style="vertical-align:top">
         <tr>
             <td>
-                <h2>
-                    <asp:Label ID="Label1" runat="server" Font-Bold="False" Font-Size="24px" ForeColor="#F6B200"
-                        Text="Login"></asp:Label>
-                </h2>
+                 <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <h2>
+                                Login
+                            </h2>
+                            <p>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
         <tr>
             <td valign="top">
-                <asp:Panel ID="Panel2" runat="server" Height="600px">
-                    <table border="0" cellpadding="0" cellspacing="0" style="padding-left:20px; padding-right:20px; height: 600px; padding-top: 0px;" width="720px">
+                <asp:Panel ID="Panel2" runat="server" Height="800px">
+                    <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px; padding-right:10px; height: 600px; padding-top: 0px;" width="800px">
                         <tr>
-                            <td align="left" class="style3" rowspan="1" style="background-position: left -40px;
-                                padding: 10px; background-image: url('Imagenes/TroiloOrquesta.jpg'); background-repeat: no-repeat;"
-                                valign="top">
+                            <td align="left" rowspan="1" style="background-position: left 0px; padding: 10px; background-image: url('Imagenes/TroiloOrquesta.jpg'); background-repeat: no-repeat;" valign="top">
                                 Si usted aún no posee una cuenta de usuario en nuestro Sitio Web, usted puede registrarse de forma gratuita haciendo clic en la opción 
                                 &#39;Crear nueva cuenta de usuario&#39;.
                                 <br />
@@ -27,8 +32,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0">
                                     <tr>
                                         <td valign="top">
-                                            <asp:Panel ID="Panel1" runat="server" DefaultButton="LoginButton" BorderStyle="Solid"
-                                                BorderWidth="1" BorderColor="#cccccc" Width="370px">
+                                            <asp:Panel ID="Panel1" runat="server" DefaultButton="LoginButton" BorderStyle="Solid" BorderWidth="1" BorderColor="#cccccc" Width="370px">
                                                 <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; padding-right: 10px;">
                                                     <tr>
                                                         <td align="center" colspan="3" style="padding-top: 20px" class="style1">
@@ -93,7 +97,7 @@
                                             <font style="color: #F6B200">&gt;</font> Promociones
                                             <br />
                                             Por cada lanzamiento de un nuevo producto, tenemos reservado un precio especial para la venta de las primeras unidades.
-                                            Usted contará con toda la información necesaria relacionada al lanzamiento y detalle del producto, y como usuario de nuestro sitio web podrá reservar la unidad que le sea de interes.
+                                            Usted contará con toda la información necesaria relacionada al lanzamiento del producto, y como usuario de nuestro sitio web podrá reservar la unidad que le sea de interes.
                                         </td>
                                     </tr>
                                     <tr>

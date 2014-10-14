@@ -53,6 +53,8 @@ namespace Condeco
         {
             NombreTextBox.Text = "";
             DescripcionTextBox.Text = "";
+            astvMyTree.ClearNodesCheck();
+            astvMyTree.ExpandToDepth(0);
         }
         private void BindPagingGrid()
         {
