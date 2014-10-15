@@ -30,7 +30,7 @@ namespace Condeco
                     Response.Redirect("~/Empresa.aspx");
                     break;
                 case "Productos":
-                    Response.Redirect("~/Producto.aspx");
+                    Response.Redirect("~/Mensaje.aspx?Productos");
                     break;
                 case "Contacto":
                     Response.Redirect("~/Contacto.aspx");
@@ -51,7 +51,7 @@ namespace Condeco
                     Response.Redirect("~/Default.aspx");
                     break;
                 case "Login":
-                    Response.Redirect("~/UsuarioLogin.aspx");
+                    Response.Redirect("~/Mensaje.aspx?Login");
                     break;
                 case "Administración Site|Productos|Crear":
                     Response.Redirect("~/ProductoCrear.aspx");
