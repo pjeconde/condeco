@@ -38,10 +38,10 @@
                     Utilizamos la madera con su tonalidad natural u oscurecida con tintes y diversos colores pasteles para darle calidez a los mismos. <br />
                     <br />
                     Realizamos además, algunos carteles con efecto similar al camuflado en diversas tonalidades y otros estilos como el <i><b>campestre</b></i> o el <i><b>shabby chic</b></i> que es una mezcla de elementos antiguos con modernos.<br />
-                    <br />
-                    <asp:Image ID="ImageProductosCarteles" runat="server" ImageUrl="~/Imagenes/Home.jpg" />
-                    <br />  
-                    <br />  
+                </p>
+                <asp:Image ID="ImageProductosCarteles" runat="server" ImageUrl="~/Imagenes/Home.jpg" />
+                <br />  
+                <p>
                     La señalización decorativa no sólo luce bien en la oficina sino que también funciona muy bien en una casa. <br />
                     La creación de un cartel para la cocina con el menú, o un afiche para la sala con una cita conmovedora puede resultar muy atractivo. <br />
                     Hacer una señal con un aspecto envejecido consiste simular una pieza antigua mostrando las imperfecciones como parte de su encanto. <br />
