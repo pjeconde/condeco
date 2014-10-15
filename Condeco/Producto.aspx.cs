@@ -33,21 +33,6 @@ namespace Condeco
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             BindPagingGrid();
-            List<ASTreeViewNode> checkedNodes = this.astvMyTree.GetCheckedNodes(false);
-            
-            listaTipoProducto = "";
-            foreach (ASTreeViewNode node in checkedNodes)
-            {
-                //Nodos seleccionados
-                if (listaTipoProducto == "")
-                {
-                    listaTipoProducto += node.NodeValue;        //"[" + node.NodeText + "-" + node.NodeValue + "]";
-                }
-                else
-                {
-                    listaTipoProducto += ", " + node.NodeValue;
-                }
-            }
         }
         protected void ClearButton_Click(object sender, EventArgs e)
         {
@@ -60,6 +45,21 @@ namespace Condeco
         {
             try
             {
+                List<ASTreeViewNode> checkedNodes = this.astvMyTree.GetCheckedNodes(false);
+                listaTipoProducto = "";
+                foreach (ASTreeViewNode node in checkedNodes)
+                {
+                    //Nodos seleccionados
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto += node.NodeValue;
+                    }
+                    else
+                    {
+                        listaTipoProducto += ", " + node.NodeValue;
+                    }
+                }
+
                 int CantidadFilas = 0;
                 List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
                 if (Vista1RadioButton.Checked == true)
@@ -101,6 +101,14 @@ namespace Condeco
                     //ListView
                     ProductoListView.DataSource = (List<CondecoEntidades.Producto>)ViewState["lista"];
                     ProductoListView.DataBind();
+                }
+                if (DataPager1.TotalRowCount > DataPager1.MaximumRows)
+                {
+                    DataPager1.Visible = true;
+                }
+                else
+                {
+                    DataPager1.Visible = false;
                 }
             }
             catch (System.Threading.ThreadAbortException)

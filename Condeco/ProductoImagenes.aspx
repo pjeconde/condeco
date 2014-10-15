@@ -4,12 +4,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainCPH" runat="server">
     <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px;">
         <tr>
-            <td align="center" colspan="2" style="padding-top: 20px">
-                <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Imagenes del Producto"></asp:Label>
+            <td colspan="2">
+                <table class="ppaltable" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <h2>
+                                <asp:Label ID="TituloPaginaLabel" runat="server" Text="Imagenes del Producto"></asp:Label>
+                            </h2>
+                            <p>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
         <tr>
-            <td align="center" valign="bottom" style="padding-right: 5px; padding-top: 20px">
+            <td align="center" valign="bottom" style="padding-right: 5px;>
                 <asp:Label ID="VistaPreviaLabel" runat="server" Text="Vista Previa"></asp:Label>
             </td>
             <td valign="bottom">

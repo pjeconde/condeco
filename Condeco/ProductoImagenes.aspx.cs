@@ -83,7 +83,7 @@ namespace Condeco
                         else
                         {
                             CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
-                            FileUpload1.PostedFile.SaveAs(path + sesion.Usuario.Id + "-" + producto.Id.ToString() + fileExtension);
+                            FileUpload1.PostedFile.SaveAs(path + producto.Id.ToString() + fileExtension);
                             string[] archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + ".*", System.IO.SearchOption.TopDirectoryOnly);
                             if (archivos.Length != 0)
                             {

@@ -6,8 +6,18 @@
     <asp:Panel ID="Panel2" runat="server" DefaultButton="BuscarButton">
         <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px">
             <tr>
-                <td align="center" colspan="3" style="padding-top:20px">
-                    <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="? Producto"></asp:Label>
+                <td colspan="3">
+                    <table class="ppaltable" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>
+                                <h2>
+                                    <asp:Label ID="TituloPaginaLabel" runat="server" Text="? Producto"></asp:Label>
+                                </h2>
+                                <p>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
             <tr>

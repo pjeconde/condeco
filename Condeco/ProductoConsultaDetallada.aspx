@@ -107,7 +107,9 @@
                     </tr>
                     <tr>
                         <td align="left" colspan="2" style="padding-top: 2px;">
+                            <b>
                             <asp:Label ID="NombreLabel" runat="server" Text=""></asp:Label>
+                            </b>
                         </td>
                     </tr>
                     <tr>
