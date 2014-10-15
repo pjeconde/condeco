@@ -90,7 +90,7 @@ namespace Condeco
                     productoHasta.ComentarioPrecioBase = ComentarioPrecioBaseTextBox.Text;
 
                     productoHasta.YouTube = YouTubeTextBox.Text;
-                    string listaTipoProductos = Funciones.TreeViewLista(astvMyTree);
+                    string listaTipoProductos = Funciones.TreeViewListaChilds(astvMyTree);
                     if (listaTipoProductos != "")
                     {
                         productoHasta.TipoProducto.Id = Convert.ToInt32(listaTipoProductos);

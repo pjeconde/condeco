@@ -15,10 +15,10 @@ namespace Condeco
             switch (a)
             {
                 case "Login":
-                    DetalleLabel.Text = "Modificar Producto";
+                    DetalleLabel.Text = "Próximamente esta página le permitirá a usted ser usuario de nuestro sitio web y acceder a las novedades y promociones vigentes.";
                     break;
                 case "Productos":
-                    DetalleLabel.Text = "Imagenes Producto";
+                    DetalleLabel.Text = "Próximamente esta página le permitirá a usted buscar y visualizar los productos que ofrecemos.";
                     break;
             }
         }
