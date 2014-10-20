@@ -679,22 +679,13 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.DropDownList MedioDropDownList;
         
         /// <summary>
-        /// Label3 control.
+        /// NuevaClaveCaptchaButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// CaptchaImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image CaptchaImage;
+        protected global::System.Web.UI.WebControls.Button NuevaClaveCaptchaButton;
         
         /// <summary>
         /// CondicionesLabel control.
@@ -706,6 +697,15 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label CondicionesLabel;
         
         /// <summary>
+        /// CaptchaImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image CaptchaImage;
+        
+        /// <summary>
         /// CondicionesTextBox control.
         /// </summary>
         /// <remarks>
@@ -715,13 +715,13 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.TextBox CondicionesTextBox;
         
         /// <summary>
-        /// NuevaClaveCaptchaButton control.
+        /// CrearCuentaLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NuevaClaveCaptchaButton;
+        protected global::System.Web.UI.WebControls.Label CrearCuentaLabel;
         
         /// <summary>
         /// RegularExpressionValidator9 control.
@@ -785,15 +785,6 @@ namespace Condeco {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label CaseSensitiveLabel;
-        
-        /// <summary>
-        /// CrearCuentaLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CrearCuentaLabel;
         
         /// <summary>
         /// CrearCuentaButton control.

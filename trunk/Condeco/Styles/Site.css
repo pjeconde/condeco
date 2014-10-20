@@ -422,7 +422,7 @@ div.accountInfo
 }
 .TextoComun
 {
-	position: relative; border: 0px; color: white;
+	position: relative; border: 0px; color: gray;
 	font-weight: normal; font-size: 12px; font-family: Arial; font-style: normal;
 }
 .TextoCenter

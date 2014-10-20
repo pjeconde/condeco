@@ -44,7 +44,7 @@ namespace Condeco
                     CancelarButton.Visible = false;
                     CondecoRN.Sesion.Cerrar(sesion);
                     Funciones.PersonalizarControlesMaster(Master, false, sesion);
-                    MensajeLabel.Text = "The password was changed successfully. <br /> To continue, click on 'Login'.";
+                    MensajeLabel.Text = "La clave ha sido cambiada satisfactoriamente.<br /> Para continuar hacer clic en 'Login'.";
                 }
             }
             catch (System.Threading.ThreadAbortException)
@@ -53,11 +53,11 @@ namespace Condeco
             }
             catch (CondecoEX.Usuario.PasswordNoMatch)
             {
-                MensajeLabel.Text = "Current password incorrect";
+                MensajeLabel.Text = "Clave actual incorrecta";
             }
             catch (CondecoEX.Usuario.PasswordYConfirmacionNoCoincidente)
             {
-                MensajeLabel.Text = "The new password does not match with your confirmation";
+                MensajeLabel.Text = "La nueva clave no coincide con su confirmación";
             }
             catch (Exception ex)
             {

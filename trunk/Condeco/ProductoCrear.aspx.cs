@@ -116,7 +116,7 @@ namespace Condeco
                     MensajeLabel.Text = "Seleccione el tipo de producto";
                     return;
                 }
-                string listaTipoProductosChilds = Funciones.TreeViewLista(astvMyTree);
+                string listaTipoProductosChilds = Funciones.TreeViewListaChilds(astvMyTree);
                 if (listaTipoProductosChilds == "")
                 {
                     MensajeLabel.Text = "Seleccione el tipo de producto";

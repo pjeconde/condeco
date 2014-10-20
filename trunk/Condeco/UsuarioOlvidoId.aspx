@@ -8,18 +8,18 @@
         <tr>
             <td colspan="3">
                 <h2>
-                    <asp:Label ID="TituloLabel" runat="server" Text="Olvidó su Id. de Usuario ?"></asp:Label>
+                    <asp:Label ID="TituloLabel" runat="server" Text="Olvidó su Nombre de Usuario ?"></asp:Label>
                 </h2>
             </td>
         </tr>
         <tr>
             <td colspan="3" align="left" style="padding-top:20px;">
-                <asp:Label ID="Label8" runat="server" SkinID="TextoMediano" Text="Si usted olvidó su Id. de Usuario, ingrese su email que registró al momento de crear la cuenta."></asp:Label>
+                <asp:Label ID="Label8" runat="server" SkinID="TextoMediano" Text="Si usted olvidó su Nombre de Usuario, ingrese el email que registró al momento de crear la cuenta."></asp:Label>
             </td>
         </tr>
         <tr>
             <td colspan="3" align="left" style="padding-top:10px;">
-                <asp:Label ID="Label9" runat="server" SkinID="TextoMediano" Text="Nosotros le enviaremos su Id. de Usuario a esa dirección de email."></asp:Label>
+                <asp:Label ID="Label9" runat="server" SkinID="TextoMediano" Text="Nosotros le enviaremos su Nombre de Usuario a esa dirección de email."></asp:Label>
             </td>
         </tr>
         <!-- @@@ OBJETOS ESPECIFICOS DE LA PAGINA @@@-->
@@ -44,7 +44,7 @@
             </td>
             <td align="left" style="padding-top:20px">
                 <asp:Button ID="AceptarButton" runat="server" OnClick="AceptarButton_Click" TabIndex="4"
-                    Text="Solicitar Id. de Usuario" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
+                    Text="Solicitar Nombre de Usuario" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
             </td>
             <td align="right" style="padding-top:20px">
                 <asp:Button ID="CancelarButton" runat="server" CausesValidation="false" PostBackUrl="~/UsuarioLogin.aspx"

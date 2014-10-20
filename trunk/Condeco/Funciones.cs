@@ -24,6 +24,7 @@ namespace Condeco
             ContentPlaceHolder usuarioContentPlaceHolder = ((ContentPlaceHolder)Master.FindControl("UsuarioCPH"));
             Label usuarioLabel = ((Label)usuarioContentPlaceHolder.FindControl("UsuarioLabel"));
             HyperLink usuarioHyperLink = ((HyperLink)usuarioContentPlaceHolder.FindControl("UsuarioHyperLink"));
+
             //Label cUITLabel = ((Label)usuarioContentPlaceHolder.FindControl("CUITLabel"));
             //DropDownList cUITDropDownList = ((DropDownList)usuarioContentPlaceHolder.FindControl("CUITDropDownList"));
             //Label uNLabel = ((Label)usuarioContentPlaceHolder.FindControl("UNLabel"));
@@ -160,6 +161,7 @@ namespace Condeco
                     usuarioImageButton.Visible = true;
                     usuarioContentPlaceHolder.Visible = true;
                     usuarioHyperLink.Text = Sesion.Usuario.Nombre.Replace(" ", "&nbsp;");
+                    usuarioLabel.Text = "User: ";
                     menu.Items[menu.Items.Count - 1].Selectable = true;
                 }
             }

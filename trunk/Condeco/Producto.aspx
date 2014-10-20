@@ -94,8 +94,8 @@
                                 <tr>
                                     <td align="left" style="padding-left: 10px;">
                                         <asp:RadioButton ID="Vista1RadioButton" runat="server" AutoPostBack="True"
-                                            Text="Vista 1" GroupName="Vistas" OnCheckedChanged="VistaRadioButton_CheckedChanged" />&nbsp;&nbsp;&nbsp;
-                                        <asp:RadioButton ID="Vista2RadioButton" runat="server" AutoPostBack="True" Text="Vista 2" Checked="true"
+                                            Text="Vista 1" GroupName="Vistas" OnCheckedChanged="VistaRadioButton_CheckedChanged" Checked="true"/>&nbsp;&nbsp;&nbsp;
+                                        <asp:RadioButton ID="Vista2RadioButton" runat="server" AutoPostBack="True" Text="Vista 2" 
                                             GroupName="Vistas" OnCheckedChanged="VistaRadioButton_CheckedChanged" />
                                     </td>
                                 </tr>
@@ -195,14 +195,14 @@
                                                     <td style="width: 380px; vertical-align: top">
                                                         <table border="0" cellpadding="0" cellspacing="0">
                                                             <tr>
+                                                                <td style="padding-top: 5px; padding-right:5px;">
+                                                                    <asp:Image ID="ImagenRecomendada" runat="server" ImageUrl='<%# Eval("TipoDestacado").ToString()=="02" ? "~/Imagenes/Estrella.jpg" : "~/Imagenes/Iconos/PuntoW.jpg"%>'
+                                                                        Width="5px" />
+                                                                </td>
                                                                 <td>
                                                                     <asp:Label ID="NombreLabel" runat="server" SkinID="TituloColor1Grande" Text='<%# Eval("Nombre") %>'
                                                                         CssClass='<%# Eval("TipoDestacado").ToString()=="01" || Eval("TipoDestacado").ToString()=="02" ? "myClass01" : "myClass"%>'
                                                                         Width="300px" />
-                                                                </td>
-                                                                <td style="padding-top: 5px">
-                                                                    <asp:Image ID="ImagenRecomendada" runat="server" ImageUrl='<%# Eval("TipoDestacado").ToString()=="02" ? "~/Imagenes/Estrella.jpg" : "~/Imagenes/Iconos/PuntoW.jpg"%>'
-                                                                        Width="25px" />
                                                                 </td>
                                                             </tr>
                                                         </table>
