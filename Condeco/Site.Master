@@ -129,7 +129,7 @@
                                             <table>
                                                 <tr>
                                                     <td class="Fuente" align="right" style="color: #F6B200; font-weight: bold">
-                                                        <asp:Label ID="UsuarioLabel" runat="server" Text="User:"></asp:Label>
+                                                        <asp:Label ID="UsuarioLabel" runat="server" Text=""></asp:Label>
                                                     </td>
                                                     <td class="Fuente" align="left" colspan="3" style="color: White;">
                                                         <asp:HyperLink ID="UsuarioHyperLink" runat="server" Text="" ForeColor="White" NavigateUrl="~/UsuarioConsulta.aspx"></asp:HyperLink>
@@ -137,7 +137,6 @@
                                                 </tr>
                                             </table>
                                         </asp:ContentPlaceHolder>
-
                                     </td>
                                 </tr>
                             </table>

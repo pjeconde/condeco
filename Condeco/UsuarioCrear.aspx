@@ -19,11 +19,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="left" colspan="2" style="padding-left:32px; padding-top:20px">
+                        <td align="left" colspan="2" style="padding-left:30px; padding-top:20px">
                             <!-- @@@ OBJETOS ESPECIFICOS DE LA PAGINA @@@-->
-                            <table id="Table1" border="0" cellpadding="0" cellspacing="0" width="600">
+                            <table id="Table1" border="0" cellpadding="0" cellspacing="0" width="680px">
                                 <tr>
-                                    <td align="right" colspan="2" style="width: 300px; padding-right:5px">
+                                    <td align="right" colspan="2" style="width: 200px; padding-right:5px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="NombreTextBox"
                                             ErrorMessage="First and Last Name" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label7" runat="server" SkinID="IndicadorValidacion"></asp:Label>
@@ -34,10 +34,8 @@
                                         </asp:RequiredFieldValidator>
                                         <asp:Label SkinID="TextoMediano" ID="NombreLabel" runat="server" Text="Nombre y Apellido"></asp:Label>
                                     </td>
-                                    <td align="left" colspan="2">
+                                    <td align="left" colspan="3">
                                         <asp:TextBox ID="NombreTextBox" runat="server" MaxLength="50" TabIndex="1" Width="400px"></asp:TextBox>
-                                    </td>
-                                    <td style="width: 200px">
                                     </td>
                                 </tr>
                                 <!-- Pais -->
@@ -54,7 +52,7 @@
                                         </asp:RequiredFieldValidator>
                                         <asp:Label ID="Label25" runat="server" Text="Pais"></asp:Label>
                                     </td>
-                                    <td align="left" colspan="2" style="padding-top: 5px">
+                                    <td align="left" colspan="3" style="padding-top: 5px">
                                         <asp:TextBox ID="PaisTextBox" runat="server" MaxLength="50" TabIndex="2" Width="400px"></asp:TextBox>
                                     </td>
                                 </tr>
@@ -72,7 +70,7 @@
                                         </asp:RequiredFieldValidator>
                                         <asp:Label ID="Label28" runat="server" Text="Provincia"></asp:Label>
                                     </td>
-                                    <td align="left" colspan="2" style="padding-top: 5px">
+                                    <td align="left" colspan="3" style="padding-top: 5px">
                                         <asp:TextBox ID="ProvinciaTextBox" runat="server" MaxLength="50" TabIndex="3" Width="400px"></asp:TextBox>
                                     </td>
                                 </tr>
@@ -90,7 +88,7 @@
                                         </asp:RequiredFieldValidator>
                                         <asp:Label ID="Label29" runat="server" Text="Localidad"></asp:Label>
                                     </td>
-                                    <td align="left" colspan="2" style="padding-top: 5px">
+                                    <td align="left" colspan="3" style="padding-top: 5px">
                                         <asp:TextBox ID="LocalidadTextBox" runat="server" MaxLength="50" TabIndex="4" Width="400px"></asp:TextBox>
                                     </td>
                                 </tr>
@@ -98,7 +96,7 @@
                                     <td align="right" colspan="2" style="padding-right: 5px; padding-top: 5px">
                                         <asp:Label ID="Label30" runat="server" Text="Facebook Address"></asp:Label>
                                     </td>
-                                    <td align="left" colspan="2" style="padding-top: 5px">
+                                    <td align="left" colspan="3" style="padding-top: 5px">
                                         <asp:TextBox ID="FacebookTextBox" runat="server" MaxLength="50" TabIndex="5" Width="400px"></asp:TextBox>
                                     </td>
                                 </tr>
@@ -110,7 +108,7 @@
                                         </asp:RegularExpressionValidator>
                                         <asp:Label SkinID="TextoMediano" ID="TelefonoLabel" runat="server" Text="Telefono"></asp:Label>
                                     </td>
-                                    <td align="left" colspan="2" style="padding-top:5px">
+                                    <td align="left" colspan="3" style="padding-top:5px">
                                         <asp:TextBox ID="TelefonoTextBox" runat="server" MaxLength="50" TabIndex="5" Width="400px"></asp:TextBox>
                                     </td>
                                 </tr>
@@ -126,14 +124,14 @@
                                         </asp:RequiredFieldValidator>
                                         <asp:Label SkinID="TextoMediano" ID="EmailLabel" runat="server" Text="Email"></asp:Label>
                                     </td>
-                                    <td align="left" colspan="2" style="padding-top:5px">
+                                    <td align="left" colspan="3" style="padding-top:5px">
                                         <asp:TextBox ID="EmailTextBox" runat="server" MaxLength="128" TabIndex="6" Width="400px"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                     </td>
-                                    <td colspan="2" style="color: Gray">
+                                    <td colspan="3" style="color: Gray">
                                         (Muy importante: La confirmación de la cuenta se realizara vía email, a esta misma cuenta)
                                     </td>
                                 </tr>
@@ -147,14 +145,14 @@
                                             ErrorMessage="User.Id" SetFocusOnError="True">
                                             <asp:Label ID="Label14" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label SkinID="TextoMediano" ID="IdUsuarioLabel" runat="server" Text="Usuario de Ingreso"></asp:Label>
+                                        <asp:Label SkinID="TextoMediano" ID="IdUsuarioLabel" runat="server" Text="Nombre de Usuario"></asp:Label>
                                     </td>
                                     <td align="left" style="padding-top:5px">
                                         <asp:TextBox ID="IdUsuarioTextBox" runat="server" MaxLength="50" TabIndex="7" Width="100px"></asp:TextBox>
                                     </td>
                                     <td align="left" colspan="2" style="padding-left: 5px; padding-top:5px; width: 330px">
                                         <asp:Button ID="ComprobarDisponibilidadButton" runat="server" CausesValidation="false"
-                                            OnClick="ComprobarDisponibilidadButton_Click" Text="It is available?" ToolTip="Chequear la disponibilidad del Id. de Usuario ingresado"
+                                            OnClick="ComprobarDisponibilidadButton_Click" Text="Está disponible ?" ToolTip="Chequear la disponibilidad del Nombre de Usuario ingresado"
                                             Width="120px" />
                                         <asp:Label SkinID="TextoMediano" ID="ResultadoComprobarDisponibilidadLabel" runat="server" Font-Bold="True"
                                             Font-Size="12px" Text="" Width="200px"></asp:Label>
@@ -177,22 +175,22 @@
                                             Width="100px"></asp:TextBox>
                                     </td>
                                     <td align="left" rowspan="2" style="padding-left: 5px; padding-top:5px" valign="middle">
-                                        <asp:Label ID="Label4" runat="server" ForeColor="Gray" Text="(Si usted olvido el password, use la pregunta de seguridad)"></asp:Label>
+                                        <asp:Label ID="Label4" runat="server" ForeColor="Gray" Text="(Si usted olvido la clave, use la pregunta de seguridad)"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="right" colspan="2" style="padding-top:5px; padding-right: 5px">
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="ConfirmacionPasswordTextBox"
-                                            ErrorMessage="Reingresar password" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                                            ErrorMessage="Reingresar clave" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label17" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ConfirmacionPasswordTextBox"
-                                            ErrorMessage="Reingresar password" SetFocusOnError="True">
+                                            ErrorMessage="Reingresar clave" SetFocusOnError="True">
                                             <asp:Label ID="Label18" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label SkinID="TextoMediano" ID="ConfirmacionPasswordLabel" runat="server" Text="Reingresar password"></asp:Label>
+                                        <asp:Label SkinID="TextoMediano" ID="ConfirmacionPasswordLabel" runat="server" Text="Reingresar clave"></asp:Label>
                                     </td>
-                                    <td align="left" style="padding-top:5px">
+                                    <td align="left" colspan="3" style="padding-top:5px">
                                         <asp:TextBox ID="ConfirmacionPasswordTextBox" runat="server" MaxLength="50" TabIndex="9"
                                             TextMode="Password" Width="100px"></asp:TextBox>
                                     </td>
@@ -209,7 +207,7 @@
                                         </asp:RequiredFieldValidator>
                                         <asp:Label SkinID="TextoMediano" ID="PreguntaLabel" runat="server" Text="Pregunta de Securidad"></asp:Label>
                                     </td>
-                                    <td align="left" colspan="2" style="padding-top:5px">
+                                    <td align="left" colspan="3" style="padding-top:5px">
                                         <asp:Label SkinID="TextoMediano" ID="Label1" runat="server" Font-Bold="true" Text="¿"></asp:Label>
                                         <asp:TextBox ID="PreguntaTextBox" runat="server" MaxLength="256" TabIndex="10" Width="400px"></asp:TextBox>
                                         <asp:Label SkinID="TextoMediano" ID="Label6" runat="server" Font-Bold="true" Text="?"></asp:Label>
@@ -227,7 +225,7 @@
                                         </asp:RequiredFieldValidator>
                                         <asp:Label SkinID="TextoMediano" ID="RespuestaLabel" runat="server" Text="Respuesta"></asp:Label>
                                     </td>
-                                    <td align="left" colspan="2" style="padding-top:5px">
+                                    <td align="left" colspan="3" style="padding-top:5px">
                                         <asp:TextBox ID="RespuestaTextBox" runat="server" MaxLength="256" TabIndex="11" Width="400px"></asp:TextBox>
                                     </td>
                                 </tr>
@@ -235,50 +233,41 @@
                                     <td align="right" colspan="2" style="padding-top:5px; padding-right: 5px">
                                         <asp:Label SkinID="TextoMediano" ID="LabelIdMedio" runat="server" Text="Como nos conocio ?"></asp:Label>
                                     </td>
-                                    <td align="left"  colspan="2" style="padding-top:5px">
+                                    <td align="left"  colspan="3" style="padding-top:5px">
 				                        <asp:DropDownList ID="MedioDropDownList" runat="server" TabIndex="501" Width="216px" DataValueField="Id" DataTextField="Descr">
 				                        </asp:DropDownList>
 			                        </td>
                                 </tr>
-                                <tr>
-                                    <td align="center" style="padding-top:5px; width: 150px" valign="bottom">
-                                        <asp:Label ID="Label3" runat="server" Text="" Width="150px"></asp:Label>
+                                  <tr>
+                                    <td align="right" colspan="2" style="padding-top:5px; padding-right: 5px">
+                                        <asp:Button ID="NuevaClaveCaptchaButton" runat="server" CausesValidation="false" OnClick="NuevaClaveCaptchaButton_Click" Text="Nuevo código" />
+                                        <asp:Label ID="CondicionesLabel" runat="server" Visible="false" Text="Terminos y condiciones del servicio"></asp:Label>
+                                    </td>
+                                    <td align="left" colspan="3" style="padding-top:5px">
                                         <asp:Image ID="CaptchaImage" runat="server" AlternateText="" Height="60px" Width="150px" />
-                                    </td>
-                                    <td align="right" style="padding-top:5px; padding-right: 5px">
-                                        <asp:Label ID="CondicionesLabel" runat="server" Text="Terms and Conditions of Service"></asp:Label>
-                                    </td>
-                                    <td align="left" colspan="2" style="padding-top:5px">
-                                        <asp:TextBox ID="CondicionesTextBox" runat="server" Font-Size="Small" Height="100px"
-                                            ReadOnly="true" TextMode="MultiLine" Width="400px"></asp:TextBox>
+                                        <asp:TextBox ID="CondicionesTextBox" runat="server" Font-Size="Small" Height="100px" Visible="false" ReadOnly="true" TextMode="MultiLine" Width="400px"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="center" style="padding-top:5px" valign="top">
-                                        <asp:Button ID="NuevaClaveCaptchaButton" runat="server" CausesValidation="false"
-                                            OnClick="NuevaClaveCaptchaButton_Click" Text="New Code" />
+                                    <td align="right" colspan="5" style="padding-top: 10px">
+                                        <asp:Label ID="CrearCuentaLabel" runat="server" Visible="false" Text="Al hacer clic en 'Crear cuenta', you está aceptado los terminos y condiciones de la misma."></asp:Label>
                                     </td>
-                                    <td align="right" style="padding-top:5px; padding-right: 5px; width: 150px">
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="CaptchaTextBox"
-                                            ErrorMessage="Codigo" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
+                                </tr>
+                                <tr>
+                                    <td align="right" colspan="2" style="padding-top:5px; padding-right: 5px;">
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="CaptchaTextBox" ErrorMessage="Código" SetFocusOnError="True" ValidationExpression="[A-Za-z\- ,.0-9]*">
                                             <asp:Label ID="Label23" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RegularExpressionValidator>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="CaptchaTextBox"
-                                            ErrorMessage="Codigo" SetFocusOnError="True">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="CaptchaTextBox" ErrorMessage="Código" SetFocusOnError="True">
                                             <asp:Label ID="Label24" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label ID="ClaveLabel" runat="server" Text="Codigo"></asp:Label>
+                                        <asp:Label ID="ClaveLabel" runat="server" Text="Ingresar el código"></asp:Label>
                                     </td>
                                     <td align="left" style="width: 80px; padding-top:5px">
                                         <asp:TextBox ID="CaptchaTextBox" runat="server" MaxLength="20" TabIndex="12" Width="100px"></asp:TextBox>
                                     </td>
                                     <td align="left" style="padding-top:5px; padding-left: 5px">
-                                        <asp:Label ID="CaseSensitiveLabel" runat="server" ForeColor="gray" Text="(not case sensitive)"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right" colspan="4" style="padding-top: 10px">
-                                        <asp:Label ID="CrearCuentaLabel" runat="server" Text="By clicking on 'Create account', you agree to the terms and conditions of service."></asp:Label>
+                                        <asp:Label ID="CaseSensitiveLabel" runat="server" ForeColor="gray" Text="(no tiene en cuenta las mínusculas o mayúsculas)"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -288,6 +277,8 @@
                                         <asp:Button ID="CrearCuentaButton" runat="server" OnClick="CrearCuentaButton_Click"
                                             TabIndex="13" Text="Crear cuenta" Width="100px" />
                                     </td>
+                                    <td colspan="1">
+                                    </td>
                                     <td align="right" style="padding-top: 10px">
                                         <asp:Button ID="CancelarButton" runat="server" CausesValidation="false" PostBackUrl="~/UsuarioLogin.aspx"
                                             TabIndex="14" Text="Cancelar" Width="100px" />
@@ -296,7 +287,7 @@
                                 <tr>
                                     <td colspan="2">
                                     </td>
-                                    <td align="center" colspan="2" style="padding-bottom:30px; padding-top: 20px">
+                                    <td align="center" colspan="3" style="padding-bottom:30px; padding-top: 20px">
                                         <asp:Label ID="MensajeLabel" runat="server" SkinID="MensajePagina" Text=""></asp:Label>
                                         <asp:ValidationSummary ID="MensajeValidationSummary" runat="server" SkinID="MensajeValidationSummary" />
                                     </td>

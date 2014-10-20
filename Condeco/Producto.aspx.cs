@@ -62,7 +62,7 @@ namespace Condeco
 
                 int CantidadFilas = 0;
                 List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
-                if (Vista1RadioButton.Checked == true)
+                if (Vista2RadioButton.Checked == true)
                 {
                     lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                     ProductoPagingGridView.VirtualItemCount = CantidadFilas;
@@ -228,14 +228,14 @@ namespace Condeco
         {
             if (Vista1RadioButton.Checked == true)
             {
-                PanelPagingGridView.Visible = true;
-                PanelListView.Visible = false;
-                BindPagingGrid();
+                PanelPagingGridView.Visible = false;
+                PanelListView.Visible = true;
+                BindPagingGrid();                
             }
             else
             {
-                PanelPagingGridView.Visible = false;
-                PanelListView.Visible = true;
+                PanelPagingGridView.Visible = true;
+                PanelListView.Visible = false;
                 BindPagingGrid();
             }
         }

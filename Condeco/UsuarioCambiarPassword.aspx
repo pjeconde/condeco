@@ -6,8 +6,16 @@
     <asp:Panel ID="Panel1" runat="server" DefaultButton="AceptarButton">
         <table border="0" cellpadding="0" cellspacing="0" class="TextoComun" style="text-align:left; padding-left:10px;">
             <tr>
-                <td colspan="2" align="center" style="padding-top:20px">
-                    <asp:Label ID="TituloLabel" runat="server" SkinID="TituloPagina" Text="Change User Password"></asp:Label>
+                <td colspan="2">
+                    <table border="0" cellpadding="0" cellspacing="0" class="ppaltable" style="width: 100%;">
+                        <tr>
+                            <td>
+                                <h2>
+                                    <asp:Label ID="TituloLabel" runat="server" Text="Cambiar la clave"></asp:Label>
+                                </h2>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
             <tr>

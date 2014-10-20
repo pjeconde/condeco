@@ -22,7 +22,7 @@ namespace Condeco
                 {
                     CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
                     TituloPaginaLabel.Text = sesion.Usuario.Nombre;
-                    DatosPersonalesLabel.Text = "Id: " + sesion.Usuario.Id;
+                    DatosPersonalesLabel.Text = "Nombre de Usuario: " + sesion.Usuario.Id;
                     DatosPersonalesLabel.Text += "<br />Email: " + sesion.Usuario.Email;
                     if (!sesion.Usuario.EmailSMS.Equals(String.Empty)) DatosPersonalesLabel.Text += "<br />SMS: " + sesion.Usuario.EmailSMS;
                     if (!sesion.Usuario.Telefono.Equals(String.Empty)) DatosPersonalesLabel.Text += "<br />Telefono: " + sesion.Usuario.Telefono;

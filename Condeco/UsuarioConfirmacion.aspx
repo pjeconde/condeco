@@ -5,8 +5,16 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainCPH" runat="server">
     <table border="0" cellpadding="0" cellspacing="0" class="TextoComun" style="padding-left:10px; text-align: left;">
         <tr>
-            <td align="center" style="padding-top:20px">
-                <asp:Label ID="Label5" runat="server" SkinID="TituloPagina" Text="Account Creation Confirmation"></asp:Label>
+            <td style="padding-top:20px">
+                <table border="0" cellpadding="0" cellspacing="0" class="ppaltable" style="width: 100%;">
+                    <tr>
+                        <td>
+                            <h2>
+                                <asp:Label ID="TituloLabel" runat="server" Text="Confirmación de creación de la cuenta"></asp:Label>
+                            </h2>
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
         <tr>

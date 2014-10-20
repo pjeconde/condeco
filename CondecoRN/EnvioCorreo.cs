@@ -16,7 +16,7 @@ namespace CondecoRN
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["MailCredencialesUsr"]);
             mail.To.Add(new MailAddress(Usuario.Email));
-            mail.Subject = "You now have a new account";
+            mail.Subject = "Creación de una nueva cuenta";
             mail.IsBodyHtml = true;
             StringBuilder a = new StringBuilder();
             a.Append("Estimado/a <b>" + Usuario.Nombre.Trim() + "</b>:<br />");
@@ -51,7 +51,7 @@ namespace CondecoRN
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["MailCredencialesUsr"]);
             mail.To.Add(new MailAddress(Email));
-            mail.Subject = "Account information";
+            mail.Subject = "Información";
             mail.IsBodyHtml = true;
             StringBuilder a = new StringBuilder();
             a.Append("Estimado/a <b>" + cuentas[0].Nombre.Trim() + "</b>:<br />");

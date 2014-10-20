@@ -26,7 +26,7 @@ namespace Condeco
                 EmailTextBox.Enabled = false;
                 AceptarButton.Visible = false;
                 CancelarButton.Visible = false;
-                MensajeLabel.Text = "Se ha enviado, por correo electrónico, el Id.Usuario de su(s) cuenta(s).  La recepción del email puede demorar unos minutos.";
+                MensajeLabel.Text = "Se ha enviado, por correo electrónico, el NombreUsuario de su(s) cuenta(s).  La recepción del email puede demorar unos minutos.";
             }
             catch (System.Threading.ThreadAbortException)
             {

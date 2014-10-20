@@ -64,7 +64,10 @@ namespace Condeco
                 ConfirmacionPasswordTextBox.Enabled = false;
                 PreguntaTextBox.Enabled = false;
                 RespuestaTextBox.Enabled = false;
-                MensajeLabel.Text = "Thanks for creating your account. <br /> Follow the instructions, which were sent by email, to confirm the creation of your account. <br /> Receiving email may take a few minutes.";
+                PaisTextBox.Enabled = false;
+                ProvinciaTextBox.Enabled = false;
+                LocalidadTextBox.Enabled = false;
+                MensajeLabel.Text = "Gracias por crear su cuenta.<br /> Las instrucciones, serán enviadas a su email, para que usted pueda confirmar la creación de su cuenta.<br /> La recepción del email puede tardar unos minutos.";
             }
             catch (Exception ex)
             {
@@ -88,23 +91,23 @@ namespace Condeco
                 if (disponible)
                 {
                     ResultadoComprobarDisponibilidadLabel.ForeColor = System.Drawing.Color.Green;
-                    ResultadoComprobarDisponibilidadLabel.Text = "OK";
+                    ResultadoComprobarDisponibilidadLabel.Text = "Si está disponible";
                 }
                 else
                 {
                     ResultadoComprobarDisponibilidadLabel.ForeColor = System.Drawing.Color.Red;
-                    ResultadoComprobarDisponibilidadLabel.Text = "Unavailable";
+                    ResultadoComprobarDisponibilidadLabel.Text = "No está disponible";
                 }
             }
             catch (CondecoEX.Validaciones.ValorNoInfo)
             {
                 ResultadoComprobarDisponibilidadLabel.ForeColor = MensajeLabel.ForeColor;
-                ResultadoComprobarDisponibilidadLabel.Text = "User.Id not reported";
+                ResultadoComprobarDisponibilidadLabel.Text = "Nombre de Usuario no ingresado";
             }
             catch (Exception ex)
             {
                 ResultadoComprobarDisponibilidadLabel.ForeColor = MensajeLabel.ForeColor;
-                ResultadoComprobarDisponibilidadLabel.Text = "See details at bottom of page";
+                ResultadoComprobarDisponibilidadLabel.Text = "Ver detalle en el botón de la página";
                 MensajeLabel.Text = CondecoEX.Funciones.Detalle(ex);
             }
         }

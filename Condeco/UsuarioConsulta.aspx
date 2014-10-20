@@ -3,10 +3,10 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadCPH">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainCPH" runat="server">
-    <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px">
+    <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px" class="ppaltable">
         <tr>
-            <td align="center" colspan="2" style="padding-top:20px">
-                <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Permisos de Usuarios"></asp:Label>
+            <td align="left" colspan="2" style="padding-top:20px">
+                <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Usuario"></asp:Label>
             </td>
         </tr>
         <tr>

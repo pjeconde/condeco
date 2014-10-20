@@ -28,7 +28,7 @@ namespace Condeco
                     CondecoEntidades.Usuario usuario = new CondecoEntidades.Usuario();
                     usuario.Id = idUsuario;
                     CondecoRN.Usuario.Confirmar(usuario, true, true, (CondecoEntidades.Sesion)Session["Sesion"]);
-                    MensajeLabel.Text = "Congratulations !!!.<br /><br />Your new account '" + usuario.Id + "' now available.<br />To access the application, click on 'Login'";
+                    MensajeLabel.Text = "Felicitaciones !!!.<br /><br />Su nueva cuenta '" + usuario.Id + "' ahora está disponible.<br />Para acceder hacer clic en 'Login'";
                 }
             }
             catch (System.Security.Cryptography.CryptographicException)
