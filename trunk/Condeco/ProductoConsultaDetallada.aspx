@@ -109,6 +109,9 @@
                         <td align="left" colspan="2" style="padding-top: 2px;">
                             <b>
                             <asp:Label ID="NombreLabel" runat="server" Text=""></asp:Label>
+                            <%if (TipoProductoLabel.Text != "") 
+                            {%>(<asp:Label ID="TipoProductoLabel" runat="server"></asp:Label>)
+                            <%}%>
                             </b>
                         </td>
                     </tr>
@@ -132,15 +135,6 @@
                         <td align="left" colspan="2" style="padding-right: 5px; padding-top: 5px">
                             Comentario:
                             <asp:Label ID="ComentarioPrecioBaseLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <%} %>
-                    <%if (TipoProductoLabel.Text != "") 
-                      {%>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-top: 5px">
-                            Tipo de Producto: 
-                            <asp:Label ID="TipoProductoLabel" runat="server"></asp:Label>
                         </td>
                     </tr>
                     <%} %>

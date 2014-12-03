@@ -141,6 +141,12 @@ namespace Condeco
                     ViewState["Producto"] = producto;
                     ModalPopupExtender1.Show();
                     break;
+                case "Modificar":
+                    Session["Producto"] = producto;
+                    //Response.Redirect("~/ProductoModificar.aspx", false);
+                    string script = "window.open('/ProductoModificar.aspx', '');";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "popup", script, true);
+                    break;
             }
         }
         protected void ProductosPagingGridView_RowEditing(object sender, GridViewEditEventArgs e)

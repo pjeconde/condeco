@@ -69,7 +69,8 @@
                 <asp:Label ID="Label9" runat="server" Text="Descripción"></asp:Label>
             </td>
             <td align="left" style="padding-top:2px">
-                <asp:TextBox ID="DescripcionTextBox" runat="server" TextMode="MultiLine" CssClass="MultilineFont" style="resize: none;" MaxLength="250" Height="100px" TabIndex="2" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" runat="server" TextMode="MultiLine" MaxLength="250" Height="200px" TabIndex="2" Width="400px"></asp:TextBox>
+                <ajaxToolkit:HtmlEditorExtender TargetControlID="DescripcionTextBox" runat="server" EnableSanitization="false"  />
             </td>        
         </tr>
         <tr>
