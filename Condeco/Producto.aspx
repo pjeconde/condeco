@@ -5,7 +5,7 @@
 <%@ Register Assembly="ASTreeView" Namespace="Geekees.Common.Controls" TagPrefix="ct" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table cellpadding="0" cellspacing="0" style="width:100%">
+    <table cellpadding="0" cellspacing="0" border="0" style="width:100%">
         <tr>
             <td style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg'); width: 100%; background-repeat: repeat; border-style: none; height:10px;">
             </td>
@@ -107,17 +107,13 @@
             </td>
         </tr>
         <tr>
-            <td style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg'); width: 100%; background-repeat: repeat; border-style: none; height:1px;">
+            <td style="padding-top:5px">
             </td>
         </tr>
-    </table>
-    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 1px; border: 0px; background-color:Lime">
+    </table>    
+    <table border="0" cellpadding="0" cellspacing="0" width="100%"> 
         <tr>
-            <td style="height:2px; background-color: Gray">
-            </td>
-        </tr>
-        <tr>
-            <td style="height:9px; background-color: white">
+            <td style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg'); width: 100%; background-repeat: repeat; border-style: none; height:2px;">
             </td>
         </tr>
     </table>
@@ -215,10 +211,14 @@
                                                                             Width="100px" />
                                                                     </asp:LinkButton>
                                                                 </td>
+                                                                <td style="vertical-align: top">
+                                                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("Descripcion") %>'
+                                                                        Width="280px" CssClass='<%# Eval("TipoDestacado").ToString()=="02" ? "myClass02" : "myClass"%>' />
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td colspan="2" style="vertical-align: top">
-                                                                    <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion") %>'
+                                                                    <asp:Label ID="PrecioLabel" runat="server" Text='<%# Eval("PrecioBase").ToString()=="0" ? "consultar precio" : "$ "+Eval("PrecioBase") %>'
                                                                         Width="280px" CssClass='<%# Eval("TipoDestacado").ToString()=="02" ? "myClass02" : "myClass"%>' />
                                                                 </td>
                                                             </tr>
