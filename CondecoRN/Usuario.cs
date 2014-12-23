@@ -239,5 +239,42 @@ namespace CondecoRN
             CondecoDB.Usuario db = new CondecoDB.Usuario(Sesion);
             db.CambioEstado(Usuario, Evento, IdEstadoHst);
         }
+
+        public static List<CondecoEntidades.Usuario> ListaPorIdUsuario(int IdUsuario, CondecoEntidades.Sesion Sesion)
+        {
+            CondecoDB.Usuario db = new CondecoDB.Usuario(Sesion);
+            return db.ListaPorIdUsuario(IdUsuario);
+        }
+        public static List<CondecoEntidades.Usuario> ListaPorNombre(string Nombre, CondecoEntidades.Sesion Sesion)
+        {
+            CondecoDB.Usuario db = new CondecoDB.Usuario(Sesion);
+            return db.ListaPorNombre(Nombre);
+        }
+        public static List<CondecoEntidades.Usuario> Lista(out int CantidadFilas, int IndicePagina, int TamañoPagina, string OrderBy, string Nombre, string Email, string SessionID, CondecoEntidades.Sesion Sesion)
+        {
+            List<CondecoEntidades.Usuario> listaUsuario = new List<CondecoEntidades.Usuario>();
+            CondecoDB.Usuario db = new CondecoDB.Usuario(Sesion);
+            if (OrderBy.Equals(String.Empty))
+            {
+                OrderBy = "IdUsuario desc";
+            }
+            listaUsuario = db.ListaCompleta(OrderBy, Nombre, Email);
+            int cantidadFilas = listaUsuario.Count;
+            CantidadFilas = cantidadFilas;
+            return db.Lista(IndicePagina, TamañoPagina, OrderBy, SessionID, listaUsuario);
+        }
+        public static List<CondecoEntidades.Usuario> ListaCompleta(out int CantidadFilas, string OrderBy, string Nombre, string Email, string SessionID, CondecoEntidades.Sesion Sesion)
+        {
+            List<CondecoEntidades.Usuario> listaUsuario = new List<CondecoEntidades.Usuario>();
+            CondecoDB.Usuario db = new CondecoDB.Usuario(Sesion);
+            if (OrderBy.Equals(String.Empty))
+            {
+                OrderBy = "IdUsuario desc";
+            }
+            listaUsuario = db.ListaCompleta(OrderBy, Nombre, Email);
+            int cantidadFilas = listaUsuario.Count;
+            CantidadFilas = cantidadFilas;
+            return listaUsuario;
+        }
     }
 }

@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contacto.aspx" />
+    <Content Include="ExploradorUsuario.aspx" />
     <Content Include="Imagenes\Home.jpg" />
     <Content Include="Imagenes\MaderaC1.jpg" />
     <Content Include="Imagenes\Plastificados.jpg" />
@@ -260,6 +261,13 @@
     </Compile>
     <Compile Include="Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExploradorUsuario.aspx.cs">
+      <DependentUpon>ExploradorUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExploradorUsuario.aspx.designer.cs">
+      <DependentUpon>ExploradorUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mensaje.aspx.cs">
       <DependentUpon>Mensaje.aspx</DependentUpon>

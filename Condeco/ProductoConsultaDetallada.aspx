@@ -103,15 +103,14 @@
                     <tr>
                         <td align="left" colspan="2" style="padding-right: 5px; padding-top: 5px">
                             <asp:Label ID="Label9" runat="server" Text="Producto" SkinID="TituloColor1Grande"></asp:Label>
+                            <%if (TipoProductoLabel.Text != "") {%><asp:Label ID="TipoProductoLabel" runat="server" Visible="false"></asp:Label>
+                            <%}%>
                         </td>
                     </tr>
                     <tr>
                         <td align="left" colspan="2" style="padding-top: 2px;">
                             <b>
                             <asp:Label ID="NombreLabel" runat="server" Text=""></asp:Label>
-                            <%if (TipoProductoLabel.Text != "") 
-                            {%>(<asp:Label ID="TipoProductoLabel" runat="server"></asp:Label>)
-                            <%}%>
                             </b>
                         </td>
                     </tr>

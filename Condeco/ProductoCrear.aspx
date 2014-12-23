@@ -47,10 +47,24 @@
                     ErrorMessage="Descripción" SetFocusOnError="True">
                     <asp:Label ID="Label8" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RequiredFieldValidator>
-                <asp:Label ID="Label9" runat="server" Text="Descripción"></asp:Label>
+                <asp:Label ID="DescripcionLabel" runat="server" Text="Descripción"></asp:Label>
             </td>
             <td align="left" style="padding-top:2px">
-                <asp:TextBox ID="DescripcionTextBox" runat="server" TextMode="MultiLine" CssClass="MultilineFont" style="resize: none;" MaxLength="250" Height="100px" TabIndex="2" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" runat="server" TextMode="MultiLine" CssClass="MultilineFont" style="resize: none;" MaxLength="2000" Height="300px" TabIndex="2" Width="400px"></asp:TextBox>
+                <ajaxToolkit:HtmlEditorExtender ID="HtmlEditorExtender1" TargetControlID="DescripcionTextBox" runat="server" EnableSanitization="false"  />
+            </td>        
+        </tr>
+        <tr>
+            <td align="right" style="padding-right:5px; padding-top:2px">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DescripcionCortaTextBox"
+                    ErrorMessage="Descripción Corta" SetFocusOnError="True">
+                    <asp:Label ID="Label1" runat="server" SkinID="IndicadorValidacion"></asp:Label>
+                </asp:RequiredFieldValidator>
+                <asp:Label ID="DescripcionCortaLabel" runat="server" Text="Descripción Corta"></asp:Label>
+            </td>
+            <td align="left" style="padding-top:2px">
+                <asp:TextBox ID="DescripcionCortaTextBox" runat="server" TextMode="MultiLine" CssClass="MultilineFont" style="resize: none;" MaxLength="500" Height="200px" TabIndex="2" Width="400px"></asp:TextBox>
+                <ajaxToolkit:HtmlEditorExtender ID="HtmlEditorExtender2" TargetControlID="DescripcionCortaLabel" runat="server" EnableSanitization="false"  />
             </td>        
         </tr>
         <tr>

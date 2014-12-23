@@ -221,9 +221,9 @@ namespace Condeco
 
             astvMyTree.RootNode
                 .AppendChild((n100)
-                    .AppendChild(new ASTreeViewLinkNode("Madera Pinotea", "Madera Pinotea", "", "frm", "madera maciza", ""))
-                    .AppendChild(new ASTreeViewLinkNode("Madera Cedro", "Madera Cedro", "", "frm", "", ""))
-                    .AppendChild(new ASTreeViewLinkNode("Vintage", "Vintage", "", "frm", "madera maciza", ""))
+                    .AppendChild(new ASTreeViewLinkNode("Madera Pinotea", "101", "", "frm", "madera maciza", ""))
+                    .AppendChild(new ASTreeViewLinkNode("Madera Cedro", "102", "", "frm", "", ""))
+                    .AppendChild(new ASTreeViewLinkNode("Vintage", "103", "", "frm", "madera maciza", ""))
                 )
                 .AppendChild(new ASTreeViewLinkNode("Espejos", "200", "", "frm", "", ""))
                 .AppendChild(new ASTreeViewLinkNode("Carteles", "300", "", "frm", "", ""))

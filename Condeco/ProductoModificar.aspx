@@ -69,8 +69,21 @@
                 <asp:Label ID="Label9" runat="server" Text="Descripción"></asp:Label>
             </td>
             <td align="left" style="padding-top:2px">
-                <asp:TextBox ID="DescripcionTextBox" runat="server" TextMode="MultiLine" MaxLength="250" Height="200px" TabIndex="2" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" runat="server" TextMode="MultiLine" MaxLength="2000" Height="300px" TabIndex="2" Width="400px"></asp:TextBox>
                 <ajaxToolkit:HtmlEditorExtender TargetControlID="DescripcionTextBox" runat="server" EnableSanitization="false"  />
+            </td>        
+        </tr>
+        <tr>
+            <td align="right" style="padding-right:5px; padding-top:2px">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DescripcionCortaTextBox"
+                    ErrorMessage="Descripción Corta" SetFocusOnError="True">
+                    <asp:Label ID="Label1" runat="server" SkinID="IndicadorValidacion"></asp:Label>
+                </asp:RequiredFieldValidator>
+                <asp:Label ID="Label2" runat="server" Text="Descripción"></asp:Label>
+            </td>
+            <td align="left" style="padding-top:2px">
+                <asp:TextBox ID="DescripcionCortaTextBox" runat="server" TextMode="MultiLine" MaxLength="500" Height="200px" TabIndex="2" Width="400px"></asp:TextBox>
+                <ajaxToolkit:HtmlEditorExtender ID="HtmlEditorExtender1" TargetControlID="DescripcionCortaTextBox" runat="server" EnableSanitization="false"  />
             </td>        
         </tr>
         <tr>

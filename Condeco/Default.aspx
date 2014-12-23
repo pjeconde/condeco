@@ -34,7 +34,7 @@
                 <p>&nbsp;</p>
                 <h4 style="font-weight:bold">Carteles</h4>
                 <p>
-                    Fabricamos <i><b>carteles para decoración en madera maciza tipo vintage</b></i>, a los cuales se les hace un desgastado manual que añade un encanto rústico. <br />
+                    Fabricamos <i><b>carteles para decoración en madera maciza tipo vintage</b></i>, a los cuales les hacemos un desgastado manual para simular el paso del tiempo. <br />
                     Utilizamos la madera con su tonalidad natural u oscurecida con tintes y diversos colores pasteles para darle calidez a los mismos. <br />
                     <br />
                     Realizamos además, algunos carteles con efecto similar al camuflado en diversas tonalidades y otros estilos como el <i><b>campestre</b></i> o el <i><b>shabby chic</b></i> que es una mezcla de elementos antiguos con modernos.<br />

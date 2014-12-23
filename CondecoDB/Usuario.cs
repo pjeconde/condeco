@@ -240,5 +240,180 @@ namespace CondecoDB
                 throw new CondecoEX.Usuario.ErrorDeConfirmacion();
             }
         }
+        public List<CondecoEntidades.Usuario> ListaPorIdUsuario(int IdUsuario)
+        {
+            List<CondecoEntidades.Usuario> lista = new List<CondecoEntidades.Usuario>();
+            if (sesion.Usuario.Id != null)
+            {
+                StringBuilder a = new StringBuilder(string.Empty);
+                a.Append("select Usuario.IdUsuario, Usuario.Nombre, Usuario.Telefono, Usuario.Email, Usuario.Password, Usuario.Pregunta, Usuario.Respuesta, Usuario.CantidadEnviosMail, Usuario.FechaUltimoReenvioMail, Usuario.EmailSMS, Usuario.IdMedio, Usuario.IdWF, Usuario.Estado, Usuario.UltActualiz, Usuario.Pais, Usuario.Provincia, Usuario.Localidad, Usuario.Direccion, Usuario.CodPost, Usuario.Facebook, Usuario.DatoAdicional1, Usuario.DatoAdicional2 ");
+                a.Append("from Usuario where IdUsuario= " + IdUsuario);
+                DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
+                if (dt.Rows.Count != 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        CondecoEntidades.Usuario Usuario = new CondecoEntidades.Usuario();
+                        Copiar(dt.Rows[i], Usuario);
+                        lista.Add(Usuario);
+                    }
+                }
+            }
+            return lista;
+        }
+        public List<CondecoEntidades.Usuario> ListaPorNombre(string Nombre)
+        {
+            List<CondecoEntidades.Usuario> lista = new List<CondecoEntidades.Usuario>();
+            if (sesion.Usuario.Id != null)
+            {
+                if (sesion.Usuario.Id != null)
+                {
+                    StringBuilder a = new StringBuilder(string.Empty);
+                    a.Append("select Usuario.IdUsuario, Usuario.Nombre, Usuario.Telefono, Usuario.Email, Usuario.Password, Usuario.Pregunta, Usuario.Respuesta, Usuario.CantidadEnviosMail, Usuario.FechaUltimoReenvioMail, Usuario.EmailSMS, Usuario.IdMedio, Usuario.IdWF, Usuario.Estado, Usuario.UltActualiz, Usuario.Pais, Usuario.Provincia, Usuario.Localidad, Usuario.Direccion, Usuario.CodPost, Usuario.Facebook, Usuario.DatoAdicional1, Usuario.DatoAdicional2 ");
+                    a.Append("from Usuario where Nombre like '%" + Nombre + "%'");
+                    DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
+                    if (dt.Rows.Count != 0)
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            CondecoEntidades.Usuario Usuario = new CondecoEntidades.Usuario();
+                            Copiar(dt.Rows[i], Usuario);
+                            lista.Add(Usuario);
+                        }
+                    }
+                }
+            }
+            return lista;
+        }
+        public List<CondecoEntidades.Usuario> ListaCompleta(string OrderBy, string Nombre, string Email)
+        {
+            List<CondecoEntidades.Usuario> lista = new List<CondecoEntidades.Usuario>();
+            StringBuilder a = new StringBuilder(string.Empty);
+            a.Append("select Usuario.IdUsuario, Usuario.Nombre, Usuario.Telefono, Usuario.Email, Usuario.Password, Usuario.Pregunta, Usuario.Respuesta, Usuario.CantidadEnviosMail, Usuario.FechaUltimoReenvioMail, Usuario.EmailSMS, Usuario.IdMedio, Usuario.IdWF, Usuario.Estado, Usuario.UltActualiz, Usuario.Pais, Usuario.Provincia, Usuario.Localidad, Usuario.Direccion, Usuario.CodPost, Usuario.Facebook, Usuario.DatoAdicional1, Usuario.DatoAdicional2 ");
+            a.Append("from Usuario where 1=1 ");
+            if (!Nombre.Equals(string.Empty))
+            {
+                a.Append("and Nombre like '%" + Nombre + "%' ");
+            }
+            if (!Email.Equals(string.Empty))
+            {
+                a.Append("and Email like '%" + Email + "%' ");
+            }
+            a.Append("and Estado = 'Vigente' ");
+            a.Append("order by " + OrderBy);
+            DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
+            if (dt.Rows.Count != 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    CondecoEntidades.Usuario Usuario = new CondecoEntidades.Usuario();
+                    Copiar(dt.Rows[i], Usuario);
+                    lista.Add(Usuario);
+                }
+            }
+            return lista;
+        }
+        public List<CondecoEntidades.Usuario> Lista(int IndicePagina, int TamañoPagina, string OrderBy, string SessionID, List<CondecoEntidades.Usuario> UsuarioLista)
+        {
+            System.Text.StringBuilder a = new StringBuilder();
+            a.Append("CREATE TABLE #Usuario" + SessionID + "( ");
+            a.Append("[IdUsuario] [varchar](50) NOT NULL, ");
+	        a.Append("[Nombre] [varchar](50) NOT NULL, ");
+	        a.Append("[Telefono] [varchar](50) NOT NULL, ");
+	        a.Append("[Email] [varchar](128) NOT NULL, ");
+	        a.Append("[Password] [varchar](50) NOT NULL, ");
+	        a.Append("[Pregunta] [varchar](256) NOT NULL, ");
+	        a.Append("[Respuesta] [varchar](256) NOT NULL, ");
+	        a.Append("[CantidadEnviosMail] [int] NOT NULL, ");
+	        a.Append("[FechaUltimoReenvioMail] [datetime] NOT NULL, ");
+	        a.Append("[EmailSMS] [varchar](50) NOT NULL, ");
+	        a.Append("[IdMedio] [varchar](15) NOT NULL, ");
+	        a.Append("[IdWF] [int] NOT NULL, ");
+	        a.Append("[Estado] [varchar](15) NOT NULL, ");
+	        a.Append("[UltActualiz] [timestamp] NOT NULL, ");
+	        a.Append("[Pais] [varchar](50) NOT NULL, ");
+	        a.Append("[Provincia] [varchar](50) NOT NULL, ");
+	        a.Append("[Localidad] [varchar](50) NOT NULL, ");
+	        a.Append("[Direccion] [varchar](60) NOT NULL, ");
+	        a.Append("[CodPost] [varchar](10) NOT NULL, ");
+	        a.Append("[Facebook] [varchar](100) NOT NULL, ");
+	        a.Append("[DatoAdicional1] [varchar](250) NOT NULL, ");
+            a.Append("[DatoAdicional2] [varchar](250) NOT NULL, ");
+            a.Append("CONSTRAINT [Usuario" + SessionID + "] PRIMARY KEY CLUSTERED ");
+            a.Append("( ");
+            a.Append("[IdUsuario] ASC ");
+            a.Append(")WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY] ");
+            a.Append(") ON [PRIMARY] ");
+            foreach (CondecoEntidades.Usuario Usuario in UsuarioLista)
+            {
+                a.Append("Insert #Usuario" + SessionID + " values ('" + Usuario.Id + "', '");
+                a.Append(Usuario.Nombre + "', '");
+                a.Append(Usuario.Telefono + "', '");
+                a.Append(Usuario.Email + "', '");
+                a.Append(Usuario.Password + "', '");
+                a.Append(Usuario.Pregunta + "', '");
+                a.Append(Usuario.Respuesta + "', ");
+                a.Append(Usuario.CantidadEnviosMail + ", '");
+                a.Append(Usuario.FechaUltimoReenvioMail.ToString("yyyyMMdd") + "', '");
+                a.Append(Usuario.EmailSMS + "', '");
+                a.Append(Usuario.IdMedio + "', ");
+                a.Append(Usuario.WF.Id + ", '");
+                a.Append(Usuario.Estado + "', ");
+                a.Append("null, '");
+                a.Append(Usuario.Pais + "', '");
+                a.Append(Usuario.Provincia + "', '");
+                a.Append(Usuario.Localidad + "', '");
+                a.Append(Usuario.Direccion + "', '");
+                a.Append(Usuario.CodPost + "', '");
+                a.Append(Usuario.Facebook + "', '");
+                a.Append(Usuario.DatoAdicional1 + "', '");
+                a.Append(Usuario.DatoAdicional2 + "') ");
+            }
+            a.Append("select * ");
+            a.Append("from (select top {0} ROW_NUMBER() OVER (ORDER BY {1}) as ROW_NUM, ");
+            a.Append("IdUsuario, Nombre, Telefono, Email, Password, Pregunta, Respuesta, CantidadEnviosMail, FechaUltimoReenvioMail, EmailSMS, IdMedio, IdWF, Estado, UltActualiz, Pais, Provincia, Localidad, Direccion, CodPost, Facebook, DatoAdicional1, DatoAdicional2 ");
+            a.Append("from #Usuario" + SessionID + " ");
+            a.Append("ORDER BY ROW_NUM) innerSelect WHERE ROW_NUM > {2} ");
+            a.Append("DROP TABLE #Usuario" + SessionID);
+            if (OrderBy.Trim().ToUpper() == "NOMBRE" || OrderBy.Trim().ToUpper() == "NOMBRE DESC" || OrderBy.Trim().ToUpper() == "NOMBRE ASC")
+            {
+                OrderBy = "#Producto" + SessionID + "." + OrderBy;
+            }
+            string commandText = string.Format(a.ToString(), ((IndicePagina + 1) * TamañoPagina), OrderBy, (IndicePagina * TamañoPagina));
+            DataTable dt = new DataTable();
+            dt = (DataTable)Ejecutar(commandText.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
+            List<CondecoEntidades.Usuario> lista = new List<CondecoEntidades.Usuario>();
+            if (dt.Rows.Count != 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    CondecoEntidades.Usuario Usuario = new CondecoEntidades.Usuario();
+                    Usuario.Id = Convert.ToString(dt.Rows[i]["IdUsuario"]);
+                    Usuario.Nombre = Convert.ToString(dt.Rows[i]["Nombre"]);
+                    Usuario.Telefono = Convert.ToString(dt.Rows[i]["Telefono"]);
+                    Usuario.Email = Convert.ToString(dt.Rows[i]["Email"]);
+                    Usuario.Password = Convert.ToString(dt.Rows[i]["Password"]);
+                    Usuario.Pregunta = Convert.ToString(dt.Rows[i]["Pregunta"]);
+                    Usuario.Respuesta = Convert.ToString(dt.Rows[i]["Respuesta"]);
+                    Usuario.CantidadEnviosMail = Convert.ToInt32(dt.Rows[i]["CantidadEnviosMail"]);
+                    Usuario.FechaUltimoReenvioMail = Convert.ToDateTime(dt.Rows[i]["FechaUltimoReenvioMail"]);
+                    Usuario.EmailSMS = Convert.ToString(dt.Rows[i]["EmailSMS"]);
+                    Usuario.IdMedio = Convert.ToString(dt.Rows[i]["IdMedio"]);
+                    Usuario.WF.Id = Convert.ToInt32(dt.Rows[i]["IdWF"]);
+                    Usuario.WF.Estado = Convert.ToString(dt.Rows[i]["Estado"]);
+                    Usuario.UltActualiz = ByteArray2TimeStamp((byte[])dt.Rows[i]["UltActualiz"]);
+                    Usuario.Pais = Convert.ToString(dt.Rows[i]["Pais"]);
+                    Usuario.Provincia = Convert.ToString(dt.Rows[i]["Provincia"]);
+                    Usuario.Localidad = Convert.ToString(dt.Rows[i]["Localidad"]);
+                    Usuario.Direccion = Convert.ToString(dt.Rows[i]["Direccion"]);
+                    Usuario.CodPost = Convert.ToString(dt.Rows[i]["CodPost"]);
+                    Usuario.Facebook = Convert.ToString(dt.Rows[i]["Facebook"]);
+                    Usuario.DatoAdicional1 = Convert.ToString(dt.Rows[i]["DatoAdicional1"]);
+                    Usuario.DatoAdicional2 = Convert.ToString(dt.Rows[i]["DatoAdicional2"]);
+                    lista.Add(Usuario);
+                }
+            }
+            return lista;
+        }
     }
 }
