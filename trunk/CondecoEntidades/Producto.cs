@@ -11,6 +11,7 @@ namespace CondecoEntidades
         private int id;
         private string nombre;
         private string descripcion;
+        private string descripcionCorta;
         private string idMoneda;
         private decimal precioBase;
         private string comentarioPrecioBase;
@@ -59,6 +60,17 @@ namespace CondecoEntidades
             get
             {
                 return descripcion;
+            }
+        }
+        public string DescripcionCorta
+        {
+            set
+            {
+                descripcionCorta = value;
+            }
+            get
+            {
+                return descripcionCorta;
             }
         }
         public string IdMoneda

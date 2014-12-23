@@ -60,6 +60,7 @@ namespace Condeco
                     if (MensajeLabel.Text != "") { return; }
                     Producto.Nombre= NombreTextBox.Text.Trim();
                     Producto.Descripcion = DescripcionTextBox.Text.Trim();
+                    Producto.DescripcionCorta = DescripcionCortaTextBox.Text.Trim();
                     Producto.PrecioBase = Convert.ToDecimal(PrecioBaseTextBox.Text);
                     Producto.ComentarioPrecioBase = ComentarioPrecioBaseTextBox.Text;
                     Producto.YouTube = YouTubeTextBox.Text;
@@ -82,6 +83,7 @@ namespace Condeco
 
                         NombreTextBox.Enabled = false;
                         DescripcionTextBox.Enabled = false;
+                        DescripcionCortaTextBox.Enabled = false;
                         PrecioBaseTextBox.Enabled = false;
                         ComentarioPrecioBaseTextBox.Enabled = false;
                         YouTubeTextBox.Enabled = false;

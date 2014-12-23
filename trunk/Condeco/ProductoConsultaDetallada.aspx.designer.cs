@@ -76,15 +76,6 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// Control NombreLabel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NombreLabel;
-        
-        /// <summary>
         /// Control TipoProductoLabel.
         /// </summary>
         /// <remarks>
@@ -92,6 +83,15 @@ namespace Condeco {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TipoProductoLabel;
+        
+        /// <summary>
+        /// Control NombreLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NombreLabel;
         
         /// <summary>
         /// Control DescripcionLabel.

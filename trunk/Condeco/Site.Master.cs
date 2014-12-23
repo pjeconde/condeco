@@ -52,6 +52,7 @@ namespace Condeco
                     break;
                 case "Login":
                     Response.Redirect("~/UsuarioLogin.aspx");
+                    //Response.Redirect("~/Mensaje.aspx?Login");
                     break;
                 case "Administración Site|Productos|Crear":
                     Response.Redirect("~/ProductoCrear.aspx");
@@ -66,7 +67,7 @@ namespace Condeco
                     Response.Redirect("~/ExploradorProducto.aspx");
                     break;
                 case "Administración Site|Explorador de Usuarios":
-                    Response.Redirect("~/ExploradorUsuarios.aspx");
+                    Response.Redirect("~/ExploradorUsuario.aspx");
                     break;
                 case "Administración Site|Explorador de Permisos":
                     Response.Redirect("~/ExploradorPermiso.aspx");

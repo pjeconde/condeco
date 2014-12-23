@@ -45,6 +45,7 @@ namespace Condeco
                     
                     NombreTextBox.Text = producto.Nombre;
                     DescripcionTextBox.Text = producto.Descripcion;
+                    DescripcionCortaTextBox.Text = producto.DescripcionCorta;
                     PrecioBaseTextBox.Text = producto.PrecioBase.ToString();
                     ComentarioPrecioBaseTextBox.Text = producto.ComentarioPrecioBase;
 
@@ -85,6 +86,7 @@ namespace Condeco
                     productoHasta.Id = Convert.ToInt32(IdProductoLabel.Text);
                     productoHasta.Nombre = NombreTextBox.Text;
                     productoHasta.Descripcion = DescripcionTextBox.Text;
+                    productoHasta.DescripcionCorta = DescripcionCortaTextBox.Text;
                     productoHasta.IdMoneda = "$";
                     productoHasta.PrecioBase = Convert.ToDecimal(PrecioBaseTextBox.Text);
                     productoHasta.ComentarioPrecioBase = ComentarioPrecioBaseTextBox.Text;
