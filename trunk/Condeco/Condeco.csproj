@@ -60,8 +60,10 @@
     <Content Include="About.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="ExploradorUsuario.aspx" />
+    <Content Include="Imagenes\Cabecera-LogoMobili2.jpg" />
     <Content Include="Imagenes\Home.jpg" />
     <Content Include="Imagenes\MaderaC1.jpg" />
+    <Content Include="Imagenes\MaderasCombinadas2.jpg" />
     <Content Include="Imagenes\Plastificados.jpg" />
     <Content Include="Imagenes\Productos.jpg" />
     <Content Include="Mensaje.aspx" />

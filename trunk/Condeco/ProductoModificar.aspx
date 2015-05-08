@@ -79,7 +79,7 @@
                     ErrorMessage="Descripción Corta" SetFocusOnError="True">
                     <asp:Label ID="Label1" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                 </asp:RequiredFieldValidator>
-                <asp:Label ID="Label2" runat="server" Text="Descripción"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Descripción Corta"></asp:Label>
             </td>
             <td align="left" style="padding-top:2px">
                 <asp:TextBox ID="DescripcionCortaTextBox" runat="server" TextMode="MultiLine" MaxLength="500" Height="200px" TabIndex="2" Width="400px"></asp:TextBox>

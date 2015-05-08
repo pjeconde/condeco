@@ -40,6 +40,7 @@ namespace Condeco
             DescripcionTextBox.Text = "";
             astvMyTree.ClearNodesCheck();
             astvMyTree.ExpandToDepth(0);
+            BindPagingGrid();
         }
         private void BindPagingGrid()
         {
