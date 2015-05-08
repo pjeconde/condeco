@@ -4,7 +4,7 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadCPH">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table class="ppaltable" width="100%">
+    <table>
         <tr>
             <td>
                 <h2>
@@ -22,7 +22,10 @@
                 </p>
                 <asp:Image ID="ImageProductosRusticos" runat="server" ImageUrl="~/Imagenes/Productos.jpg" />
                 <br />
+                <br />
+                Si usted desea una hacer una consulta, cotización o presupuesto, haga <asp:HyperLink ID="HyperLink2" runat="server" Target="_self" NavigateUrl="~/Contacto.aspx">clic aquí</asp:HyperLink> y le contestaremos a la brevedad.
                 <p>&nbsp;</p>
+                <asp:Panel runat="server" Visible="false">
                 <h4 style="font-weight:bold">Pisos</h4>
                 <p>
                     Realizamos todo tipo de <i><b>reparación de pisos de madera, plastificado o hidrolaqueado</b></i> de los mismos.<br />
@@ -32,6 +35,7 @@
                 <asp:Image ID="ImageProductosPlastificados" runat="server" ImageUrl="~/Imagenes/Plastificados.jpg" />
                 <br />
                 <p>&nbsp;</p>
+                </asp:Panel>
                 <h4 style="font-weight:bold">Carteles</h4>
                 <p>
                     Fabricamos <i><b>carteles para decoración en madera maciza tipo vintage</b></i>, a los cuales les hacemos un desgastado manual para simular el paso del tiempo. <br />
