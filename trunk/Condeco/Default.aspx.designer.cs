@@ -13,13 +13,13 @@ namespace Condeco {
     public partial class Default {
         
         /// <summary>
-        /// ImageProductosRusticos control.
+        /// HyperLink3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImageProductosRusticos;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
         
         /// <summary>
         /// HyperLink2 control.
@@ -49,12 +49,12 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Image ImageProductosPlastificados;
         
         /// <summary>
-        /// ImageProductosCarteles control.
+        /// HyperLink4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImageProductosCarteles;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
     }
 }

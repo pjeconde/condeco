@@ -7,7 +7,7 @@
 <asp:Label SkinID="TextoInicioMediano" runat="server" Font-Size="12px" ForeColor="Gray" Font-Bold="False" Width="100%"></asp:Label>
 <asp:Label SkinID="TextoInicioChico" runat="server" Font-Size="10px" ForeColor="Gray" Font-Bold="False" Width="100%"></asp:Label>
 
-<asp:Label SkinID="TituloPagina" runat="server" Font-Size="24px" ForeColor="Gray" Font-Bold="false"></asp:Label>
+<asp:Label SkinID="TituloPagina" runat="server" Font-Size="1.5em" font-weight="600" ForeColor="Gray" Font-Bold="false"></asp:Label>
 <asp:Label SkinID="TituloMediano" runat="server" Font-Size="12px" ForeColor="Gray" Font-Bold="True"></asp:Label>
 <asp:Label SkinID="TituloMedianoNoBold" runat="server" Font-Size="12px" ForeColor="Gray" Font-Bold="False"></asp:Label>
 

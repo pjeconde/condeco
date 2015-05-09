@@ -71,8 +71,7 @@
         }
     //]]>
     </script>
-    <table border="0" cellpadding="0" cellspacing="0" 
-        style="padding-left:10px; vertical-align:top; background-image: url('Imagenes/Detallada.jpg'); background-repeat: no-repeat;">
+    <table border="0" cellpadding="0" cellspacing="0" style="padding:20px; vertical-align:top; background-image: url('Imagenes/Detallada.jpg'); background-repeat: no-repeat;">
         <tr>
             <td align="left" colspan="2" style="padding-top:20px">
                 <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Detalle del Producto"></asp:Label>

@@ -22,6 +22,14 @@ namespace Condeco
                 DataBind();
                 //this.astvMyTree.ContextMenu.MenuItems.Add(new ASContextMenuItem("Custom Menu", "alert('current value:' + " + this.astvMyTree.ContextMenuClientID + ".getSelectedItem().parentNode.getAttribute('treeNodeValue')" + ");return false;", "text"));
                 astvMyTree.ExpandToDepth(0);
+                if (Request.QueryString.Count > 0)
+                {
+                    string v = Request.QueryString["Filtro"].ToString();
+                    string[] buscarNodo = new string[1];
+                    buscarNodo[0] = v;  //400 - Mesas
+                    this.astvMyTree.CheckNodes(buscarNodo, true);
+                }
+                ((Panel)this.Master.FindControl("ProductoLineaColor")).Visible = true;
             }
         }
 

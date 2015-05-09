@@ -4,14 +4,14 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadCPH">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table>
+    <table style="width: 1000px; padding:20px;">
         <tr>
             <td>
                 <h2>
                     Bienvenidos<br />
                 </h2>
-                <p>
-                    <font style="font-style: normal; font-style: italic; font-weight:bold"> Usted podrá encontrar en nuestro sitio web, los distintos tipos de productos y objetos de decoración ofrecidos, visualizando detalladamente los mismos.</font>
+                <p style=">
+                    <font style="font-style: normal; font-style: italic; font-weight:bold;">Usted podrá encontrar en nuestro sitio web, los distintos tipos de productos y objetos de decoración ofrecidos, visualizando detalladamente los mismos.</font>
                     <br />
                 </p>
                 <h4 style="font-weight:bold">Muebles</h4>
@@ -20,11 +20,18 @@
                     <br />
                     También realizamos productos tipo vintage o retro, con terminaciones manuales que hacen único al producto.
                 </p>
-                <asp:Image ID="ImageProductosRusticos" runat="server" ImageUrl="~/Imagenes/Productos.jpg" />
+                <asp:HyperLink ID="HyperLink3" runat="server" BorderStyle="None" ImageUrl="~/Imagenes/Productos.jpg" NavigateUrl="~/Producto.aspx?Filtro=400"></asp:HyperLink>
+                <br />
+                <p>
+                Mesas ratonas trabajadas en madera maciza de pinotea, pino antiguo, incienso y cedro. En muchos casos utilizamos madera antigua de aberturas, pisos y muebles en desuso. Algunos de nuestros productos se combinan con MDF laqueado en color blanco satinado.
+                </p>
+                <asp:HyperLink runat="server" BorderStyle="None" ImageUrl="Imagenes/Home-Muebles-MesasRatonas.jpg" NavigateUrl="~/Producto.aspx?Filtro=400"></asp:HyperLink>
                 <br />
                 <br />
                 Si usted desea una hacer una consulta, cotización o presupuesto, haga <asp:HyperLink ID="HyperLink2" runat="server" Target="_self" NavigateUrl="~/Contacto.aspx">clic aquí</asp:HyperLink> y le contestaremos a la brevedad.
-                <p>&nbsp;</p>
+                <br />
+                <br />
+
                 <asp:Panel runat="server" Visible="false">
                 <h4 style="font-weight:bold">Pisos</h4>
                 <p>
@@ -36,6 +43,7 @@
                 <br />
                 <p>&nbsp;</p>
                 </asp:Panel>
+                
                 <h4 style="font-weight:bold">Carteles</h4>
                 <p>
                     Fabricamos <i><b>carteles para decoración en madera maciza tipo vintage</b></i>, a los cuales les hacemos un desgastado manual para simular el paso del tiempo. <br />
@@ -43,7 +51,7 @@
                     <br />
                     Realizamos además, algunos carteles con efecto similar al camuflado en diversas tonalidades y otros estilos como el <i><b>campestre</b></i> o el <i><b>shabby chic</b></i> que es una mezcla de elementos antiguos con modernos.<br />
                 </p>
-                <asp:Image ID="ImageProductosCarteles" runat="server" ImageUrl="~/Imagenes/Home.jpg" />
+                <asp:HyperLink ID="HyperLink4" runat="server" BorderStyle="None" ImageUrl="~/Imagenes/Home.jpg" NavigateUrl="~/Producto.aspx"></asp:HyperLink>
                 <br />  
                 <p>
                     La señalización decorativa no sólo luce bien en la oficina sino que también funciona muy bien en una casa. <br />

@@ -3,7 +3,7 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadCPH">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table class="ppaltable" width="100%">
+    <table style="width: 1000px; padding:20px;">
         <tr>
             <td>
                 <h2>
