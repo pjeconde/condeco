@@ -7,13 +7,9 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
     <table cellpadding="0" cellspacing="0" border="0" style="width:100%">
         <tr>
-            <td style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg'); width: 100%; background-repeat: repeat; border-style: none; height:10px;">
-            </td>
-        </tr>
-        <tr>
             <td>
                 <asp:Panel runat="server" ID="Buscador" DefaultButton="BuscarButton">
-                <table class="ppaltable" border="0" cellpadding="0" cellspacing="0" >
+                <table border="0" cellpadding="0" cellspacing="0" width="1000px" style="padding: 20px">
                     <tr>
                         <td colspan="5">
                             <table border="0" cellpadding="0" cellspacing="0" width="780">
@@ -113,19 +109,19 @@
     </table>    
     <table border="0" cellpadding="0" cellspacing="0" width="100%"> 
         <tr>
-            <td style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg'); width: 100%; background-repeat: repeat; border-style: none; height:2px;">
+            <td style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg'); width: 1046; background-repeat: repeat; border-style: none; height:2px;">
             </td>
         </tr>
     </table>
-    <table border="0" cellpadding="0" cellspacing="0" style="width: 800px;">
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 100px;">
         <tr>
             <td>
                 <asp:Panel ID="PanelPagingGridView" runat="server">
-                    <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 10px; width: 800px;">    
+                    <table border="0" cellpadding="0" cellspacing="0" style="padding: 20px; width: 840px;">    
                         <tr>
                             <td>
                                 <asp:Panel ID="Panel1" runat="server" BackColor="white" BorderColor="white" BorderStyle="Solid"
-                                    BorderWidth="0px" ScrollBars="Auto" Width="800px" BackImageUrl="">
+                                    BorderWidth="0px" ScrollBars="Auto" Width="840px" BackImageUrl="">
                                     <cc1:PagingGridView ID="ProductoPagingGridView" runat="server" OnPageIndexChanging="ProductoPagingGridView_PageIndexChanging"
                                         OnRowDataBound="ProductoPagingGridView_RowDataBound" FooterStyle-ForeColor="Brown"
                                         OnSorting="ProductoPagingGridView_Sorting" AllowPaging="True" AllowSorting="True" 
@@ -161,11 +157,11 @@
             </td>
         </tr>
         <tr>
-            <td valign="top" style="padding-left: 10px;">
+            <td valign="top" style="padding: 20px;">
                 <asp:Panel ID="PanelListView" runat="server" BackColor="White">
-                    <table border="0" cellpadding="0" cellspacing="0" style="width: 800px; vertical-align: top">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 840px; vertical-align: top">
                         <tr>
-                            <td style="padding-top: 10px; padding-bottom: 10px; width: 800px; vertical-align: top">
+                            <td style="padding-top: 10px; padding-bottom: 10px; width: 840px; vertical-align: top">
                                 <asp:ListView ID="ProductoListView" runat="server" OnPagePropertiesChanging="ProductoListView_PagePropertiesChanging"
                                     GroupItemCount="2">
                                     <LayoutTemplate>
@@ -223,6 +219,8 @@
                                                                 </td>
                                                             </tr>
                                                         </table>
+                                                    </td>
+                                                    <td style="width:10px">
                                                     </td>
                                                 </tr>
                                                 <tr>
