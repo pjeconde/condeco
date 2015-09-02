@@ -7,3 +7,12 @@ C:\SVNCondeco\CondecoDB\bin\Debug\CondecoEntidades.pdb
 C:\SVNCondeco\CondecoDB\bin\Debug\CondecoEX.pdb
 C:\SVNCondeco\CondecoDB\obj\Debug\CondecoDB.dll
 C:\SVNCondeco\CondecoDB\obj\Debug\CondecoDB.pdb
+C:\GitHub\condeco\CondecoDB\obj\Debug\CondecoDB.csprojResolveAssemblyReference.cache
+C:\GitHub\condeco\CondecoDB\obj\Debug\CondecoDB.dll
+C:\GitHub\condeco\CondecoDB\obj\Debug\CondecoDB.pdb
+C:\GitHub\condeco\CondecoDB\bin\Debug\CondecoDB.dll
+C:\GitHub\condeco\CondecoDB\bin\Debug\CondecoDB.pdb
+C:\GitHub\condeco\CondecoDB\bin\Debug\CondecoEntidades.dll
+C:\GitHub\condeco\CondecoDB\bin\Debug\CondecoEX.dll
+C:\GitHub\condeco\CondecoDB\bin\Debug\CondecoEntidades.pdb
+C:\GitHub\condeco\CondecoDB\bin\Debug\CondecoEX.pdb

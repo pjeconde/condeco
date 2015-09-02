@@ -64,7 +64,7 @@
             </td>
             <td align="left" style="padding-top:2px">
                 <asp:TextBox ID="DescripcionCortaTextBox" runat="server" TextMode="MultiLine" CssClass="MultilineFont" style="resize: none;" MaxLength="500" Height="200px" TabIndex="2" Width="400px"></asp:TextBox>
-                <ajaxToolkit:HtmlEditorExtender ID="HtmlEditorExtender2" TargetControlID="DescripcionCortaLabel" runat="server" EnableSanitization="false"  />
+                <ajaxToolkit:HtmlEditorExtender ID="HtmlEditorExtender2" TargetControlID="DescripcionCortaTextBox" runat="server" EnableSanitization="false"  />
             </td>        
         </tr>
         <tr>

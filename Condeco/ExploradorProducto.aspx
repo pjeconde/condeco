@@ -79,11 +79,15 @@
                                         <asp:LinkButton Id="Modificar" runat="server" CausesValidation="false" CommandName="Modificar"  CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip="<%# ((GridViewRow) Container).RowIndex %>" Text="Modificar" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" HeaderStyle-Width="100px" ReadOnly="true">
+                                    <HeaderStyle HorizontalAlign="Center" Wrap="false" />
+                                    <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
+                                </asp:BoundField>
                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" HeaderStyle-Width="200px" ReadOnly="true">
                                     <HeaderStyle HorizontalAlign="Center" Wrap="false" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="Descripcion" HeaderText="Descripción" SortExpression="Descripcion" ReadOnly="true" 
+                                <asp:BoundField DataField="DescripcionCorta" HeaderText="Descripción Corta" SortExpression="DescripcionCorta" ReadOnly="true" 
                                     HeaderStyle-Width="250px">
                                     <HeaderStyle Wrap="False" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />

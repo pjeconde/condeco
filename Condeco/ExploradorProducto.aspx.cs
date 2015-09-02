@@ -101,7 +101,7 @@ namespace Condeco
                 e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                 
                 //Color por estado distinto a Active
-                if (e.Row.Cells[4].Text != "Vigente")
+                if (e.Row.Cells[6].Text != "Vigente")
                 {
                     e.Row.ForeColor = Color.Red;
                 }

@@ -200,7 +200,7 @@ namespace CondecoDB
             a.Append("[IdProducto] [int] NOT NULL, ");
 	        a.Append("[Nombre] [varchar](50) NOT NULL, ");
 	        a.Append("[Descripcion] [varchar](2000) NOT NULL, ");
-            a.Append("[DescripcionCorta] [varchar](500) NOT NULL, ");
+            a.Append("[DescripcionCorta] [varchar](250) NOT NULL, ");
             a.Append("[IdMoneda] [varchar](10) NOT NULL, ");
 	        a.Append("[PrecioBase] [numeric](18, 2) NOT NULL, ");
 	        a.Append("[ComentarioPrecioBase] [varchar](250) NOT NULL, ");

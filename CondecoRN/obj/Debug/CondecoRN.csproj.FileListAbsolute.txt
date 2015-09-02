@@ -11,3 +11,16 @@ C:\SVNCondeco\CondecoRN\bin\Debug\CondecoEX.dll
 C:\SVNCondeco\CondecoRN\bin\Debug\Captcha.pdb
 C:\SVNCondeco\CondecoRN\bin\Debug\CondecoDB.pdb
 C:\SVNCondeco\CondecoRN\bin\Debug\CondecoEX.pdb
+C:\GitHub\condeco\CondecoRN\obj\Debug\CondecoRN.csprojResolveAssemblyReference.cache
+C:\GitHub\condeco\CondecoRN\obj\Debug\CondecoRN.dll
+C:\GitHub\condeco\CondecoRN\obj\Debug\CondecoRN.pdb
+C:\GitHub\condeco\CondecoRN\bin\Debug\CondecoRN.dll
+C:\GitHub\condeco\CondecoRN\bin\Debug\CondecoRN.pdb
+C:\GitHub\condeco\CondecoRN\bin\Debug\Captcha.dll
+C:\GitHub\condeco\CondecoRN\bin\Debug\CondecoDB.dll
+C:\GitHub\condeco\CondecoRN\bin\Debug\CondecoEntidades.dll
+C:\GitHub\condeco\CondecoRN\bin\Debug\CondecoEX.dll
+C:\GitHub\condeco\CondecoRN\bin\Debug\Captcha.pdb
+C:\GitHub\condeco\CondecoRN\bin\Debug\CondecoDB.pdb
+C:\GitHub\condeco\CondecoRN\bin\Debug\CondecoEntidades.pdb
+C:\GitHub\condeco\CondecoRN\bin\Debug\CondecoEX.pdb

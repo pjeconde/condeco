@@ -208,7 +208,7 @@
                                                                     </asp:LinkButton>
                                                                 </td>
                                                                 <td style="vertical-align: top">
-                                                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("Descripcion") %>'
+                                                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("DescripcionCorta") %>'
                                                                         Width="280px" CssClass='<%# Eval("TipoDestacado").ToString()=="02" ? "myClass02" : "myClass"%>' />
                                                                 </td>
                                                             </tr>

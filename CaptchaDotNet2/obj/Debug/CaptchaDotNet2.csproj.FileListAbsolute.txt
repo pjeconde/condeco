@@ -8,3 +8,7 @@ C:\SVNTangoFamilyAndGuide\TangoFamilyAndGuide\CaptchaDotNet2\bin\Debug\Captcha.p
 C:\SVNTangoFamilyAndGuide\TangoFamilyAndGuide\CaptchaDotNet2\obj\Debug\Captcha.dll
 C:\SVNTangoFamilyAndGuide\TangoFamilyAndGuide\CaptchaDotNet2\obj\Debug\Captcha.pdb
 C:\SVNTangoFamilyAndGuide\TangoFamilyAndGuide\CaptchaDotNet2\obj\Debug\CaptchaDotNet2.csprojResolveAssemblyReference.cache
+C:\GitHub\condeco\CaptchaDotNet2\bin\Debug\Captcha.dll
+C:\GitHub\condeco\CaptchaDotNet2\bin\Debug\Captcha.pdb
+C:\GitHub\condeco\CaptchaDotNet2\obj\Debug\Captcha.dll
+C:\GitHub\condeco\CaptchaDotNet2\obj\Debug\Captcha.pdb

@@ -2,3 +2,7 @@ C:\SVNCondeco\CondecoEntidades\bin\Debug\CondecoEntidades.dll
 C:\SVNCondeco\CondecoEntidades\bin\Debug\CondecoEntidades.pdb
 C:\SVNCondeco\CondecoEntidades\obj\Debug\CondecoEntidades.dll
 C:\SVNCondeco\CondecoEntidades\obj\Debug\CondecoEntidades.pdb
+C:\GitHub\condeco\CondecoEntidades\bin\Debug\CondecoEntidades.dll
+C:\GitHub\condeco\CondecoEntidades\bin\Debug\CondecoEntidades.pdb
+C:\GitHub\condeco\CondecoEntidades\obj\Debug\CondecoEntidades.dll
+C:\GitHub\condeco\CondecoEntidades\obj\Debug\CondecoEntidades.pdb
