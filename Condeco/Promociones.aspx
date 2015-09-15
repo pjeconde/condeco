@@ -3,16 +3,20 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadCPH">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table class="ppaltable" width="100%">
-        <tr>
-            <td>
-                <h2>
-                    Promociones
-                </h2>
-                <p>
-                    En breve estaremos informando las promociones.
-                </p>
-            </td>
-        </tr>
-    </table>
+    <section class="bg-info" id="secPromociones">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p>
+                    <span class="fa fa-2x fa-usd"></span>
+                    </p>
+                    <h2 class="section-heading"> Promociones</h2>
+                    <hr>
+                    <p>En breve estaremos informando las promociones.
+                    </p>
+                    <a href="Default.aspx" class="btn btn-default btn-xl">Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </asp:Content>

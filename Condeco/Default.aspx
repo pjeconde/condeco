@@ -10,7 +10,7 @@
                 <h2>
                     Bienvenidos<br />
                 </h2>
-                <p style=">
+                <p>
                     <font style="font-style: normal; font-style: italic; font-weight:bold;">Usted podrá encontrar en nuestro sitio web, los distintos tipos de productos y objetos de decoración ofrecidos, visualizando detalladamente los mismos.</font>
                     <br />
                 </p>

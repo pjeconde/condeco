@@ -16,72 +16,19 @@ namespace Condeco
         {
             if (RefrescaDatosUsuario) CondecoRN.Sesion.RefrescarDatosUsuario(Sesion.Usuario, Sesion);
 
-            ContentPlaceHolder menuContentPlaceHolder = ((ContentPlaceHolder)Master.FindControl("MenuCPH"));
-            Menu menu = ((Menu)menuContentPlaceHolder.FindControl("Menu"));
+            Control btnUsuarioLogin = (Control)Master.FindControl("btnUsuarioLogin");
+            btnUsuarioLogin.Visible = false;
+            Control btnAdmin = (Control)Master.FindControl("btnAdmin");
+            btnAdmin.Visible = false;
+            Control btnCerrarLogin = (Control)Master.FindControl("btnCerrarLogin");
+            btnCerrarLogin.Visible = false;
+            Control btnUsuario = (Control)Master.FindControl("btnUsuario");
+            btnUsuario.Visible = false;
 
-            ImageButton usuarioImageButton = ((ImageButton)Master.FindControl("UsuarioImageButton"));
-
-            ContentPlaceHolder usuarioContentPlaceHolder = ((ContentPlaceHolder)Master.FindControl("UsuarioCPH"));
-            Label usuarioLabel = ((Label)usuarioContentPlaceHolder.FindControl("UsuarioLabel"));
-            HyperLink usuarioHyperLink = ((HyperLink)usuarioContentPlaceHolder.FindControl("UsuarioHyperLink"));
-
-            //Label cUITLabel = ((Label)usuarioContentPlaceHolder.FindControl("CUITLabel"));
-            //DropDownList cUITDropDownList = ((DropDownList)usuarioContentPlaceHolder.FindControl("CUITDropDownList"));
-            //Label uNLabel = ((Label)usuarioContentPlaceHolder.FindControl("UNLabel"));
-            //DropDownList uNDropDownList = ((DropDownList)usuarioContentPlaceHolder.FindControl("UNDropDownList"));
-            
-            menu.Items.Clear();
-            menu.Orientation = Orientation.Horizontal;
-            menu.Enabled = true;
-            menu.Visible = true;
-            MenuItem mItem;
-
-            //mItem = new MenuItem("Página principal", "Página principal");
-            //menu.Items.Add(mItem);
-            //menu.Items[menu.Items.Count - 1].Selectable = true;
-
-            //mItem = new MenuItem("Contacto", "Contacto");
-            //menu.Items.Add(mItem);
-            //menu.Items[menu.Items.Count - 1].Selectable = true;
-
-            mItem = new MenuItem("Portada", "Portada");
-            menu.Items.Add(mItem);
-            menu.Items[menu.Items.Count - 1].Selectable = false;
-
-            mItem = new MenuItem("Empresa", "Empresa");
-            menu.Items.Add(mItem);
-            menu.Items[menu.Items.Count - 1].Selectable = false;
-
-            mItem = new MenuItem("Productos", "Productos");
-            menu.Items.Add(mItem);
-            menu.Items[menu.Items.Count - 1].Selectable = false;
-
-            mItem = new MenuItem("Contacto", "Contacto");
-            menu.Items.Add(mItem);
-            menu.Items[menu.Items.Count - 1].Selectable = false;
-
-            mItem = new MenuItem("Login", "Login");
-            menu.Items.Add(mItem);
-            menu.Items[menu.Items.Count - 1].Selectable = false;
-
-            mItem = new MenuItem("Novedades", "Novedades");
-            menu.Items.Add(mItem);
-            menu.Items[menu.Items.Count - 1].Selectable = false;
-
-            mItem = new MenuItem("Promociones", "Promociones");
-            menu.Items.Add(mItem);
-            menu.Items[menu.Items.Count - 1].Selectable = false;
-
-
-            mItem = new MenuItem("Configuración", "Configuración");
-            menu.Items.Add(mItem);
-            menu.Items[menu.Items.Count - 1].Selectable = false;
-            mItem = new MenuItem("Cambiar password", "Cambiar password");
-            menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-            menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-            mItem = new MenuItem("Modificar configuración", "Modificar configuración");
-            menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-            menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
+            //ImageButton usuarioImageButton = ((ImageButton)Master.FindControl("UsuarioImageButton"));
+            //ContentPlaceHolder usuarioContentPlaceHolder = ((ContentPlaceHolder)Master.FindControl("UsuarioCPH"));
+            //Label usuarioLabel = ((Label)usuarioContentPlaceHolder.FindControl("UsuarioLabel"));
+            //HyperLink usuarioHyperLink = ((HyperLink)usuarioContentPlaceHolder.FindControl("UsuarioHyperLink"));
 
             List<CondecoEntidades.Permiso> permisoAdminSITEActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
             {
@@ -89,105 +36,76 @@ namespace Condeco
             });
             if (permisoAdminSITEActive.Count != 0)
             {
-                mItem = new MenuItem("Administración Site", "Administración Site");
-                menu.Items.Add(mItem);
-                menu.Items[menu.Items.Count - 1].Selectable = false;
-
-                mItem = new MenuItem("Productos", "Productos");
-                menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-                menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-
-                MenuItem miProductos = new MenuItem();
-                miProductos = menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1];
-                mItem = new MenuItem("Crear", "Crear");
-                miProductos.ChildItems.Add(mItem);
-                miProductos.ChildItems[0].Selectable = false;
-
-                mItem = new MenuItem("Modificar", "Modificar");
-                miProductos.ChildItems.Add(mItem);
-                
-                miProductos.ChildItems[0].Selectable = false;
-                mItem = new MenuItem("Imagenes", "Imagenes");
-                miProductos.ChildItems.Add(mItem);
-
-                miProductos.ChildItems[0].Selectable = false;
-                mItem = new MenuItem("Explorador", "Explorador");
-                miProductos.ChildItems.Add(mItem);
-                miProductos.ChildItems[0].Selectable = false;
-
-                mItem = new MenuItem("Explorador de Usuarios", "Explorador de Usuarios");
-                menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-                menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-                mItem = new MenuItem("Explorador de Permisos", "Explorador de Permisos");
-                menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-                menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-                mItem = new MenuItem("Explorador de Publicidad", "Explorador de Publicidad");
-                menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-                menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
-                mItem = new MenuItem("Explorador de Comentarios", "Explorador de Comentarios");
-                menu.Items[menu.Items.Count - 1].ChildItems.Add(mItem);
-                menu.Items[menu.Items.Count - 1].ChildItems[menu.Items[menu.Items.Count - 1].ChildItems.Count - 1].Selectable = false;
+                btnAdmin.Visible = true;
             }
 
-            mItem = new MenuItem("Close session", "Close session");
-            menu.Items.Add(mItem);
-            menu.Items[menu.Items.Count - 1].Selectable = false;
+            //mItem = new MenuItem("Close session", "Close session");
+            //menu.Items.Add(mItem);
+            //menu.Items[menu.Items.Count - 1].Selectable = false;
 
-            menuContentPlaceHolder.Visible = false;
-            usuarioContentPlaceHolder.Visible = false;
             if (Sesion != null)
             {
                 foreach (string s in Sesion.OpcionesHabilitadas)
                 {
-                    MenuItem mItemFind = menu.FindItem(s);
-                    if (mItemFind != null)
+                    Control c = (Control)Master.FindControl("btn" + s);
+                    if (c != null)
                     {
-                        mItemFind.Selectable = true;
+                        c.Visible = true;
                     }
                 }
-                menuContentPlaceHolder.Visible = true;
                 if (Sesion.Usuario.Id != null)
                 {
-                    String path = Master.Server.MapPath("~/ImagenesSubidas/");
-                    string[] archivos = System.IO.Directory.GetFiles(path, Sesion.Usuario.Id + ".*", System.IO.SearchOption.TopDirectoryOnly);
-                    if (archivos.Length > 0)
+                    Control c = (Control)Master.FindControl("btnUsuario");
+                    if (c != null)
                     {
-                        usuarioImageButton.ImageUrl = "~/ImagenesSubidas/" + archivos[0].Replace(Master.Server.MapPath("~/ImagenesSubidas/"), String.Empty);
+                        c.Visible = true;
                     }
-                    else
+                    c = (Control)Master.FindControl("btnCerrarLogin");
+                    if (c != null)
                     {
-                        usuarioImageButton.ImageUrl = "~/Imagenes/SiluetaHombre.jpg";
+                        c.Visible = true;
                     }
-                    usuarioImageButton.Visible = true;
-                    usuarioContentPlaceHolder.Visible = true;
-                    usuarioHyperLink.Text = Sesion.Usuario.Nombre.Replace(" ", "&nbsp;");
-                    usuarioLabel.Text = "User: ";
-                    menu.Items[menu.Items.Count - 1].Selectable = true;
+                    Label usrNombre = (Label)Master.FindControl("lblUsuario");
+                    if (usrNombre != null)
+                    {
+                        usrNombre.Text = Sesion.Usuario.Id + " - " + Sesion.Usuario.Nombre;
+                    }
+                    
+                    //String path = Master.Server.MapPath("~/ImagenesSubidas/");
+                    //string[] archivos = System.IO.Directory.GetFiles(path, Sesion.Usuario.Id + ".*", System.IO.SearchOption.TopDirectoryOnly);
+                    //if (archivos.Length > 0)
+                    //{
+                    //    usuarioImageButton.ImageUrl = "~/ImagenesSubidas/" + archivos[0].Replace(Master.Server.MapPath("~/ImagenesSubidas/"), String.Empty);
+                    //}
+                    //else
+                    //{
+                    //    usuarioImageButton.ImageUrl = "~/Imagenes/SiluetaHombre.jpg";
+                    //}
+                    //usuarioImageButton.Visible = true;
+                    //usuarioContentPlaceHolder.Visible = true;
+                    //usuarioHyperLink.Text = Sesion.Usuario.Nombre.Replace(" ", "&nbsp;");
+                    //usuarioLabel.Text = "User: ";
+                    //menu.Items[menu.Items.Count - 1].Selectable = true;
                 }
             }
             if (Sesion.Usuario.Id == null)
             {
-                for (int i = menu.Items.Count - 1; i > 4; i--)
+                Control c = (Control)Master.FindControl("btnUsuarioLogin");
+                if (c != null)
                 {
-                    RemoverMenuItem(menu, menu.Items[i]);
+                    c.Visible = true;
                 }
             }
-            MenuItem menuItem = menu.FindItem("Login");
-            if (menuItem != null && !menuItem.Selectable) RemoverMenuItem(menu, menuItem);
         }
-        private static void RemoverMenuItem(Menu Menu, MenuItem MenuItem)
+        public static void OcultarItem(MasterPage Master, string Item)
         {
-            for (int j = MenuItem.ChildItems.Count - 1; j >= 0; j--)
+            Control control = (Control)Master.FindControl(Item);
+            if (control != null)
             {
-                MenuItem.ChildItems.Remove(MenuItem.ChildItems[0]);
+                control.Visible = false;
             }
-            Menu.Items.Remove(MenuItem);
         }
-        public static void RemoverMenuItem(Menu Menu, string IdMenuItem)
-        {
-            MenuItem menuItem = Menu.FindItem(IdMenuItem);
-            if (menuItem != null) RemoverMenuItem(Menu, menuItem);
-        }
+
         public static void GenerarImagenCaptcha(System.Web.SessionState.HttpSessionState Session, System.Web.UI.WebControls.Image CaptchaImage, TextBox CaptchaTextBox)
         {
             string s = RandomText.Generate();

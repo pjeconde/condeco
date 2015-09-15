@@ -18,8 +18,7 @@ namespace Condeco
         }
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            Menu menu = ((Menu)Master.FindControl("MenuCPH").FindControl("Menu"));
-            Funciones.RemoverMenuItem(menu, "Login");
+            Funciones.OcultarItem(Master, "btnLoginUsurio");
         }
         protected void LoginButton_Click(object sender, EventArgs e)
         {

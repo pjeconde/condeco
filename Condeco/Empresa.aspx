@@ -3,25 +3,27 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadCPH">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table style="width: 1000px; padding:20px;">
-        <tr>
-            <td>
-                <h2>
-                    Empresa
-                </h2>
-                <p>
-                    Nuestra empresa esta ubicada en el barrio de Villa del Parque y cuenta con talleres propios.
-                    <br />  
-                    Nos dedicamos al diseño y fabricación de muebles y objetos de decoración realizados principalmente en madera. 
-                    <br /> 
-                </p>
-                <p>
-                    Nuestro objetivo fundamental es satisfacer al cliente y cuidar al mismo tiempo el medio ambiente. 
-                    <br /> 
-                    Es muy importante para nosotros, aumentar la conciencia acerca las preocupaciones ambientales y desarrollar nuestros productos con maderas recuperadas en demoliciones y otros materiales descartados por individuos o empresas, 
-                    reciclandolos para generar objetos funcionales con un diseño actual. 
-                </p>
-            </td>
-        </tr>
-    </table>
+     <section class="bg-primary" id="empresa">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p>
+                    <span class="fa fa-2x fa-building-o"></span>
+                    </p>
+                    <h2 class="section-heading"> Empresa</h2>
+                    <hr>
+                    <p>Nuestra empresa esta ubicada en el barrio de Villa del Parque y cuenta con talleres propios.
+                    <br />Nos dedicamos al diseño y fabricación de muebles y objetos de decoración realizados principalmente en madera.
+                    </p>
+                    <p>
+                        Nuestro objetivo fundamental es satisfacer al cliente y cuidar al mismo tiempo el medio ambiente.
+                        <br />
+                        Es muy importante para nosotros cuidar el medio ambiente, es por eso que desarrollamos en la medida de lo posible, productos con maderas recuperadas en demoliciones y otros materiales descartados por individuos o empresas.
+                        Reciclamos materiales que nos permitan generar objetos funcionales con un diseño actual.
+                    </p>
+                    <a href="Default.aspx" class="btn btn-default btn-xl">Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </asp:Content>

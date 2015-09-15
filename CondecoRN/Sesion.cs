@@ -17,18 +17,19 @@ namespace CondecoRN
             List<string> opcionesHabilitadas = new List<string>();
             if (Sesion.Usuario.Id != null)
             {
-                opcionesHabilitadas.Add("Configuración|Cambiar password");
-                opcionesHabilitadas.Add("Configuración|Modificar configuración");
+                opcionesHabilitadas.Add("UsuarioCambiarClave");
+                opcionesHabilitadas.Add("UsuarioConsulta");
+                opcionesHabilitadas.Add("UsuarioCerrar");
                 List<CondecoEntidades.Permiso> permisoOperNovedadesActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                 {
                     return p.TipoPermiso.Id == "OperNovedades" && p.Estado == "Vigente";
                 });
                 if (permisoOperNovedadesActive.Count != 0)
                 {
-                    opcionesHabilitadas.Add("Novedades|Crear");
-                    opcionesHabilitadas.Add("Novedades|Modificar");
-                    opcionesHabilitadas.Add("Novedades|Imagenes");
-                    opcionesHabilitadas.Add("Novedades|Consultar");
+                    opcionesHabilitadas.Add("NovedadesCrear");
+                    opcionesHabilitadas.Add("NovedadesModificar");
+                    opcionesHabilitadas.Add("NovedadesImagenes");
+                    opcionesHabilitadas.Add("NovedadesConsultar");
                 }
                 List<CondecoEntidades.Permiso> permisoOperPromocionesActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                 {
@@ -36,10 +37,10 @@ namespace CondecoRN
                 });
                 if (permisoOperPromocionesActive.Count != 0)
                 {
-                    opcionesHabilitadas.Add("Promociones|Crear");
-                    opcionesHabilitadas.Add("Promociones|Modificar");
-                    opcionesHabilitadas.Add("Promociones|Imagenes");
-                    opcionesHabilitadas.Add("Promociones|Consultar");
+                    opcionesHabilitadas.Add("PromocionesCrear");
+                    opcionesHabilitadas.Add("PromocionesModificar");
+                    opcionesHabilitadas.Add("PromocionesImagenes");
+                    opcionesHabilitadas.Add("PromocionesConsultar");
                 }
                 List<CondecoEntidades.Permiso> permisoAdminSITEActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
                 {
@@ -54,22 +55,22 @@ namespace CondecoRN
                     });
                     if (permisoOperProductosActive.Count != 0)
                     {
-                        opcionesHabilitadas.Add("Administración Site|Productos|Crear");
-                        opcionesHabilitadas.Add("Administración Site|Productos|Modificar");
-                        opcionesHabilitadas.Add("Administración Site|Productos|Imagenes");
-                        opcionesHabilitadas.Add("Administración Site|Productos|Consultar");
+                        opcionesHabilitadas.Add("ProductosCrear");
+                        opcionesHabilitadas.Add("ProductosModificar");
+                        opcionesHabilitadas.Add("ProductosImagenes");
+                        opcionesHabilitadas.Add("ProductosConsultar");
                     }
                     opcionesHabilitadas.Add("Administración Site|Explorador de Usuarios");
                     opcionesHabilitadas.Add("Administración Site|Explorador de Permisos");
-                    opcionesHabilitadas.Add("Administración Site|Explorador de Publicidad");
-                    opcionesHabilitadas.Add("Administración Site|Explorador de Comentarios");
+                    //opcionesHabilitadas.Add("Administración Site|Explorador de Publicidad");
+                    //opcionesHabilitadas.Add("Administración Site|Explorador de Comentarios");
                     //opcionesHabilitadas.Add("Administración Site|Explorador de Configuraciones");
                     //opcionesHabilitadas.Add("Administración Site|Explorador de Logs");
                 }
             }
             else
             {
-                opcionesHabilitadas.Add("Login");
+                opcionesHabilitadas.Add("UsuarioLogin");
             }
             opcionesHabilitadas.Add("Portada");
             opcionesHabilitadas.Add("Empresa");
