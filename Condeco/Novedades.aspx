@@ -3,7 +3,7 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadCPH">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <section class="bg-info" id="secNovedades">
+    <section class="bg-primary-white" id="secNovedades">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -14,7 +14,7 @@
                     <hr>
                     <p>En breve estaremos informando las novedades.
                     </p>
-                    <a href="Default.aspx" class="btn btn-default btn-xl">Home</a>
+                    <a href="Default.aspx" class="btn btn-primary btn-xl page-scroll">HOME</a>
                 </div>
             </div>
         </div>

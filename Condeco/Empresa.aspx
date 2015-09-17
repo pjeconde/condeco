@@ -13,7 +13,7 @@
                     <h2 class="section-heading"> Empresa</h2>
                     <hr>
                     <p>Nuestra empresa esta ubicada en el barrio de Villa del Parque y cuenta con talleres propios.
-                    <br />Nos dedicamos al diseño y fabricación de muebles y objetos de decoración realizados principalmente en madera.
+                    <br />Nos dedicamos al diseño y fabricación de objetos de decoración realizados principalmente en madera.
                     </p>
                     <p>
                         Nuestro objetivo fundamental es satisfacer al cliente y cuidar al mismo tiempo el medio ambiente.

@@ -67,6 +67,13 @@
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="Imagenes\Cabecera-LogoMobili2.jpg" />
+    <Content Include="Imagenes\portfolio\1.jpg" />
+    <Content Include="Imagenes\portfolio\2.jpg" />
+    <Content Include="Imagenes\portfolio\3.jpg" />
+    <Content Include="Imagenes\portfolio\4.jpg" />
+    <Content Include="Imagenes\portfolio\5.jpg" />
+    <Content Include="Imagenes\portfolio\6-1.jpg" />
+    <Content Include="Imagenes\portfolio\6.jpg" />
     <Content Include="img\header.jpg" />
     <Content Include="Imagenes\Home-Muebles-MesasRatonas.jpg" />
     <Content Include="Imagenes\Home.jpg" />

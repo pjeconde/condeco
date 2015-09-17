@@ -18,7 +18,7 @@ namespace Condeco
         }
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            Funciones.OcultarItem(Master, "btnLoginUsurio");
+            Funciones.OcultarItem(Master, "btnLoginUsuario");
         }
         protected void LoginButton_Click(object sender, EventArgs e)
         {

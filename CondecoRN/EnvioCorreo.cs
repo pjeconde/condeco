@@ -89,9 +89,9 @@ namespace CondecoRN
             a.Append("Telefono: " + ContactoSite.Telefono + "<br />");
             a.Append("Email: " + ContactoSite.Email + "<br />");
             a.Append("Mensaje:<br />");
-            a.Append("------------------------------------------------<br />");
+            a.Append("-------------------------------------------<br />");
             a.Append(ContactoSite.Mensaje + "<br />");
-            a.Append("------------------------------------------------<br />");
+            a.Append("-------------------------------------------<br />");
             mail2Cedeira.Body = a.ToString();
             smtpClient2Cedeira.Credentials = new NetworkCredential(System.Configuration.ConfigurationManager.AppSettings["MailCredencialesUsr"], System.Configuration.ConfigurationManager.AppSettings["MailCredencialesPsw"]);
             smtpClient2Cedeira.Send(mail2Cedeira);
@@ -107,7 +107,7 @@ namespace CondecoRN
             a.Append("Estimado/a <b>" + ContactoSite.Nombre.Trim() + "</b>:<br />");
             a.Append("<br />");
             a.Append("Gracias por comunicarse con nosotros.<br />");
-            if (ContactoSite.Motivo == "FactElectronica")
+            if (ContactoSite.Motivo == "Consulta")
             {
                 a.Append("Su consulta será respondida a la brevedad.<br />");
             }
@@ -115,6 +115,7 @@ namespace CondecoRN
             {
                 a.Append("Su consulta será respondida a la brevedad.<br />");
             }
+            a.Append("<br />");
             a.Append("Saludos.<br />");
             a.Append("<br />");
             a.Append("<b>ConDeco</b><br />");

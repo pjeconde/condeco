@@ -19,7 +19,7 @@ namespace Condeco
                 NombreTextBox.Focus();
                 try
                 {
-                    Funciones.GenerarImagenCaptcha(Session, CaptchaImage, CaptchaTextBox);
+                    Funciones.GenerarImagenCaptcha(Session, CaptchaImage);
                     CondicionesTextBox.Text = CondecoRN.Usuario.TerminosYCondiciones().Replace("<br />", Environment.NewLine);
                 }
                 catch (Exception ex)
@@ -77,7 +77,7 @@ namespace Condeco
         }
         protected void NuevaClaveCaptchaButton_Click(object sender, EventArgs e)
         {
-            Funciones.GenerarImagenCaptcha(Session, CaptchaImage, CaptchaTextBox);
+            Funciones.GenerarImagenCaptcha(Session, CaptchaImage);
         }
         protected void ComprobarDisponibilidadButton_Click(object sender, EventArgs e)
         {

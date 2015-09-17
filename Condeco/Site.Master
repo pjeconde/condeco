@@ -11,12 +11,14 @@
 	<meta name="description" content="" />
 	<meta name="author" content="" />
     <link href='https://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
-
+    
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
     <link href="css/animate.min.css" rel="stylesheet" type="text/css" />
     <link href="css/creative.css" rel="stylesheet" type="text/css" />
-
+    
     <asp:ContentPlaceHolder ID="HeadCPH" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -129,7 +131,7 @@
                     a solas y conectarte con las cosas que m&aacute;s te gustan&hellip; Estamos para
                     inspirarte y enamorarte de la decoraci&oacute;n.
                     </p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started</a>
+                    <a href="Producto.aspx" class="btn btn-default btn-xl">Ver!!!</a>
                 </div>
             </div>
         </div>
@@ -176,17 +178,16 @@
             </div>
         </div>
     </section>
-    <form id="form1" runat="server">
+    <form id="formulario" runat="server">
     <div class="text-center">
         <asp:ScriptManager ID="MasterScriptManager" runat="server">
         </asp:ScriptManager>
         <asp:Panel ID="Cabecera" runat="server" BackColor="Black" Width="100%">
-            <table cellpadding="0" cellspacing="0" border="0" style="background-color: Black;
-                width: 100%;">
+            <table style="background-color: Black; width: 100%; border:0">
                 <tr>
                     <td>
                         <asp:Panel ID="ProductoLineaColor" runat="server" Visible="false">
-                            <table border="0" cellpadding="0" cellspacing="0" style="height: 10px;" width="100%;">
+                            <table style="height: 10px; width:100%; border:0;">
                                 <tr>
                                     <td style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg');
                                         width: 1046px; background-repeat: repeat; border-style: none; height: 10px;">
@@ -202,7 +203,7 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
-    <section id="contacto">
+    <section id="contacto" class="bg-info">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">

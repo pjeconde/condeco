@@ -13,38 +13,39 @@ namespace Condeco
         {
             if (!IsPostBack)
             {
-                Funciones.GenerarImagenCaptcha(Session, CaptchaImage, CaptchaTextBox);
+                Funciones.GenerarImagenCaptcha(Session, CaptchaImage);
+                ((System.Web.UI.HtmlControls.HtmlInputText)ContactoCodigo).Value = "";
             }
+            ContactoEmail.Attributes["type"] = "email";
         }
         protected void NuevaClaveCaptchaButton_Click(object sender, EventArgs e)
         {
-            Funciones.GenerarImagenCaptcha(Session, CaptchaImage, CaptchaTextBox);
+            Funciones.GenerarImagenCaptcha(Session, CaptchaImage);
+            ((System.Web.UI.HtmlControls.HtmlInputText)ContactoCodigo).Value = "";
         }
         protected void EnviarButton_Click(object sender, EventArgs e)
         {
             MensajeLabel.Text = String.Empty;
             CondecoEntidades.ContactoSite contacto = new CondecoEntidades.ContactoSite();
-            contacto.Motivo = MotivoTextBox.Text;
-            contacto.Nombre = NombreTextBox.Text;
-            contacto.Telefono = TelefonoTextBox.Text;
-            contacto.Email = EmailTextBox.Text;
-            contacto.Mensaje = MensajeTextBox.Text;
+            contacto.Nombre = ((System.Web.UI.HtmlControls.HtmlInputText)ContactoNombre).Value;
+            contacto.Telefono = ((System.Web.UI.HtmlControls.HtmlInputText)ContactoTelefono).Value;
+            contacto.Email = ((System.Web.UI.HtmlControls.HtmlInputText)ContactoEmail).Value;
+            contacto.Motivo = ((System.Web.UI.HtmlControls.HtmlInputText)ContactoAsunto).Value;
+            contacto.Mensaje = ((System.Web.UI.HtmlControls.HtmlTextArea)ContactoMensaje).Value;
             try
             {
-                CondecoRN.ContactoSite.Validar(contacto, Session["captcha"].ToString(), CaptchaTextBox.Text);
+                string cc = ((System.Web.UI.HtmlControls.HtmlInputText)ContactoCodigo).Value;
+                CondecoRN.ContactoSite.Validar(contacto, Session["captcha"].ToString(), cc);
                 CondecoRN.ContactoSite.Registrar(contacto);
                 EnviarButton.Enabled = false;
                 BorrarDatosButton.Enabled = false;
                 NuevaClaveCaptchaButton.Enabled = false;
-                //CaptchaImage.Visible = false;
-                ClaveLabel.Enabled = false;
-                CaptchaTextBox.Enabled = false;
-                CaseSensitiveLabel.Enabled = false;
-                MotivoTextBox.Enabled = false;
-                NombreTextBox.Enabled = false;
-                TelefonoTextBox.Enabled = false;
-                EmailTextBox.Enabled = false;
-                MensajeTextBox.Enabled = false;
+                ((System.Web.UI.HtmlControls.HtmlInputText)ContactoNombre).Disabled = true;
+                ((System.Web.UI.HtmlControls.HtmlInputText)ContactoNombre).Disabled = true;
+                ((System.Web.UI.HtmlControls.HtmlInputText)ContactoTelefono).Disabled = true;
+                ((System.Web.UI.HtmlControls.HtmlInputText)ContactoEmail).Disabled = true;
+                ((System.Web.UI.HtmlControls.HtmlInputText)ContactoAsunto).Disabled = true;
+                ((System.Web.UI.HtmlControls.HtmlTextArea)ContactoMensaje).Disabled = true;
                 MensajeLabel.Text = "Formulario enviado satisfactoriamente";
             }
             catch (Exception ex)
@@ -54,12 +55,13 @@ namespace Condeco
         }
         protected void BorrarDatosButton_Click(object sender, EventArgs e)
         {
-            NombreTextBox.Text = String.Empty;
-            TelefonoTextBox.Text = String.Empty;
-            EmailTextBox.Text = String.Empty;
-            MensajeTextBox.Text = String.Empty;
-            MensajeLabel.Text = String.Empty;
-            Funciones.GenerarImagenCaptcha(Session, CaptchaImage, CaptchaTextBox);
+            ((System.Web.UI.HtmlControls.HtmlInputText)ContactoNombre).Value = "";
+            ((System.Web.UI.HtmlControls.HtmlInputText)ContactoTelefono).Value = "";
+            ((System.Web.UI.HtmlControls.HtmlInputText)ContactoEmail).Value = "";
+            ((System.Web.UI.HtmlControls.HtmlInputText)ContactoAsunto).Value = "";
+            ((System.Web.UI.HtmlControls.HtmlTextArea)ContactoMensaje).Value = "";
+            Funciones.GenerarImagenCaptcha(Session, CaptchaImage);
+            ((System.Web.UI.HtmlControls.HtmlInputText)ContactoCodigo).Value = "";
         }
     }
 }

@@ -4,62 +4,100 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadCPH">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainCPH">
-    <table style="width: 1000px; padding:20px;">
-        <tr>
-            <td>
-                <h2>
-                    Bienvenidos<br />
-                </h2>
-                <p>
-                    <font style="font-style: normal; font-style: italic; font-weight:bold;">Usted podrá encontrar en nuestro sitio web, los distintos tipos de productos y objetos de decoración ofrecidos, visualizando detalladamente los mismos.</font>
-                    <br />
-                </p>
-                <h4 style="font-weight:bold">Muebles</h4>
-                <p>
-                    Principalmente trabajamos productos desarrollados en madera, con acabados en laca poliuretánica de alta calidad.
-                    <br />
-                    También realizamos productos tipo vintage o retro, con terminaciones manuales que hacen único al producto.
-                </p>
-                <asp:HyperLink ID="HyperLink3" runat="server" BorderStyle="None" ImageUrl="~/Imagenes/Productos.jpg" NavigateUrl="~/Producto.aspx?Filtro=400"></asp:HyperLink>
-                <br />
-                <p>
-                Mesas ratonas trabajadas en madera maciza de pinotea, pino antiguo, incienso y cedro. En muchos casos utilizamos madera antigua de aberturas, pisos y muebles en desuso. Algunos de nuestros productos se combinan con MDF laqueado en color blanco satinado.
-                </p>
-                <asp:HyperLink runat="server" BorderStyle="None" ImageUrl="Imagenes/Home-Muebles-MesasRatonas.jpg" NavigateUrl="~/Producto.aspx?Filtro=400"></asp:HyperLink>
-                <br />
-                <br />
-                Si usted desea una hacer una consulta, cotización o presupuesto, haga <asp:HyperLink ID="HyperLink2" runat="server" Target="_self" NavigateUrl="~/Contacto.aspx">clic aquí</asp:HyperLink> y le contestaremos a la brevedad.
-                <br />
-                <br />
-
-                <asp:Panel runat="server" Visible="false">
-                <h4 style="font-weight:bold">Pisos</h4>
-                <p>
-                    Realizamos todo tipo de <i><b>reparación de pisos de madera, plastificado o hidrolaqueado</b></i> de los mismos.<br />
-                    Contamos con personal altamente capacitado para realizar dicha tarea. <br />
-                    Si usted desea una hacer una consulta, cotización o presupuesto, haga <asp:HyperLink ID="HyperLink1" runat="server" Target="_self" NavigateUrl="~/Contacto.aspx">clic aquí</asp:HyperLink> y le contestaremos a la brevedad.
-                </p>
-                <asp:Image ID="ImageProductosPlastificados" runat="server" ImageUrl="~/Imagenes/Plastificados.jpg" />
-                <br />
-                <p>&nbsp;</p>
-                </asp:Panel>
-                
-                <h4 style="font-weight:bold">Carteles</h4>
-                <p>
-                    Fabricamos <i><b>carteles para decoración en madera maciza tipo vintage</b></i>, a los cuales les hacemos un desgastado manual para simular el paso del tiempo. <br />
-                    Utilizamos la madera con su tonalidad natural u oscurecida con tintes y diversos colores pasteles para darle calidez a los mismos. <br />
-                    <br />
-                    Realizamos además, algunos carteles con efecto similar al camuflado en diversas tonalidades y otros estilos como el <i><b>campestre</b></i> o el <i><b>shabby chic</b></i> que es una mezcla de elementos antiguos con modernos.<br />
-                </p>
-                <asp:HyperLink ID="HyperLink4" runat="server" BorderStyle="None" ImageUrl="~/Imagenes/Home.jpg" NavigateUrl="~/Producto.aspx"></asp:HyperLink>
-                <br />  
-                <p>
-                    La señalización decorativa no sólo luce bien en la oficina sino que también funciona muy bien en una casa. <br />
-                    La creación de un cartel para la cocina con el menú, o un afiche para la sala con una cita conmovedora puede resultar muy atractivo. <br />
-                    Hacer una señal con un aspecto envejecido consiste simular una pieza antigua mostrando las imperfecciones como parte de su encanto. <br />
-                    <br />  
-                </p>
-            </td>
-        </tr>
-    </table>
+    <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="imagenes/portfolio/1.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Peces
+                                </div>
+                                <div class="project-name">
+                                    madera y metal
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="imagenes/portfolio/2.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Caras
+                                </div>
+                                <div class="project-name">
+                                    madera y metal
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="imagenes/portfolio/3.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Muebles
+                                </div>
+                                <div class="project-name">
+                                    madera maciza
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="imagenes/portfolio/4.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Carteles
+                                </div>
+                                <div class="project-name">
+                                    madera añejada
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="imagenes/portfolio/5.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Barcos
+                                </div>
+                                <div class="project-name">
+                                    madera y metal
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="imagenes/portfolio/6-1.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </asp:Content>

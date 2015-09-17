@@ -106,14 +106,13 @@ namespace Condeco
             }
         }
 
-        public static void GenerarImagenCaptcha(System.Web.SessionState.HttpSessionState Session, System.Web.UI.WebControls.Image CaptchaImage, TextBox CaptchaTextBox)
+        public static void GenerarImagenCaptcha(System.Web.SessionState.HttpSessionState Session, System.Web.UI.WebControls.Image CaptchaImage)
         {
             string s = RandomText.Generate();
             string ens = Encryptor.Encrypt(s, "srgerg$%^bg", Convert.FromBase64String("srfjuoxp"));
             Session["captcha"] = s.ToLower();
             string color = "#ffffff";
             CaptchaImage.ImageUrl = "~/Captcha.ashx?w=305&h=92&c=" + ens + "&bc=" + color;
-            CaptchaTextBox.Text = String.Empty;
         }
         public static bool SessionTimeOut(System.Web.SessionState.HttpSessionState Session)
         {

@@ -13,94 +13,49 @@ namespace Condeco {
     public partial class Contacto {
         
         /// <summary>
-        /// CorreoElectronicoLabel control.
+        /// ContactoNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CorreoElectronicoLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ContactoNombre;
         
         /// <summary>
-        /// eMailInfoHyperLink control.
+        /// ContactoEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink eMailInfoHyperLink;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ContactoEmail;
         
         /// <summary>
-        /// NombreLabel control.
+        /// ContactoTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NombreLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ContactoTelefono;
         
         /// <summary>
-        /// NombreTextBox control.
+        /// ContactoAsunto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ContactoAsunto;
         
         /// <summary>
-        /// TelefonoLabel control.
+        /// ContactoMensaje control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TelefonoLabel;
-        
-        /// <summary>
-        /// TelefonoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TelefonoTextBox;
-        
-        /// <summary>
-        /// EmailLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EmailLabel;
-        
-        /// <summary>
-        /// EmailTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EmailTextBox;
-        
-        /// <summary>
-        /// MotivoLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MotivoLabel;
-        
-        /// <summary>
-        /// MotivoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MotivoTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ContactoMensaje;
         
         /// <summary>
         /// CaptchaImage control.
@@ -112,24 +67,6 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Image CaptchaImage;
         
         /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// MensajeTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MensajeTextBox;
-        
-        /// <summary>
         /// NuevaClaveCaptchaButton control.
         /// </summary>
         /// <remarks>
@@ -139,31 +76,22 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Button NuevaClaveCaptchaButton;
         
         /// <summary>
-        /// ClaveLabel control.
+        /// ContactoCodigo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ClaveLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ContactoCodigo;
         
         /// <summary>
-        /// CaptchaTextBox control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CaptchaTextBox;
-        
-        /// <summary>
-        /// CaseSensitiveLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CaseSensitiveLabel;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// EnviarButton control.
@@ -191,6 +119,15 @@ namespace Condeco {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SalirButton;
+        
+        /// <summary>
+        /// MensajeOKLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MensajeOKLabel;
         
         /// <summary>
         /// MensajeLabel control.
