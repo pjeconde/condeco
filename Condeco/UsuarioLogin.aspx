@@ -20,74 +20,56 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <p>...</p>
+                <div class="col-md-3">
+                    <p></p>
                 </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default" style="max-width: 400px; min-width: 380px;">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
                         <div class="panel-body">
-                            <p>
-                                <asp:Panel ID="Panel1" runat="server" DefaultButton="LoginButton" BorderStyle="Solid" BorderWidth="0" BorderColor="#cccccc">
-                                <p>
-                                    <h4><asp:Label ID="Label6" runat="server" SkinID="TituloPagina" Text="Login de Usuario"></asp:Label></h4>
-                                </p>                                       
-                                <div class="row control-group">
-                                    <div class="form-group col-xs-6">
-                                    <div class="input-group">
-                                        Nombre de usuario
-                                    </div><!-- /input-group -->
-                                    </div><!-- /.col-lg-6 -->
-                                    <div class="form-group col-xs-6">
-                                    <div class="input-group">
-                                        <asp:TextBox ID="UsuarioTextBox" runat="server" MaxLength="50" OnTextChanged="UsuarioTextBox_TextChanged" 
+                            <asp:Panel ID="Panel1" runat="server" DefaultButton="LoginButton" BorderStyle="Solid" BorderWidth="0" BorderColor="#cccccc">
+                            <h4><asp:Label ID="Label6" runat="server" Text="Login de Usuario"></asp:Label></h4>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                    Nombre de usuario
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                    <asp:TextBox ID="UsuarioTextBox" runat="server" MaxLength="50" OnTextChanged="UsuarioTextBox_TextChanged" 
                                         TabIndex="1"></asp:TextBox>
-                                    </div><!-- /input-group -->
-                                    </div><!-- /.col-lg-6 -->
-                                </div><!-- /.row -->
-                                <div class="row control-group">
-                                    <div class="form-group col-xs-6">
-                                        <div class="input-group">
-                                            Clave
-                                        </div>
-                                        <!-- /input-group -->
-                                    </div>
-                                    <!-- /.col-lg-6 -->
-                                    <div class="form-group col-xs-6">
-                                        <div class="input-group">
-                                            <asp:TextBox ID="PasswordTextBox" runat="server" OnTextChanged="PasswordTextBox_TextChanged"
-                                            TabIndex="2" TextMode="Password"></asp:TextBox>
-                                        </div>
-                                        <!-- /input-group -->
-                                    </div>
-                                    <!-- /.col-lg-6 -->
-                                </div><!-- /.row -->
-                                <p>
-                                        <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-info" OnClick="LoginButton_Click" TabIndex="3"
-                                            Text="Login" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
-                                </p>
-                                <p>                                            
-                                        <asp:Label ID="MensajeLabel" runat="server" CssClass="text-danger" Text=""></asp:Label>
-                                </p>
-                                <p>
-                                        <asp:HyperLink ID="CuentaCrearHyperLink" runat="server" NavigateUrl="~/UsuarioCrear.aspx"
-                                            SkinID="LinkMedianoClaro">Crear nueva cuenta de usuario</asp:HyperLink>  
-                                            <br />
-                                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/UsuarioOlvidoId.aspx"
-                                            SkinID="LinkMedianoClaro">Olvidó su nombre de usuario ?</asp:HyperLink>&nbsp;&nbsp;
+                                </div>
+                            </div><!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+                                     Clave
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                     <asp:TextBox ID="PasswordTextBox" runat="server" OnTextChanged="PasswordTextBox_TextChanged"
+                                         TabIndex="2" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div><!-- /.row -->
+                            <br/>
+                            <p>
+                                    <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-info" OnClick="LoginButton_Click" TabIndex="3"
+                                        Text="Login" OnClientClick="this.disabled = true; BorrarMensaje()" UseSubmitBehavior="false" />
+                            </p>
+                            <p>                                            
+                                    <asp:Label ID="MensajeLabel" runat="server" CssClass="text-danger" Text=""></asp:Label>
+                            </p>
+                            <p>
+                                    <asp:HyperLink ID="CuentaCrearHyperLink" runat="server" NavigateUrl="~/UsuarioCrear.aspx">Crear nueva cuenta de usuario</asp:HyperLink>  
+                                        <br />
+                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/UsuarioOlvidoId.aspx">Olvidó su nombre de usuario ?</asp:HyperLink>&nbsp;&nbsp;
                                 
-                                        <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/UsuarioOlvidoPassword.aspx"
-                                            SkinID="LinkMedianoClaro">Olvidó su clave ?</asp:HyperLink>
-                                </p>
-                                </asp:Panel>
-                            </p>    
+                                    <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/UsuarioOlvidoPassword.aspx">Olvidó su clave ?</asp:HyperLink>
+                            </p>
+                            </asp:Panel>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <p>...</p>
+                <div class="col-md-3">
+                    <p></p>
                 </div>
             </div>
-            <div class="jumbotron">
+            <div class="jumbotron" style="background-color: #dadada">
               <h4>Información</h4>
               <p class="text-left">
                     <h5>
@@ -95,21 +77,30 @@
                     disponibles en nuestro sitio web.
                     </h5>
                     <br />
-                    <font style="color: #F6B200"><b>&gt;</b></font> Novedades
-                    <br />
-                    <h6>
-                    Una vez al mes actualizamos la información con las novedades o nuevos diseños que
-                    estamos desarrollando en nuestro taller.
-                    </h6>
-                    <br />
-                    <font style="color: #F6B200"><b>&gt;</b></font> Promociones
-                    <br />
-                    <h6>
-                    Por cada lanzamiento de un nuevo producto, tenemos reservado un precio especial
-                    para la venta de las primeras unidades. Usted contará con toda la información necesaria
-                    relacionada al lanzamiento del producto, y como usuario de nuestro sitio web podrá
-                    reservar la unidad que le sea de interes.
-                    </h6>
+                    <div class="col-lg-6">
+                        <div class="panel panel-info">
+                          <div class="panel-heading"><font style="color: #F6B200"><b>&gt;</b></font> Novedades</div>
+                          <div class="panel-body">
+                                <h6>
+                                Una vez al mes actualizamos la información con las novedades o nuevos diseños que
+                                estamos desarrollando en nuestro taller.
+                                </h6>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-info">
+                          <div class="panel-heading"><font style="color: #F6B200"><b>&gt;</b></font> Promociones</div>
+                          <div class="panel-body">
+                                <h6>
+                                    Por cada lanzamiento de un nuevo producto, tenemos reservado un precio especial
+                                    para la venta de las primeras unidades. Usted contará con toda la información necesaria
+                                    relacionada al lanzamiento del producto, y como usuario de nuestro sitio web podrá
+                                    reservar la unidad que le sea de interes.
+                                </h6>
+                          </div>
+                        </div>
+                    </div>
                 </p>
                 <p><a href="Default.aspx" class="btn btn-primary btn-xl page-scroll">HOME</a></p>
             </div>

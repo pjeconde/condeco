@@ -1,21 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ExploradorUsuario.aspx.cs" Inherits="Condeco.ExploradorUsuario" Theme="Condeco" Culture="en-GB" UICulture="en-GB" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ExploradorPermisos.aspx.cs" Inherits="Condeco.ExploradorPermisos" Theme="Condeco" Culture="en-GB" UICulture="en-GB" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <%@ Register Assembly="CondecoWebForm" Namespace="CondecoWebForm" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainCPH" runat="server">
     <asp:Panel ID="PanelPPal" runat="server" DefaultButton="BuscarButton">
     <br />
-    <br />
     <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px">
         <tr>
             <td align="center" colspan="3" style="padding-top:20px">
-                <h3><asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Explorador de Usuarios"></asp:Label></h3>
+                <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Explorador de Permisos"></asp:Label>
                 <asp:Label ID="TargetControlIDdelModalPopupExtender1" runat="server" Text=""></asp:Label>
             </td>
         </tr>
         <tr>
             <td align="left" style="padding-right:5px; padding-top:5px">
-                <asp:RadioButton ID="IdUsuarioRadioButton" runat="server" AutoPostBack="true" Text="Id." GroupName="TipoBusqueda" oncheckedchanged="TipoBusquedaRadioButton_CheckedChanged" TabIndex="1"/>
+                <asp:RadioButton ID="IdUsuarioRadioButton" runat="server" AutoPostBack="true" Text="Id.Usuario" GroupName="TipoBusqueda" oncheckedchanged="TipoBusquedaRadioButton_CheckedChanged" TabIndex="1"/>
             </td>
             <td align="left" style="padding-top:5px">
                 <asp:TextBox ID="IdUsuarioTextBox" runat="server" MaxLength="50" TabIndex="7" Width="300px"></asp:TextBox>
@@ -26,7 +25,7 @@
         </tr>
         <tr>
             <td align="left" style="padding-right:5px; padding-top:5px">
-                <asp:RadioButton ID="NombreRadioButton" runat="server" AutoPostBack="true" Text="Nombre" GroupName="TipoBusqueda" oncheckedchanged="TipoBusquedaRadioButton_CheckedChanged" TabIndex="2"/>
+                <asp:RadioButton ID="NombreRadioButton" runat="server" AutoPostBack="true" Text="Nombre de Usuario" GroupName="TipoBusqueda" oncheckedchanged="TipoBusquedaRadioButton_CheckedChanged" TabIndex="2"/>
             </td>
             <td align="left" style="padding-top:5px">
                 <asp:TextBox ID="NombreTextBox" runat="server" MaxLength="50" TabIndex="6" Width="300px"></asp:TextBox>
@@ -36,10 +35,10 @@
         </tr>
         <tr>
             <td align="left" style="padding-right:5px; padding-top:5px">
-                <asp:RadioButton ID="EmailRadioButton" runat="server" AutoPostBack="true" Text="Email" GroupName="TipoBusqueda" oncheckedchanged="TipoBusquedaRadioButton_CheckedChanged" TabIndex="2"/>
+                <asp:RadioButton ID="DescripcionRadioButton" runat="server" AutoPostBack="true" Text="Descripción de Usuario" GroupName="TipoBusqueda" oncheckedchanged="TipoBusquedaRadioButton_CheckedChanged" TabIndex="2"/>
             </td>
             <td align="left" style="padding-top:5px">
-                <asp:TextBox ID="EmailTextBox" runat="server" MaxLength="50" TabIndex="6" Width="300px"></asp:TextBox>
+                <asp:TextBox ID="DescripcionTextBox" runat="server" MaxLength="50" TabIndex="6" Width="300px"></asp:TextBox>
             </td>        
             <td>
             </td>
@@ -59,7 +58,7 @@
                         <cc1:PagingGridView ID="UsuariosPagingGridView" runat="server" OnPageIndexChanging="UsuariosPagingGridView_PageIndexChanging"
                             OnRowDataBound="UsuariosPagingGridView_RowDataBound" FooterStyle-ForeColor="Brown" OnRowEditing="UsuariosPagingGridView_RowEditing" OnRowCancelingEdit="UsuariosPagingGridView_RowCancelingEdit"
                             OnRowUpdating="UsuariosPagingGridView_RowUpdating" OnSorting="UsuariosPagingGridView_Sorting" AllowPaging="True" AllowSorting="True" PageSize="5" 
-                            AutoGenerateColumns="false" SkinID="GrillaGuide" OnRowCommand="UsuariosPagingGridView_RowCommand" BorderColor="Gray"
+                            AutoGenerateColumns="false" SkinID="GrillaGuide" OnRowCommand="UsuariosPagingGridView_RowCommand"
                             OnSelectedIndexChanged="UsuariosPagingGridView_SelectedIndexChanged" OnSelectedIndexChanging="UsuariosPagingGridView_SelectedIndexChanging">
                             <Columns>
                                 <asp:TemplateField ItemStyle-VerticalAlign="Top">
@@ -94,6 +93,21 @@
                                     <HeaderStyle Wrap="False" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True" />
                                 </asp:BoundField>
+                                <asp:TemplateField HeaderText="Edit" ShowHeader="False" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="100px" ItemStyle-VerticalAlign="Top" FooterStyle-VerticalAlign="Top">
+                                    <HeaderStyle Wrap="False" Font-Bold="false" />
+                                    <EditItemTemplate>
+                                        <asp:LinkButton ID="lnkUpdate" runat="server" CausesValidation="True" CommandName="Update" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"  
+                                            Text="Update" OnClientClick="return confirm('Update?')" ValidationGroup="Update"></asp:LinkButton>
+                                        <asp:ValidationSummary ID="vsUpdate" runat="server" ShowMessageBox="true" ShowSummary="false"
+                                            ValidationGroup="Update" Enabled="true" HeaderText="Validation Summary..." />
+                                        <asp:LinkButton ID="lnkCancel" runat="server" CausesValidation="False" CommandName="Cancel" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+                                            Text="Cancel"></asp:LinkButton>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="lnkEdit" runat="server" CausesValidation="False" CommandName="Edit" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"
+                                            Text="Edit"></asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                             <PagerSettings Mode="NumericFirstLast" />
                         </cc1:PagingGridView>

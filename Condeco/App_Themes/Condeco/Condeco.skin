@@ -1,7 +1,7 @@
 <%@ Register Assembly="CondecoWebForm" Namespace="CondecoWebForm" TagPrefix="cc1" %>
 
-<asp:Label SkinID="MensajePagina" runat="server" ForeColor="#669900" Font-Bold="True" Width="500px"></asp:Label>
-
+<asp:Label SkinID="MensajePagina" runat="server" ForeColor="#669900" Font-Bold="True"></asp:Label>
+<asp:Label SkinID="IndicadorValidacion" runat="server" ForeColor="#669900" Font-Bold="True"></asp:Label>
 <asp:Label SkinID="TituloColor1Grande" runat="server" ForeColor="Gray" Font-Bold="True" Width="400px"></asp:Label>
 
 <asp:TextBox SkinID="TextoBoxFEADescrGr" runat="server" Style="width: 570px; resize: none;" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>

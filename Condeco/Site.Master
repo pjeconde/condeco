@@ -65,8 +65,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a class="page-scroll" href="Novedades.aspx">Novedades</a> </li>
                     <li><a class="page-scroll" href="Promociones.aspx">Promociones</a> </li>
+                    <li><a class="page-scroll" href="Novedades.aspx">Novedades</a> </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li id="btnAdmin" class="dropdown" runat="server">
@@ -77,61 +77,40 @@
                         <li class="dropdown-header">
                             Productos:
                         </li>
-                        <li><a href="#">Crear</a></li>
-                        <li><a href="#">Modificar</a></li>
-                        <li><a href="#">Imagenes</a></li>
-                        <li><a href="#">Explorador</a></li>
+                        <li><a href="ProductoCrear.aspx">Crear</a></li>
+                        <li><a href="ProductoModificar.aspx">Modificar</a></li>
+                        <li><a href="ProductoImagenes.aspx">Imagenes</a></li>
+                        <li><a href="ExploradorProducto.aspx">Explorador</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Explorador de Usuarios</a></li>
-                        <li><a href="#">Explorador de Permisos</a></li>
+                        <li><a href="ExploradorUsuario.aspx">Explorador de Usuarios</a></li>
+                        <li><a href="ExploradorPermisos.aspx">Explorador de Permisos</a></li>
                       </ul>
                     </li>
                     <li><a class="page-scroll" href="Empresa.aspx">Empresa</a> </li>
                     <li><a class="page-scroll" href="Producto.aspx">Productos</a> </li>
                     <li><a class="page-scroll" href="Contacto.aspx">Contacto</a> </li>
                     <li><a runat="server" id="btnUsuarioLogin" href="UsuarioLogin.aspx">Login</a> </li>
-                    <li><a runat="server" id="btnCerrarLogin" href="UsuarioLogin.aspx">Cerrar</a> </li>
+                    <li><a runat="server" id="btnCerrarLogin" href="UsuarioLogin.aspx?cerrar">Cerrar</a> </li>
                 </ul>
             </div>
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <header id="secHeader" runat="server">
-        <div class="header-content">
-            <div class="header-content-inner">
-                <div id="LeftSide">
-                    <span class="GFLaBelleAurore"><b>Bienvenidos!!!</b></span>
-                    <br/>
-                    <br />
-                    <p>
-                    Buscamos generar un nuevo concepto de decoraci&oacute;n que transmita emociones.<br />
-                    Creamos un espacio online, en donde puedas encontrar productos innovadores, con personalidad y estilo propio. 
-                    </p>
-                </div>
-                <p>
-                <img src="Imagenes/Cabecera-LogoMobili2.jpg" alt="..." class="img-thumbnail"/>
-                </p>
-                <p>
-                <a href="Producto.aspx" class="btn btn-primary btn-xl page-scroll">Ingresar</a>
-                </p>
-            </div>
-        </div>
-    </header>
+
     <section id="secAcerca" runat="server" class="bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading"><span class="GFLaBelleAurore" style="color: #f8f8f8"><b>We Believe</b></span><br /></h2>
                     <hr class="light">
-                    <p class="text-faded">Creemos que el dise&ntilde;o expresa nuestra identidad; habla de qui&eacute;nes
-                    somos, de las cosas que nos gustan, y del estilo de vida que llevamos. Habitar un
+                    <p class="text-faded">Creemos que el dise&ntilde;o expresa nuestra identidad, habla de qui&eacute;nes
+                    somos, de las cosas que nos gustan y del estilo de vida que llevamos. Habitar un
                     espacio es mucho m&aacute;s que ocuparlo, es hacerlo propio. Es tener una relaci&oacute;n
-                    y conexi&oacute;n con los objetos, colores y texturas que en &eacute;l conviven.
-                    As&iacute; creamos este espacio para vos, a donde puedas escaparte, pasar un rato
-                    a solas y conectarte con las cosas que m&aacute;s te gustan&hellip; Estamos para
+                    y conexi&oacute;n con los objetos, colores y texturas que en &eacute;l conviven.<br /><br />
+                    Creamos este espacio para vos, para que puedas conectarte con las cosas que m&aacute;s te gustan&hellip; Estamos para
                     inspirarte y enamorarte de la decoraci&oacute;n.
                     </p>
-                    <a href="Producto.aspx" class="btn btn-default btn-xl">Ver!!!</a>
+                    <a href="Producto.aspx" class="btn btn-default btn-xl">INGRESAR</a>
                 </div>
             </div>
         </div>
@@ -149,14 +128,14 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-2x fa-usd wow bounceIn text-primary"></i>
+                        <a href="Promociones.aspx"><i class="fa fa-2x fa-usd wow bounceIn text-primary"></i></a>
                         <h3>Promociones</h3>
                         <p class="text-muted">Vea nuestras ofertas del mes.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-2x fa-diamond wow bounceIn text-primary"></i>
+                        <a href="ProductosDestacados.aspx"><i class="fa fa-2x fa-diamond wow bounceIn text-primary"></i></a>
                         <h3>Destacados</h3>
                         <p class="text-muted">Vea alguno de nuestros productos destacados.</p>
                     </div>
@@ -170,7 +149,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-2x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <a href="Novedades.aspx"><i class="fa fa-2x fa-magic wow bounceIn text-primary" data-wow-delay=".2s"></i></a>
                         <h3>Novedades</h3>
                         <p class="text-muted">Información relacionada al desarrollo de nuevos productos y lanzamientos.</p>
                     </div>
@@ -182,23 +161,6 @@
     <div class="text-center">
         <asp:ScriptManager ID="MasterScriptManager" runat="server">
         </asp:ScriptManager>
-        <asp:Panel ID="Cabecera" runat="server" BackColor="Black" Width="100%">
-            <table style="background-color: Black; width: 100%; border:0">
-                <tr>
-                    <td>
-                        <asp:Panel ID="ProductoLineaColor" runat="server" Visible="false">
-                            <table style="height: 10px; width:100%; border:0;">
-                                <tr>
-                                    <td style="background-position: 0px; background-image: url('Imagenes/MaderaC1.jpg');
-                                        width: 1046px; background-repeat: repeat; border-style: none; height: 10px;">
-                                    </td>
-                                </tr>
-                            </table>
-                        </asp:Panel>
-                    </td>
-                </tr>
-            </table>
-        </asp:Panel>
         <asp:ContentPlaceHolder ID="MainCPH" runat="server">
         </asp:ContentPlaceHolder>
     </div>
@@ -209,7 +171,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Vamos a estar en contacto!</h2>
                     <hr class="primary">
-                    <p>Por cualquier consulta acerca de nuestros productos, puede comunicarse con nosotros telefónicamente o enviarnos un email y le responderemos tan rápido como sea posible.</p>
+                    <p>Por cualquier consulta acerca de nuestros productos, puede comunicarse con nosotros telefónicamente o enviarnos un email. Le responderemos tan rápido como sea posible.</p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>

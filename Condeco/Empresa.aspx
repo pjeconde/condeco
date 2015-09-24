@@ -16,9 +16,9 @@
                     <br />Nos dedicamos al diseño y fabricación de objetos de decoración realizados principalmente en madera.
                     </p>
                     <p>
-                        Nuestro objetivo fundamental es satisfacer al cliente y cuidar al mismo tiempo el medio ambiente.
+                        Nuestro objetivo fundamental es satisfacer al cliente ofreciendo productos innovadores con personalidad propia y que al mismo tiempo nos permita cuidar el medio ambiente.
                         <br />
-                        Es muy importante para nosotros cuidar el medio ambiente, es por eso que desarrollamos en la medida de lo posible, productos con maderas recuperadas en demoliciones y otros materiales descartados por individuos o empresas.
+                        Es por eso que desarrollamos, en la medida de lo posible, productos con maderas recuperadas en demoliciones y otros materiales descartados por individuos o empresas.
                         Reciclamos materiales que nos permitan generar objetos funcionales con un diseño actual.
                     </p>
                     <a href="Default.aspx" class="btn btn-default btn-xl">Home</a>

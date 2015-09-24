@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="imagenes/portfolio/4.jpg" class="img-responsive" alt="">
+                        <img src="imagenes/portfolio/PorfolioCarteles.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="imagenes/portfolio/5.jpg" class="img-responsive" alt="">
+                        <img src="imagenes/portfolio/PorfolioBarcos.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -84,14 +84,14 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="imagenes/portfolio/6-1.jpg" class="img-responsive" alt="">
+                        <img src="imagenes/portfolio/PorfolioMarcos.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Marcos
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    pinotea y cedro
                                 </div>
                             </div>
                         </div>

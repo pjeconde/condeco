@@ -15,26 +15,37 @@ namespace Condeco
             if (!IsPostBack)
             {
                 CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
-                Funciones.PersonalizarControlesMaster(this, true, sesion);
-
                 string[] segmentosURL = HttpContext.Current.Request.Url.Segments;
-                string pagina = segmentosURL[segmentosURL.Length - 1]; 
+                string pagina = segmentosURL[segmentosURL.Length - 1];                
                 if (pagina != null)
                 {
                     Control c;
                     switch (pagina)
                     {
                         case "Default.aspx":
-                            c = (Control)this.FindControl("secHeader");
-                            c.Visible = true;
+                            //c = (Control)this.FindControl("secHeader");
+                            //c.Visible = true;
                             c = (Control)this.FindControl("secAcerca");
                             c.Visible = true;
                             c = (Control)this.FindControl("secServicios");
                             c.Visible = true;
                             break;
-                        default:
-                            c = (Control)this.FindControl("secHeader");
+                        case "UsuarioLogin.aspx":
+                            if (HttpContext.Current.Request.Url.Query.ToUpper() == "?CERRAR")
+                            {
+                                if (sesion != null && sesion.Usuario.Id != null)
+                                {
+                                    CondecoRN.Sesion.Cerrar(sesion);
+                                }
+                            }
+                            c = (Control)this.FindControl("secAcerca");
                             c.Visible = false;
+                            c = (Control)this.FindControl("secServicios");
+                            c.Visible = false;
+                            break;
+                        default:
+                            //c = (Control)this.FindControl("secHeader");
+                            //c.Visible = false;
                             c = (Control)this.FindControl("secAcerca");
                             c.Visible = false;
                             c = (Control)this.FindControl("secServicios");
@@ -42,6 +53,7 @@ namespace Condeco
                             break;
                     }
                 }
+                Funciones.PersonalizarControlesMaster(this, true, sesion);
             }
         }
         protected void Page_Load(object sender, EventArgs e)

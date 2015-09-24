@@ -29,7 +29,6 @@ namespace Condeco
                     buscarNodo[0] = v;  //400 - Mesas
                     this.astvMyTree.CheckNodes(buscarNodo, true);
                 }
-                ((Panel)this.Master.FindControl("ProductoLineaColor")).Visible = true;
             }
         }
 

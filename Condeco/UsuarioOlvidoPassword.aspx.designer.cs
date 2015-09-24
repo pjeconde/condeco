@@ -13,13 +13,13 @@ namespace Condeco {
     public partial class UsuarioOlvidoPassword {
         
         /// <summary>
-        /// TituloLabel control.
+        /// Label7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TituloLabel;
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
         /// Label8 control.
@@ -382,12 +382,30 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label MensajeLabel;
         
         /// <summary>
-        /// MensajeValidationSummary control.
+        /// VSGrupo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary MensajeValidationSummary;
+        protected global::System.Web.UI.WebControls.ValidationSummary VSGrupo1;
+        
+        /// <summary>
+        /// VSGrupo2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary VSGrupo2;
+        
+        /// <summary>
+        /// VSGrupo3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary VSGrupo3;
     }
 }

@@ -67,15 +67,6 @@ namespace Condeco {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor btnCerrarLogin;
         
         /// <summary>
-        /// secHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl secHeader;
-        
-        /// <summary>
         /// secAcerca control.
         /// </summary>
         /// <remarks>
@@ -110,24 +101,6 @@ namespace Condeco {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager MasterScriptManager;
-        
-        /// <summary>
-        /// Cabecera control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Cabecera;
-        
-        /// <summary>
-        /// ProductoLineaColor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ProductoLineaColor;
         
         /// <summary>
         /// MainCPH control.

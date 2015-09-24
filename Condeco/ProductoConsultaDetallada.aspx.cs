@@ -68,7 +68,6 @@ namespace Condeco
             }
             MensajeLabel.Text = "";
             MensajeLabel.Focus();
-            ((Panel)this.Master.FindControl("ProductoLineaColor")).Visible = true;
         }
         private void CompletarImagenesActuales(string[] archivos)
         {

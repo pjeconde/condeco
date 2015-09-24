@@ -13,13 +13,13 @@ namespace Condeco {
     public partial class UsuarioCrear {
         
         /// <summary>
-        /// Label5 control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
         /// RegularExpressionValidator1 control.
@@ -580,15 +580,6 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label PreguntaLabel;
         
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
         /// PreguntaTextBox control.
         /// </summary>
         /// <remarks>
@@ -688,15 +679,6 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Button NuevaClaveCaptchaButton;
         
         /// <summary>
-        /// CondicionesLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CondicionesLabel;
-        
-        /// <summary>
         /// CaptchaImage control.
         /// </summary>
         /// <remarks>
@@ -704,6 +686,15 @@ namespace Condeco {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image CaptchaImage;
+        
+        /// <summary>
+        /// CondicionesLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CondicionesLabel;
         
         /// <summary>
         /// CondicionesTextBox control.

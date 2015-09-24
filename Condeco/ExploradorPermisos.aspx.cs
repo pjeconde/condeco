@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Condeco
 {
-    public partial class ExploradorUsuario : System.Web.UI.Page
+    public partial class ExploradorPermisos : System.Web.UI.Page
     {
         List<CondecoEntidades.Usuario> usuario = new List<CondecoEntidades.Usuario>();
         protected void Page_Load(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Condeco
                 }
                 else
                 {
-                    lista = CondecoRN.Usuario.Lista(out CantidadFilas, UsuariosPagingGridView.PageIndex, UsuariosPagingGridView.PageSize, UsuariosPagingGridView.OrderBy, NombreTextBox.Text, EmailTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    lista = CondecoRN.Usuario.Lista(out CantidadFilas, UsuariosPagingGridView.PageIndex, UsuariosPagingGridView.PageSize, UsuariosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 }
                 UsuariosPagingGridView.VirtualItemCount = CantidadFilas;
                 ViewState["lista"] = lista;
@@ -78,7 +78,7 @@ namespace Condeco
                 DesSeleccionarFilas();
                 List<CondecoEntidades.Usuario> lista = new List<CondecoEntidades.Usuario>();
                 int CantidadFilas = 0;
-                lista = CondecoRN.Usuario.Lista(out CantidadFilas, UsuariosPagingGridView.PageIndex, UsuariosPagingGridView.PageSize, UsuariosPagingGridView.OrderBy, NombreTextBox.Text, EmailTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                lista = CondecoRN.Usuario.Lista(out CantidadFilas, UsuariosPagingGridView.PageIndex, UsuariosPagingGridView.PageSize, UsuariosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 ViewState["lista"] = lista;
                 UsuariosPagingGridView.DataSource = (List<CondecoEntidades.Usuario>)ViewState["lista"];
                 UsuariosPagingGridView.DataBind();
@@ -246,7 +246,7 @@ namespace Condeco
                 }
                 else
                 {
-                    lista = CondecoRN.Usuario.Lista(out CantidadFilas, UsuariosPagingGridView.PageIndex, UsuariosPagingGridView.PageSize, UsuariosPagingGridView.OrderBy, NombreTextBox.Text, EmailTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    lista = CondecoRN.Usuario.Lista(out CantidadFilas, UsuariosPagingGridView.PageIndex, UsuariosPagingGridView.PageSize, UsuariosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 }
                 if (MensajeLabel.Text == "")
                 {
@@ -273,16 +273,16 @@ namespace Condeco
             {
                 NombreTextBox.Text = String.Empty;
                 NombreTextBox.Visible = false;
-                EmailTextBox.Text = String.Empty;
-                EmailTextBox.Visible = false;
+                DescripcionTextBox.Text = String.Empty;
+                DescripcionTextBox.Visible = false;
                 IdUsuarioTextBox.Visible = true;
             }
             else if (NombreRadioButton.Checked)
             {
                 IdUsuarioTextBox.Text = String.Empty;
                 IdUsuarioTextBox.Visible = false;
-                EmailTextBox.Text = String.Empty;
-                EmailTextBox.Visible = false;
+                DescripcionTextBox.Text = String.Empty;
+                DescripcionTextBox.Visible = false;
                 NombreTextBox.Visible = true;
             }
             else
@@ -291,7 +291,7 @@ namespace Condeco
                 IdUsuarioTextBox.Visible = false;
                 NombreTextBox.Text = String.Empty;
                 NombreTextBox.Visible = false;
-                EmailTextBox.Visible = true;
+                DescripcionTextBox.Visible = true;
             }
         }
     }

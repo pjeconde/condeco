@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <p>
-                    <span class="fa fa-2x fa-magic"></span>
+                    <span class="fa fa-2x fa-magic wow bounceIn text-primary" data-wow-delay=".1s"></span>
                     </p>
                     <h2 class="section-heading"> Novedades</h2>
                     <hr>

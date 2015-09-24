@@ -59,6 +59,8 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contacto.aspx" />
+    <Content Include="ExploradorPermisos.aspx" />
+    <Content Include="ProductosDestacados.aspx" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -70,10 +72,9 @@
     <Content Include="Imagenes\portfolio\1.jpg" />
     <Content Include="Imagenes\portfolio\2.jpg" />
     <Content Include="Imagenes\portfolio\3.jpg" />
-    <Content Include="Imagenes\portfolio\4.jpg" />
-    <Content Include="Imagenes\portfolio\5.jpg" />
-    <Content Include="Imagenes\portfolio\6-1.jpg" />
-    <Content Include="Imagenes\portfolio\6.jpg" />
+    <Content Include="Imagenes\portfolio\PorfolioCarteles.jpg" />
+    <Content Include="Imagenes\portfolio\PorfolioMarcos.jpg" />
+    <Content Include="Imagenes\portfolio\PorfolioBarcos.jpg" />
     <Content Include="img\header.jpg" />
     <Content Include="Imagenes\Home-Muebles-MesasRatonas.jpg" />
     <Content Include="Imagenes\Home.jpg" />
@@ -295,6 +296,20 @@
     </Compile>
     <Compile Include="Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExploradorPermisos.aspx.cs">
+      <DependentUpon>ExploradorPermisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExploradorPermisos.aspx.designer.cs">
+      <DependentUpon>ExploradorPermisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosDestacados.aspx.cs">
+      <DependentUpon>ProductosDestacados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosDestacados.aspx.designer.cs">
+      <DependentUpon>ProductosDestacados.aspx</DependentUpon>
     </Compile>
     <Compile Include="ExploradorUsuario.aspx.cs">
       <DependentUpon>ExploradorUsuario.aspx</DependentUpon>
