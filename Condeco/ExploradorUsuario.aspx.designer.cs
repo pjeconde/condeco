@@ -13,15 +13,6 @@ namespace Condeco {
     public partial class ExploradorUsuario {
         
         /// <summary>
-        /// PanelPPal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelPPal;
-        
-        /// <summary>
         /// TituloPaginaLabel control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace Condeco {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TargetControlIDdelModalPopupExtender1;
+        
+        /// <summary>
+        /// PanelPPal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelPPal;
         
         /// <summary>
         /// IdUsuarioRadioButton control.
@@ -184,13 +184,13 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label NombreLabel;
         
         /// <summary>
-        /// DescripcionLabel control.
+        /// EmailLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DescripcionLabel;
+        protected global::System.Web.UI.WebControls.Label EmailLabel;
         
         /// <summary>
         /// EstadoLabel control.

@@ -13,15 +13,6 @@ namespace Condeco {
     public partial class ExploradorPermisos {
         
         /// <summary>
-        /// PanelPPal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelPPal;
-        
-        /// <summary>
         /// TituloPaginaLabel control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace Condeco {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TargetControlIDdelModalPopupExtender1;
+        
+        /// <summary>
+        /// PanelPPal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelPPal;
         
         /// <summary>
         /// IdUsuarioRadioButton control.
@@ -67,40 +67,40 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator reIdUsuarioTextBox;
         
         /// <summary>
-        /// NombreRadioButton control.
+        /// TipoPermisoRadioButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton NombreRadioButton;
+        protected global::System.Web.UI.WebControls.RadioButton TipoPermisoRadioButton;
         
         /// <summary>
-        /// NombreTextBox control.
+        /// TipoPermisoTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
+        protected global::System.Web.UI.WebControls.TextBox TipoPermisoTextBox;
         
         /// <summary>
-        /// DescripcionRadioButton control.
+        /// EstadoRadioButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton DescripcionRadioButton;
+        protected global::System.Web.UI.WebControls.RadioButton EstadoRadioButton;
         
         /// <summary>
-        /// DescripcionTextBox control.
+        /// EstadoTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
+        protected global::System.Web.UI.WebControls.TextBox EstadoTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -130,13 +130,13 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// UsuariosPagingGridView control.
+        /// PermisosPagingGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CondecoWebForm.PagingGridView UsuariosPagingGridView;
+        protected global::CondecoWebForm.PagingGridView PermisosPagingGridView;
         
         /// <summary>
         /// MensajeLabel control.
@@ -175,22 +175,22 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label TituloConfirmacionLabel;
         
         /// <summary>
-        /// NombreLabel control.
+        /// IdUsuarioLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NombreLabel;
+        protected global::System.Web.UI.WebControls.Label IdUsuarioLabel;
         
         /// <summary>
-        /// DescripcionLabel control.
+        /// TipoPermisoLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DescripcionLabel;
+        protected global::System.Web.UI.WebControls.Label TipoPermisoLabel;
         
         /// <summary>
         /// EstadoLabel control.

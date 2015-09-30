@@ -70,3 +70,7 @@ Condeco/bin/CondecoWebForm.dll
 Condeco/bin/CondecoWebForm.pdb
 CaptchaDotNet2/bin/Debug/Captcha.dll
 Condeco/Condeco.suo
+Condeco/bin/Condeco.dll
+Condeco/bin/Condeco.pdb
+Condeco/Condeco.suo
+.gitignore

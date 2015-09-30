@@ -10,7 +10,7 @@ namespace Condeco
 {
     public partial class ExploradorPermisos : System.Web.UI.Page
     {
-        List<CondecoEntidades.Usuario> usuario = new List<CondecoEntidades.Usuario>();
+        List<CondecoEntidades.Permiso> permiso = new List<CondecoEntidades.Permiso>();
         protected void Page_Load(object sender, EventArgs e)
         {
             CondecoEntidades.Sesion sesion;
@@ -25,9 +25,9 @@ namespace Condeco
                     sesion = (CondecoEntidades.Sesion)Session["Sesion"];
                     DataBind();
                 }
-                NombreRadioButton.Checked = true;
-                TipoBusquedaRadioButton_CheckedChanged(NombreRadioButton, new EventArgs());
-                NombreTextBox.Focus();
+                TipoPermisoRadioButton.Checked = true;
+                TipoBusquedaRadioButton_CheckedChanged(TipoPermisoRadioButton, new EventArgs());
+                TipoPermisoTextBox.Focus();
             }
             sesion = (CondecoEntidades.Sesion)Session["Sesion"];
             List<CondecoEntidades.Permiso> permisoAdminSITEActive = sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
@@ -39,27 +39,30 @@ namespace Condeco
                 Response.Redirect("~/Default.aspx");
             }
         }
-        protected void UsuariosPagingGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void PermisosPagingGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             try
             {
                 DesSeleccionarFilas();
-                UsuariosPagingGridView.PageIndex = e.NewPageIndex;
-                List<CondecoEntidades.Usuario> lista;
+                PermisosPagingGridView.PageIndex = e.NewPageIndex;
+                List<CondecoEntidades.Permiso> lista;
                 int CantidadFilas = 0;
                 if (IdUsuarioRadioButton.Checked)
                 {
-                    lista = CondecoRN.Usuario.ListaPorIdUsuario(IdUsuarioTextBox.Text, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    CondecoEntidades.Usuario usr = new CondecoEntidades.Usuario();
+                    usr.Id = IdUsuarioTextBox.Text;
+                    lista = CondecoRN.Permiso.LeerListaPermisosPorUsuario(usr, (CondecoEntidades.Sesion)Session["Sesion"]);
                     CantidadFilas = lista.Count;
                 }
                 else
                 {
-                    lista = CondecoRN.Usuario.Lista(out CantidadFilas, UsuariosPagingGridView.PageIndex, UsuariosPagingGridView.PageSize, UsuariosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    lista = new List<CondecoEntidades.Permiso>();
+                    //lista = CondecoRN.Permiso.Lista(out CantidadFilas, PermisosPagingGridView.PageIndex, PermisosPagingGridView.PageSize, PermisosPagingGridView.OrderBy, TipoPermisoTextBox.Text, EsatdoTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 }
-                UsuariosPagingGridView.VirtualItemCount = CantidadFilas;
+                PermisosPagingGridView.VirtualItemCount = CantidadFilas;
                 ViewState["lista"] = lista;
-                UsuariosPagingGridView.DataSource = lista;
-                UsuariosPagingGridView.DataBind();
+                PermisosPagingGridView.DataSource = lista;
+                PermisosPagingGridView.DataBind();
             }
             catch (System.Threading.ThreadAbortException)
             {
@@ -71,17 +74,17 @@ namespace Condeco
                 MensajeLabel.Text = ex.Message;
             }
         }
-        protected void UsuariosPagingGridView_Sorting(object sender, GridViewSortEventArgs e)
+        protected void PermisosPagingGridView_Sorting(object sender, GridViewSortEventArgs e)
         {
             try
             {
                 DesSeleccionarFilas();
-                List<CondecoEntidades.Usuario> lista = new List<CondecoEntidades.Usuario>();
+                List<CondecoEntidades.Permiso> lista = new List<CondecoEntidades.Permiso>();
                 int CantidadFilas = 0;
-                lista = CondecoRN.Usuario.Lista(out CantidadFilas, UsuariosPagingGridView.PageIndex, UsuariosPagingGridView.PageSize, UsuariosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                //lista = CondecoRN.Permiso.Lista(out CantidadFilas, PermisosPagingGridView.PageIndex, PermisosPagingGridView.PageSize, PermisosPagingGridView.OrderBy, TipoPermisoTextBox.Text, EsatdoTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 ViewState["lista"] = lista;
-                UsuariosPagingGridView.DataSource = (List<CondecoEntidades.Usuario>)ViewState["lista"];
-                UsuariosPagingGridView.DataBind();
+                PermisosPagingGridView.DataSource = (List<CondecoEntidades.Permiso>)ViewState["lista"];
+                PermisosPagingGridView.DataBind();
             }
             catch (System.Threading.ThreadAbortException)
             {
@@ -93,7 +96,7 @@ namespace Condeco
                 MensajeLabel.Text = ex.Message;
             }
         }
-        protected void UsuariosPagingGridView_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void PermisosPagingGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
@@ -101,7 +104,7 @@ namespace Condeco
                 e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                 
                 //Color por estado distinto a Active
-                if (e.Row.Cells[4].Text != "Vigente")
+                if (e.Row.Cells[5].Text != "Vigente")
                 {
                     e.Row.ForeColor = Color.Red;
                 }
@@ -110,90 +113,90 @@ namespace Condeco
                 {
                     ddlTipoDestacado.DataSource = CondecoEntidades.TiposDestacado.TipoDestacado.ListaMasSinInformar();
                     ddlTipoDestacado.DataBind();
-                    ddlTipoDestacado.SelectedValue = UsuariosPagingGridView.DataKeys[e.Row.RowIndex].Values[0].ToString();
+                    ddlTipoDestacado.SelectedValue = PermisosPagingGridView.DataKeys[e.Row.RowIndex].Values[0].ToString();
                 }
             }
         }
         private void DesSeleccionarFilas()
         {
-            UsuariosPagingGridView.SelectedIndex = -1;
+            PermisosPagingGridView.SelectedIndex = -1;
         }
 
-        protected void UsuariosPagingGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void PermisosPagingGridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int item = Convert.ToInt32(e.CommandArgument);
-            List<CondecoEntidades.Usuario> lista = (List<CondecoEntidades.Usuario>)ViewState["lista"];
-            CondecoEntidades.Usuario usuario = lista[item];
+            List<CondecoEntidades.Permiso> lista = (List<CondecoEntidades.Permiso>)ViewState["lista"];
+            CondecoEntidades.Permiso permiso = lista[item];
             switch (e.CommandName)
             {
                 case "Detalle":
-                    Session["Usuario"] = usuario;
-                    Response.Redirect("~/UsuarioConsultaDetallada.aspx");
+                    Session["Permiso"] = permiso;
+                    Response.Redirect("~/PermisoConsultaDetallada.aspx");
                     break;
                 case "CambiarEstado":
-                    //Session["Usuario"] = usuario;
+                    //Session["Permiso"] = permiso;
                     //CondecoEntidades.Evento Evento;
-                    //CondecoRN.Usuario.EventoPosible(out Evento, usuario, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    //CondecoRN.Permiso.EventoPosible(out Evento, permiso, (CondecoEntidades.Sesion)Session["Sesion"]);
                     //TituloConfirmacionLabel.Text = "Confirmar " + Evento.DescrEvento;
-                    //NombreLabel.Text = usuario.Nombre;
-                    //DescripcionLabel.Text = usuario.Email;
-                    //EstadoLabel.Text = usuario.WF.Estado;
-                    //ViewState["Usuario"] = usuario;
+                    //NombreLabel.Text = permiso.Nombre;
+                    //DescripcionLabel.Text = permiso.Email;
+                    //EstadoLabel.Text = permiso.WF.Estado;
+                    //ViewState["Permiso"] = permiso;
                     //ModalPopupExtender1.Show();
                     break;
                 case "Modificar":
-                    Session["Usuario"] = usuario;
-                    string script = "window.open('/UsuarioModificar.aspx', '');";
+                    Session["Permiso"] = permiso;
+                    string script = "window.open('/PermisoModificar.aspx', '');";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "popup", script, true);
                     break;
             }
         }
-        protected void UsuariosPagingGridView_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void PermisosPagingGridView_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            UsuariosPagingGridView.EditIndex = e.NewEditIndex;
-            UsuariosPagingGridView.DataSource = ViewState["lista"];
-            UsuariosPagingGridView.DataBind();
+            PermisosPagingGridView.EditIndex = e.NewEditIndex;
+            PermisosPagingGridView.DataSource = ViewState["lista"];
+            PermisosPagingGridView.DataBind();
         }
-        protected void UsuariosPagingGridView_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        protected void PermisosPagingGridView_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
-            UsuariosPagingGridView.EditIndex = -1;
-            UsuariosPagingGridView.DataSource = ViewState["lista"];
-            UsuariosPagingGridView.DataBind();
+            PermisosPagingGridView.EditIndex = -1;
+            PermisosPagingGridView.DataSource = ViewState["lista"];
+            PermisosPagingGridView.DataBind();
         }
-        protected void UsuariosPagingGridView_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        protected void PermisosPagingGridView_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             try
             {
-                //List<CondecoEntidades.Usuario> usuarios = ((List<CondecoEntidades.Usuario>)ViewState["lista"]);
-                //CondecoEntidades.Usuario usuarioActual = CondecoRN.Usuario.ObtenerCopia(usuarios[e.RowIndex]);
-                //CondecoEntidades.Usuario usuario = usuarios[e.RowIndex];
+                //List<CondecoEntidades.Permiso> permisos = ((List<CondecoEntidades.Permiso>)ViewState["lista"]);
+                //CondecoEntidades.Permiso permisoActual = CondecoRN.Permiso.ObtenerCopia(permisos[e.RowIndex]);
+                //CondecoEntidades.Permiso permiso = permisos[e.RowIndex];
 
-                //string ranking = ((TextBox)UsuariosPagingGridView.Rows[e.RowIndex].FindControl("txtRanking")).Text;
-                //string tipoDestacado = ((DropDownList)UsuariosPagingGridView.Rows[e.RowIndex].FindControl("ddlTipoDestacado")).SelectedValue;
+                //string ranking = ((TextBox)PermisosPagingGridView.Rows[e.RowIndex].FindControl("txtRanking")).Text;
+                //string tipoDestacado = ((DropDownList)PermisosPagingGridView.Rows[e.RowIndex].FindControl("ddlTipoDestacado")).SelectedValue;
                 //if (ranking != string.Empty)
                 //{
-                //    usuario.Ranking = Convert.ToInt32(ranking);
+                //    permiso.Ranking = Convert.ToInt32(ranking);
                 //}
                 //else
                 //{
                 //    throw new Exception("Debe informar el ranking. No puede estar vacío.");
                 //}
-                //usuario.TipoDestacado = tipoDestacado;
-                //CondecoRN.Usuario.Modificar(usuarioActual, usuario, (CondecoEntidades.Sesion)Session["Sesion"]);
-                //UsuariosPagingGridView.EditIndex = -1;
-                //UsuariosPagingGridView.DataSource = ViewState["lista"];
-                //UsuariosPagingGridView.DataBind();
+                //permiso.TipoDestacado = tipoDestacado;
+                //CondecoRN.Permiso.Modificar(permisoActual, permiso, (CondecoEntidades.Sesion)Session["Sesion"]);
+                //PermisosPagingGridView.EditIndex = -1;
+                //PermisosPagingGridView.DataSource = ViewState["lista"];
+                //PermisosPagingGridView.DataBind();
             }
             catch (Exception ex)
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Message", "<SCRIPT LANGUAGE='javascript'>alert('" + ex.Message.ToString().Replace("'", "") + "');</SCRIPT>", false);
             }
         }
-        protected void UsuariosPagingGridView_SelectedIndexChanged(object sender, EventArgs e)
+        protected void PermisosPagingGridView_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
 
-        protected void UsuariosPagingGridView_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        protected void PermisosPagingGridView_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
         }
 
@@ -208,16 +211,16 @@ namespace Condeco
                 try
                 {
                     //CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
-                    //CondecoEntidades.Usuario usuario = (CondecoEntidades.Usuario)ViewState["Usuario"];
+                    //CondecoEntidades.Permiso permiso = (CondecoEntidades.Permiso)ViewState["Permiso"];
                     //CondecoEntidades.Evento Evento;
-                    //CondecoRN.Usuario.EventoPosible(out Evento, usuario, sesion);
-                    //CondecoRN.Usuario.CambiarEstado(usuario, Evento.Id, Evento.EstadoHst, sesion);
+                    //CondecoRN.Permiso.EventoPosible(out Evento, permiso, sesion);
+                    //CondecoRN.Permiso.CambiarEstado(permiso, Evento.Id, Evento.EstadoHst, sesion);
                     //BuscarButton_Click(BuscarButton, new EventArgs());
                     //Funciones.PersonalizarControlesMaster(Master, true, sesion);
                 }
                 catch (Exception ex)
                 {
-                    MensajeLabel.Text = "Problemas al cambiar el estado del Usuario." + ex.Message;
+                    MensajeLabel.Text = "Problemas al cambiar el estado del Permiso." + ex.Message;
                 }
             }
         }
@@ -230,68 +233,70 @@ namespace Condeco
             else
             {
                 MensajeLabel.Text = String.Empty;
-                List<CondecoEntidades.Usuario> lista = new List<CondecoEntidades.Usuario>();
+                List<CondecoEntidades.Permiso> lista = new List<CondecoEntidades.Permiso>();
                 int CantidadFilas = 0;
                 if (IdUsuarioRadioButton.Checked)
                 {
+                    CondecoEntidades.Usuario usr = new CondecoEntidades.Usuario();
+                    usr.Id = IdUsuarioTextBox.Text;
                     if (IdUsuarioTextBox.Text == string.Empty)
                     {
-                        MensajeLabel.Text = "No se han encontrado Usuarios que satisfagan la busqueda";
+                        MensajeLabel.Text = "No se han encontrado Permisos que satisfagan la busqueda";
                     }
                     else
                     {
-                        lista = CondecoRN.Usuario.ListaPorIdUsuario(IdUsuarioTextBox.Text, (CondecoEntidades.Sesion)Session["Sesion"]);
+                        lista = CondecoRN.Permiso.LeerListaPermisosPorUsuario(usr, (CondecoEntidades.Sesion)Session["Sesion"]);
                         CantidadFilas = lista.Count;
                     }
                 }
                 else
                 {
-                    lista = CondecoRN.Usuario.Lista(out CantidadFilas, UsuariosPagingGridView.PageIndex, UsuariosPagingGridView.PageSize, UsuariosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    //lista = CondecoRN.Permiso.Lista(out CantidadFilas, PermisosPagingGridView.PageIndex, PermisosPagingGridView.PageSize, PermisosPagingGridView.OrderBy, TipoPermisoTextBox.Text, EsatdoTextBox.Text, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 }
                 if (MensajeLabel.Text == "")
                 {
-                    UsuariosPagingGridView.VirtualItemCount = CantidadFilas;
+                    PermisosPagingGridView.VirtualItemCount = CantidadFilas;
                     ViewState["lista"] = lista;
                     //Grilla
-                    UsuariosPagingGridView.DataSource = lista;
-                    UsuariosPagingGridView.DataBind();
+                    PermisosPagingGridView.DataSource = lista;
+                    PermisosPagingGridView.DataBind();
                     if (lista.Count == 0)
                     {
-                        UsuariosPagingGridView.DataSource = null;
-                        UsuariosPagingGridView.DataBind();
-                        MensajeLabel.Text = "No se han encontrado Usuarios que satisfagan la busqueda";
+                        PermisosPagingGridView.DataSource = null;
+                        PermisosPagingGridView.DataBind();
+                        MensajeLabel.Text = "No se han encontrado Permisos que satisfagan la busqueda";
                     }
                 }
             }
         }
         protected void TipoBusquedaRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            UsuariosPagingGridView.DataSource = null;
-            UsuariosPagingGridView.DataBind();
+            PermisosPagingGridView.DataSource = null;
+            PermisosPagingGridView.DataBind();
             MensajeLabel.Text = String.Empty;
             if (IdUsuarioRadioButton.Checked)
             {
-                NombreTextBox.Text = String.Empty;
-                NombreTextBox.Visible = false;
-                DescripcionTextBox.Text = String.Empty;
-                DescripcionTextBox.Visible = false;
+                TipoPermisoTextBox.Text = String.Empty;
+                TipoPermisoTextBox.Visible = false;
+                EstadoTextBox.Text = String.Empty;
+                EstadoTextBox.Visible = false;
                 IdUsuarioTextBox.Visible = true;
             }
-            else if (NombreRadioButton.Checked)
+            else if (TipoPermisoRadioButton.Checked)
             {
                 IdUsuarioTextBox.Text = String.Empty;
                 IdUsuarioTextBox.Visible = false;
-                DescripcionTextBox.Text = String.Empty;
-                DescripcionTextBox.Visible = false;
-                NombreTextBox.Visible = true;
+                EstadoTextBox.Text = String.Empty;
+                EstadoTextBox.Visible = false;
+                TipoPermisoTextBox.Visible = true;
             }
             else
             {
                 IdUsuarioTextBox.Text = String.Empty;
                 IdUsuarioTextBox.Visible = false;
-                NombreTextBox.Text = String.Empty;
-                NombreTextBox.Visible = false;
-                DescripcionTextBox.Visible = true;
+                TipoPermisoTextBox.Text = String.Empty;
+                TipoPermisoTextBox.Visible = false;
+                EstadoTextBox.Visible = true;
             }
         }
     }

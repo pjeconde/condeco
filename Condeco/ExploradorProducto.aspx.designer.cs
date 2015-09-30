@@ -121,6 +121,15 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Button SalirButton;
         
         /// <summary>
+        /// MensajeLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MensajeLabel;
+        
+        /// <summary>
         /// Panel1 control.
         /// </summary>
         /// <remarks>
@@ -137,15 +146,6 @@ namespace Condeco {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::CondecoWebForm.PagingGridView ProductosPagingGridView;
-        
-        /// <summary>
-        /// MensajeLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MensajeLabel;
         
         /// <summary>
         /// ModalPopupExtender1 control.
