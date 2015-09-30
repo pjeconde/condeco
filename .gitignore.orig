@@ -1,0 +1,77 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+CaptchaDotNet2/bin/Debug/Captcha.dll
+CaptchaDotNet2/bin/Debug/Captcha.pdb
+CaptchaDotNet2/obj/Debug/Captcha.dll
+CaptchaDotNet2/obj/Debug/Captcha.pdb
+CaptchaDotNet2/bin/Debug/Captcha.dll
+CaptchaDotNet2/bin/Debug/Captcha.pdb
+CaptchaDotNet2/obj/Debug/Captcha.dll
+CaptchaDotNet2/obj/Debug/Captcha.pdb
+<<<<<<< HEAD
+CaptchaDotNet2/bin/Debug/Captcha.dll
+CaptchaDotNet2/bin/Debug/Captcha.pdb
+CaptchaDotNet2/obj/Debug/Captcha.dll
+CaptchaDotNet2/obj/Debug/Captcha.pdb
+CaptchaDotNet2/obj/Debug/CaptchaDotNet2.csproj.FileListAbsolute.txt
+Condeco/bin/Captcha.dll
+Condeco/bin/Captcha.pdb
+Condeco/bin/Condeco.dll
+Condeco/bin/Condeco.pdb
+Condeco/bin/CondecoDB.dll
+Condeco/bin/CondecoDB.pdb
+Condeco/bin/CondecoEntidades.dll
+Condeco/bin/CondecoEntidades.pdb
+Condeco/bin/CondecoEX.dll
+Condeco/bin/CondecoEX.pdb
+Condeco/bin/CondecoRN.dll
+Condeco/bin/CondecoRN.pdb
+Condeco/bin/CondecoWebForm.dll
+Condeco/bin/CondecoWebForm.pdb
+CaptchaDotNet2/bin/Debug/Captcha.dll
+=======
+>>>>>>> 81df2a3d27f8dc8d99ea96112017398a2f7e6b63
+Condeco/Condeco.suo
+Condeco/Condeco.suo
+Condeco/Condeco.suo
