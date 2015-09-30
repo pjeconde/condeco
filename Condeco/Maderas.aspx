@@ -51,7 +51,7 @@
                     <h3>Jequitibá o Yequitiba</h3>
                     <h4>Su centro es generalmente rosado castaño o beige rosado, además, beige rosado oscuro, eventualmente con sombras morrones.</h4>
                     <p>Su olor es imperceptibles. Es una madera liviana y suave de cortar. En condiciones favorables la Jequitibá se considera moderadamente resistente.<br />
-                    Por ser liviana, de color agradable, fácil de trabajar y de propiedades mecánicas medianas a bajas, puede ser usada para contrapechados, enchapados, muebles y marcos, terminaciones interna, tacos para zapatos, juguetes y lápices, etc.
+                    Por ser liviana, de color agradable, fácil de trabajar y de propiedades mecánicas medianas a bajas, puede ser usada para contrapechados, enchapados, muebles y marcos, terminaciones interna, tacos para zapatos, juguetes y lápices, etc. 
                     </p>
                     <a class="btn btn-primary" href="#">Ver proyecto <span class="glyphicon glyphicon-chevron-right"></span></a>
                 </div>
