@@ -39,12 +39,12 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="Default.aspx"><img src="Imagenes/Logo.gif" alt="" width="20px" height="20px" /></a>
+                <a class="navbar-brand" href="#page-top"><img src="Imagenes/Logo.gif" alt="" width="20px" height="20px" /></a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
                         class="icon-bar"></span><span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Condeco</a>
+                <a class="navbar-brand page-scroll" href="Default.aspx">Condeco</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -78,8 +78,8 @@
                             Productos:
                         </li>
                         <li><a href="ProductoCrear.aspx">Crear</a></li>
-                        <li><a href="ProductoModificar.aspx">Modificar</a></li>
-                        <li><a href="ProductoImagenes.aspx">Imagenes</a></li>
+                        <li><a href="ProductoSeleccionar.aspx?Modificar">Modificar</a></li>
+                        <li><a href="ProductoSeleccionar.aspx?Imagenes">Imagenes</a></li>
                         <li><a href="ExploradorProducto.aspx">Explorador</a></li>
                         <li class="divider"></li>
                         <li><a href="ExploradorUsuario.aspx">Explorador de Usuarios</a></li>
@@ -89,8 +89,8 @@
                     <li><a class="page-scroll" href="Empresa.aspx">Empresa</a> </li>
                     <li><a class="page-scroll" href="Producto.aspx">Productos</a> </li>
                     <li><a class="page-scroll" href="Contacto.aspx">Contacto</a> </li>
-                    <li><a runat="server" id="btnUsuarioLogin" href="UsuarioLogin.aspx">Login</a> </li>
-                    <li><a runat="server" id="btnCerrarLogin" href="UsuarioLogin.aspx?cerrar">Cerrar</a> </li>
+                    <li><a runat="server" id="btnUsuarioLogin" href="UsuarioLogin.aspx"><i class="glyphicon glyphicon-log-in"></i> Login</a> </li>
+                    <li><a runat="server" id="btnCerrarLogin" href="UsuarioLogin.aspx?cerrar"><i class="glyphicon glyphicon-log-out"></i> Cerrar</a> </li>
                 </ul>
             </div>
         </div>
@@ -110,7 +110,7 @@
                     Creamos este espacio para vos, para que puedas conectarte con las cosas que m&aacute;s te gustan&hellip; Estamos para
                     inspirarte y enamorarte de la decoraci&oacute;n.
                     </p>
-                    <a href="Producto.aspx" class="btn btn-default btn-xl">INGRESAR</a>
+                    <a href="Producto.aspx" class="btn btn-default btn-xl">VER PRODUCTOS</a>
                 </div>
             </div>
         </div>

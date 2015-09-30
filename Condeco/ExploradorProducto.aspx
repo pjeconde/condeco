@@ -3,14 +3,36 @@
 <%@ Register Assembly="CondecoWebForm" Namespace="CondecoWebForm" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainCPH" runat="server">
+    <section class="bg-primary-white" id="secExploradorProducto">
+        <div class="container">
+            <div class="row">
+                <p>
+                <span class="fa fa-2x fa-user"></span>
+                </p>
+                <h2 class="section-heading"> <asp:Label ID="TituloPaginaLabel" runat="server" Text="Explorador de Productos"></asp:Label></h2>
+                <asp:Label ID="TargetControlIDdelModalPopupExtender1" runat="server" Text=""></asp:Label>
+                <hr>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <p></p>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </section>
     <asp:Panel ID="PanelPPal" runat="server" DefaultButton="BuscarButton">
     <table border="0" cellpadding="0" cellspacing="0" style="padding-left:10px">
-        <tr>
-            <td align="center" colspan="3" style="padding-top:20px">
-                <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Explorador de Productos"></asp:Label>
-                <asp:Label ID="TargetControlIDdelModalPopupExtender1" runat="server" Text=""></asp:Label>
-            </td>
-        </tr>
         <tr>
             <td align="left" style="padding-right:5px; padding-top:5px">
                 <asp:RadioButton ID="IdProductoRadioButton" runat="server" AutoPostBack="true" Text="Id.Producto" GroupName="TipoBusqueda" oncheckedchanged="TipoBusquedaRadioButton_CheckedChanged" TabIndex="1"/>
@@ -155,7 +177,7 @@
     PopupDragHandleControlID="ConfirmacionPanel"
     BehaviorID="mdlPopup" />
     <asp:Panel ID="ConfirmacionPanel" runat="server" CssClass="ModalWindow">
-        <table width="100%">
+        <table width="100%" style="background-color:Silver">
             <tr>
                 <td colspan="2">
                     <asp:Label ID="TituloConfirmacionLabel" runat="server" SkinID="TituloPagina"></asp:Label>

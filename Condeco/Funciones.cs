@@ -136,6 +136,11 @@ namespace Condeco
             n500.EnableChildren = false;
             n500.EnableEditContextMenu = false;
 
+            ASTreeViewLinkNode n600 = new ASTreeViewLinkNode("Decoración", "600", "", "frm", "objetos decorativos", "");
+            n600.EnableCheckbox = Buscador;
+            n600.EnableChildren = false;
+            n600.EnableEditContextMenu = false;
+
             astvMyTree.RootNode
                 .AppendChild((n100)
                     .AppendChild(new ASTreeViewLinkNode("Madera Pinotea", "101", "", "frm", "madera maciza", ""))
@@ -150,6 +155,12 @@ namespace Condeco
                 .AppendChild((n500)
                     .AppendChild(new ASTreeViewLinkNode("Bancos Rústicos", "501", "", "frm", "En madera reciclada", ""))
                     .AppendChild(new ASTreeViewLinkNode("Bancos Modernos", "502", "", "frm", "En madera reciclada", ""))
+                )
+                .AppendChild((n600)
+                    .AppendChild(new ASTreeViewLinkNode("Peces", "601", "", "frm", "madera y metal", ""))
+                    .AppendChild(new ASTreeViewLinkNode("Barcos", "602", "", "frm", "madera y metal", ""))
+                    .AppendChild(new ASTreeViewLinkNode("Caras", "603", "", "frm", "madera y metal", ""))
+                    .AppendChild(new ASTreeViewLinkNode("Objetos Varios", "650", "", "frm", "madera y metal", ""))
                 );
         }
         public static string TreeViewLista(ASTreeView astvMyTree)

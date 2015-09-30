@@ -31,7 +31,7 @@
                                         ErrorMessage="First and Last Name" SetFocusOnError="True">
                                         <asp:Label ID="Label8" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                     </asp:RequiredFieldValidator>
-                                    <asp:Label SkinID="TextoMediano" ID="NombreLabel" runat="server" Text="Nombre y Apellido"></asp:Label>
+                                    <asp:Label ID="NombreLabel" runat="server" Text="Nombre y Apellido"></asp:Label>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
                                      <asp:TextBox ID="NombreTextBox" runat="server" MaxLength="50" TabIndex="1" Width="100%"></asp:TextBox>
@@ -101,7 +101,7 @@
                                         ErrorMessage="Telefono" SetFocusOnError="True" ValidationExpression="[0-9\-]*">
                                         <asp:Label ID="Label9" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                     </asp:RegularExpressionValidator>
-                                    <asp:Label SkinID="TextoMediano" ID="TelefonoLabel" runat="server" Text="Telefono"></asp:Label>
+                                    <asp:Label ID="TelefonoLabel" runat="server" Text="Telefono"></asp:Label>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
                                     <asp:TextBox ID="TelefonoTextBox" runat="server" MaxLength="50" TabIndex="5" Width="100%"></asp:TextBox>
@@ -117,7 +117,7 @@
                                             ErrorMessage="Email" SetFocusOnError="True">
                                             <asp:Label ID="Label12" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                         </asp:RequiredFieldValidator>
-                                        <asp:Label SkinID="TextoMediano" ID="EmailLabel" runat="server" Text="Email"></asp:Label>
+                                        <asp:Label ID="EmailLabel" runat="server" Text="Email"></asp:Label>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
                                         <asp:TextBox ID="EmailTextBox" runat="server" MaxLength="128" TabIndex="6" Width="100%"></asp:TextBox>
@@ -140,7 +140,7 @@
                                         ErrorMessage="User.Id" SetFocusOnError="True">
                                         <asp:Label ID="Label14" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                     </asp:RequiredFieldValidator>
-                                    <asp:Label SkinID="TextoMediano" ID="IdUsuarioLabel" runat="server" Text="Nombre de Usuario"></asp:Label>
+                                    <asp:Label ID="IdUsuarioLabel" runat="server" Text="Nombre de Usuario"></asp:Label>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
                                     <asp:TextBox ID="IdUsuarioTextBox" runat="server" MaxLength="50" TabIndex="7" Width="100%"></asp:TextBox>
@@ -167,7 +167,7 @@
                                         ErrorMessage="Clave" SetFocusOnError="True">
                                         <asp:Label ID="Label16" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                     </asp:RequiredFieldValidator>
-                                    <asp:Label SkinID="TextoMediano" ID="PasswordLabel" runat="server" Text="Clave"></asp:Label>
+                                    <asp:Label ID="PasswordLabel" runat="server" Text="Clave"></asp:Label>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
                                     <asp:TextBox ID="PasswordTextBox" runat="server" MaxLength="50" TabIndex="8" TextMode="Password"
@@ -207,13 +207,13 @@
                                         ErrorMessage="Pregunta de Securidad" SetFocusOnError="True">
                                         <asp:Label ID="Label20" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                     </asp:RequiredFieldValidator>
-                                    <asp:Label SkinID="TextoMediano" ID="PreguntaLabel" runat="server" Text="Pregunta de Seguridad"></asp:Label>
+                                    <asp:Label ID="PreguntaLabel" runat="server" Text="Pregunta de Seguridad"></asp:Label>
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-left">
                                     <asp:TextBox ID="PreguntaTextBox" runat="server" MaxLength="256" TabIndex="10" Width="100%"></asp:TextBox>
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left">
-                                    <asp:Label SkinID="TextoMediano" ID="Label6" runat="server" Font-Bold="true" Text="?"></asp:Label>
+                                    <asp:Label ID="Label6" runat="server" Font-Bold="true" Text="?"></asp:Label>
                                 </div>
                             </div>
                             <div class="row">
@@ -226,7 +226,7 @@
                                         ErrorMessage="Respuesta" SetFocusOnError="True">
                                         <asp:Label ID="Label22" runat="server" SkinID="IndicadorValidacion"></asp:Label>
                                     </asp:RequiredFieldValidator>
-                                    <asp:Label SkinID="TextoMediano" ID="RespuestaLabel" runat="server" Text="Respuesta"></asp:Label>
+                                    <asp:Label ID="RespuestaLabel" runat="server" Text="Respuesta"></asp:Label>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
                                     <asp:TextBox ID="RespuestaTextBox" runat="server" MaxLength="256" TabIndex="11" Width="100%"></asp:TextBox>
@@ -235,7 +235,7 @@
                             <br />
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
-                                    <asp:Label SkinID="TextoMediano" ID="LabelIdMedio" runat="server" Text="Como nos conocio ?"></asp:Label>
+                                    <asp:Label ID="LabelIdMedio" runat="server" Text="Como nos conocio ?"></asp:Label>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
                                     <asp:DropDownList ID="MedioDropDownList" runat="server" TabIndex="501" DataValueField="Id" DataTextField="Descr" Width="100%">
@@ -308,6 +308,7 @@
                             </div>
                         </div>
                     </div>
+                    <p><a href="Default.aspx" class="btn btn-primary btn-xl page-scroll">HOME</a></p>
                 </div>
                 <div class="col-lg-2">
                     <p></p>

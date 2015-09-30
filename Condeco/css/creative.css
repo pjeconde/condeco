@@ -24,6 +24,13 @@ hr.light {
     border-color: #fff;
 }
 
+hr.HRnormal 
+{
+	max-width: 100%;
+    border-color: #EEE;
+    border-width: 1px;
+}
+
 a {
     color: #f05f40;
     -webkit-transition: all .35s;

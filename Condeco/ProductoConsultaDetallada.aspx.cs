@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+using System.Text;
 
 namespace Condeco
 {
@@ -59,6 +61,53 @@ namespace Condeco
                 ViewState["lista"] = c;
                 ComentarioListView.DataSource = c;
 
+
+                //<!-- Indicators -->
+                //<ol class="carousel-indicators">
+                //    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                //    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                //    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                //    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                //</ol>
+
+                //<div class="item active">
+                //    <a id="linkPortada" class="thumbnail" runat="server" href="Imagenes/Interrogacion.jpg"
+                //        target="_blank">
+                //        <asp:Image ID="ImagePortadaAmpliada" runat="server" ImageUrl="~/Imagenes/portfolio/1.jpg" />
+                //    </a>
+                //    <div class="carousel-caption">
+                //        <h3></h3>
+                //    </div>
+                //</div>
+                //<div class="item" hidden="hidden">
+                //    <a id="linkImage1" class="thumbnail" runat="server" href="Imagenes/Interrogacion.jpg"
+                //        target="_blank">
+                //        <asp:Image ID="Image1Ampliada" runat="server" ImageUrl="~/Imagenes/portfolio/2.jpg" />
+                //    </a>
+                //    <div class="carousel-caption">
+                //        <h3></h3>
+                //    </div>
+                //</div>
+                //<div class="item">
+                //    <a id="linkImage2" class="thumbnail" runat="server" href="Imagenes/Interrogacion.jpg"
+                //        target="_blank">
+                //        <asp:Image ID="Image2Ampliada" runat="server" ImageUrl="~/Imagenes/portfolio/3.jpg" />
+                //    </a>
+                //    <div class="carousel-caption">
+                //        <h3></h3>
+                //    </div>
+                //</div>
+                //<div class="item">
+                //    <a id="linkImage3" class="thumbnail" runat="server" href="Imagenes/Interrogacion.jpg"
+                //        target="_blank">
+                //        <asp:Image ID="Image3Ampliada" runat="server" ImageUrl="~/Imagenes/Interrogacion.jpg" />
+                //    </a>
+                //    <div class="carousel-caption">
+                //        <h3></h3>
+                //    </div>
+                //</div>
+
+
                 pHeader.Visible = false;
                 pBody.Visible = false;
                 pComentarioCrear.Visible = false;
@@ -71,39 +120,87 @@ namespace Condeco
         }
         private void CompletarImagenesActuales(string[] archivos)
         {
-            Image1.ImageUrl = "~/Imagenes/Interrogacion.jpg";
-            Image2.ImageUrl = "~/Imagenes/Interrogacion.jpg";
-            Image3.ImageUrl = "~/Imagenes/Interrogacion.jpg";
-            for (int i = 0; i < archivos.Length; i++)
+            
+            //ObjectCache cache = MemoryCache.Default;
+            try
             {
-                if (i == 0)
+                CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
+                if (Session["CarouselInnerHtml"] != null && Session["CarouselIndicatorsHtml"] != null && Session["CarouselIdProducto"] != null && Session["CarouselIdProducto"].ToString() == producto.Id.ToString())
                 {
-                    linkImage1.HRef = "~/ImagenesProducto/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
-                    Image1.ImageUrl = "~/ImagenesProducto/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
-                    Image1Ampliada.ImageUrl = "~/ImagenesProducto/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+                    //use the cached html
+                    ltlCarouselImages.Text = Session["CarouselInnerHtml"].ToString();
+                    ltlCarouselIndicators.Text = Session["CarouselIndicatorsHtml"].ToString();
                 }
-                else if (i == 1)
+                else
                 {
-                    linkImage2.HRef = "~/ImagenesProducto/" + archivos[1].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
-                    Image2.ImageUrl = "~/ImagenesProducto/" + archivos[1].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
-                    Image2Ampliada.ImageUrl = "~/ImagenesProducto/" + archivos[1].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
-                }
-                else if (i == 2)
-                {
-                    linkImage3.HRef = "~/ImagenesProducto/" + archivos[2].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
-                    Image3.ImageUrl = "~/ImagenesProducto/" + archivos[2].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
-                    Image3Ampliada.ImageUrl = "~/ImagenesProducto/" + archivos[2].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+                    TituloImagenes.Text = "No hay imagenes";
+                    if (archivos.Length > 0)
+                    {
+                        TituloImagenes.Text = "Imagenes";
+                        var carouselInnerHtml = new StringBuilder();
+                        var indicatorsHtml = new StringBuilder(@"<ol class='carousel-indicators'>");
+                        //loop through and build up the html for indicators + images
+                        for (int i = 0; i < archivos.Length; i++)
+                        {
+                            var fileName = archivos[i].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+                            carouselInnerHtml.AppendLine(i == 0 ? "<div class='item active'>" : "<div class='item'>");
+                            carouselInnerHtml.AppendLine("<a class='thumbnail' href='#'>");
+                            carouselInnerHtml.AppendLine("<img src='ImagenesProducto/" + fileName + "' alt='Slide #" + (i + 1) + "'>");
+                            carouselInnerHtml.AppendLine("</a>");
+                            carouselInnerHtml.AppendLine("</div>");
+                            indicatorsHtml.AppendLine(i == 0 ? @"<li data-target='#myCarousel' data-slide-to='" + i + "' class='active'></li>" : @"<li data-target='#myCarousel' data-slide-to='" + i + "' class=''></li>");
+                        }
+                        //close tag
+                        indicatorsHtml.AppendLine("</ol>");
+                        //stick the html in the literal tags and the cache
+                        Session["CarouselInnerHtml"] = ltlCarouselImages.Text = carouselInnerHtml.ToString();
+                        Session["CarouselIndicatorsHtml"] = ltlCarouselIndicators.Text = indicatorsHtml.ToString();
+                        Session["CarouselIdProducto"] = producto.Id.ToString();
+                    }
                 }
             }
+            catch (Exception)
+            {
+                //something is dodgy so flush the cache
+                if (Session["CarouselInnerHtml"] != null)
+                {
+                    Session.Remove("CarouselInnerHtml");
+                }
+                if (Session["CarouselIndicatorsHtml"] != null)
+                {
+                    Session.Remove("CarouselIndicatorsHtml");
+                }
+                if (Session["CarouselIdProducto"] != null)
+                {
+                    Session.Remove("CarouselIdProducto");
+                }
+            }
+
+            //for (int i = 0; i < archivos.Length; i++)
+            //{
+            //    if (i == 0)
+            //    {
+            //        linkImage1.HRef = "~/ImagenesProducto/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+            //        Image1Ampliada.ImageUrl = "~/ImagenesProducto/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+            //    }
+            //    else if (i == 1)
+            //    {
+            //        linkImage2.HRef = "~/ImagenesProducto/" + archivos[1].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+            //        Image2Ampliada.ImageUrl = "~/ImagenesProducto/" + archivos[1].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+            //    }
+            //    else if (i == 2)
+            //    {
+            //        linkImage3.HRef = "~/ImagenesProducto/" + archivos[2].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+            //        Image3Ampliada.ImageUrl = "~/ImagenesProducto/" + archivos[2].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+            //    }
+            //}
         }
         private void CompletarImagenPortada(string[] archivos)
         {
-            ImagePortada.ImageUrl = "~/Imagenes/Interrogacion.jpg";
             if (archivos.Length >= 1)
             {
-                linkPortada.HRef = "~/ImagenesProducto/Portada/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/Portada/"), String.Empty);
-                ImagePortada.ImageUrl = "~/ImagenesProducto/Portada/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/Portada/"), String.Empty);
-                ImagePortadaAmpliada.ImageUrl = "~/ImagenesProducto/Portada/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/Portada/"), String.Empty);
+                //linkPortada.HRef = "~/ImagenesProducto/Portada/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/Portada/"), String.Empty);
+                //ImagePortadaAmpliada.ImageUrl = "~/ImagenesProducto/Portada/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/Portada/"), String.Empty);
             }
         }
 

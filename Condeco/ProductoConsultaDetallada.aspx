@@ -2,252 +2,134 @@
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainCPH" runat="server">
-    <script type='text/javascript'>
-    //<![CDATA[
-
-        /* Expando Image Script 2008 John Davenport Scheuer
-        as first seen in http://www.dynamicdrive.com/forums/
-        username: jscheuer1 - This Notice Must Remain for Legal Use
-        */
-        if (document.images) 
-        {
-            (function () {
-                var cos, a = /Apple/.test(navigator.vendor), times = a ? 20 : 40, speed = a ? 40 : 20;
-                var expConIm = function (im) {
-                    im = im || window.event;
-                    if (!expConIm.r.test(im.className))
-                        im = im.target || im.srcElement || null;
-                    if (!im || !expConIm.r.test(im.className))
-                        return;
-                    var e = expConIm,
-                    widthHeight = function (dim) {
-                        return dim[0] * cos + dim[1] + 'px';
-                    },
-                    resize = function () {
-                        cos = (1 - Math.cos((e.ims[i].jump / times) * Math.PI)) / 2;
-                        im.style.width = widthHeight(e.ims[i].w);
-                        im.style.height = widthHeight(e.ims[i].h);
-                        if (e.ims[i].d && times > e.ims[i].jump) {
-                            ++e.ims[i].jump;
-                            e.ims[i].timer = setTimeout(resize, speed);
-                        }
-                        else if (!e.ims[i].d && e.ims[i].jump > 0) {
-                            --e.ims[i].jump;
-                            e.ims[i].timer = setTimeout(resize, speed);
-                        }
-                    }, d = document.images, i = d.length - 1;
-                    for (i; i > -1; --i)
-                        if (d[i] == im) break;
-                    i = i + im.src;
-                    if (!e.ims[i]) {
-                        im.title = '';
-                        e.ims[i] = { im: new Image(), jump: 0 };
-                        e.ims[i].im.onload = function () {
-                            e.ims[i].w = [e.ims[i].im.width - im.width, im.width];
-                            e.ims[i].h = [e.ims[i].im.height - im.height, im.height];
-                            e(im);
-                        };
-                        e.ims[i].im.src = im.src;
-                        return;
-                    }
-                    if (e.ims[i].timer) clearTimeout(e.ims[i].timer);
-                    e.ims[i].d = !e.ims[i].d;
-                    resize();
-                };
-
-                expConIm.ims = {};
-
-                expConIm.r = new RegExp('\\bexpando\\b');
-
-                if (document.addEventListener) {
-                    document.addEventListener('mouseover', expConIm, false);
-                    document.addEventListener('mouseout', expConIm, false);
-                }
-                else if (document.attachEvent) {
-                    document.attachEvent('onmouseover', expConIm);
-                    document.attachEvent('onmouseout', expConIm);
-                }
-            })();
-        }
-    //]]>
-    </script>
-    <table border="0" cellpadding="0" cellspacing="0" style="padding:20px; vertical-align:top; background-image: url('Imagenes/Detallada.jpg'); background-repeat: no-repeat;">
-        <tr>
-            <td align="left" colspan="2" style="padding-top:20px">
-                <asp:Label ID="TituloPaginaLabel" runat="server" SkinID="TituloPagina" Text="Detalle del Producto"></asp:Label>
-                <asp:Label ID="TargetControlIDdelModalPopupExtender1" runat="server" Text=""></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td align="center" colspan="2" style="padding-top: 10px">
-                <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
-                    <ContentTemplate>
-                        <asp:Label ID="MensajeLabel" runat="server" SkinID="MensajePagina" Text=""></asp:Label>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="1" style="vertical-align: top; padding-left: 20px;">
-                <table border="0" cellpadding="0" cellspacing="0" style="vertical-align: top">
-                    <tr>
-                        <td align="right" style="padding-right: 5px; vertical-align: top">
-                            <asp:Label ID="Label7" runat="server" Text="Id." Visible="false"></asp:Label>
-                        </td>
-                        <td align="left" style="padding-top: 5px; vertical-align: top">
-                            <asp:TextBox ID="IdProductoTextBox" runat="server" MaxLength="50" TabIndex="4" Width="150px"
-                                Visible="false"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-right: 5px; padding-top: 5px">
-                            <asp:Label ID="Label9" runat="server" Text="Producto" SkinID="TituloColor1Grande"></asp:Label>
-                            <%if (TipoProductoLabel.Text != "") {%><asp:Label ID="TipoProductoLabel" runat="server" Visible="false"></asp:Label>
-                            <%}%>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-top: 2px;">
-                            <b>
-                            <asp:Label ID="NombreLabel" runat="server" Text=""></asp:Label>
-                            </b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-top: 2px;">
-                            <asp:Label ID="DescripcionLabel" runat="server" Text=""></asp:Label>
-                        </td>
-                    </tr>
-                    <%if (PrecioBaseLabel.Text != "")
-                      {%>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-right: 5px; padding-top: 5px">
-                            Precio: $ 
-                            <asp:Label ID="PrecioBaseLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <%} %>
-                    <%if (ComentarioPrecioBaseLabel.Text != "") 
-                      {%>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-right: 5px; padding-top: 5px">
-                            Comentario:
-                            <asp:Label ID="ComentarioPrecioBaseLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <%} %>
-                    <!-- Info.Web -->
-                    <%if (YouTubeLabel.Text != "")
-                      {%>
-                    <tr>
-                        <td align="left" colspan="2" style="padding-top: 5px" valign="top">
-                            YouTube:
-                            <asp:Label ID="YouTubeLabel" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <%} %>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td align="left" style="vertical-align: top; padding-left: 20px;" class="style2">
-                <!-- Imagenes -->
-                <table border="0" cellpadding="0" cellspacing="0" style="padding-left:0px">
-                    <tr>
-                        <td align="left" style="padding-right: 5px; padding-top: 5px; vertical-align: top">
-                            <asp:Label ID="Label4" runat="server" Text="Imagenes" SkinID="TituloColor1Grande"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <table border="0" cellpadding="0" cellspacing="0" style="padding-left: 0px">
-                                <tr>
-                                    <td align="left" style="padding-right: 25px; padding-top: 5px; vertical-align: top">
-                                        <a id="linkPortada" class="thumbnail" runat="server" href="Imagenes/Interrogacion.jpg" target="_blank">
-                                            <asp:Image ID="ImagePortada" runat="server" BorderStyle="Solid" BorderWidth="1px"
-                                                BorderColor="#cccccc" ImageUrl="~/Imagenes/Interrogacion.jpg" Width="90px" />
-                                                <span><asp:Image ID="ImagePortadaAmpliada" runat="server" BorderStyle="Solid" BorderWidth="1px"  
-                                                BorderColor="#cccccc" ImageUrl="~/Imagenes/Interrogacion.jpg"  Width="290px" /></span>
-                                        </a>
-                                    </td>
-                                    <td align="left" style="padding-right: 25px; padding-top: 5px; vertical-align: top">
-                                        <a id="linkImage1" class="thumbnail" runat="server" href="Imagenes/Interrogacion.jpg" target="_blank">
-                                            <asp:Image ID="Image1" runat="server" BorderStyle="Solid" BorderWidth="1px"  
-                                                BorderColor="#cccccc" ImageUrl="~/Imagenes/Interrogacion.jpg" Width="90px" />
-                                                <span><asp:Image ID="Image1Ampliada" runat="server" BorderStyle="Solid" BorderWidth="1px"  
-                                                BorderColor="#cccccc" ImageUrl="~/Imagenes/Interrogacion.jpg"  Width="290px" /></span>
-                                        </a>
-                                    </td>
-                                    <td align="left" style="padding-right: 25px; padding-top: 5px; vertical-align: top">
-                                        <a id="linkImage2" class="thumbnail" runat="server" href="Imagenes/Interrogacion.jpg" target="_blank">
-                                            <asp:Image ID="Image2" runat="server" BorderStyle="Solid" BorderWidth="1px"
-                                                BorderColor="#cccccc" ImageUrl="~/Imagenes/Interrogacion.jpg" Width="90px" />
-                                                <span><asp:Image ID="Image2Ampliada" runat="server" BorderStyle="Solid" BorderWidth="1px"  
-                                                BorderColor="#cccccc" ImageUrl="~/Imagenes/Interrogacion.jpg"  Width="290px" /></span>
-                                        </a>
-                                    </td>
-                                    <td align="left" style="padding-right: 25px; padding-top: 5px; vertical-align: top">
-                                        <a id="linkImage3" class="thumbnail" runat="server" href="Imagenes/Interrogacion.jpg" target="_blank">
-                                            <asp:Image ID="Image3" runat="server" BorderStyle="Solid" BorderWidth="1px"
-                                                BorderColor="#cccccc" ImageUrl="~/Imagenes/Interrogacion.jpg" Width="90px" />
-                                                <span><asp:Image ID="Image3Ampliada" runat="server" BorderStyle="Solid" BorderWidth="1px"  
-                                                BorderColor="#cccccc" ImageUrl="~/Imagenes/Interrogacion.jpg"  Width="290px" /></span>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                    <td>
-                        <p>
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                          <!-- Indicators -->
-                          <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                          </ol>
-
-                          <!-- Wrapper for slides -->
-                          <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                              <img src="img/IMG_3077%20-Mini.JPG" alt="pepe"/>
-                              <div class="carousel-caption">
-                                ...
-                              </div>
+    <section class="bg-primary-white" id="secUsuarioOlvidoId">
+        <div class="container-fluid">
+            <div class="row">
+                    <p>
+                    <span class="fa fa-2x fa-eye"></span>
+                    </p>
+                    <h2 class="section-heading"><asp:Label ID="TituloPaginaLabel" runat="server" Text="Detalles del Producto"></asp:Label></h2>
+                    <hr>
+                    <p>
+                        <asp:Label ID="TargetControlIDdelModalPopupExtender1" runat="server" Text=""></asp:Label>
+                    </p>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <p></p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="panel panel-default" style="">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                                        <ContentTemplate>
+                                            <asp:Label ID="MensajeLabel" runat="server" SkinID="MensajePagina" Text=""></asp:Label>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                        <asp:Label ID="Label7" runat="server" Text="Id." Visible="false"></asp:Label>
+                                        <asp:TextBox ID="IdProductoTextBox" runat="server" MaxLength="50" TabIndex="4" Width="150px" Visible="false"></asp:TextBox>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                        <asp:Label ID="Label9" runat="server" Text="Producto" SkinID="TituloColor1Grande"></asp:Label>
+                                        <%if (TipoProductoLabel.Text != "") {%><asp:Label ID="TipoProductoLabel" runat="server" Visible="false"></asp:Label>
+                                        <%}%>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                        <asp:Label ID="NombreLabel" runat="server" Text=""></asp:Label>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                
+                                    </div>
+                                </div>
+                                <%if (PrecioBaseLabel.Text != ""){%>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                        Precio: $ <asp:Label ID="PrecioBaseLabel" runat="server"></asp:Label>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                    </div>
+                                </div>
+                                <%} %>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
+                                        <asp:Label ID="DescripcionLabel" runat="server" Text=""></asp:Label>
+                                    </div>
+                                </div>
+                                <%if (ComentarioPrecioBaseLabel.Text != "") {%>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                        Comentario: <asp:Label ID="ComentarioPrecioBaseLabel" runat="server"></asp:Label>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                
+                                    </div>
+                                </div>
+                                <%} %>
+                                <%if (YouTubeLabel.Text != "")
+                                {%>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                        YouTube: <asp:Label ID="YouTubeLabel" runat="server"></asp:Label>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
+                                    </div>
+                                </div>
+                                <%} %>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <asp:Label ID="TituloImagenes" runat="server" Text="Imagenes" SkinID="TituloColor1Grande"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                            <!-- Indicators -->
+                                            <asp:Literal ID="ltlCarouselIndicators" runat="server" />
+                                            <!-- Images-->
+                                            <div class="carousel-inner">
+                                                <asp:Literal ID="ltlCarouselImages" runat="server" />
+                                            </div>
+                                            <!-- Controls -->
+                                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control"
+                                                    href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right">
+                                                    </span></a>
+                                        </div>
+                                        <!-- Carousel -->
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <asp:Button ID="SalirButton" runat="server" CausesValidation="false" TabIndex="504" Text="Salir" PostBackUrl="~/Default.aspx" class="btn btn-info" />
+                                        <input type="button" value="Volver atrás" name="Volver" onclick="history.back()" class="btn btn-info" />
+                                    </div>
+                                </div>
                             </div>
-                            <div class="item">
-                              <img src="img/IMG_3490%20-Mini.JPG" alt="Carteles"/>
-                              <div class="carousel-caption">
-                                ...
-                              </div>
-                            </div>
-                            ...
-                          </div>
-
-                          <!-- Controls -->
-                          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                          </a>
                         </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <p>
                         </p>
-                    </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td align="left" colspan="2" style="padding-top:20px">
-                <asp:Button ID="SalirButton" runat="server" CausesValidation="false" TabIndex="504" Text="Salir" PostBackUrl="~/Default.aspx" />
-                <input type="button" value="Volver atrás" name="Volver" onclick="history.back()" />
-            </td>
-        </tr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <table border="0" cellpadding="0" cellspacing="0" style="padding:20px; vertical-align:top; background-image: url('Imagenes/Detallada.jpg'); background-repeat: no-repeat;">
         <tr>
             <td align="left" colspan="2" style="padding-top:20px">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">

@@ -37,12 +37,18 @@ namespace Condeco
             ResultadoComprobarDisponibilidadLabel.Text = String.Empty;
             CondecoEntidades.Usuario usuario = new CondecoEntidades.Usuario();
             usuario.Nombre = NombreTextBox.Text;
+            usuario.Pais = PaisTextBox.Text;
+            usuario.Provincia = ProvinciaTextBox.Text;
+            usuario.Localidad = LocalidadTextBox.Text;
             usuario.Telefono = TelefonoTextBox.Text;
             usuario.Email = EmailTextBox.Text;
+            usuario.Facebook = FacebookTextBox.Text;
             usuario.Id = IdUsuarioTextBox.Text;
+            usuario.Facebook = FacebookTextBox.Text;
             usuario.Password = PasswordTextBox.Text;
             usuario.Pregunta = PreguntaTextBox.Text;
             usuario.Respuesta = RespuestaTextBox.Text;
+            usuario.IdMedio = MedioDropDownList.SelectedValue;
             try
             {
                 CondecoRN.Usuario.Validar(usuario, ConfirmacionPasswordTextBox.Text, Session["captcha"].ToString(), CaptchaTextBox.Text, (CondecoEntidades.Sesion)Session["Sesion"]);
@@ -57,16 +63,18 @@ namespace Condeco
                 CaptchaTextBox.Visible = false;
                 CaseSensitiveLabel.Visible = false;
                 NombreTextBox.Enabled = false;
+                PaisTextBox.Enabled = false;
+                ProvinciaTextBox.Enabled = false;
+                LocalidadTextBox.Enabled = false;
                 TelefonoTextBox.Enabled = false;
                 EmailTextBox.Enabled = false;
+                FacebookTextBox.Enabled = false;
                 IdUsuarioTextBox.Enabled = false;
                 PasswordTextBox.Enabled = false;
                 ConfirmacionPasswordTextBox.Enabled = false;
                 PreguntaTextBox.Enabled = false;
                 RespuestaTextBox.Enabled = false;
-                PaisTextBox.Enabled = false;
-                ProvinciaTextBox.Enabled = false;
-                LocalidadTextBox.Enabled = false;
+                MedioDropDownList.Enabled = false;
                 MensajeLabel.Text = "Gracias por crear su cuenta.<br /> Las instrucciones, serán enviadas a su email, para que usted pueda confirmar la creación de su cuenta.<br /> La recepción del email puede tardar unos minutos.";
             }
             catch (Exception ex)

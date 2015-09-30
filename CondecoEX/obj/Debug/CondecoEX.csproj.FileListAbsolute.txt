@@ -6,4 +6,3 @@ C:\GitHub\condeco\CondecoEX\bin\Debug\CondecoEX.dll
 C:\GitHub\condeco\CondecoEX\bin\Debug\CondecoEX.pdb
 C:\GitHub\condeco\CondecoEX\obj\Debug\CondecoEX.dll
 C:\GitHub\condeco\CondecoEX\obj\Debug\CondecoEX.pdb
-C:\GitHub\condeco\CondecoEX\obj\Debug\CondecoEX.csprojResolveAssemblyReference.cache

@@ -94,33 +94,40 @@ namespace CondecoRN
                                 }
                                 else
                                 {
-                                    if (ConfirmacionPassword == String.Empty)
+                                    if (Usuario.Password.Length < 3)
                                     {
-                                        throw new CondecoEX.Validaciones.ValorNoInfo("Reingresar Password");
+                                        throw new CondecoEX.Validaciones.ValorInvalido("Password (mínimo 3 dígitos)");
                                     }
                                     else
                                     {
-                                        if (Usuario.Password != ConfirmacionPassword)
+                                        if (ConfirmacionPassword == String.Empty)
                                         {
-                                            throw new CondecoEX.Usuario.PasswordYConfirmacionNoCoincidente();
+                                            throw new CondecoEX.Validaciones.ValorNoInfo("Reingresar Password");
                                         }
                                         else
                                         {
-                                            if (Usuario.Pregunta == String.Empty)
+                                            if (Usuario.Password != ConfirmacionPassword)
                                             {
-                                                throw new CondecoEX.Validaciones.ValorNoInfo("Pregunta de seguridad");
+                                                throw new CondecoEX.Usuario.PasswordYConfirmacionNoCoincidente();
                                             }
                                             else
                                             {
-                                                if (Usuario.Respuesta == String.Empty)
+                                                if (Usuario.Pregunta == String.Empty)
                                                 {
-                                                    throw new CondecoEX.Validaciones.ValorNoInfo("Respuesta de seguridad");
+                                                    throw new CondecoEX.Validaciones.ValorNoInfo("Pregunta de seguridad");
                                                 }
                                                 else
                                                 {
-                                                    if (!ClaveCatpcha.Equals(Clave.ToLower()))
+                                                    if (Usuario.Respuesta == String.Empty)
                                                     {
-                                                        throw new CondecoEX.Validaciones.ValorInvalido("Codigo");
+                                                        throw new CondecoEX.Validaciones.ValorNoInfo("Respuesta de seguridad");
+                                                    }
+                                                    else
+                                                    {
+                                                        if (!ClaveCatpcha.Equals(Clave.ToLower()))
+                                                        {
+                                                            throw new CondecoEX.Validaciones.ValorInvalido("Codigo");
+                                                        }
                                                     }
                                                 }
                                             }
@@ -133,6 +140,14 @@ namespace CondecoRN
                 }
             }
         }
+        public static void ValidarModificacion(CondecoEntidades.Usuario Usuario)
+        {
+            if (Usuario.Nombre == String.Empty)
+            {
+                throw new CondecoEX.Validaciones.ValorNoInfo("Nombre y Apellido");
+            }
+        }
+
         public static void Registrar(CondecoEntidades.Usuario Usuario, bool EnviarCorreo, CondecoEntidades.Sesion Sesion)
         {
             Usuario.WF.Estado = "PteConf";
@@ -240,7 +255,7 @@ namespace CondecoRN
             db.CambioEstado(Usuario, Evento, IdEstadoHst);
         }
 
-        public static List<CondecoEntidades.Usuario> ListaPorIdUsuario(int IdUsuario, CondecoEntidades.Sesion Sesion)
+        public static List<CondecoEntidades.Usuario> ListaPorIdUsuario(string IdUsuario, CondecoEntidades.Sesion Sesion)
         {
             CondecoDB.Usuario db = new CondecoDB.Usuario(Sesion);
             return db.ListaPorIdUsuario(IdUsuario);

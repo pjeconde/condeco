@@ -373,4 +373,7 @@ update Configuracion set @idWF=Valor=convert(varchar(256), convert(int, Valor)+1
 insert Permiso values ('administrador', 'OperProductos', '20621231', @idWF, 'Vigente')
 insert Log values (@IdWF, getdate(), 'administrador', 'Permiso', 'Nuevo', 'Vigente', 'Nuevo Script')
 
+/*----- Modif. 25/9/2015 -----*/
+alter table Producto alter column Descripcion varchar(2000) not null
+go
 

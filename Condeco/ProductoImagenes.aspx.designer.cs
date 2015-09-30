@@ -22,22 +22,22 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label TituloPaginaLabel;
         
         /// <summary>
-        /// VistaPreviaLabel control.
+        /// FileUpload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label VistaPreviaLabel;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
-        /// ImageParaAgregar control.
+        /// SubirImagenButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImageParaAgregar;
+        protected global::System.Web.UI.WebControls.Button SubirImagenButton;
         
         /// <summary>
         /// Label4 control.
@@ -58,22 +58,22 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label MaximoPermitidoLabel;
         
         /// <summary>
-        /// FileUpload1 control.
+        /// VistaPreviaLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.Label VistaPreviaLabel;
         
         /// <summary>
-        /// SubirImagenButton control.
+        /// ImageParaAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubirImagenButton;
+        protected global::System.Web.UI.WebControls.Image ImageParaAgregar;
         
         /// <summary>
         /// BorrarImagenButton control.
@@ -94,15 +94,6 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Button AgregarPortada;
         
         /// <summary>
-        /// AgregarButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AgregarButton;
-        
-        /// <summary>
         /// MensajeLabel control.
         /// </summary>
         /// <remarks>
@@ -110,24 +101,6 @@ namespace Condeco {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MensajeLabel;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// CatalogoLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CatalogoLabel;
         
         /// <summary>
         /// PortadaLabel control.
@@ -139,33 +112,6 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Label PortadaLabel;
         
         /// <summary>
-        /// Imagen1Label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Imagen1Label;
-        
-        /// <summary>
-        /// Imagen2Label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Imagen2Label;
-        
-        /// <summary>
-        /// Imagen3Label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Imagen3Label;
-        
-        /// <summary>
         /// ImagePortada control.
         /// </summary>
         /// <remarks>
@@ -173,33 +119,6 @@ namespace Condeco {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImagePortada;
-        
-        /// <summary>
-        /// Image1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-        
-        /// <summary>
-        /// Image2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
-        
-        /// <summary>
-        /// Image3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image3;
         
         /// <summary>
         /// BorrarPortadaButton control.
@@ -211,31 +130,58 @@ namespace Condeco {
         protected global::System.Web.UI.WebControls.Button BorrarPortadaButton;
         
         /// <summary>
-        /// BorrarImagen1Button control.
+        /// AgregarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BorrarImagen1Button;
+        protected global::System.Web.UI.WebControls.Button AgregarButton;
         
         /// <summary>
-        /// BorrarImagen2Button control.
+        /// TituloImagenes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BorrarImagen2Button;
+        protected global::System.Web.UI.WebControls.Label TituloImagenes;
         
         /// <summary>
-        /// BorrarImagen3Button control.
+        /// ltlCarouselIndicators control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BorrarImagen3Button;
+        protected global::System.Web.UI.WebControls.Literal ltlCarouselIndicators;
+        
+        /// <summary>
+        /// ltlCarouselImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlCarouselImages;
+        
+        /// <summary>
+        /// EliminarImagenDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList EliminarImagenDropDownList;
+        
+        /// <summary>
+        /// EliminarImagenButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EliminarImagenButton;
         
         /// <summary>
         /// SalirButton control.

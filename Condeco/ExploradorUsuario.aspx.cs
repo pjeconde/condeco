@@ -49,7 +49,7 @@ namespace Condeco
                 int CantidadFilas = 0;
                 if (IdUsuarioRadioButton.Checked)
                 {
-                    lista = CondecoRN.Usuario.ListaPorIdUsuario(Convert.ToInt32(IdUsuarioTextBox.Text), (CondecoEntidades.Sesion)Session["Sesion"]);
+                    lista = CondecoRN.Usuario.ListaPorIdUsuario(IdUsuarioTextBox.Text, (CondecoEntidades.Sesion)Session["Sesion"]);
                     CantidadFilas = lista.Count;
                 }
                 else
@@ -101,7 +101,7 @@ namespace Condeco
                 e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                 
                 //Color por estado distinto a Active
-                if (e.Row.Cells[4].Text != "Vigente")
+                if (e.Row.Cells[5].Text != "Vigente")
                 {
                     e.Row.ForeColor = Color.Red;
                 }
@@ -240,7 +240,7 @@ namespace Condeco
                     }
                     else
                     {
-                        lista = CondecoRN.Usuario.ListaPorIdUsuario(Convert.ToInt32(IdUsuarioTextBox.Text), (CondecoEntidades.Sesion)Session["Sesion"]);
+                        lista = CondecoRN.Usuario.ListaPorIdUsuario(IdUsuarioTextBox.Text, (CondecoEntidades.Sesion)Session["Sesion"]);
                         CantidadFilas = lista.Count;
                     }
                 }

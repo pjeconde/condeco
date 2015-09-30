@@ -33,19 +33,17 @@
                                     Nombre de usuario
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
-                                    <asp:TextBox ID="UsuarioTextBox" runat="server" MaxLength="50" OnTextChanged="UsuarioTextBox_TextChanged" 
-                                        TabIndex="1"></asp:TextBox>
+                                    <asp:TextBox ID="UsuarioTextBox" runat="server" MaxLength="50" OnTextChanged="UsuarioTextBox_TextChanged" TabIndex="1" Width="100%"></asp:TextBox>
                                 </div>
-                            </div><!-- /.row -->
+                            </div>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
                                      Clave
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
-                                     <asp:TextBox ID="PasswordTextBox" runat="server" OnTextChanged="PasswordTextBox_TextChanged"
-                                         TabIndex="2" TextMode="Password"></asp:TextBox>
+                                     <asp:TextBox ID="PasswordTextBox" runat="server" OnTextChanged="PasswordTextBox_TextChanged" TabIndex="2" TextMode="Password" Width="100%"></asp:TextBox>
                                 </div>
-                            </div><!-- /.row -->
+                            </div>
                             <br/>
                             <p>
                                     <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-info" OnClick="LoginButton_Click" TabIndex="3"
@@ -79,7 +77,7 @@
                     <br />
                     <div class="col-lg-6">
                         <div class="panel panel-info">
-                          <div class="panel-heading"><font style="color: #F6B200"><b>&gt;</b></font> Novedades</div>
+                          <div class="panel-heading"><i class="fa fa-chevron-right"></i> Novedades</div>
                           <div class="panel-body">
                                 <h6>
                                 Una vez al mes actualizamos la información con las novedades o nuevos diseños que
@@ -90,7 +88,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="panel panel-info">
-                          <div class="panel-heading"><font style="color: #F6B200"><b>&gt;</b></font> Promociones</div>
+                          <div class="panel-heading"><i class="fa fa-chevron-right"></i> Promociones</div>
                           <div class="panel-body">
                                 <h6>
                                     Por cada lanzamiento de un nuevo producto, tenemos reservado un precio especial

@@ -35,9 +35,9 @@ namespace Condeco
                     }
                     else
                     {
-                        NombreRadioButton.Checked = true;
+                        IdProductoRadioButton.Checked = true;
                         TipoBusquedaRadioButton_CheckedChanged(NombreRadioButton, new EventArgs());
-                        NombreTextBox.Focus();
+                        IdProductoTextBox.Focus();
                     }
                 }
                 catch (Exception ex)

@@ -23,7 +23,7 @@
                     <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Nombre</label>
+                            <label hidden="hidden">Nombre</label>
                             <input type="text" runat="server" class="form-control" placeholder="Nombre" id="ContactoNombre" required 
                                 data-validation-required-message="Por favor ingrese su nombre.">
                             <p class="help-block text-danger">
@@ -32,7 +32,7 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Email</label>
+                            <label hidden="hidden">Email</label>
                             <input type="text" runat="server" class="form-control" placeholder="Email" id="ContactoEmail" required
                                 data-validation-required-message="Por favor ingrese su email.">
                             <p class="help-block text-danger">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Teléfono</label>
+                            <label hidden="hidden">Teléfono</label>
                             <input type="text" runat="server" class="form-control" placeholder="Teléfono" id="ContactoTelefono" required 
                                 data-validation-required-message="Por favor ingrese número de telefono.">
                             <p class="help-block text-danger">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Asunto</label>
+                            <label hidden="hidden">Asunto</label>
                             <input type="text" runat="server" class="form-control" placeholder="Asunto" id="ContactoAsunto" required 
                                 data-validation-required-message="Por favor ingrese número de telefono.">
                             <p class="help-block text-danger">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Mensaje</label>
+                            <label hidden="hidden">Mensaje</label>
                             <textarea rows="5" runat="server" class="form-control" placeholder="Mensaje" id="ContactoMensaje" required
                                 data-validation-required-message="Por favor ingrese un mensaje." style="resize: none;"></textarea>
                             <p class="help-block text-danger">
@@ -68,12 +68,12 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>
-                                Código de control</label>
+                            <label hidden="hidden">Código de control</label>
                             <asp:Image ID="CaptchaImage" runat="server" AlternateText="" Height="60px" Width="150px" />
                             <asp:Button ID="NuevaClaveCaptchaButton" runat="server" class="btn btn-info" TabIndex="7"
                                 OnClick="NuevaClaveCaptchaButton_Click" Text="Nuevo código" OnClientClick="this.disabled = true; BorrarMensaje()"
                                 UseSubmitBehavior="false" />
+                            <br />
                             <input type="text" runat="server" class="form-control" placeholder="Ingresar el Código"
                                 id="ContactoCodigo" required data-validation-required-message="Por favor ingrese el código.">
                             <asp:Label ID="Label1" runat="server" ForeColor="gray" Text="(NO se distinguen mayúsculas de minúsculas)"></asp:Label>

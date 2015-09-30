@@ -40,3 +40,9 @@ a {
 {
 	font-size: 14px;
 }
+
+.containerClass .ajax__html_editor_extender_container
+{
+    width: 100% !important;/*important is really important at here*/
+    height: 100% auto; 
+}

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+using System.Text;
+using System.Collections;
 
 namespace Condeco
 {
@@ -108,47 +111,93 @@ namespace Condeco
             CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
             String path = Server.MapPath("~/ImagenesProducto/");
             string[] archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
+            ArrayList al = new ArrayList();
+            al.Add("");
+            for (int i = 0; i < archivos.Length; i++)
+            {
+                al.Add(System.IO.Path.GetFileName(archivos[i]));
+            }
+            EliminarImagenDropDownList.DataSource = al;
+            EliminarImagenDropDownList.DataBind();
             return archivos;
         }
         private void CompletarImagenesActuales(string[] archivos, bool ControlarMaxArch)
         {
-            Image1.ImageUrl = "~/Imagenes/Interrogacion.jpg";
-            Image2.ImageUrl = "~/Imagenes/Interrogacion.jpg";
-            Image3.ImageUrl = "~/Imagenes/Interrogacion.jpg";
-            for (int i = 0; i < archivos.Length; i++)
+
+            //ObjectCache cache = MemoryCache.Default;
+            try
             {
-                if (i == 0)
+                CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
+                if (Session["CarouselInnerHtml"] != null && Session["CarouselIndicatorsHtml"] != null && Session["CarouselIdProducto"] != null && Session["CarouselIdProducto"].ToString() == producto.Id.ToString())
                 {
-                    Image1.ImageUrl = "~/ImagenesProducto/" + archivos[0].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+                    //use the cached html
+                    ltlCarouselImages.Text = Session["CarouselInnerHtml"].ToString();
+                    ltlCarouselIndicators.Text = Session["CarouselIndicatorsHtml"].ToString();
                 }
-                else if (i == 1)
+                else
                 {
-                    Image2.ImageUrl = "~/ImagenesProducto/" + archivos[1].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+                    TituloImagenes.Text = "No hay imagenes";
+                    if (archivos.Length > 0)
+                    {
+                        TituloImagenes.Text = "Imagenes";
+                        var carouselInnerHtml = new StringBuilder();
+                        var indicatorsHtml = new StringBuilder(@"<ol class='carousel-indicators'>");
+                        //loop through and build up the html for indicators + images
+                        for (int i = 0; i < archivos.Length; i++)
+                        {
+                            var fileName = archivos[i].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
+                            carouselInnerHtml.AppendLine(i == 0 ? "<div class='item active'>" : "<div class='item'>");
+                            carouselInnerHtml.AppendLine("<a runat='server' id='NombreImagenSelect" + i.ToString() + "' onclick='MostrarImagenAEliminar_Click' href='#' title='" + fileName + "'>");
+                            carouselInnerHtml.AppendLine("<img src='ImagenesProducto/" + fileName + "' alt='Slide #" + (i + 1) + "'>");
+                            carouselInnerHtml.AppendLine("</a>");
+                            carouselInnerHtml.AppendLine("</div>");
+                            indicatorsHtml.AppendLine(i == 0 ? @"<li data-target='#myCarousel' data-slide-to='" + i + "' class='active'></li>" : @"<li data-target='#myCarousel' data-slide-to='" + i + "' class=''></li>");
+                        }
+                        //close tag
+                        indicatorsHtml.AppendLine("</ol>");
+                        //stick the html in the literal tags and the cache
+                        Session["CarouselInnerHtml"] = ltlCarouselImages.Text = carouselInnerHtml.ToString();
+                        Session["CarouselIndicatorsHtml"] = ltlCarouselIndicators.Text = indicatorsHtml.ToString();
+                        Session["CarouselIdProducto"] = producto.Id.ToString();
+                    }
                 }
-                else if (i == 2)
+                ViewState["archivos"] = archivos;
+                if (archivos.Length >= 10)
                 {
-                    Image3.ImageUrl = "~/ImagenesProducto/" + archivos[2].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
-                }
-            }
-            ViewState["archivos"] = archivos;
-            if (archivos.Length >= 3)
-            {
-                if (ControlarMaxArch)
-                {
-                    MensajeLabel.Text = "Imposible subir más imagenes al catálogo (máximo permitido 3 imagenes). Deberá eliminar alguna de las imagenes actuales, para poder incorporar otra nueva.";
+                    if (ControlarMaxArch)
+                    {
+                        MensajeLabel.Text = "Imposible subir más imagenes al catálogo (máximo permitido 10 imagenes). Deberá eliminar alguna de las imagenes actuales, para poder incorporar otra nueva.";
+                    }
+                    else
+                    {
+                        MensajeLabel.Text = "";
+                    }
                 }
                 else
                 {
                     MensajeLabel.Text = "";
                 }
             }
-            else
+            catch (Exception)
             {
-                MensajeLabel.Text = "";
+                //something is dodgy so flush the cache
+                if (Session["CarouselInnerHtml"] != null)
+                {
+                    Session.Remove("CarouselInnerHtml");
+                }
+                if (Session["CarouselIndicatorsHtml"] != null)
+                {
+                    Session.Remove("CarouselIndicatorsHtml");
+                }
+                if (Session["CarouselIdProducto"] != null)
+                {
+                    Session.Remove("CarouselIdProducto");
+                }
             }
         }
         protected void BorrarImagenButton_Click(object sender, EventArgs e)
         {
+            //Borra la imagen del temporal.
             MensajeLabel.Text = "";
             if (Funciones.SessionTimeOut(Session))
             {
@@ -164,6 +213,7 @@ namespace Condeco
                 {
                     System.IO.File.Delete(archivos[i]);
                     ImageParaAgregar.ImageUrl = "~/Imagenes/Interrogacion.jpg";
+                    ImageParaAgregar.DataBind();
                 }
             }
         }
@@ -181,9 +231,9 @@ namespace Condeco
                 if (ViewState["archivos"] != null)
                 {
                     string[] archivos = (string[])ViewState["archivos"];
-                    if (archivos.Length >= 3)
+                    if (archivos.Length >= 10)
                     {
-                        MensajeLabel.Text = "Imposible subir más imagenes al catálogo (máximo permitido 3 imagenes). Deberá eliminar alguna de las imagenes actuales, para poder incorporar otra nueva.";
+                        MensajeLabel.Text = "Imposible subir más imagenes al catálogo (máximo permitido 10 imagenes). Deberá eliminar alguna de las imagenes actuales, para poder incorporar otra nueva.";
                         CantArchivosOK = false;
                     }
                 }
@@ -206,59 +256,47 @@ namespace Condeco
                         ImageParaAgregar.ImageUrl = "~/Imagenes/Interrogacion.jpg";
                     }
                     archivos = LeerImagenesActuales();
+                    Session.Remove("CarouselInnerHtml");
+                    Session.Remove("CarouselIndicatorsHtml");
                     CompletarImagenesActuales(archivos, true);
                 }
             }
         }
-        protected void BorrarImagen1Button_Click(object sender, EventArgs e)
+        protected void MostrarImagenAEliminar_Click(object sender, EventArgs e)
         {
-            MensajeLabel.Text = "";
-            CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
-            Image1.ImageUrl = "~/Imagenes/Interrogacion.jpg";
-            string[] archivos = (string[])ViewState["archivos"];
-            if (archivos.Length >= 1)
-            {
-                System.IO.File.Delete(archivos[0]);
-                //Volver a leer las imagenes para ver cuantas quedaron y 
-                //reordenar en el formulario de Imagenes actuales. 
-                String path = Server.MapPath("~/ImagenesProducto/");
-                CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
-                archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
-                CompletarImagenesActuales(archivos, true);
-            }
+            //Control c = (Control)this.FindControl("NombreImgAliminar");
+            //NombreImagenAEliminar.Text = ((LinkButton)c).ToolTip;
+            //ImagenAEliminar.ImageUrl = "~/Imagenes/" + NombreImagenAEliminar.Text;
         }
-        protected void BorrarImagen2Button_Click(object sender, EventArgs e)
+
+        protected void EliminarImagenButton_Click(object sender, EventArgs e)
         {
             MensajeLabel.Text = "";
-            CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
-            Image1.ImageUrl = "~/Imagenes/Interrogacion.jpg";
-            string[] archivos = (string[])ViewState["archivos"];
-            if (archivos.Length >= 1)
+            string[] archivos;
+            try
             {
-                System.IO.File.Delete(archivos[1]);
-                //Volver a leer las imagenes para ver cuantas quedaron y 
-                //reordenar en el formulario de Imagenes actuales. 
-                String path = Server.MapPath("~/ImagenesProducto/");
-                CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
-                archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
-                CompletarImagenesActuales(archivos, true);
+                string imagenAEliminar = EliminarImagenDropDownList.SelectedValue;
+                if (imagenAEliminar != "")
+                {
+                    String path = Server.MapPath("~/ImagenesProducto/");
+                    System.IO.File.Delete(path + imagenAEliminar);
+
+                    //Volver a leer las imagenes para ver cuantas quedaron y 
+                    //reordenar en el formulario de Imagenes actuales. 
+                    CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
+                    archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
+                    Session.Remove("CarouselInnerHtml");
+                    Session.Remove("CarouselIndicatorsHtml");
+                    CompletarImagenesActuales(archivos, true);
+                }
+                else
+                {
+                    MensajeLabel.Text = "Usted no ha seleccionado ninguna imagen.";
+                }
             }
-        }
-        protected void BorrarImagen3Button_Click(object sender, EventArgs e)
-        {
-            MensajeLabel.Text = "";
-            CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
-            Image1.ImageUrl = "~/Imagenes/Interrogacion.jpg";
-            string[] archivos = (string[])ViewState["archivos"];
-            if (archivos.Length >= 1)
+            catch (Exception ex)
             {
-                System.IO.File.Delete(archivos[2]);
-                //Volver a leer las imagenes para ver cuantas quedaron y 
-                //reordenar en el formulario de Imagenes actuales. 
-                String path = Server.MapPath("~/ImagenesProducto/");
-                CondecoEntidades.Producto producto = (CondecoEntidades.Producto)Session["Producto"];
-                archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
-                CompletarImagenesActuales(archivos, true);
+                MensajeLabel.Text = "Error al tratar de eliminar la imagen. " + ex.Message;
             }
         }
 

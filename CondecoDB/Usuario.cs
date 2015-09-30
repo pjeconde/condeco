@@ -240,14 +240,14 @@ namespace CondecoDB
                 throw new CondecoEX.Usuario.ErrorDeConfirmacion();
             }
         }
-        public List<CondecoEntidades.Usuario> ListaPorIdUsuario(int IdUsuario)
+        public List<CondecoEntidades.Usuario> ListaPorIdUsuario(string IdUsuario)
         {
             List<CondecoEntidades.Usuario> lista = new List<CondecoEntidades.Usuario>();
             if (sesion.Usuario.Id != null)
             {
                 StringBuilder a = new StringBuilder(string.Empty);
                 a.Append("select Usuario.IdUsuario, Usuario.Nombre, Usuario.Telefono, Usuario.Email, Usuario.Password, Usuario.Pregunta, Usuario.Respuesta, Usuario.CantidadEnviosMail, Usuario.FechaUltimoReenvioMail, Usuario.EmailSMS, Usuario.IdMedio, Usuario.IdWF, Usuario.Estado, Usuario.UltActualiz, Usuario.Pais, Usuario.Provincia, Usuario.Localidad, Usuario.Direccion, Usuario.CodPost, Usuario.Facebook, Usuario.DatoAdicional1, Usuario.DatoAdicional2 ");
-                a.Append("from Usuario where IdUsuario= " + IdUsuario);
+                a.Append("from Usuario where IdUsuario= '" + IdUsuario + "'");
                 DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
                 if (dt.Rows.Count != 0)
                 {
