@@ -4,12 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Condeco - Objetos Decorativos</title>
     <meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="" />
-	<meta name="author" content="" />
+	<meta name="description" content="Decoración en todo tipo de madera maciza, principalmente pinotea, cedro, incienso, jequitiba. Tratamos de usar materiales reciclados para cuidar el medio ambiente. También utilizamos en nuestros trabajos metal microperforado, desplegado, hierro y chapa." />
+	<meta name="author" content="Conde Pablo" />
     <link href='https://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
     
     <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
