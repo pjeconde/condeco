@@ -110,14 +110,13 @@
                                             Text="Modificar" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" HeaderStyle-Width="100px"
-                                    ReadOnly="true">
+                                <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="IdProducto" ReadOnly="true">
                                     <HeaderStyle HorizontalAlign="Center" Wrap="false" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" HeaderStyle-Width="200px"
-                                    ReadOnly="true">
-                                    <HeaderStyle HorizontalAlign="Center" Wrap="false" />
+                                    ReadOnly="true" HeaderStyle-HorizontalAlign="Center">
+                                    <HeaderStyle HorizontalAlign="Center" Wrap="true" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="DescripcionCorta" HeaderText="Descripción Corta" SortExpression="DescripcionCorta"
@@ -125,9 +124,13 @@
                                     <HeaderStyle Wrap="False" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" ReadOnly="true"
-                                    HeaderStyle-Width="100px">
-                                    <HeaderStyle Wrap="False" />
+                                <asp:BoundField DataField="PrecioBase" HeaderText="Precio" SortExpression="PrecioBase"
+                                    ReadOnly="true">
+                                    <HeaderStyle Wrap="true" />
+                                    <ItemStyle HorizontalAlign="right" VerticalAlign="Top" Wrap="true" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" ReadOnly="true">
+                                    <HeaderStyle Wrap="true" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True" />
                                 </asp:BoundField>
                                 <asp:TemplateField HeaderText="Ranking" HeaderStyle-HorizontalAlign="Center" ControlStyle-Width="50px"
@@ -135,7 +138,7 @@
                                     <HeaderStyle Wrap="False" Font-Bold="false" />
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtRanking" runat="server" Text='<%# Bind("Ranking") %>' MaxLength="2"
-                                            Width="50px"></asp:TextBox>
+                                            Width="50px" align="right" SkinID="TextoDerecha"></asp:TextBox>
                                         <asp:RegularExpressionValidator ID="retxtRanking" ControlToValidate="txtRanking"
                                             ValidationExpression="[0-9]*" ErrorMessage="Solo Numeros" Display="Dynamic" runat="server"
                                             SetFocusOnError="true" ForeColor="Red">*</asp:RegularExpressionValidator>

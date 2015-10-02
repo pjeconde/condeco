@@ -38,10 +38,13 @@ namespace CondecoRN
             hasta.Id = Desde.Id;
             hasta.Nombre = Desde.Nombre;
             hasta.Descripcion = Desde.Descripcion;
+            hasta.DescripcionCorta = Desde.DescripcionCorta;
             hasta.PrecioBase = Desde.PrecioBase;
+            hasta.ComentarioPrecioBase = Desde.ComentarioPrecioBase;
+            hasta.YouTube = Desde.YouTube;
             hasta.UltActualiz = Desde.UltActualiz;
             hasta.WF.Id = Desde.WF.Id;
-            hasta.WF.Estado = hasta.WF.Estado;
+            hasta.WF.Estado = Desde.WF.Estado;
             hasta.TipoProducto = Desde.TipoProducto;
             hasta.Ranking = Desde.Ranking;
             hasta.TipoDestacado = Desde.TipoDestacado;
@@ -67,7 +70,7 @@ namespace CondecoRN
             {
                 OrderBy = "Ranking desc, IdProducto desc";
             }
-            listaProducto = db.ListaCompleta(OrderBy, Nombre, Descripcion, ListaTipoProducto);
+            listaProducto = db.ListaCompletaVigentes(OrderBy, Nombre, Descripcion, ListaTipoProducto);
             int cantidadFilas = listaProducto.Count;
             CantidadFilas = cantidadFilas;
             return db.Lista(IndicePagina, TamañoPagina, OrderBy, SessionID, listaProducto);
@@ -80,7 +83,33 @@ namespace CondecoRN
             {
                 OrderBy = "Ranking desc, IdProducto desc";
             }
-            listaProducto = db.ListaCompleta(OrderBy, Nombre, Descripcion, ListaTipoProducto);
+            listaProducto = db.ListaCompletaVigentes(OrderBy, Nombre, Descripcion, ListaTipoProducto);
+            int cantidadFilas = listaProducto.Count;
+            CantidadFilas = cantidadFilas;
+            return listaProducto;
+        }
+        public static List<CondecoEntidades.Producto> ListaAdmin(out int CantidadFilas, int IndicePagina, int TamañoPagina, string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto, string SessionID, CondecoEntidades.Sesion Sesion)
+        {
+            List<CondecoEntidades.Producto> listaProducto = new List<CondecoEntidades.Producto>();
+            CondecoDB.Producto db = new CondecoDB.Producto(Sesion);
+            if (OrderBy.Equals(String.Empty))
+            {
+                OrderBy = "Ranking desc, IdProducto desc";
+            }
+            listaProducto = db.ListaCompletaAdmin(OrderBy, Nombre, Descripcion, ListaTipoProducto);
+            int cantidadFilas = listaProducto.Count;
+            CantidadFilas = cantidadFilas;
+            return db.Lista(IndicePagina, TamañoPagina, OrderBy, SessionID, listaProducto);
+        }
+        public static List<CondecoEntidades.Producto> ListaCompletaAdmin(out int CantidadFilas, string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto, string SessionID, CondecoEntidades.Sesion Sesion)
+        {
+            List<CondecoEntidades.Producto> listaProducto = new List<CondecoEntidades.Producto>();
+            CondecoDB.Producto db = new CondecoDB.Producto(Sesion);
+            if (OrderBy.Equals(String.Empty))
+            {
+                OrderBy = "Ranking desc, IdProducto desc";
+            }
+            listaProducto = db.ListaCompletaAdmin(OrderBy, Nombre, Descripcion, ListaTipoProducto);
             int cantidadFilas = listaProducto.Count;
             CantidadFilas = cantidadFilas;
             return listaProducto;
@@ -101,51 +130,26 @@ namespace CondecoRN
             });
             if (permisoAdminSITEActive.Count == 0)
             {
-                if (Producto.Estado == "CanceledAdmin")
-                {
                     Evento.Id = "";
-                    Evento.DescrEvento = "In this state there is no event available. Only the Site Manager can intervene.";
+                    Evento.DescrEvento = "Solamente un administrador puede intervenir";
                     Evento.Accion = "";
                     Evento.EstadoHst = "";
-
-                }
-                else if (Producto.Estado == "Vigente")
-                {
-                    Evento.Id = "Cancel";
-                    Evento.DescrEvento = "Cancel";
-                    Evento.Accion = "Cancel";
-                    Evento.EstadoHst = "Canceled";
-                }
-                else if (Producto.Estado == "Canceled")
-                {
-                    Evento.Id = "Undo Cancel";
-                    Evento.DescrEvento = "Undo Cancel";
-                    Evento.Accion = "Undo Cancel";
-                    Evento.EstadoHst = "Vigente";
-                }
             }
             else
             {
-                if (Producto.Estado == "CanceledAdmin")
+                if (Producto.Estado == "Vigente")
                 {
-                    Evento.Id = "Undo Cancel (Admin)";
-                    Evento.DescrEvento = "Undo Cancel (Admin)";
-                    Evento.Accion = "Undo Cancel (Admin)";
+                    Evento.Id = "Baja";
+                    Evento.DescrEvento = "Baja";
+                    Evento.Accion = "Baja";
+                    Evento.EstadoHst = "Baja";
+                }
+                else if (Producto.Estado == "Baja")
+                {
+                    Evento.Id = "CancelarBaja";
+                    Evento.DescrEvento = "Cancelar Baja";
+                    Evento.Accion = "Cancelar Baja";
                     Evento.EstadoHst = "Vigente";
-                }
-                else if (Producto.Estado == "Vigente")
-                {
-                    Evento.Id = "Cancel (Admin)";
-                    Evento.DescrEvento = "Cancel (Admin)";
-                    Evento.Accion = "Cancel (Admin)";
-                    Evento.EstadoHst = "CanceledAdmin";
-                }
-                else if (Producto.Estado == "Canceled")
-                {
-                    Evento.Id = "Cancel (Admin)";
-                    Evento.DescrEvento = "Cancel (Admin)";
-                    Evento.Accion = "Cancel (Admin)";
-                    Evento.EstadoHst = "CanceledAdmin";
                 }
             }
         }

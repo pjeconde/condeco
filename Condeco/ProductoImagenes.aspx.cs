@@ -101,7 +101,7 @@ namespace Condeco
                 }
                 else
                 {
-                    MensajeLabel.Text = "Wrong file type.";
+                    MensajeLabel.Text = "Tipo de archivo no permitido.";
                 }
             }
         }
@@ -147,7 +147,7 @@ namespace Condeco
                         {
                             var fileName = archivos[i].Replace(Server.MapPath("~/ImagenesProducto/"), String.Empty);
                             carouselInnerHtml.AppendLine(i == 0 ? "<div class='item active'>" : "<div class='item'>");
-                            carouselInnerHtml.AppendLine("<a runat='server' id='NombreImagenSelect" + i.ToString() + "' onclick='MostrarImagenAEliminar_Click' href='#' title='" + fileName + "'>");
+                            carouselInnerHtml.AppendLine("<a runat='server' id='NombreImagenSelect" + i.ToString() + "' href='#' title='" + fileName + "'>");
                             carouselInnerHtml.AppendLine("<img src='ImagenesProducto/" + fileName + "' alt='Slide #" + (i + 1) + "'>");
                             carouselInnerHtml.AppendLine("</a>");
                             carouselInnerHtml.AppendLine("</div>");
@@ -255,9 +255,9 @@ namespace Condeco
                         System.IO.File.Delete(archivos[0]);
                         ImageParaAgregar.ImageUrl = "~/Imagenes/Interrogacion.jpg";
                     }
-                    archivos = LeerImagenesActuales();
                     Session.Remove("CarouselInnerHtml");
                     Session.Remove("CarouselIndicatorsHtml");
+                    archivos = LeerImagenesActuales();
                     CompletarImagenesActuales(archivos, true);
                 }
             }
@@ -287,7 +287,9 @@ namespace Condeco
                     archivos = System.IO.Directory.GetFiles(path, producto.Id.ToString() + "-*.*", System.IO.SearchOption.TopDirectoryOnly);
                     Session.Remove("CarouselInnerHtml");
                     Session.Remove("CarouselIndicatorsHtml");
+                    archivos = LeerImagenesActuales();
                     CompletarImagenesActuales(archivos, true);
+                    MensajeLabel.Text = "Imagen eliminada satisfactoriamente del catálogo.";
                 }
                 else
                 {

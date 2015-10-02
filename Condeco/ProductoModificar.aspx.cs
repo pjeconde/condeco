@@ -106,6 +106,7 @@ namespace Condeco
                     YouTubeTextBox.Enabled = false;
                     EstadoDropDownList.Enabled = false;
                     astvMyTree.Enabled = false;
+                    astvMyTree.EnableNodeSelection = false;
                     TipoProductoPanel.Enabled = false;
                     AceptarButton.Enabled = false;
                     SalirButton.Text = "Salir";

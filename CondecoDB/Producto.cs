@@ -161,7 +161,7 @@ namespace CondecoDB
             }
             return lista;
         }
-        public List<CondecoEntidades.Producto> ListaCompleta(string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto)
+        public List<CondecoEntidades.Producto> ListaCompletaVigentes(string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto)
         {
             List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
             StringBuilder a = new StringBuilder(string.Empty);
@@ -180,6 +180,37 @@ namespace CondecoDB
                 a.Append("and IdTipoProducto in (" +  ListaTipoProducto + ") ");
             }
             a.Append("and Estado = 'Vigente' ");
+            a.Append("order by " + OrderBy);
+            DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
+            if (dt.Rows.Count != 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    CondecoEntidades.Producto Producto = new CondecoEntidades.Producto();
+                    Copiar(dt.Rows[i], Producto);
+                    lista.Add(Producto);
+                }
+            }
+            return lista;
+        }
+        public List<CondecoEntidades.Producto> ListaCompletaAdmin(string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto)
+        {
+            List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
+            StringBuilder a = new StringBuilder(string.Empty);
+            a.Append("select Producto.IdProducto, Producto.Nombre, Producto.Descripcion, Producto.DescripcionCorta, Producto.IdMoneda, Producto.PrecioBase, Producto.ComentarioPrecioBase, Producto.IdWF, Producto.Estado, Producto.IdTipoProducto, Producto.Ranking, Producto.UltActualiz, Producto.TipoDestacado, Producto.YouTube ");
+            a.Append("from Producto where 1=1 ");
+            if (!Nombre.Equals(string.Empty))
+            {
+                a.Append("and Nombre like '%" + Nombre + "%' ");
+            }
+            if (!Descripcion.Equals(string.Empty))
+            {
+                a.Append("and Descripcion like '%" + Descripcion + "%' ");
+            }
+            if (!ListaTipoProducto.Equals(string.Empty))
+            {
+                a.Append("and IdTipoProducto in (" + ListaTipoProducto + ") ");
+            }
             a.Append("order by " + OrderBy);
             DataTable dt = (DataTable)Ejecutar(a.ToString(), TipoRetorno.TB, Transaccion.NoAcepta, sesion.CnnStr);
             if (dt.Rows.Count != 0)

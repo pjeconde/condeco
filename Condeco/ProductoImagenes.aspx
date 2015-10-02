@@ -53,36 +53,35 @@
                             </p>
                             <p>
                                 <asp:Label ID="TituloImagenes" runat="server" Text=""></asp:Label>
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                            <!-- Indicators -->
-                                            <asp:Literal ID="ltlCarouselIndicators" runat="server" />
-                                            <!-- Images-->
-                                            <div class="carousel-inner">
-                                                <asp:Literal ID="ltlCarouselImages" runat="server" />
-                                            </div>
-                                            <!-- Controls -->
-                                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                                <span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control"
-                                                    href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right">
-                                                    </span></a>
-                                        </div>
-                                        <!-- Carousel -->
-                                    </div>
-                                </div>
                             </p>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                        <!-- Indicators -->
+                                        <asp:Literal ID="ltlCarouselIndicators" runat="server" />
+                                        <!-- Images-->
+                                        <div class="carousel-inner">
+                                            <asp:Literal ID="ltlCarouselImages" runat="server" />
+                                        </div>
+                                        <!-- Controls -->
+                                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control"
+                                                href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right">
+                                                </span></a>
+                                    </div>
+                                    <!-- Carousel -->
+                                </div>
+                            </div>
                             <p>
-                                Eliminar imagen del catálogo: <asp:DropDownList ID="EliminarImagenDropDownList" runat="server" OnSelectedIndexChanged="EliminarImagenButton_Click" Width="100%">
+                                Imagen a eliminar del catálogo: <asp:DropDownList ID="EliminarImagenDropDownList" runat="server" Width="100%">
                                 </asp:DropDownList>
-                                <br />
+                            <p/>
+                            <p>
                                 <asp:Button ID="EliminarImagenButton" runat="server" TabIndex="3" Text="Eliminar" CssClass="btn btn-info" 
                                 OnClick="EliminarImagenButton_Click" />
-                                
-                                <br />
                             </p>
                             <p>
-                                <asp:Button ID="SalirButton" runat="server" Text="Exit" TabIndex="4" PostBackUrl="~/Default.aspx" />
+                                <asp:Button ID="SalirButton" runat="server" Text="Salir" TabIndex="4" PostBackUrl="~/Default.aspx" CssClass="btn btn-info" />
                             </p>
                         </div>
                     </div>

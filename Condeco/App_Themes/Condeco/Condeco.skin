@@ -6,6 +6,8 @@
 
 <asp:TextBox SkinID="TextoBoxFEADescrGr" runat="server" Style="width: 570px; resize: none;" ForeColor="#071F70" BorderStyle="NotSet"></asp:TextBox>
 
+<asp:TextBox SkinID="TextoDerecha" runat="server" BorderStyle="NotSet" Style="text-align: right"></asp:TextBox>
+
 <asp:ValidationSummary SkinID="MensajeValidationSummary" runat="server" Font-Size="12px" ForeColor="#669900" Font-Bold="True" HeaderText="Por favor, ingrese (o corrija) los siguientes campos: " ShowMessageBox="true" ShowSummary="true" DisplayMode="SingleParagraph"/>
 
 <asp:HyperLink SkinID="LinkChicoClaro" runat="server" Font-Size="10px" ForeColor="Gray"></asp:HyperLink>

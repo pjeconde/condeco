@@ -54,7 +54,7 @@ namespace Condeco
                 }
                 else
                 {
-                    lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductosPagingGridView.PageIndex, ProductosPagingGridView.PageSize, ProductosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, "", Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    lista = CondecoRN.Producto.ListaAdmin(out CantidadFilas, ProductosPagingGridView.PageIndex, ProductosPagingGridView.PageSize, ProductosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, "", Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 }
                 ProductosPagingGridView.VirtualItemCount = CantidadFilas;
                 ViewState["lista"] = lista;
@@ -78,7 +78,7 @@ namespace Condeco
                 DesSeleccionarFilas();
                 List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
                 int CantidadFilas = 0;
-                lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductosPagingGridView.PageIndex, ProductosPagingGridView.PageSize, ProductosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, "", Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                lista = CondecoRN.Producto.ListaAdmin(out CantidadFilas, ProductosPagingGridView.PageIndex, ProductosPagingGridView.PageSize, ProductosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, "", Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 ViewState["lista"] = lista;
                 ProductosPagingGridView.DataSource = (List<CondecoEntidades.Producto>)ViewState["lista"];
                 ProductosPagingGridView.DataBind();
@@ -101,7 +101,7 @@ namespace Condeco
                 e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                 
                 //Color por estado distinto a Active
-                if (e.Row.Cells[6].Text != "Vigente")
+                if (e.Row.Cells[7].Text != "Vigente")
                 {
                     e.Row.ForeColor = Color.Red;
                 }
@@ -121,32 +121,39 @@ namespace Condeco
 
         protected void ProductosPagingGridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int item = Convert.ToInt32(e.CommandArgument);
-            List<CondecoEntidades.Producto> lista = (List<CondecoEntidades.Producto>)ViewState["lista"];
-            CondecoEntidades.Producto producto = lista[item];
-            switch (e.CommandName)
+            int item = 0;
+            try
             {
-                case "Detalle":
-                    Session["Producto"] = producto;
-                    Response.Redirect("~/ProductoConsultaDetallada.aspx");
-                    break;
-                case "CambiarEstado":
-                    Session["Producto"] = producto;
-                    CondecoEntidades.Evento Evento;
-                    CondecoRN.Producto.EventoPosible(out Evento, producto, (CondecoEntidades.Sesion)Session["Sesion"]);
-                    TituloConfirmacionLabel.Text = "Confirmar " + Evento.DescrEvento;
-                    NombreLabel.Text = producto.Nombre;
-                    DescripcionLabel.Text = producto.Descripcion;
-                    EstadoLabel.Text = producto.WF.Estado;
-                    ViewState["Producto"] = producto;
-                    ModalPopupExtender1.Show();
-                    break;
-                case "Modificar":
-                    Session["Producto"] = producto;
-                    //Response.Redirect("~/ProductoModificar.aspx", false);
-                    string script = "window.open('/ProductoModificar.aspx', '');";
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "popup", script, true);
-                    break;
+                item = Convert.ToInt32(e.CommandArgument);
+                List<CondecoEntidades.Producto> lista = (List<CondecoEntidades.Producto>)ViewState["lista"];
+                CondecoEntidades.Producto producto = lista[item];
+                switch (e.CommandName)
+                {
+                    case "Detalle":
+                        Session["Producto"] = producto;
+                        Response.Redirect("~/ProductoConsultaDetallada.aspx");
+                        break;
+                    case "CambiarEstado":
+                        Session["Producto"] = producto;
+                        CondecoEntidades.Evento Evento;
+                        CondecoRN.Producto.EventoPosible(out Evento, producto, (CondecoEntidades.Sesion)Session["Sesion"]);
+                        TituloConfirmacionLabel.Text = "Confirmar " + Evento.DescrEvento;
+                        NombreLabel.Text = producto.Nombre;
+                        DescripcionLabel.Text = producto.Descripcion;
+                        EstadoLabel.Text = producto.WF.Estado;
+                        ViewState["Producto"] = producto;
+                        ModalPopupExtender1.Show();
+                        break;
+                    case "Modificar":
+                        Session["Producto"] = producto;
+                        //Response.Redirect("~/ProductoModificar.aspx", false);
+                        string script = "window.open('/ProductoModificar.aspx', '');";
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "popup", script, true);
+                        break;
+                }
+            }
+            catch
+            {
             }
         }
         protected void ProductosPagingGridView_RowEditing(object sender, GridViewEditEventArgs e)
@@ -165,22 +172,22 @@ namespace Condeco
         {
             try
             {
-                List<CondecoEntidades.Producto> profesores = ((List<CondecoEntidades.Producto>)ViewState["lista"]);
-                CondecoEntidades.Producto profesorActual = CondecoRN.Producto.ObtenerCopia(profesores[e.RowIndex]);
-                CondecoEntidades.Producto profesor = profesores[e.RowIndex];
+                List<CondecoEntidades.Producto> productos = ((List<CondecoEntidades.Producto>)ViewState["lista"]);
+                CondecoEntidades.Producto productoActual = CondecoRN.Producto.ObtenerCopia(productos[e.RowIndex]);
+                CondecoEntidades.Producto producto = productos[e.RowIndex];
 
                 string ranking = ((TextBox)ProductosPagingGridView.Rows[e.RowIndex].FindControl("txtRanking")).Text;
                 string tipoDestacado = ((DropDownList)ProductosPagingGridView.Rows[e.RowIndex].FindControl("ddlTipoDestacado")).SelectedValue;
                 if (ranking != string.Empty)
                 {
-                     profesor.Ranking = Convert.ToInt32(ranking);
+                    producto.Ranking = Convert.ToInt32(ranking);
                 }
                 else
                 {
                     throw new Exception("Debe informar el ranking. No puede estar vacío.");
                 }
-                profesor.TipoDestacado = tipoDestacado;
-                CondecoRN.Producto.Modificar(profesorActual, profesor, (CondecoEntidades.Sesion)Session["Sesion"]);
+                producto.TipoDestacado = tipoDestacado;
+                CondecoRN.Producto.Modificar(productoActual, producto, (CondecoEntidades.Sesion)Session["Sesion"]);
                 ProductosPagingGridView.EditIndex = -1;
                 ProductosPagingGridView.DataSource = ViewState["lista"];
                 ProductosPagingGridView.DataBind();
@@ -247,7 +254,7 @@ namespace Condeco
                 }
                 else
                 {
-                    lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductosPagingGridView.PageIndex, ProductosPagingGridView.PageSize, ProductosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, "", Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    lista = CondecoRN.Producto.ListaAdmin(out CantidadFilas, ProductosPagingGridView.PageIndex, ProductosPagingGridView.PageSize, ProductosPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, "", Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 }
                 if (MensajeLabel.Text == "")
                 {

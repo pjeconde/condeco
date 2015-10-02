@@ -74,3 +74,10 @@ Condeco/bin/Condeco.dll
 Condeco/bin/Condeco.pdb
 Condeco/Condeco.suo
 .gitignore
+Condeco/bin
+Condeco/bin
+Condeco/ImagenesProducto
+Condeco/obj
+CondecoDB/bin
+CondecoRN/bin
+CondecoRN/bin
