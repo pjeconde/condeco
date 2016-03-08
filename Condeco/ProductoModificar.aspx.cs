@@ -78,6 +78,8 @@ namespace Condeco
             }
             else
             {
+                ValidarCampos();
+                if (MensajeLabel.Text != "") { return; }
                 CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
                 CondecoEntidades.Producto productoDesde = (CondecoEntidades.Producto)Session["Producto"];
                 CondecoEntidades.Producto productoHasta = CondecoRN.Producto.ObtenerCopia(productoDesde);
@@ -118,6 +120,37 @@ namespace Condeco
                     MensajeLabel.Text = CondecoEX.Funciones.Detalle(ex);
                     return;
                 }
+            }
+        }
+        private void ValidarCampos()
+        {
+            try
+            {
+                if (EstadoDropDownList.SelectedValue == "")
+                {
+                    MensajeLabel.Text = "Seleccione el tipo de producto";
+                    return;
+                }
+                string listaTipoProductosChilds = Funciones.TreeViewListaChilds(astvMyTree);
+                if (listaTipoProductosChilds == "")
+                {
+                    MensajeLabel.Text = "Seleccione el tipo de producto";
+                    return;
+                }
+                else
+                {
+                    string[] l = listaTipoProductosChilds.Split(Convert.ToChar(","));
+                    if (l.Length > 1)
+                    {
+                        MensajeLabel.Text = "Seleccione solamente un tipo de producto";
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MensajeLabel.Text = CondecoEX.Funciones.Detalle(ex);
+                return;
             }
         }
     }

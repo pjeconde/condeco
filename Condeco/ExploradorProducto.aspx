@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                     <asp:Panel ID="Panel1" runat="server" BackColor="white" BorderStyle="Solid" ScrollBars="Auto"
-                        Width="100%" BackImageUrl="" BorderWidth="0px">
+                        Width="100%" BackImageUrl="" BorderWidth="0px" HorizontalAlign="Center">
                         <cc1:PagingGridView ID="ProductosPagingGridView" runat="server" OnPageIndexChanging="ProductosPagingGridView_PageIndexChanging"
                             OnRowDataBound="ProductosPagingGridView_RowDataBound" FooterStyle-ForeColor="Brown"
                             OnRowEditing="ProductosPagingGridView_RowEditing" OnRowCancelingEdit="ProductosPagingGridView_RowCancelingEdit"
@@ -120,7 +120,7 @@
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="DescripcionCorta" HeaderText="Descripción Corta" SortExpression="DescripcionCorta"
-                                    ReadOnly="true" HeaderStyle-Width="250px">
+                                    ReadOnly="true" HeaderStyle-Width="250px" HtmlEncode="false">
                                     <HeaderStyle Wrap="False" />
                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" />
                                 </asp:BoundField>

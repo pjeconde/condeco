@@ -16,13 +16,13 @@ namespace Condeco
             {
                 CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
                 string[] segmentosURL = HttpContext.Current.Request.Url.Segments;
-                string pagina = segmentosURL[segmentosURL.Length - 1];                
+                string pagina = segmentosURL[segmentosURL.Length - 1].ToUpper();                
                 if (pagina != null)
                 {
                     Control c;
                     switch (pagina)
                     {
-                        case "Default.aspx":
+                        case "DEFAULT.ASPX":
                             //c = (Control)this.FindControl("secHeader");
                             //c.Visible = true;
                             c = (Control)this.FindControl("secAcerca");
@@ -30,7 +30,7 @@ namespace Condeco
                             c = (Control)this.FindControl("secServicios");
                             c.Visible = true;
                             break;
-                        case "UsuarioLogin.aspx":
+                        case "USUARIOLOGIN.ASPX":
                             if (HttpContext.Current.Request.Url.Query.ToUpper() == "?CERRAR")
                             {
                                 if (sesion != null && sesion.Usuario.Id != null)

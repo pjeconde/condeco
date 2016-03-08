@@ -1,18 +1,43 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductoConsultaDetallada.aspx.cs" Inherits="Condeco.ProductoConsultaDetallada" Culture="en-GB" UICulture="en-GB" MaintainScrollPositionOnPostback="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductoConsultaDetalladaSM.aspx.cs" Inherits="Condeco.ProductoConsultaDetalladaSM" Culture="en-GB" UICulture="en-GB" MaintainScrollPositionOnPostback="false" Theme="Condeco" %>
+
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainCPH" runat="server">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+
+    <meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Decoración en todo tipo de madera maciza, principalmente pinotea, cedro, incienso, jequitiba. Tratamos de usar materiales reciclados para cuidar el medio ambiente. También utilizamos en nuestros trabajos metal microperforado, desplegado, hierro y chapa." />
+	<meta name="author" content="Conde Pablo" />
+    <link href='https://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
+    
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/creative.css" rel="stylesheet" type="text/css" />
+
+    <!-- jQuery -->
     <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
     <script src="js/jquery.touchSwipe.min.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
             //Enable swiping...
             $(".carousel-inner").swipe({
                 //Generic swipe handler for all directions
-                swipeLeft: function (event, direction, distance, duration, fingerCount) {
+                swipeRight: function (event, direction, distance, duration, fingerCount) {
                     $(this).parent().carousel('prev');
                 },
-                swipeRight: function () {
+                swipeLeft: function () {
                     $(this).parent().carousel('next');
                 },
                 //Default is 75px, set to 0 for demo so any distance triggers swipe
@@ -20,8 +45,20 @@
             });
         });
     </script>
-    <section class="bg-primary-white" id="secUsuarioOlvidoId">
-        <div class="container-fluid">
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <section class="bg-primary-white" id="secProductoConsultaDetallada">
+        <div class="container-fluid text-center">
             <div class="row">
                     <p>
                     <span class="fa fa-2x fa-eye"></span>
@@ -41,11 +78,7 @@
                         <div class="panel panel-default" style="">
                             <div class="panel-body">
                                 <div class="row">
-                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
-                                        <ContentTemplate>
-                                            <asp:Label ID="MensajeLabel" runat="server" SkinID="MensajePagina" Text=""></asp:Label>
-                                        </ContentTemplate>
-                                    </asp:UpdatePanel>
+                                    <asp:Label ID="MensajeLabel" runat="server" SkinID="MensajePagina" Text=""></asp:Label>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">
@@ -104,7 +137,9 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                             <!-- Indicators -->
                                             <asp:Literal ID="ltlCarouselIndicators" runat="server" />
@@ -119,10 +154,12 @@
                                                     </span></a>
                                         </div>
                                     </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    </div>
                                 </div>
                                 <br />
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                                         <asp:Button ID="SalirButton" runat="server" CausesValidation="false" TabIndex="504" Text="Salir" PostBackUrl="~/Default.aspx" class="btn btn-info" />
                                         <input type="button" value="Volver atrás" name="Volver" onclick="history.back()" class="btn btn-info" />
                                     </div>
@@ -144,6 +181,10 @@
             margin: auto;
         }
     </style>
-</asp:Content>
+    </form>
+</body>
+</html>
+
+
 
 

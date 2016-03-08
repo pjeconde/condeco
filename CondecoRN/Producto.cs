@@ -61,8 +61,8 @@ namespace CondecoRN
             CondecoDB.Producto db = new CondecoDB.Producto(Sesion);
             return db.ListaPorNombre(Nombre);
         }
-        
-        public static List<CondecoEntidades.Producto> Lista(out int CantidadFilas, int IndicePagina, int TamañoPagina, string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto, string SessionID, CondecoEntidades.Sesion Sesion)
+
+        public static List<CondecoEntidades.Producto> Lista(out int CantidadFilas, int IndicePagina, int TamañoPagina, string OrderBy, string TextoABuscar, string ListaTipoProducto, string SessionID, CondecoEntidades.Sesion Sesion)
         {
             List<CondecoEntidades.Producto> listaProducto = new List<CondecoEntidades.Producto>();
             CondecoDB.Producto db = new CondecoDB.Producto(Sesion);
@@ -70,12 +70,12 @@ namespace CondecoRN
             {
                 OrderBy = "Ranking desc, IdProducto desc";
             }
-            listaProducto = db.ListaCompletaVigentes(OrderBy, Nombre, Descripcion, ListaTipoProducto);
+            listaProducto = db.ListaCompletaVigentes(OrderBy, TextoABuscar, ListaTipoProducto);
             int cantidadFilas = listaProducto.Count;
             CantidadFilas = cantidadFilas;
             return db.Lista(IndicePagina, TamañoPagina, OrderBy, SessionID, listaProducto);
         }
-        public static List<CondecoEntidades.Producto> ListaCompleta(out int CantidadFilas, string OrderBy, string Nombre, string Descripcion, string ListaTipoProducto, string SessionID, CondecoEntidades.Sesion Sesion)
+        public static List<CondecoEntidades.Producto> ListaCompleta(out int CantidadFilas, string OrderBy, string TextoABuscar, string ListaTipoProducto, string SessionID, CondecoEntidades.Sesion Sesion)
         {
             List<CondecoEntidades.Producto> listaProducto = new List<CondecoEntidades.Producto>();
             CondecoDB.Producto db = new CondecoDB.Producto(Sesion);
@@ -83,7 +83,7 @@ namespace CondecoRN
             {
                 OrderBy = "Ranking desc, IdProducto desc";
             }
-            listaProducto = db.ListaCompletaVigentes(OrderBy, Nombre, Descripcion, ListaTipoProducto);
+            listaProducto = db.ListaCompletaVigentes(OrderBy, TextoABuscar, ListaTipoProducto);
             int cantidadFilas = listaProducto.Count;
             CantidadFilas = cantidadFilas;
             return listaProducto;

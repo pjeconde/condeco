@@ -31,31 +31,76 @@ namespace Condeco {
         protected global::Geekees.Common.Controls.ASTreeView astvMyTree;
         
         /// <summary>
-        /// NombreLabel control.
+        /// MarcosLinkButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NombreLabel;
+        protected global::System.Web.UI.WebControls.LinkButton MarcosLinkButton;
         
         /// <summary>
-        /// NombreTextBox control.
+        /// CartelesLinkButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
+        protected global::System.Web.UI.WebControls.LinkButton CartelesLinkButton;
         
         /// <summary>
-        /// Label2 control.
+        /// MesasLinkButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.LinkButton MesasLinkButton;
+        
+        /// <summary>
+        /// CarasLinkButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton CarasLinkButton;
+        
+        /// <summary>
+        /// PecesLinkButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton PecesLinkButton;
+        
+        /// <summary>
+        /// BarcosLinkButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BarcosLinkButton;
+        
+        /// <summary>
+        /// CuadrosLinkButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton CuadrosLinkButton;
+        
+        /// <summary>
+        /// OtrosObjetosLinkButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton OtrosObjetosLinkButton;
         
         /// <summary>
         /// DescripcionTextBox control.
@@ -64,16 +109,16 @@ namespace Condeco {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText DescripcionTextBox;
         
         /// <summary>
-        /// ContactoNombre control.
+        /// BuscarBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText ContactoNombre;
+        protected global::System.Web.UI.HtmlControls.HtmlButton BuscarBtn;
         
         /// <summary>
         /// BuscarButton control.
@@ -92,6 +137,15 @@ namespace Condeco {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ClearButton;
+        
+        /// <summary>
+        /// divVistas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divVistas;
         
         /// <summary>
         /// Vista1RadioButton control.

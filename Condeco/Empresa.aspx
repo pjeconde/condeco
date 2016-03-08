@@ -18,6 +18,12 @@
                     <p>
                         Nuestro objetivo fundamental es satisfacer al cliente ofreciendo productos innovadores con personalidad propia y que al mismo tiempo nos permita cuidar el medio ambiente.
                         <br />
+                        <br />
+                            <!--<a href="Maderas.aspx" title="Maderas utilizadas" style="color: white">-->
+                            <span class="glyphicon fa-1-5x glyphicon-tree-deciduous" style="padding-right:5px"></span><span class="glyphicon fa-1-5x glyphicon-tree-conifer" aria-hidden="true"></span>
+                            <!--</a>-->
+                        <br />
+                        <br />
                         Es por eso que desarrollamos, en la medida de lo posible, productos con maderas recuperadas en demoliciones y otros materiales descartados por individuos o empresas.
                         Reciclamos materiales que nos permitan generar objetos funcionales con un diseño actual.
                     </p>

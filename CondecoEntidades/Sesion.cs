@@ -13,6 +13,8 @@ namespace CondecoEntidades
         private List<string> opcionesHabilitadas;
         private List<TipoProducto> tiposProducto;
         private DateTime fechaInicio;
+        private string ambiente;
+        private string baseDeDatos;
 
         public Sesion()
         {
@@ -80,6 +82,28 @@ namespace CondecoEntidades
             set
             {
                 fechaInicio = value;
+            }
+        }
+        public string Ambiente
+        {
+            get
+            {
+                return ambiente;
+            }
+            set
+            {
+                ambiente = value;
+            }
+        }
+        public string BaseDeDatos
+        {
+            get
+            {
+                return baseDeDatos;
+            }
+            set
+            {
+                baseDeDatos = value;
             }
         }
     }

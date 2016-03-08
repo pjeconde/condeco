@@ -33,6 +33,10 @@ namespace Condeco
             CondecoEntidades.Sesion s = new CondecoEntidades.Sesion();
             s.CnnStr = System.Configuration.ConfigurationManager.AppSettings["CnnStr"];
             s.OpcionesHabilitadas = CondecoRN.Sesion.OpcionesHabilitadas(s);
+            s.Ambiente = System.Configuration.ConfigurationManager.AppSettings["Ambiente"];
+            string cnnStr = System.Configuration.ConfigurationManager.AppSettings["CnnStr"].ToString();
+            string[] db = cnnStr.Split(Convert.ToChar(";"));
+            s.BaseDeDatos = "(" + db[db.Length - 2].ToString() + ")";
             s.TiposProducto = CondecoRN.TipoProducto.Lista(s);
             Session["Sesion"] = s;
             Application.Lock();

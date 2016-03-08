@@ -72,12 +72,12 @@ namespace Condeco
                     }
                     Producto.Ranking = 0;
                     Producto.WF.Estado = EstadoDropDownList.SelectedValue;
-                    if (CondecoRN.Producto.ComprobarNombreProducto(Producto.Nombre, sesion))
-                    {
-                        MensajeLabel.Text = "Hay un producto con un nombre similar, modifique parte del texto. ";
-                    }
-                    else
-                    {
+                    //if (CondecoRN.Producto.ComprobarNombreProducto(Producto.Nombre, sesion))
+                    //{
+                    //    MensajeLabel.Text = "Hay un producto con un nombre similar, modifique parte del texto. ";
+                    //}
+                    //else
+                    //{
                         int IdProducto = 0;
                         CondecoRN.Producto.Crear(out IdProducto, Producto, sesion);
 
@@ -100,7 +100,7 @@ namespace Condeco
                         Producto.Id = IdProducto;
                         Session["Producto"] = Producto;
                         Response.Redirect("~/ProductoImagenes.aspx");
-                    }
+                    //}
                 }
                 catch (Exception ex)
                 {

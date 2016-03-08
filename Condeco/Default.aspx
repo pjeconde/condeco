@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
-                    <a href="Producto.aspx" class="portfolio-box">
+                    <a href="Producto.aspx?Filtro=601" class="portfolio-box">
                         <img src="imagenes/portfolio/PortfolioPeces.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -23,8 +23,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="Producto.aspx" class="portfolio-box">
-                        <img src="imagenes/portfolio/2.jpg" class="img-responsive" alt="">
+                    <a href="Producto.aspx?Filtro=603" class="portfolio-box">
+                        <img src="imagenes/portfolio/PorfolioCaras.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -38,8 +38,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="Producto.aspx" class="portfolio-box">
-                        <img src="imagenes/portfolio/3.jpg" class="img-responsive" alt="">
+                    <a href="Producto.aspx?Filtro=401" class="portfolio-box">
+                        <img src="imagenes/portfolio/PorfolioMuebles.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -53,7 +53,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="Producto.aspx" class="portfolio-box">
+                    <a href="Producto.aspx?Filtro=300" class="portfolio-box">
                         <img src="imagenes/portfolio/PorfolioCarteles.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -68,7 +68,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="Producto.aspx" class="portfolio-box">
+                    <a href="Producto.aspx?Filtro=602" class="portfolio-box">
                         <img src="imagenes/portfolio/PorfolioBarcos.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -83,7 +83,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="Producto.aspx" class="portfolio-box">
+                    <a href="Producto.aspx?Filtro=100" class="portfolio-box">
                         <img src="imagenes/portfolio/PorfolioMarcos.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">

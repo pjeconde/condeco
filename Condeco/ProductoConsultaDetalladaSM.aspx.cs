@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Condeco
 {
-    public partial class ProductoConsultaDetallada : System.Web.UI.Page
+    public partial class ProductoConsultaDetalladaSM : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

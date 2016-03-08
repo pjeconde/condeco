@@ -28,6 +28,20 @@ namespace Condeco
                     string[] buscarNodo = new string[1];
                     buscarNodo[0] = v;  //400 - Mesas
                     this.astvMyTree.CheckNodes(buscarNodo, true);
+                    BindPagingGrid();
+                }
+                BuscarBtn.ServerClick += new EventHandler(this.BuscarButton_Click);
+                if (Funciones.EsUsuarioAdmin(((CondecoEntidades.Sesion)Session["Sesion"])))
+                {
+                    divVistas.Visible = true;
+                    Vista1RadioButton.Visible = true;
+                    Vista2RadioButton.Visible = true;
+                }
+                else
+                {
+                    divVistas.Visible = false;
+                    Vista1RadioButton.Visible = false;
+                    Vista2RadioButton.Visible = false;
                 }
             }
         }
@@ -36,6 +50,62 @@ namespace Condeco
         {
             Funciones.GenerarTreeTipoProductos(astvMyTree, true);
         }
+        protected void BuscarDirectoButton_Click(object sender, EventArgs e)
+        {
+            listaTipoProducto = "";
+            switch (((LinkButton)sender).CommandName)
+            {
+                case "Marcos":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "101, 102, 103, 200";
+                    }
+                    break;
+                case "Carteles":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "300";
+                    }
+                    break;
+                case "Mesas":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "401";
+                    }
+                    break;
+                case "Peces":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "601";
+                    }
+                    break;
+                case "Barcos":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "602";
+                    }
+                    break;
+                case "Caras":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "603";
+                    }
+                    break;
+                case "Cuadros":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "604";
+                    }
+                    break;
+                case "Otros Objetos":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "650";
+                    }
+                    break;
+            }
+            BindPagingGrid();
+        }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
@@ -43,8 +113,7 @@ namespace Condeco
         }
         protected void ClearButton_Click(object sender, EventArgs e)
         {
-            NombreTextBox.Text = "";
-            DescripcionTextBox.Text = "";
+            DescripcionTextBox.Value = "";
             astvMyTree.ClearNodesCheck();
             astvMyTree.ExpandToDepth(0);
             BindPagingGrid();
@@ -53,26 +122,26 @@ namespace Condeco
         {
             try
             {
-                List<ASTreeViewNode> checkedNodes = this.astvMyTree.GetCheckedNodes(false);
-                listaTipoProducto = "";
-                foreach (ASTreeViewNode node in checkedNodes)
-                {
-                    //Nodos seleccionados
-                    if (listaTipoProducto == "")
-                    {
-                        listaTipoProducto += node.NodeValue;
-                    }
-                    else
-                    {
-                        listaTipoProducto += ", " + node.NodeValue;
-                    }
-                }
+                //List<ASTreeViewNode> checkedNodes = this.astvMyTree.GetCheckedNodes(false);
+                //listaTipoProducto = "";
+                //foreach (ASTreeViewNode node in checkedNodes)
+                //{
+                //    //Nodos seleccionados
+                //    if (listaTipoProducto == "")
+                //    {
+                //        listaTipoProducto += node.NodeValue;
+                //    }
+                //    else
+                //    {
+                //        listaTipoProducto += ", " + node.NodeValue;
+                //    }
+                //}
 
                 int CantidadFilas = 0;
                 List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
                 if (Vista2RadioButton.Checked == true)
                 {
-                    lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, DescripcionTextBox.Value, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                     ProductoPagingGridView.VirtualItemCount = CantidadFilas;
                     ViewState["lista"] = lista;
                     //Grilla
@@ -81,7 +150,7 @@ namespace Condeco
                 }
                 else
                 {
-                    lista = CondecoRN.Producto.ListaCompleta(out CantidadFilas, "", NombreTextBox.Text, DescripcionTextBox.Text, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                    lista = CondecoRN.Producto.ListaCompleta(out CantidadFilas, "", DescripcionTextBox.Value, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
 
                     string[] archivos = LeerImagenesPortada();
                     for (int i = 0; i < archivos.Length; i++)
@@ -140,7 +209,7 @@ namespace Condeco
                 ProductoPagingGridView.PageIndex = e.NewPageIndex;
                 List<CondecoEntidades.Producto> lista;
                 int CantidadFilas = 0;
-                lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, DescripcionTextBox.Value, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 ProductoPagingGridView.VirtualItemCount = CantidadFilas;
                 ViewState["lista"] = lista;
                 ProductoPagingGridView.DataSource = lista;
@@ -163,7 +232,7 @@ namespace Condeco
                 DesSeleccionarFilas();
                 List<CondecoEntidades.Producto> lista = new List<CondecoEntidades.Producto>();
                 int CantidadFilas = 0;
-                lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, NombreTextBox.Text, DescripcionTextBox.Text, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
+                lista = CondecoRN.Producto.Lista(out CantidadFilas, ProductoPagingGridView.PageIndex, ProductoPagingGridView.PageSize, ProductoPagingGridView.OrderBy, DescripcionTextBox.Value, listaTipoProducto, Session.SessionID, (CondecoEntidades.Sesion)Session["Sesion"]);
                 ViewState["lista"] = lista;
                 ProductoPagingGridView.DataSource = (List<CondecoEntidades.Producto>)ViewState["lista"];
                 ProductoPagingGridView.DataBind();
@@ -258,7 +327,7 @@ namespace Condeco
                 return m.Id == item;
             });
             Session["Producto"] = Producto;
-            Response.Redirect("~/ProductoConsultaDetallada.aspx");
+            Response.Redirect("~/ProductoConsultaDetalladaSM.aspx");
         }
     }
 }

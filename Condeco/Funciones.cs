@@ -16,6 +16,15 @@ namespace Condeco
         {
             if (RefrescaDatosUsuario) CondecoRN.Sesion.RefrescarDatosUsuario(Sesion.Usuario, Sesion);
 
+            if (Sesion.Ambiente != "PROD")
+            {
+                //ContentPlaceHolder cedeiraContentPlaceHolder = ((ContentPlaceHolder)Master.FindControl("CedeiraContentPlaceHolder"));
+                Label ambienteLabel = ((Label)Master.FindControl("AmbienteLabel"));
+                ambienteLabel.Text = Sesion.Ambiente;
+                Label baseDeDatos = ((Label)Master.FindControl("BaseDeDatosLabel"));
+                baseDeDatos.Text = Sesion.BaseDeDatos;
+            }
+
             Control btnUsuarioLogin = (Control)Master.FindControl("btnUsuarioLogin");
             btnUsuarioLogin.Visible = false;
             Control btnAdmin = (Control)Master.FindControl("btnAdmin");
@@ -160,6 +169,7 @@ namespace Condeco
                     .AppendChild(new ASTreeViewLinkNode("Peces", "601", "", "frm", "madera y metal", ""))
                     .AppendChild(new ASTreeViewLinkNode("Barcos", "602", "", "frm", "madera y metal", ""))
                     .AppendChild(new ASTreeViewLinkNode("Caras", "603", "", "frm", "madera y metal", ""))
+                    .AppendChild(new ASTreeViewLinkNode("Cuadros", "604", "", "frm", "madera y metal", ""))
                     .AppendChild(new ASTreeViewLinkNode("Objetos Varios", "650", "", "frm", "madera y metal", ""))
                 );
         }
@@ -202,6 +212,18 @@ namespace Condeco
                 }
             }
             return lista;
+        }
+        public static bool EsUsuarioAdmin(CondecoEntidades.Sesion Sesion)
+        {
+            List<CondecoEntidades.Permiso> permisoAdminSITEActive = Sesion.Usuario.Permisos.FindAll(delegate(CondecoEntidades.Permiso p)
+            {
+                return p.TipoPermiso.Id == "AdminSITE" && p.Estado == "Vigente";
+            });
+            if (permisoAdminSITEActive.Count != 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
