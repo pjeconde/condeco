@@ -36,10 +36,36 @@ namespace Condeco
                     EstadoDropDownList.DataSource = CondecoEntidades.Estados.ListaEstados.ListaMasSinInformar();
                     Funciones.GenerarTreeTipoProductos(astvMyTree, false);
 
+                    if (Session["Producto"] != null)
+                    {
+                        CompletarDatosClonados();
+                        Session.Remove("Producto");
+                    }
                     DataBind();
 
                     this.astvMyTree.ContextMenu.MenuItems.Add(new ASContextMenuItem("Custom Menu", "alert('current value:' + " + this.astvMyTree.ContextMenuClientID + ".getSelectedItem().parentNode.getAttribute('treeNodeValue')" + ");return false;", "text"));
                 }
+            }
+        }
+
+        private void CompletarDatosClonados()
+        {
+            try
+            {
+                CondecoEntidades.Producto producto;
+                producto = (CondecoEntidades.Producto)Session["Producto"];
+
+                NombreTextBox.Text = producto.Nombre;
+                DescripcionTextBox.Text = producto.Descripcion;
+                DescripcionCortaTextBox.Text = producto.DescripcionCorta;
+                PrecioBaseTextBox.Text = producto.PrecioBase.ToString();
+                ComentarioPrecioBaseTextBox.Text = producto.ComentarioPrecioBase;
+
+                YouTubeTextBox.Text = producto.YouTube;
+                EstadoDropDownList.SelectedValue = producto.Estado;
+            }
+            catch
+            { 
             }
         }
 

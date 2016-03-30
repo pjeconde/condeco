@@ -159,13 +159,17 @@ namespace Condeco
         protected void ProductosPagingGridView_RowEditing(object sender, GridViewEditEventArgs e)
         {
             ProductosPagingGridView.EditIndex = e.NewEditIndex;
+            int IndexAux = ProductosPagingGridView.CurrentPageIndex;
             ProductosPagingGridView.DataSource = ViewState["lista"];
+            ProductosPagingGridView.CurrentPageIndex = IndexAux;
             ProductosPagingGridView.DataBind();
         }
         protected void ProductosPagingGridView_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             ProductosPagingGridView.EditIndex = -1;
+            int IndexAux = ProductosPagingGridView.CurrentPageIndex;
             ProductosPagingGridView.DataSource = ViewState["lista"];
+            ProductosPagingGridView.CurrentPageIndex = IndexAux;
             ProductosPagingGridView.DataBind();
         }
         protected void ProductosPagingGridView_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -189,7 +193,9 @@ namespace Condeco
                 producto.TipoDestacado = tipoDestacado;
                 CondecoRN.Producto.Modificar(productoActual, producto, (CondecoEntidades.Sesion)Session["Sesion"]);
                 ProductosPagingGridView.EditIndex = -1;
+                int IndexAux = ProductosPagingGridView.CurrentPageIndex;
                 ProductosPagingGridView.DataSource = ViewState["lista"];
+                ProductosPagingGridView.CurrentPageIndex = IndexAux;
                 ProductosPagingGridView.DataBind();
             }
             catch (Exception ex)

@@ -173,6 +173,62 @@ namespace Condeco
                     .AppendChild(new ASTreeViewLinkNode("Objetos Varios", "650", "", "frm", "madera y metal", ""))
                 );
         }
+        public static string ListaDeProducto(string l)
+        {
+            string listaTipoProducto = "";
+            switch (l)
+            {
+                case "Marcos":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "101, 102, 103, 200";
+                    }
+                    break;
+                case "Carteles":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "300";
+                    }
+                    break;
+                case "Mesas":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "401";
+                    }
+                    break;
+                case "Peces":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "601";
+                    }
+                    break;
+                case "Barcos":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "602";
+                    }
+                    break;
+                case "Caras":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "603";
+                    }
+                    break;
+                case "Cuadros":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "604";
+                    }
+                    break;
+                case "Otros Objetos":
+                    if (listaTipoProducto == "")
+                    {
+                        listaTipoProducto = "650";
+                    }
+                    break;
+            }
+            return l;
+        }
         public static string TreeViewLista(ASTreeView astvMyTree)
         {
             List<ASTreeViewNode> checkedNodes = astvMyTree.GetCheckedNodes(false);

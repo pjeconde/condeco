@@ -13,5 +13,10 @@ namespace Condeco
         {
 
         }
+        protected void BuscarDirectoButton_Click(object sender, EventArgs e)
+        {
+            Session["ListaTipoProducto"] = Funciones.ListaDeProducto(((LinkButton)sender).CommandName);
+            Response.Redirect("Producto.aspx");
+        }
     }
 }

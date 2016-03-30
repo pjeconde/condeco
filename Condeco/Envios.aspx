@@ -10,7 +10,7 @@
                     <p>
                     <span class="fa fa-2x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></span>
                     </p>
-                    <h2 class="section-heading"> Envíos</h2>
+                    <h2 class="section-heading"> Envíos a todo el país</h2>
                     <hr>
                 </div>
             </div>

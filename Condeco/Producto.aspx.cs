@@ -17,19 +17,25 @@ namespace Condeco
         {
             if (!IsPostBack)
             {
-                GenerateTree();
-                VistaRadioButton_CheckedChanged(Vista1RadioButton, new EventArgs());
-                DataBind();
-                //this.astvMyTree.ContextMenu.MenuItems.Add(new ASContextMenuItem("Custom Menu", "alert('current value:' + " + this.astvMyTree.ContextMenuClientID + ".getSelectedItem().parentNode.getAttribute('treeNodeValue')" + ");return false;", "text"));
-                astvMyTree.ExpandToDepth(0);
-                if (Request.QueryString.Count > 0)
+                //GenerateTree();
+                if (Session["ListaTipoProducto"] != null)
                 {
-                    string v = Request.QueryString["Filtro"].ToString();
-                    string[] buscarNodo = new string[1];
-                    buscarNodo[0] = v;  //400 - Mesas
-                    this.astvMyTree.CheckNodes(buscarNodo, true);
-                    BindPagingGrid();
+                    listaTipoProducto = Session["ListaTipoProducto"].ToString();
+                    Session.Remove("ListaTipoProducto");
                 }
+                VistaRadioButton_CheckedChanged(Vista1RadioButton, new EventArgs());
+
+                //this.astvMyTree.ContextMenu.MenuItems.Add(new ASContextMenuItem("Custom Menu", "alert('current value:' + " + this.astvMyTree.ContextMenuClientID + ".getSelectedItem().parentNode.getAttribute('treeNodeValue')" + ");return false;", "text"));
+                //astvMyTree.ExpandToDepth(0);
+                //if (Request.QueryString.Count > 0)
+                //{
+                //    string v = Request.QueryString["Filtro"].ToString();
+                //    string[] buscarNodo = new string[1];
+                //    buscarNodo[0] = v;  //400 - Mesas
+                //    this.astvMyTree.CheckNodes(buscarNodo, true);
+                //    BindPagingGrid();
+                //}
+
                 BuscarBtn.ServerClick += new EventHandler(this.BuscarButton_Click);
                 if (Funciones.EsUsuarioAdmin(((CondecoEntidades.Sesion)Session["Sesion"])))
                 {
@@ -43,73 +49,49 @@ namespace Condeco
                     Vista1RadioButton.Visible = false;
                     Vista2RadioButton.Visible = false;
                 }
+                DataBind();
             }
         }
 
-        private void GenerateTree()
-        {
-            Funciones.GenerarTreeTipoProductos(astvMyTree, true);
-        }
+        //private void GenerateTree()
+        //{
+        //    Funciones.GenerarTreeTipoProductos(astvMyTree, true);
+        //}
+
         protected void BuscarDirectoButton_Click(object sender, EventArgs e)
         {
-            listaTipoProducto = "";
-            switch (((LinkButton)sender).CommandName)
-            {
-                case "Marcos":
-                    if (listaTipoProducto == "")
-                    {
-                        listaTipoProducto = "101, 102, 103, 200";
-                    }
-                    break;
-                case "Carteles":
-                    if (listaTipoProducto == "")
-                    {
-                        listaTipoProducto = "300";
-                    }
-                    break;
-                case "Mesas":
-                    if (listaTipoProducto == "")
-                    {
-                        listaTipoProducto = "401";
-                    }
-                    break;
-                case "Peces":
-                    if (listaTipoProducto == "")
-                    {
-                        listaTipoProducto = "601";
-                    }
-                    break;
-                case "Barcos":
-                    if (listaTipoProducto == "")
-                    {
-                        listaTipoProducto = "602";
-                    }
-                    break;
-                case "Caras":
-                    if (listaTipoProducto == "")
-                    {
-                        listaTipoProducto = "603";
-                    }
-                    break;
-                case "Cuadros":
-                    if (listaTipoProducto == "")
-                    {
-                        listaTipoProducto = "604";
-                    }
-                    break;
-                case "Otros Objetos":
-                    if (listaTipoProducto == "")
-                    {
-                        listaTipoProducto = "650";
-                    }
-                    break;
-            }
+            listaTipoProducto = Funciones.ListaDeProducto(((LinkButton)sender).CommandName);
             BindPagingGrid();
         }
-
+        //protected void ModificarButton_Click(object sender, EventArgs e)
+        //{
+        //    if (Funciones.SessionTimeOut(Session))
+        //    {
+        //        Response.Redirect("~/SessionTimeout.aspx");
+        //    }
+        //    else
+        //    {
+        //        CondecoEntidades.Sesion sesion = (CondecoEntidades.Sesion)Session["Sesion"];
+        //        string codProd = ((LinkButton)sender).CommandName;
+        //        if (codProd != "")
+        //        {
+        //            CondecoEntidades.Producto producto = new CondecoEntidades.Producto();
+        //            producto.Id = Convert.ToInt32(codProd);
+        //            CondecoRN.Producto.Leer(producto, sesion);
+        //            Session["Producto"] = producto;
+        //            Response.Redirect("~/ProductoModificar.aspx");
+        //        }
+        //    }
+        //}
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             BindPagingGrid();
+            //if (Funciones.EsUsuarioAdmin(((CondecoEntidades.Sesion)Session["Sesion"])))
+            //{
+            //    string s = "<asp:LinkButton ID='ModificarLink' runat='server' OnClick='ModificarButton_Click' CommandArgument='<%# Eval('Id') %>'><span class='fa fa-1-5x fa-edit' style='padding-right:5px'></span></asp:LinkButton>";
+            //    Control c = (Control)this.PanelListView.FindControl("Literal1");
+            //    ((Literal)c).Text = s;
+            //}
         }
         protected void ClearButton_Click(object sender, EventArgs e)
         {
@@ -263,14 +245,31 @@ namespace Condeco
 
         protected void ProductoPagingGridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            int item;
+            List<CondecoEntidades.Producto> lista;
+            CondecoEntidades.Producto Producto;
             switch (e.CommandName)
             {
                 case "Detalle":
-                    int item = Convert.ToInt32(e.CommandArgument);
-                    List<CondecoEntidades.Producto> lista = (List<CondecoEntidades.Producto>)ViewState["lista"];
-                    CondecoEntidades.Producto Producto = lista[item];
+                    item = Convert.ToInt32(e.CommandArgument);
+                    lista = (List<CondecoEntidades.Producto>)ViewState["lista"];
+                    Producto = lista[item];
                     Session["Producto"] = Producto;
                     Response.Redirect("~/ProductoConsultaDetallada.aspx");
+                    break;
+                case "Modificar":
+                    item = Convert.ToInt32(e.CommandArgument);
+                    lista = (List<CondecoEntidades.Producto>)ViewState["lista"];
+                    Producto = lista[item];
+                    Session["Producto"] = Producto;
+                    Response.Redirect("~/ProductoModificar.aspx");
+                    break;
+                case "Clonar":
+                    item = Convert.ToInt32(e.CommandArgument);
+                    lista = (List<CondecoEntidades.Producto>)ViewState["lista"];
+                    Producto = lista[item];
+                    Session["Producto"] = Producto;
+                    Response.Redirect("~/ProductoCrear.aspx");
                     break;
             }
         }

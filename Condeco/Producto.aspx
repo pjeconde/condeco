@@ -84,35 +84,67 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <asp:Panel ID="PanelPagingGridView" runat="server">
-                        <table class="" style="padding: 20px;">
+                        <table style="padding: 20px; width: 100%">
                             <tr>
-                                <td>
+                                <td align="center">
                                     <asp:Panel ID="Panel1" runat="server" BackColor="white" BorderColor="white" BorderStyle="None"
                                         BorderWidth="0px" ScrollBars="Auto">
                                         <cc1:PagingGridView ID="ProductoPagingGridView" runat="server" OnPageIndexChanging="ProductoPagingGridView_PageIndexChanging"
                                             OnRowDataBound="ProductoPagingGridView_RowDataBound" FooterStyle-ForeColor="Brown"
                                             OnSorting="ProductoPagingGridView_Sorting" AllowPaging="True" AllowSorting="True"
-                                            PageSize="5" AutoGenerateColumns="false" SkinID="GrillaGuide" OnRowCommand="ProductoPagingGridView_RowCommand"
+                                            PageSize="10" AutoGenerateColumns="false" SkinID="GrillaGuide" OnRowCommand="ProductoPagingGridView_RowCommand"
                                             OnSelectedIndexChanged="ProductoPagingGridView_SelectedIndexChanged" OnSelectedIndexChanging="ProductoPagingGridView_SelectedIndexChanging"
                                             BackColor="white">
                                             <Columns>
-                                                <asp:TemplateField ItemStyle-VerticalAlign="Top">
-                                                    <HeaderStyle Wrap="true" BackColor="white" />
+                                                <asp:TemplateField ItemStyle-VerticalAlign="Top" HeaderText="Ver">
+                                                    <HeaderStyle BackColor="white" HorizontalAlign="Center" />
                                                     <ItemTemplate>
                                                         <asp:LinkButton ID="Ver" runat="server" CausesValidation="false" CommandName="Detalle"
-                                                            CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip='<%# String.Format("{0}{1}", "Row ", ((GridViewRow) Container).RowIndex + 1)%>'
+                                                            CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip='<%# String.Format("{0}{1}", "Ver Detalle Fila ", ((GridViewRow) Container).RowIndex + 1)%>'
                                                             Text="Detalle" BorderColor="Gray" ForeColor="Black" Width="60px" Font-Bold="False"
                                                             CssClass="TextoCenter" />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
+                                                <asp:TemplateField ItemStyle-VerticalAlign="Top" HeaderText="Imagen">
+                                                    <HeaderStyle BackColor="white" HorizontalAlign="Center" />
+                                                    <ItemTemplate>
+                                                        <asp:Image ID="Image" runat="server" ImageUrl=<%# "ImagenesProducto/Portada/" + Eval("Id") + ".jpg" %> width="100px" />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id">
+                                                    <HeaderStyle HorizontalAlign="Center" Wrap="false" BackColor="white" />
+                                                    <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" Width="10%" BorderColor="Gray" ForeColor="Black" />
+                                                </asp:BoundField>
                                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre">
                                                     <HeaderStyle HorizontalAlign="Center" Wrap="false" BackColor="white" />
                                                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" Width="30%" BorderColor="Gray" ForeColor="Black" />
                                                 </asp:BoundField>
                                                 <asp:BoundField DataField="Descripcion" HeaderText="Descripción" SortExpression="Descripcion" HtmlEncode="false">
                                                     <HeaderStyle HorizontalAlign="Center" Wrap="false" BackColor="white" />
-                                                    <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" Width="70%" BorderColor="Gray" ForeColor="Black" />
+                                                    <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="true" Width="60%" BorderColor="Gray" ForeColor="Black" />
                                                 </asp:BoundField>
+                                                <asp:TemplateField ItemStyle-VerticalAlign="Top">
+                                                    <HeaderStyle Wrap="true" BackColor="white" />
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton ID="Modificar" runat="server" CausesValidation="false" CommandName="Modificar"
+                                                            CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip='<%# String.Format("{0}{1}", "Modificar Fila ", ((GridViewRow) Container).RowIndex + 1)%>'
+                                                            Text="Clonar" BorderColor="Gray" ForeColor="Black" Width="60px" Font-Bold="False"
+                                                            CssClass="TextoCenter">
+                                                            <span class='fa fa-1-5x fa-edit' style='padding-right:5px'></span>
+                                                        </asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:TemplateField ItemStyle-VerticalAlign="Top">
+                                                    <HeaderStyle Wrap="true" BackColor="white" />
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton ID="Clonar" runat="server" CausesValidation="false" CommandName="Clonar"
+                                                            CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip='<%# String.Format("{0}{1}", "Clonar Fila ", ((GridViewRow) Container).RowIndex + 1)%>'
+                                                            Text="Clonar" BorderColor="Gray" ForeColor="Black" Width="60px" Font-Bold="False"
+                                                            CssClass="TextoCenter">
+                                                            <span class='fa fa-1-5x fa-copy' style='padding-right:5px'></span>
+                                                        </asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
                                             </Columns>
                                             <PagerSettings Mode="NumericFirstLast" />
                                         </cc1:PagingGridView>
@@ -135,10 +167,10 @@
                                 </div>
                             </LayoutTemplate>
                             <ItemTemplate>
-                                <div class="col-lg-4 col-sm-6 col-xs-12">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            <div class="row" style="min-height: 300px;">
+                                <div class="col-lg-4 col-sm-6 col-xs-12" runat="server">
+                                    <div class="panel panel-default" runat="server">
+                                        <div class="panel-body" runat="server">
+                                            <div class="row" style="min-height: 280px;">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left" style="padding-bottom: 10px">
                                                     <asp:Image ID="ImagenRecomendada" runat="server" ImageUrl='<%# Eval("TipoDestacado").ToString()=="02" ? "~/Imagenes/Estrella.jpg" : "~/Imagenes/Iconos/PuntoW.jpg"%>'
                                                         Width="5px" />
@@ -162,13 +194,17 @@
                                                             </td>
                                                         </tr>
                                                     </table>
-                                                    <br />
-                                                    Precio: 
-                                                    <asp:Label ID="PrecioLabel" runat="server" Text='<%# Eval("PrecioBase").ToString()=="0" ? "consultar precio" : "$ "+Eval("PrecioBase") %>'
-                                                        CssClass='<%# Eval("TipoDestacado").ToString()=="02" ? "myClass02" : "myClass"%>' />
                                                 </div>
                                             </div>
-                                            <div class="row text-left" style="min-height:0px">
+                                        </div>
+                                        <div class="panel-footer" runat="server">
+                                            <div class="container" runat="server">
+                                                <div Id="ProdFooter" class="row text-left" runat="server">
+                                                    Precio: <asp:Label ID="PrecioLabel" runat="server" Text='<%# Eval("PrecioBase").ToString()=="0" ? "consultar precio" : "$ "+Eval("PrecioBase") %>'
+                                                    CssClass='<%# Eval("TipoDestacado").ToString()=="02" ? "myClass02" : "myClass"%>' />
+                                                    &nbsp;
+                                                    <asp:Literal runat="server" ID="Literal1"></asp:Literal>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
